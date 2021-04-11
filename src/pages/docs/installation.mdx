@@ -1,6 +1,6 @@
 ---
-title: Installation
-description: Learn how to get Tailwind CSS up and running in your project.
+title: 安裝 (Installation)
+description: 一起來學習如何在你的專案之中使用 Tailwind CSS 吧！
 ---
 
 import { Heading } from '@/components/Heading'
@@ -10,47 +10,49 @@ import Link from 'next/link'
 import stats from '@/utils/stats'
 
 
-## Integration guides
+如果你要用 CDN 方式引入 Tailwind，[點我快速帶你到那邊去][CDN]！
 
-Installing Tailwind CSS can be a slightly different process depending on what other frameworks/tools you're using, so we've put together a bunch of guides that cover popular setups.
+
+## 各框架的安裝教學
+
+Tailwind CSS 的安裝過程可能會因為你所使用的框架(frameworks)或工具(tools)不同而有些微差異，所以這邊整合了在幾個熱門框架上及工具中安裝 Tailwind CSS 的方法。
 
 <IntegrationGuides/>
 
-Don't see your favorite tool in the list? We're always working on new guides, but in the mean time you can follow the instructions for [installing Tailwind CSS as a PostCSS plugin](#installing-tailwind-css-as-a-post-css-plugin) instead to get set up in no time.
+如果在列表中沒看到你常用的工具也沒關係，是因為官方還在努力的開發新的教學手冊。但你別氣餒，你還可以馬上使用 [以 PostCSS 插件的方式來安裝 Tailwind CSS] 的方法來進行安裝及設定。
 
 ---
 
-## Installing Tailwind CSS as a PostCSS plugin
+## 以 PostCSS 插件的方式來安裝 Tailwind CSS
 
-*Tailwind CSS requires Node.js 12.13.0 or higher.*
+*Tailwind CSS 需要 Node.js 版本在 12.13.0 以上*
 
-For most real-world projects, we recommend installing Tailwind as a PostCSS plugin. Most modern frameworks use PostCSS under the hood already, and there's a good chance you've used or are currently using other PostCSS plugins like [autoprefixer](https://github.com/postcss/autoprefixer).
+對多數實際的案例來說，我們建議以 PostCSS 插件的方式來安裝 Tailwind CSS，因為目前大部分框架都已經有內建 PostCSS 了，而且你可以也已經習慣使用 PostCSS，又或是可能現在專案裡就已經使用了像是 [autoprefixer] 這種 PostCSS 插件。
 
-If you've never heard of PostCSS or are wondering how it's different from tools like Sass, read our guide on [using PostCSS as your preprocessor](/docs/using-with-preprocessors#using-post-css-as-your-preprocessor) for an introduction.
+如果你還沒有了解過 PostCSS，或不知道它和 Sass或其他工具的差別，你可以看一下 [PostCSS 預編譯器] 這篇的說明。
 
-If this is a bit over your head and you'd like to try Tailwind without configuring PostCSS, read our instructions on [using Tailwind without PostCSS](#using-tailwind-without-post-css) instead.
+如果這對你來說有點困難，又或者你不想透過 PostCSS 來架設 Tailwind CSS，你可以用 [不透過 PostCSS 來設定 Tailwind] 這邊提供的方法來完成安裝。
 
-### Install Tailwind via npm
+### 用 npm 來安裝 Tailwind
 
-For most projects (and to take advantage of Tailwind's customization features), you'll want to install Tailwind and its peer-dependencies via npm.
+對於大部分的專案以及想要用 Tailwind 客製化功能的人而言，會選擇透過 npm 來安裝 Tailwind 及其他必要的(依賴的)項目。
 
 ```shell
 npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
 ```
 
-Since Tailwind [does not automatically add vendor prefixes](/docs/browser-support#vendor-prefixes) to the CSS it generates, we recommend installing [autoprefixer](https://github.com/postcss/autoprefixer) to handle this for you like we've shown in the snippet above.
+為了解決 Tailwind 生成 CSS 時[不自動添加供應商前綴(vendor prefixes)]的情形，這裡推薦可以使用上面這行指令安裝 autoprefixer 來處理問題。
 
-If you're integrating Tailwind with a tool that relies on an older version of PostCSS, you may see an error like this:
+如果你的 Tailwind 是跟必須使用舊版 PostCSS 的工具做整合，很有可能會看到下面這個錯誤：
 
 ```shell
 Error: PostCSS plugin tailwindcss requires PostCSS 8.
 ```
+如果碰到上面這個情況，你需要改成 [安裝 PostCSS 7 的相容版本]。
 
-In this case, you should [install the PostCSS 7 compatibility build](#post-css-7-compatibility-build) instead.
+### 以 PostCSS 插件方式新增 Tailwind
 
-### Add Tailwind as a PostCSS plugin
-
-Add `tailwindcss` and `autoprefixer` to your PostCSS configuration. Most of the time this is a `postcss.config.js` file at the root of your project, but it could also be a `.postcssrc` file, or `postcss` key in your `package.json` file.
+把 `tailwind` 和 `autoprefixer` 增加到 PostCSS 的配置設定中。通常，你的專案目錄下會有一個叫 `postcss.config.js` 的檔案，但也有可能是 `.postcssrc` 格式的檔案，或者是以 `postcss` 金鑰的方式存在 `package.json` 檔案中。
 
 ```js
 // postcss.config.js
@@ -62,25 +64,26 @@ module.exports = {
 }
 ```
 
-If you aren't sure where PostCSS plugins are configured for the tools you're using, you'll want to refer to the documentation for those tools to learn where this should go. A search for "configure postcss {my tool}" will get you the answer pretty fast, too.
+如果在你的工具中還是找不到去哪裡配置 PostCSS 插件，那你可以參考一下你工具的文件說明，也可以善用Google搜尋去下關鍵字，如 **「XXX軟體 postCSS 設定」、「XXX框架 postCSS 設定」** ，相信你很快就能找到答案了。
 
-If you're using any other PostCSS plugins, you should read our documentation on [using PostCSS as your preprocessor](/docs/using-with-preprocessors) for more details about the best way to order them with Tailwind.
+如果你已經有用過任何其它的 PostCSS 插件，你可以從這篇 [PostCSS 預編譯器] 看到更多關於 Tailwind 去配合那些插件的最好方法。
 
-### Create your configuration file
+### 產生 Tailwind 的配置檔 / 設定檔
 
-If you'd like to customize your Tailwind installation, generate a config file for your project using the Tailwind CLI utility included when you install the `tailwindcss` npm package:
+如果想要客製化你的 Tailwind，在你安裝 `tailwindcss` 這個 npm 套件後，可以透過
+Tailwind CLI 工具在你的專案裡產生一個配置檔。
 
 ```shell
 npx tailwindcss init
 ```
 
-This will create a minimal `tailwind.config.js` file at the root of your project:
+這時候會產生一個預設值的 tailwind配置檔 `tailwind.config.js` 在你的專案根目錄：
 
 ```js
-// tailwind.config.js
+// tailwind.config.js 設定檔
 module.exports = {
   purge: [],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: false, // 也可能是 'media' 或 'class'
   theme: {
     extend: {},
   },
@@ -89,14 +92,14 @@ module.exports = {
 }
 ```
 
-Learn more about configuring Tailwind in the [configuration documentation](/docs/configuration).
+想要更詳細的去設定你的 Tailwind 的話，可以看一下 [配置]
 
-### Include Tailwind in your CSS
+### 在 CSS 中引入 Tailwind
 
-Create a CSS file if you don't already have one, and use the `@tailwind` directive to inject Tailwind's `base`, `components`, and `utilities` styles:
+如果你還沒有 CSS 檔，那先建立一個，然後使用 `@tailwind` 這個指令來載入 Tailwind 的 `base`、`components` 和 `utilities`樣式：
 
 ```css
-/* ./your-css-folder/styles.css */
+/* ./你-css-的資料夾/styles.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -269,31 +272,31 @@ This will make sure Tailwind removes any unused CSS for best performance. Read o
 
 ---
 
-## Using Tailwind via CDN
+## 透過 CDN 方式引入Tailwind 
 
-Before using the CDN build, please note that many of the features that make Tailwind CSS great are not available without incorporating Tailwind into your build process.
+在用 CDN 引入之前請注意，因為 Tailwind ==有很多特色功能是必須要安裝才能使用==的，如果要用CDN方式使用 Tailwind，需要稍微留意一下下面幾點：
 
 <List>
-  <ListItemBad>You can't customize Tailwind's default theme</ListItemBad>
-  <ListItemBad>You can't use any <a href="/docs/functions-and-directives">directives</a> like <code>@apply</code>, <code>@variants</code>, etc.</ListItemBad>
-  <ListItemBad>You can't enable additional variants like <a href="/docs/hover-focus-and-other-states#group-focus"><code>group-focus</code></a></ListItemBad>
-  <ListItemBad>You can't install third-party plugins</ListItemBad>
-  <ListItemBad>You can't tree-shake unused styles</ListItemBad>
+  <ListItemBad>無法客製化 Tailwind 的預設主題</ListItemBad>
+  <ListItemBad>無法使用任何像是 <code>@apply</code> 或 <code>@variants</code> 之類的 <a href="/docs/functions-and-directives">指令</a></ListItemBad>
+  <ListItemBad>無法開啟像是 <a href="/docs/hover-focus-and-other-states#group-focus"><code>group-focus</code></a> 這種額外的變數</ListItemBad>
+  <ListItemBad>無法安裝第三方插件</ListItemBad>
+  <ListItemBad>無法在打包時將沒使用到的樣式忽略</ListItemBad>
 </List>
 
-To get the most out of Tailwind, you really should [install it as a PostCSS plugin](#installing-tailwind-css-as-a-post-css-plugin).
+如果想要 Tailwind的完整功能，你應該要 [以 PostCSS 插件的方式來安裝 Tailwind CSS]
 
-To pull in Tailwind for quick demos or just giving the framework a spin, grab the latest default configuration build via CDN:
+如果想要快速的 demo 一下 Tailwind，或是想測試一下這個框架，你可以用 CDN 來取得最新的預設配置：
 
 ```html
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 ```
 
 <p>
-  Note that while the CDN build is large <em>({stats.default.brotlified} compressed, {stats.default.minified} raw)</em>, <strong>it's not representative of the sizes you see when including Tailwind as part of your build process</strong>.
+  請注意一下，CDN 版是很大的 ( 壓縮後 71.5kB, 原始大小 3020.9kB )。**但這不代表用安裝的方式使用 Tailwind，還會是這個大小。**
 </p>
 
-Sites that follow our [best practices](/docs/optimizing-for-production) are almost always under 10kb compressed.
+但是如果用我們提供的 [最佳做法][best practices] ，可以把檔案大小壓在 10kB 以下。
 
 ---
 
@@ -345,3 +348,44 @@ Once the rest of your tools have added support for PostCSS 8, you can move off o
 npm uninstall tailwindcss @tailwindcss/postcss7-compat
 npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
 ```
+
+
+
+
+<!-- === 網址 ================= -->
+
+[CDN]: #透過-CDN-方式引入Tailwind 
+
+[以 PostCSS 插件的方式來安裝 Tailwind CSS]: #以-PostCSS-插件的方式來安裝-Tailwind-CSS
+
+[autoprefixer]: https://github.com/postcss/autoprefixer
+
+[不透過 PostCSS 來設定 Tailwind]: https://tailwindcss.com/docs/using-with-preprocessors#using-post-css-as-your-preprocessor
+
+[不自動添加供應商前綴(vendor prefixes)]: https://tailwindcss.com/docs/browser-support#vendor-prefixes
+
+[安裝 PostCSS 7 的相容版本]: #PostCSS-7-的相容性版本
+
+[PostCSS 預編譯器]: https://tailwindcss.com/docs/using-with-preprocessors
+
+[配置]: https://tailwindcss.com/docs/configuration
+
+[Webpacker]: https://github.com/rails/webpacker
+
+[optimizing for production]: https://tailwindcss.com/docs/optimizing-for-production
+
+[switch to our PostCSS 7 compatibility build]: #PostCSS-7-的相容性版本
+
+[default configuration]: https://unpkg.com/browse/tailwindcss@%5E2/stubs/defaultConfig.stub.js
+
+[adding base styles]: https://tailwindcss.com/docs/adding-base-styles
+
+[extracting components]: https://tailwindcss.com/docs/extracting-components
+
+[adding new utilities]: https://tailwindcss.com/docs/adding-new-utilities
+
+[指令]: https://tailwindcss.com/docs/functions-and-directives
+
+[`` `group-focus` ``]: https://tailwindcss.com/docs/hover-focus-and-other-states#group-focus
+
+[best practices]: https://tailwindcss.com/docs/optimizing-for-production
