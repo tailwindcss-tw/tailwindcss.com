@@ -1,6 +1,6 @@
 ---
 title: "Backdrop Brightness"
-description: "Utilities for applying backdrop brightness filters to an element."
+description: "將背景亮度濾鏡套用在元素的功能"
 featureVersion: 'v2.1+'
 ---
 
@@ -27,7 +27,7 @@ export const classes = {
   }
 }
 
-## Usage
+## 用法 
 
 Use the `backdrop-brightness-{amount?}` utilities alongside the `backdrop-filter` utility to control an element's backdrop brightness.
 
@@ -37,9 +37,9 @@ Use the `backdrop-brightness-{amount?}` utilities alongside the `backdrop-filter
 </div>
 ```
 
-## Responsive
+## 響應式
 
-To control an element's backdrop brightness at a specific breakpoint, add a `{screen}:` prefix to any existing backdrop brightness utility. For example, use `md:backdrop-brightness-150` to apply the `backdrop-brightness-150` utility at only medium screen sizes and above.
+如要將一個元素的背景亮度控制在特定斷點，在任何一個既有背景模糊璃功能的前綴加上 `{screen}:` 就好。例如，在中型或以上的螢幕尺寸，將 `md:backdrop-brightness-150` 加入 `backdrop-brightness-150` 功能。
 
 ```html
 <div class="backdrop-filter backdrop-brightness-110 **md:backdrop-brightness-150** ...">
@@ -49,12 +49,12 @@ To control an element's backdrop brightness at a specific breakpoint, add a `{sc
 
 For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
 
-## Customizing
+## 客製化
 
-### Variants
+### 應用在變化模式 Variant
 
 <Variants plugin="backdropBrightness" name="backdrop brightness" />
 
-### Disabling
+### 停用
 
 <Disabling plugin="backdropBrightness" name="backdrop brightness" />
