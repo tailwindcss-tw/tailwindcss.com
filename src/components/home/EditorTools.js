@@ -315,19 +315,7 @@ export function EditorTools() {
         </Caption>
         <BigText className="mb-8">世界級的 IDE 整合</BigText>
         <Paragraph as="div" className="mb-6">
-          <p>
-<<<<<<< HEAD
-            {
-              '擔心記不住所有的 class 名稱嗎？ Tailwind CSS IntelliSense 這個 VS Code 擴充套件可以掩護你！'
-            }
-=======
-            擔心記不住所有的 class 名稱嗎？ Tailwind CSS IntelliSense 
-            這個 VS Code 擴充套件可以掩護你！
-          </p>
-          <p>
-            智慧的語法建議、整理以及 class 定義等，全部在你的編輯器裡，而且還不用設定。
->>>>>>> 9166e7c5... Update Installation and Utility-first pages. Bugs fixing.
-          </p>
+          <p>擔心記不住所有的 class 名稱嗎？ Tailwind CSS IntelliSense 這個 VS Code 擴充套件可以掩護你！</p>
           <p>智慧的語法建議、整理以及 class 定義等，全部在你的編輯器裡，而且還不用設定。</p>
         </Paragraph>
         <Link href="/docs/intellisense" className="text-light-blue-600 hover:text-light-blue-800">
