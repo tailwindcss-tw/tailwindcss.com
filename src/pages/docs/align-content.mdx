@@ -145,9 +145,9 @@ export const classes = { plugin }
 </div>
 ```
 
-## 行內垂直空間平均分配
+## 元素垂直空間平均分配
 
-利用 `content-around` 將容器中的每一行垂直空間平均分配：
+利用 `content-around` 將容器中的每一行元素進行垂直空間平均分配：
 
 ```html lightBlue
 <template preview class="p-4">
@@ -179,9 +179,9 @@ export const classes = { plugin }
 </div>
 ```
 
-## 垂直空間平均分配
+## 容器垂直空間平均分配
 
-利用 `content-evenly` 將容器內的每一行根據容器高度進行垂直空間平均分配；與「行內垂直空間平均分配」不同的地方是，「垂直空間平均分配」頂部與底部的空間約莫為「行內垂直空間平均分配」的兩倍：
+利用 `content-evenly` 將容器內扣除每一行元素高度的垂直空間進行平均分配：
 
 ```html purple
 <template preview class="p-4">
