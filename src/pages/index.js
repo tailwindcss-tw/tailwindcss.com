@@ -1,51 +1,51 @@
-import { Testimonials } from '@/components/Testimonials'
-import { DarkMode } from '@/components/home/DarkMode'
-import { ConstraintBased } from '@/components/home/ConstraintBased'
-import { BuildAnything } from '@/components/home/BuildAnything'
-import { Performance } from '@/components/home/Performance'
-import { MobileFirst } from '@/components/home/MobileFirst'
-import { StateVariants } from '@/components/home/StateVariants'
-import { ComponentDriven } from '@/components/home/ComponentDriven'
-import { Customization } from '@/components/home/Customization'
-import { ModernFeatures } from '@/components/home/ModernFeatures'
-import { EditorTools } from '@/components/home/EditorTools'
-import { ReadyMadeComponents } from '@/components/home/ReadyMadeComponents'
-import { Search } from '@/components/Search'
-import { Hero } from '@/components/home/Hero'
-import { BigText, InlineCode, Link, Paragraph, Widont } from '@/components/home/common'
-import { useEffect, useState } from 'react'
-import { Logo } from '@/components/Logo'
-import { Footer } from '@/components/home/Footer'
-import NextLink from 'next/link'
-import Head from 'next/head'
+import { Testimonials } from '@/components/Testimonials';
+import { DarkMode } from '@/components/home/DarkMode';
+import { ConstraintBased } from '@/components/home/ConstraintBased';
+import { BuildAnything } from '@/components/home/BuildAnything';
+import { Performance } from '@/components/home/Performance';
+import { MobileFirst } from '@/components/home/MobileFirst';
+import { StateVariants } from '@/components/home/StateVariants';
+import { ComponentDriven } from '@/components/home/ComponentDriven';
+import { Customization } from '@/components/home/Customization';
+import { ModernFeatures } from '@/components/home/ModernFeatures';
+import { EditorTools } from '@/components/home/EditorTools';
+import { ReadyMadeComponents } from '@/components/home/ReadyMadeComponents';
+import { Search } from '@/components/Search';
+import { Hero } from '@/components/home/Hero';
+import { BigText, InlineCode, Link, Paragraph, Widont } from '@/components/home/common';
+import { useEffect, useState } from 'react';
+import { Logo } from '@/components/Logo';
+import { Footer } from '@/components/home/Footer';
+import NextLink from 'next/link';
+import Head from 'next/head';
 
 function NpmInstallButton() {
-  const [state, setState] = useState('idle')
+  const [state, setState] = useState('idle');
 
   useEffect(() => {
-    let current = true
+    let current = true;
     if (state === 'copying') {
       navigator.clipboard
         .writeText('npm install tailwindcss')
         .then(() => {
           if (current) {
-            setState('copied')
+            setState('copied');
           }
         })
         .catch(() => {
           if (current) {
-            setState('error')
+            setState('error');
           }
-        })
+        });
     } else if (state === 'copied' || state === 'error') {
       window.setTimeout(() => {
         if (current) {
-          setState('idle')
+          setState('idle');
         }
-      }, 2000)
+      }, 2000);
     }
-    return () => (current = false)
-  }, [state])
+    return () => (current = false);
+  }, [state]);
 
   return (
     <button
@@ -64,7 +64,7 @@ function NpmInstallButton() {
         <path d="M8 16c0 1.886 0 2.828.586 3.414C9.172 20 10.114 20 12 20h4c1.886 0 2.828 0 3.414-.586C20 18.828 20 17.886 20 16v-4c0-1.886 0-2.828-.586-3.414C18.828 8 17.886 8 16 8m-8 8h4c1.886 0 2.828 0 3.414-.586C16 14.828 16 13.886 16 12V8m-8 8c-1.886 0-2.828 0-3.414-.586C4 14.828 4 13.886 4 12V8c0-1.886 0-2.828.586-3.414C5.172 4 6.114 4 8 4h4c1.886 0 2.828 0 3.414.586C16 5.172 16 6.114 16 8" />
       </svg>
     </button>
-  )
+  );
 }
 
 export default function Home() {
@@ -87,17 +87,30 @@ export default function Home() {
         <div className="px-4 sm:px-6 md:px-8 mb-14 sm:mb-20 xl:mb-8">
           <div className="border-b border-gray-200 py-4 flex items-center justify-between mb-16 sm:mb-20 -mx-4 px-4 sm:mx-0 sm:px-0">
             <Search />
+<<<<<<< HEAD
             <div className="flex items-center space-x-6 sm:space-x-10 ml-6 sm:ml-10">
               <NextLink href="/docs">
                 <a className="text-base leading-6 font-medium hover:text-gray-600 transition-colors duration-200 py-2">
                   <span className="sm:hidden">文件</span>
                   <span className="hidden sm:inline">文件</span>
+=======
+            <div className="flex items-center space-x-6 sm:space-x-10 ml-6 sm:ml-10 whitespace-nowrap">
+              <NextLink href="/docs">
+                <a className="text-base leading-6 font-medium hover:text-gray-600 transition-colors duration-200 py-2">
+                  <span className="sm:hidden">繁中文件</span>
+                  <span className="hidden sm:inline">繁中文件</span>
+>>>>>>> 9166e7c5... Update Installation and Utility-first pages. Bugs fixing.
                 </a>
               </NextLink>
               <NextLink href="https://tailwindcss.com/">
                 <a className="text-base leading-6 font-medium hover:text-gray-600 transition-colors duration-200 py-2">
+<<<<<<< HEAD
                   <span className="sm:hidden">EN</span>
                   <span className="hidden sm:inline">EN</span>
+=======
+                  <span className="sm:hidden">官網</span>
+                  <span className="hidden sm:inline">官方網站</span>
+>>>>>>> 9166e7c5... Update Installation and Utility-first pages. Bugs fixing.
                 </a>
               </NextLink>
               <a
@@ -155,9 +168,13 @@ export default function Home() {
                   幾千字
                 </a>{' '}
                 <Widont>
+<<<<<<< HEAD
                   {
                     '，就為了說明「為什麼傳統語義類 class 名稱的 CSS 會這麼難維護」這件事，但事實上，如果你沒有親自嘗試過，你永遠不會相信我。只要你願意耐心的給它一個機會，我相信你絕對會想知道怎麼透過其他的方式使用 CSS。'
                   }
+=======
+                  ，就為了說明「為什麼傳統語義類 class 名稱的 CSS 會這麼難維護」這件事，但事實上，如果你沒有親自嘗試過，你永遠不會相信我。 只要你願意耐心的給它一個機會，我相信你絕對會想知道怎麼透過其他的方式使用 CSS。
+>>>>>>> 9166e7c5... Update Installation and Utility-first pages. Bugs fixing.
                 </Widont>
               </Paragraph>
             </blockquote>
@@ -192,5 +209,5 @@ export default function Home() {
       </div>
       <Footer />
     </div>
-  )
+  );
 }

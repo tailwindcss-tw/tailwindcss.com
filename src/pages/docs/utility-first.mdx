@@ -1,6 +1,6 @@
 ---
-title: Utility-First
-description: Building complex components from a constrained set of primitive utilities.
+title: 功能優先
+description: 從組合過的原生功能，來建立起複雜的元件。
 ---
 
 import { Heading } from '@/components/Heading'
@@ -9,9 +9,9 @@ import { CodeSample } from '@/components/CodeSample'
 
 ## <Heading hidden>Overview</Heading>
 
-Traditionally, whenever you need to style something on the web, you write CSS.
+一般來說，你要透過寫 CSS 來幫你網站上的某些東西增加樣式。
 
-<TipBad>Using a traditional approach where custom designs require custom CSS</TipBad>
+<TipBad>在傳統的方法，如果你要客製化的設計，你就必須要自定義一個 CSS 名稱</TipBad>
 
 ```html lightBlue
 <template preview class="px-6 py-12">
@@ -21,7 +21,7 @@ Traditionally, whenever you need to style something on the web, you write CSS.
     </div>
     <div>
       <div class="text-xl font-medium text-black">ChitChat</div>
-      <p class="text-gray-500">You have a new message!</p>
+      <p class="text-gray-500">你有一則新訊息</p>
     </div>
   </div>
 </template>
@@ -32,7 +32,7 @@ Traditionally, whenever you need to style something on the web, you write CSS.
   </div>
   <div class="chat-notification-content">
     <h4 class="chat-notification-title">ChitChat</h4>
-    <p class="chat-notification-message">You have a new message!</p>
+    <p class="chat-notification-message">你有一則新訊息</p>
   </div>
 </div>
 
@@ -70,9 +70,9 @@ Traditionally, whenever you need to style something on the web, you write CSS.
 </style>
 ```
 
-With Tailwind, you style elements by applying pre-existing classes directly in your HTML.
+有了 Tailwind，你就可以用 Tailwind ==已經存在的、預先設計好的 class 名稱== 直接在 html 修改你的樣式。
 
-<TipGood>Using utility classes to build custom designs without writing CSS</TipGood>
+<TipGood>以 Tailwind 提供的 class 名稱去自訂你的 CSS</TipGood>
 
 ```html lightBlue
 <template preview class="px-6 py-12">
@@ -82,7 +82,7 @@ With Tailwind, you style elements by applying pre-existing classes directly in y
     </div>
     <div>
       <div class="text-xl font-medium text-black">ChitChat</div>
-      <p class="text-gray-500">You have a new message!</p>
+      <p class="text-gray-500">你有一則新訊息</p>
     </div>
   </div>
 </template>
@@ -93,15 +93,15 @@ With Tailwind, you style elements by applying pre-existing classes directly in y
   </div>
   <div>
     <div class="text-xl font-medium text-black">ChitChat</div>
-    <p class="text-gray-500">You have a new message!</p>
+    <p class="text-gray-500">你有一則新訊息</p>
   </div>
 </div>
 ```
 
-In the example above, we've used:
+在上面這個範例，我們用了：
 
-- Tailwind's [flexbox](/docs/display#flex) and [padding](/docs/padding) utilities (`flex`, `flex-shrink-0`, and `p-6`) to control the overall card layout
-- The [max-width](/docs/max-width) and [margin](/docs/margin) utilities (`max-w-sm` and `mx-auto`) to constrain the card width and center it horizontally
+- Tailwind 中 [flexbox](/docs/display#flex) 和[內距 (padding)](/docs/padding) 裡的功能 (`flex`, `flex-shrink-0`, and `p-6`) 去控制整個卡片的排版
+- [最大寬度 (max-width)](/docs/max-width) and [margin](/docs/margin) utilities (`max-w-sm` and `mx-auto`) to constrain the card width and center it horizontally
 - The [background color](/docs/background-color), [border radius](/docs/border-radius), and [box-shadow](/docs/box-shadow) utilities (`bg-white`, `rounded-xl`, and `shadow-md`) to style the card's appearance
 - The [width](/docs/width) and [height](/docs/height) utilities (`w-12` and `h-12`) to size the logo image
 - The [space-between](/docs/space) utilities (`space-x-4`) to handle the spacing between the logo and the text
