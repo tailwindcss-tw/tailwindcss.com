@@ -1,6 +1,6 @@
 ---
-title: "Align Content"
-description: "Utilities for controlling how rows are positioned in multi-row flex and grid containers."
+title: "垂直對齊 (Align-content)"
+description: "在多行的 flex 及網格容器中控制元件垂直對齊的功能類別"
 ---
 
 import plugin from 'tailwindcss/lib/plugins/alignContent'
@@ -9,9 +9,9 @@ import { Disabling } from '@/components/Disabling'
 
 export const classes = { plugin }
 
-## Start
+## 垂直置頂
 
-Use `content-start` to pack rows in a container against the start of the cross axis:
+利用 `content-start` 將放在容器中的每一行垂直置頂：
 
 ```html rose
 <template preview class="p-4">
@@ -43,9 +43,9 @@ Use `content-start` to pack rows in a container against the start of the cross a
 </div>
 ```
 
-## Center
+## 垂直置中
 
-Use `content-center` to pack rows in a container in the center of the cross axis:
+利用 `content-center` 將容器中的每一行垂直置中：
 
 ```html indigo
 <template preview class="p-4">
@@ -77,9 +77,9 @@ Use `content-center` to pack rows in a container in the center of the cross axis
 </div>
 ```
 
-## End
+## 垂直置底
 
-Use `content-end` to pack rows in a container against the end of the cross axis:
+利用 `content-center` 將容器中的每一行垂直置底：
 
 ```html emerald
 <template preview class="p-4">
@@ -111,9 +111,9 @@ Use `content-end` to pack rows in a container against the end of the cross axis:
 </div>
 ```
 
-## Space between
+## 行距平均分配
 
-Use `content-between` to distribute rows in a container such that there is an equal amount of space between each line:
+利用 `content-between` 將容器中的每一行依據容器高度進行行距平均分配：
 
 ```html amber
 <template preview class="p-4">
@@ -145,9 +145,9 @@ Use `content-between` to distribute rows in a container such that there is an eq
 </div>
 ```
 
-## Space around
+## 行內垂直空間平均分配
 
-Use `content-around` to distribute rows in a container such that there is an equal amount of space around each line:
+利用 `content-around` 將容器中的每一行垂直空間平均分配：
 
 ```html lightBlue
 <template preview class="p-4">
@@ -179,9 +179,9 @@ Use `content-around` to distribute rows in a container such that there is an equ
 </div>
 ```
 
-## Space evenly
+## 垂直空間平均分配
 
-Use `content-evenly` to distribute rows in a container such that there is an equal amount of space around each item, but also accounting for the doubling of space you would normally see between each item when using `content-around`:
+利用 `content-evenly` 將容器內的每一行根據容器高度進行垂直空間平均分配；與「行內垂直空間平均分配」不同的地方是，「垂直空間平均分配」頂部與底部的空間約莫為「行內垂直空間平均分配」的兩倍：
 
 ```html purple
 <template preview class="p-4">
@@ -213,9 +213,9 @@ Use `content-evenly` to distribute rows in a container such that there is an equ
 </div>
 ```
 
-## Responsive
+## 響應式設計
 
-To control the alignment of flex content at a specific breakpoint, add a `{screen}:` prefix to any existing utility class. For example, use `md:content-around` to apply the `content-around` utility at only medium screen sizes and above.
+利用在功能前放入切換點 `{screen}:` 來達到控制 flex 內容中每一個特定的切換點的垂直對齊樣式。例如使用 `md:content-around` 讓 `content-around` 功能能夠在中等及以上螢幕大小生效。
 
 ```html
 <div class="content-start **md:content-around** ...">
@@ -223,14 +223,14 @@ To control the alignment of flex content at a specific breakpoint, add a `{scree
 </div>
 ```
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+如果需要更多關於 Tailwind 的響應式設計功能，請至[響應式設計](/docs/responsive-design)的技術文件頁面中查詢。
 
-## Customizing
+## 客製化
 
-### Variants
+### 變化模式
 
 <Variants plugin="alignContent" name="align-content" />
 
-### Disabling
+### 停用
 
 <Disabling plugin="alignContent" name="align-content" />
