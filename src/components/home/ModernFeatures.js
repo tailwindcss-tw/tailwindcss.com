@@ -146,13 +146,11 @@ export function ModernFeatures() {
           <Widont>我們，只活在尖端。</Widont>
         </BigText>
         <Paragraph as="div" className="mb-6">
+          <p>{'Tailwind 很潮。因為它具備最新最棒的 CSS 特色，只為了讓你的開發過程輕鬆愉快。'}</p>
           <p>
-            Tailwind，很潮。
-            因為它具備最新最棒的 CSS 特色，只為了讓你的開發過程輕鬆愉快。
-          </p>
-          <p>
-            我們用 CSS 變數提供一流的 CSS 網格、組合式變形，和漸層，也支援像是 <code>:focus-visible</code> 
-            這種的現代狀態選擇器，以及更多其他功能。
+            {'我們用 CSS 變數提供一流的 CSS 網格、組合式變形，和漸層，也支援像是 '}
+            <code>:focus-visible</code>
+            {'這種的現代狀態選擇器，以及更多其他功能。'}
           </p>
         </Paragraph>
         <Link href="/docs/grid-template-columns" className="text-purple-600 hover:text-purple-800">

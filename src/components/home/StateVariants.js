@@ -146,11 +146,14 @@ export function StateVariants() {
           <Widont>想要 hover 和 focus 的狀態？ 我們準備給你。</Widont>
         </BigText>
         <Paragraph className="mb-6">
-		  想要在滑鼠經過時有不同的樣式嗎？那就在你想用的 class 前面加上 <InlineCode>hover:</InlineCode>！
-		  同樣，你也能加上 <InlineCode>focus</InlineCode>、{' '}
-          <InlineCode>active</InlineCode>、<InlineCode>disabled</InlineCode>、{' '}
-          <InlineCode>focus-within</InlineCode>、<InlineCode>focus-visible</InlineCode>，甚至是
-		  我們自己發明的超酷炫狀態 <InlineCode>group-hover</InlineCode> 。
+          {'想要在滑鼠經過時有不同的樣式嗎？那就在你想用的 class 前面加上 '}
+          <InlineCode>hover:</InlineCode>
+          {'！同樣，你也能加上 '}
+          <InlineCode>focus</InlineCode>、<InlineCode>active</InlineCode>、
+          <InlineCode>disabled</InlineCode>、<InlineCode>focus-within</InlineCode>、
+          <InlineCode>focus-visible</InlineCode>
+          {'，甚至是我們自己發明的超酷炫狀態 '}
+          <InlineCode>group-hover</InlineCode> 。
         </Paragraph>
         <Link
           href="/docs/hover-focus-and-other-states"

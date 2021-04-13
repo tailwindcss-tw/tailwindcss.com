@@ -88,16 +88,16 @@ export default function Home() {
           <div className="border-b border-gray-200 py-4 flex items-center justify-between mb-16 sm:mb-20 -mx-4 px-4 sm:mx-0 sm:px-0">
             <Search />
             <div className="flex items-center space-x-6 sm:space-x-10 ml-6 sm:ml-10">
-			  <NextLink href="/docs">
-				<a className="text-base leading-6 font-medium hover:text-gray-600 transition-colors duration-200 py-2">
+              <NextLink href="/docs">
+                <a className="text-base leading-6 font-medium hover:text-gray-600 transition-colors duration-200 py-2">
                   <span className="sm:hidden">文件</span>
-                  <span className="hidden sm:inline">繁中文件</span>
+                  <span className="hidden sm:inline">文件</span>
                 </a>
               </NextLink>
               <NextLink href="https://tailwindcss.com/">
                 <a className="text-base leading-6 font-medium hover:text-gray-600 transition-colors duration-200 py-2">
-                  <span className="sm:hidden">官方</span>
-				  <span className="hidden sm:inline">官方網站</span>
+                  <span className="sm:hidden">EN</span>
+                  <span className="hidden sm:inline">EN</span>
                 </a>
               </NextLink>
               <a
@@ -123,11 +123,9 @@ export default function Home() {
             <InlineCode>pt-4</InlineCode>, <InlineCode>text-center</InlineCode> 和{' '}
             <InlineCode>rotate-90</InlineCode> 等 class 屬性，並將其組合起來建構出任意的設計。
           </p>
-		  <div className="p-3">
-			心動，不如
-		  </div>
+          <div className="p-3">心動，不如</div>
           <div className="flex flex-wrap space-y-4 sm:space-y-0 sm:space-x-4 text-center">
-			<NextLink href="/docs">
+            <NextLink href="/docs">
               <a className="w-full sm:w-auto flex-none bg-gray-900 hover:bg-gray-700 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
                 馬上行動
               </a>
@@ -157,9 +155,9 @@ export default function Home() {
                   幾千字
                 </a>{' '}
                 <Widont>
-                  ，就為了說明「為什麼傳統語義類 class 名稱的 CSS 會這麼難維護」這件事，
-                  但事實上，如果你沒有親自嘗試過，你永遠不會相信我。 要是
-				  你不要著急，肯給它一個機會，我相信你絕對會想知道怎麼透過其他的方式使用 CSS。
+                  {
+                    '，就為了說明「為什麼傳統語義類 class 名稱的 CSS 會這麼難維護」這件事，但事實上，如果你沒有親自嘗試過，你永遠不會相信我。只要你願意耐心的給它一個機會，我相信你絕對會想知道怎麼透過其他的方式使用 CSS。'
+                  }
                 </Widont>
               </Paragraph>
             </blockquote>
