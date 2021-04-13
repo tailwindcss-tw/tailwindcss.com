@@ -180,7 +180,7 @@ export function Header({ navIsOpen, onNavToggle }) {
           <BannerMarkRight className="hidden sm:block absolute left-1/2 transform translate-x-[330px] translate-y-[-357px] w-[848px] h-[513px]" />
           <div className="relative flex justify-center items-center">
             <div className="text-sm font-medium text-white">
-              及時發布：下一代 Tailwind&nbsp;CSS
+              「即時」模式：全新世代的&nbsp;Tailwind&nbsp;CSS
             </div>
             <span
               aria-hidden="true"
