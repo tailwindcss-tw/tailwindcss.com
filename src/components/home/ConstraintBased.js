@@ -195,9 +195,9 @@ export function ConstraintBased() {
           <Widont>為您設計系統而生的 API</Widont>
         </BigText>
         <Paragraph className="mb-6">
-		  功能類 class 可以約束您的系統，而不會讓您在樣式表中胡亂地填數值。
-		  它們讓顏色、間距、文字版式、陰影，以及其他的一切都能井然有序的保持一致性，
-		  締造精良的設計系統。
+          {
+            '功能類 class 可以約束您的系統，而不會讓您在樣式表中胡亂地填數值。它們讓顏色、間距、文字版式、陰影，以及其他的一切都能井然有序的保持一致性，締造精良的設計系統。'
+          }
         </Paragraph>
         <Link href="/docs/utility-first" className="text-purple-600 hover:text-purple-800">
           了解詳情 -&gt;

@@ -174,9 +174,11 @@ export function DarkMode() {
           <Widont>現在，有深色模式了</Widont>
         </BigText>
         <Paragraph className="mb-6">
-		  不想在凌晨兩點，用戶在手機打開你的網站時眼睛被閃瞎嗎？ 在設定文件中開啟深色模式並在任何
-		  顏色功能前加上 <InlineCode>dark:</InlineCode>，這麼一來，當深色模式開啟時，背景顏色、文字顏色、
-		  邊框顏色和漸層色都能發生變化。
+          {
+            '不想在凌晨兩點，用戶在手機打開你的網站時眼睛被閃瞎嗎？ 在設定文件中開啟深色模式並在任何顏色功能前加上 '
+          }
+          <InlineCode>dark:</InlineCode>
+          {'，這麼一來，當深色模式開啟時，背景顏色、文字顏色、邊框顏色和漸層色都能發生變化。'}
         </Paragraph>
         <Link href="/docs/dark-mode" className="text-green-600 hover:text-green-800">
           閱讀更多 -&gt;

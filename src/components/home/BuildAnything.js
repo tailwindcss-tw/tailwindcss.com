@@ -249,9 +249,9 @@ export function BuildAnything() {
           <Widont>你能創造你想要的一切，沒唬你</Widont>
         </BigText>
         <Paragraph className="mb-6">
-          因為 Tailwind 就是這麼簡單，所以它絕對不會鼓勵你設計兩次同樣的網站。
-		  即使用了同個色票和尺寸，但它可以很輕易的讓你在下個專案中
-		  用同樣的元件，做出完全不同的設計。
+          {
+            '因為 Tailwind 就是這麼簡單，所以它絕對不會鼓勵你設計兩次同樣的網站。即使用了同個色票和尺寸，但它可以很輕易的讓你在下個專案中用同樣的元件，做出完全不同的設計。'
+          }
         </Paragraph>
         <Link href="/docs" className="text-orange-600 hover:text-orange-800">
           快開始吧！ -&gt;

@@ -32,8 +32,9 @@ export function ReadyMadeComponents() {
           <Widont>用 Tailwind UI 快速前進</Widont>
         </BigText>
         <Paragraph className="mb-6">
-          Tailwind UI 集結了我們以及所有 Tailwind CSS 的創作者所設計研發的漂亮且完全響應式的 UI 元件。
-          那裏有數百個現成的範例讓你選擇，而且保證你能找到心目中想建構的完美起點。
+          {
+            'Tailwind UI 集結了我們以及所有 Tailwind CSS 的創作者所設計研發的漂亮且完全響應式的 UI 元件。那裏有數百個現成的範例讓你選擇，而且保證你能找到心目中想建構的完美起點。'
+          }
         </Paragraph>
         <Link href="https://tailwindui.com/" className="text-violet-600 hover:text-violet-800">
           了解詳情 -&gt;

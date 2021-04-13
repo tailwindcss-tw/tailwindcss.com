@@ -118,12 +118,14 @@ export function Customization() {
         </BigText>
         <Paragraph as="div" className="mb-6">
           <p>
-            Tailwind 包含了一組專家所設計的、可以直接使用的預設值，但是其實，從色票、間距、陰影到滑鼠游標，
-            任何東西，都是可以自訂的。
+            {
+              'Tailwind 包含了一組專家所設計的、可以直接使用的預設值，但是其實，從色票、間距、陰影到滑鼠游標，任何東西，都是可以自訂的。'
+            }
           </p>
           <p>
-            用 tailwind.config.js 設定檔來創造自己的設計系統， 讓 Tailwind 來把它轉換成
-            屬於你客製化的 CSS 框架。
+            {
+              '用 tailwind.config.js 設定檔來創造自己的設計系統， 讓 Tailwind 來把它轉換成屬於你客製化的 CSS 框架。'
+            }
           </p>
         </Paragraph>
         <Link href="/docs/configuration" className="text-rose-600 hover:text-rose-800">
