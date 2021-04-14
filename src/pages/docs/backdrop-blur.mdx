@@ -29,8 +29,16 @@ export const classes = {
 
 將 `backdrop-blur-{amount?}` 功能跟 `backdrop-filter` 功能一起使用即可將一個元素的背景變模糊
 
-```html
-<div class="backdrop-filter backdrop-blur-lg ...">
+```html rose
+<template preview class="p-4">
+  <div class="flex justify-center content-center flex-wrap h-24 bg-stripes2 bg-stripes-rose-500 rounded-lg">
+    <div class="backdrop-filter backdrop-blur-sm w-1/5 h-12 text-white text-2xl font-extrabold rounded-md flex items-center justify-center bg-rose-500 bg-opacity-20">
+      DEMO
+    </div>
+  </div>
+</template>
+
+<div class="backdrop-filter backdrop-blur-sm ...">
   <!-- ... -->
 </div>
 ```
