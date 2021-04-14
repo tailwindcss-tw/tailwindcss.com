@@ -157,7 +157,7 @@ export const documentationNav = {
     pages['mix-blend-mode'],
     pages['background-blend-mode'],
   ],
-  '過濾器 (Filters)': [
+  '濾鏡 (Filters)': [
     pages['filter'],
     pages['blur'],
     pages['brightness'],
