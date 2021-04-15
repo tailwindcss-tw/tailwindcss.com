@@ -90,14 +90,14 @@ export default function Home() {
             <div className="flex items-center space-x-6 sm:space-x-10 ml-6 sm:ml-10 whitespace-nowrap">
               <NextLink href="/docs">
                 <a className="text-base leading-6 font-medium hover:text-gray-600 transition-colors duration-200 py-2">
-                  <span className="sm:hidden">繁中文件</span>
-                  <span className="hidden sm:inline">繁中文件</span>
+                  <span className="sm:hidden">技術文件</span>
+                  <span className="hidden sm:inline">技術文件</span>
                 </a>
               </NextLink>
               <NextLink href="https://tailwindcss.com/">
                 <a className="text-base leading-6 font-medium hover:text-gray-600 transition-colors duration-200 py-2">
-                  <span className="sm:hidden">官網</span>
-                  <span className="hidden sm:inline">官方網站</span>
+                  <span className="sm:hidden">EN</span>
+                  <span className="hidden sm:inline">EN</span>
                 </a>
               </NextLink>
               <a
@@ -155,7 +155,9 @@ export default function Home() {
                   幾千字
                 </a>{' '}
                 <Widont>
-                  就為了說明「為什麼傳統語義類 class 名稱的 CSS 會這麼難維護」這件事，但事實上，如果你沒有親自嘗試過，你永遠不會相信我。只要你願意耐心的給它一個機會，我相信你絕對會想知道怎麼透過其他的方式使用 CSS。
+                {
+                  '就為了說明「為什麼傳統語義類 class 名稱的 CSS 會這麼難維護」這件事，但事實上，如果你沒有親自嘗試過，你永遠不會相信我。只要你願意耐心的給它一個機會，我相信你絕對會想知道怎麼透過其他的方式使用 CSS。'
+                }
                 </Widont>
               </Paragraph>
             </blockquote>
