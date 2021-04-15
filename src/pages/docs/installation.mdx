@@ -15,7 +15,7 @@ import stats from '@/utils/stats'
 
 ## 各框架的安裝教學
 
-Tailwind CSS 的安裝過程可能會因為你所使用的框架(frameworks)或工具(tools)不同而有些微差異，所以這邊整合了在幾個熱門框架上及工具中安裝 Tailwind CSS 的方法。
+Tailwind CSS 的安裝過程可能會因為你所使用的框架 ( frameworks ) 或工具 ( tools ) 不同而有些微差異，所以這邊整合了在幾個熱門框架上及工具中安裝 Tailwind CSS 的方法。
 
 <IntegrationGuides/>
 
@@ -77,13 +77,13 @@ Tailwind CLI 工具在你的專案裡產生一個配置檔。
 npx tailwindcss init
 ```
 
-這時候會產生一個預設值的 tailwind配置檔 `tailwind.config.js` 在你的專案根目錄：
+這時候會產生一個預設值的配置檔 `tailwind.config.js` 在你的專案根目錄：
 
 ```js
 // tailwind.config.js 設定檔
 module.exports = {
   purge: [],
-  darkMode: false, // 也可能是 'media' 或 'class'
+  darkMode: false, // 也可以是 'media' 或 'class'
   theme: {
     extend: {},
   },
@@ -281,19 +281,19 @@ This will make sure Tailwind removes any unused CSS for best performance. Read o
   <ListItemBad>無法使用任何像是 <code>@apply</code> 或 <code>@variants</code> 之類的 <a href="/docs/functions-and-directives">指令</a></ListItemBad>
   <ListItemBad>無法開啟像是 <a href="/docs/hover-focus-and-other-states#group-focus"><code>group-focus</code></a> 這種額外的變數</ListItemBad>
   <ListItemBad>無法安裝第三方插件</ListItemBad>
-  <ListItemBad>無法在打包時將沒使用到的樣式忽略</ListItemBad>
+  <ListItemBad>無法 tree-shake 沒用到的樣式 ( 無法在打包時壓縮 )</ListItemBad>
 </List>
 
-如果想要 Tailwind的完整功能，你應該要 [以 PostCSS 插件的方式來安裝 Tailwind CSS]
+如果想要 Tailwind 的完整功能，你應該要 [以 PostCSS 插件的方式來安裝 Tailwind CSS](#post-css-tailwind-css)
 
-如果想要快速的 demo 一下 Tailwind，或是想測試一下這個框架，你可以用 CDN 來取得最新的預設配置：
+如果想要快速的玩轉一下 Tailwind，或是想測試一下這個框架，你可以用 CDN 來取得最新的預設配置：
 
 ```html
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 ```
 
 <p>
-  請注意一下，CDN 版是很大的 ( 壓縮後 71.5kB, 原始大小 3020.9kB )。**但這不代表用安裝的方式使用 Tailwind，還會是這個大小。**
+  請注意一下，CDN 版是很大的 ( 壓縮後 71.5kB, 原始大小 3020.9kB )。**但這不代表 Tailwind 建置之後還會是這種大小。**
 </p>
 
 但是如果用我們提供的 [最佳做法](/docs/optimizing-for-production) ，可以把檔案大小壓在 10kB 以下。
