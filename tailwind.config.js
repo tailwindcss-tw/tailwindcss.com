@@ -240,8 +240,8 @@ module.exports = {
         },
         '.bg-stripes2': {
           backgroundImage:
-            'linear-gradient(45deg, var(--stripes-color) 20%, transparent 20% 40%, var(--stripes-color) 40% 60%, red 60% 80%, var(--stripes-color) 80%);',
-          backgroundSize: '50.66px 5.66px',
+          'linear-gradient(90deg, var(--stripes-color) 20%, transparent 20% 100%);',
+          backgroundSize: '15.66px 15.66px',
         },
       }
 
