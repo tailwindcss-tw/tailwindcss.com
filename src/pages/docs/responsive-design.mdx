@@ -1,6 +1,7 @@
 ---
-title: 響應式設計
-description: Using responsive utility variants to build adaptive user interfaces.
+title: 響應式設計 (Responsive Design)
+description: 使用響應式功能變數來建立自適應的使用者介面。
+# description: Using responsive utility variants to build adaptive user interfaces.
 ---
 
 import { Heading } from '@/components/Heading'
@@ -8,11 +9,13 @@ import { TipGood, TipBad } from '@/components/Tip'
 
 ## <Heading hidden>Overview</Heading>
 
-Every utility class in Tailwind can be applied conditionally at different breakpoints, which makes it a piece of cake to build complex responsive interfaces without ever leaving your HTML.
+在 Tailwind 上的每一個功能 class 可以有條件地應用於不同的斷點，這讓您可以輕鬆地建立複雜的響應式介面而不需要離開 HTML。
+<!-- Every utility class in Tailwind can be applied conditionally at different breakpoints, which makes it a piece of cake to build complex responsive interfaces without ever leaving your HTML. -->
 
-There are five breakpoints by default, inspired by common device resolutions:
+根據常見的裝置解析度，預設值設有五個斷點。
+<!-- There are five breakpoints by default, inspired by common device resolutions: -->
 
-| Breakpoint prefix | Minimum width | CSS |
+| 斷點前綴詞 | 寬度最小值 | CSS |
 | --- | --- | --- |
 | `sm` | 640px | `@media (min-width: 640px) { ... }` |
 | `md` | 768px | `@media (min-width: 768px) { ... }` |
@@ -20,18 +23,62 @@ There are five breakpoints by default, inspired by common device resolutions:
 | `xl` | 1280px | `@media (min-width: 1280px) { ... }` |
 | `2xl` | 1536px | `@media (min-width: 1536px) { ... }` |
 
-To add a utility but only have it take effect at a certain breakpoint, all you need to do is prefix the utility with the breakpoint name, followed by the `:` character:
+<!-- | Breakpoint prefix | Minimum width | CSS |
+| --- | --- | --- |
+| `sm` | 640px | `@media (min-width: 640px) { ... }` |
+| `md` | 768px | `@media (min-width: 768px) { ... }` |
+| `lg` | 1024px | `@media (min-width: 1024px) { ... }` |
+| `xl` | 1280px | `@media (min-width: 1280px) { ... }` |
+| `2xl` | 1536px | `@media (min-width: 1536px) { ... }` | -->
+
+欲增加一個功能但僅生效在某個特定斷點上，您只需要加入該斷點的前綴詞，並在後面加上 `:` 即可。
+<!-- To add a utility but only have it take effect at a certain breakpoint, all you need to do is prefix the utility with the breakpoint name, followed by the `:` character: -->
 
 ```html
-<!-- Width of 16 by default, 32 on medium screens, and 48 on large screens -->
+<!-- 寬度預設值設為 16, 中等螢幕設為 32, 大螢幕設為 48 -->
 <img class="w-16 **md:w-32** **lg:w-48**" src="...">
 ```
+<!-- ```html
+Width of 16 by default, 32 on medium screens, and 48 on large screens
+<img class="w-16 **md:w-32** **lg:w-48**" src="...">
+``` -->
 
-This works for **every utility class in the framework**, which means you can change literally anything at a given breakpoint — even things like letter spacing or cursor styles.
+這適用於**框架中的任何一個功能 class**，代表您可以給定斷點來改變任何東西，甚至是字元間距或滑鼠游標的樣式。
+<!-- This works for **every utility class in the framework**, which means you can change literally anything at a given breakpoint — even things like letter spacing or cursor styles. -->
 
-Here's a simple example of a marketing page component that uses a stacked layout on small screens, and a side-by-side layout on larger screens *(resize your browser to see it in action)*:
+接下來是一個簡單的行銷頁面元件的範例，該範例在小螢幕上使用堆疊的排版，大螢幕上使用並排的排版 *(調整您的瀏覽器大小來檢視它的行為)*
+<!-- Here's a simple example of a marketing page component that uses a stacked layout on small screens, and a side-by-side layout on larger screens *(resize your browser to see it in action)*: -->
 
 ```html indigo
+<template preview class="px-6 py-8">
+  <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+    <div class="md:flex">
+      <div class="md:flex-shrink-0">
+        <img class="h-48 w-full object-cover md:w-48" src="https://images.unsplash.com/photo-1515711660811-48832a4c6f69?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=448&q=80" width="448" height="299" alt="Man looking at item at a store">
+      </div>
+      <div class="p-8">
+        <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">案例分析</div>
+        <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">為您新的生意找到消費者</a>
+        <p class="mt-2 text-gray-500">展開新生意是一項艱鉅的工作。五個點子讓您找到第一位消費者。</p>
+      </div>
+    </div>
+  </div>
+</template>
+
+<div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden **md:max-w-2xl**">
+  <div class="**md:flex**">
+    <div class="**md:flex-shrink-0**">
+      <img class="h-48 w-full object-cover **md:w-48**" src="/img/store.jpg" alt="Man looking at item at a store">
+    </div>
+    <div class="p-8">
+      <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">案例分析</div>
+      <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">為您新的生意找到消費者</a>
+      <p class="mt-2 text-gray-500">展開新生意是一項艱鉅的工作。五個點子讓您找到第一位消費者。</p>
+    </div>
+  </div>
+</div>
+```
+<!-- ```html indigo
 <template preview class="px-6 py-8">
   <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
     <div class="md:flex">
@@ -59,51 +106,76 @@ Here's a simple example of a marketing page component that uses a stacked layout
     </div>
   </div>
 </div>
-```
+``` -->
 
-Here's how the example above works:
+接下來說明上面範例的運作方式：
+<!-- Here's how the example above works: -->
 
-- By default, the outer `div` is `display: block`, but by adding the `md:flex` utility, it becomes `display: flex` on medium screens and larger.
-- When the parent is a flex container, we want to make sure the image never shrinks, so we've added `md:flex-shrink-0` to prevent shrinking on medium screens and larger. Technically we could have just used `flex-shrink-0` since it would do nothing on smaller screens, but since it only matters on `md` screens, it's a good idea to make that clear in the class name.
-- On small screens the image is automatically full width by default. On medium screens and up, we've constrained that width to a fixed size using `md:w-48`.
+- 在預設情況下，外側的 `div` 是 `display: block`，但是加上了 `md:flex` 的功能之後，大於中等螢幕時將會變成 `display: flex`。
+<!-- - By default, the outer `div` is `display: block`, but by adding the `md:flex` utility, it becomes `display: flex` on medium screens and larger. -->
+- 當父元素是一個 flex 容器時，為了確保圖片絕不被縮小，我們加上 `md:flex-shrink-0` 來避免其在中等螢幕或以上時被縮小。精確來說，因為在小螢幕上並不會有任何作用，其實我們可以只使用 `flex-shrink-0` 即可，但是由於我們只關注在 `md` 螢幕上的作用，所以清楚地表現在 class 名稱上會是比較好的。
+<!-- - When the parent is a flex container, we want to make sure the image never shrinks, so we've added `md:flex-shrink-0` to prevent shrinking on medium screens and larger. Technically we could have just used `flex-shrink-0` since it would do nothing on smaller screens, but since it only matters on `md` screens, it's a good idea to make that clear in the class name. -->
+- 在小螢幕上的圖片預設將會自動的滿版呈現，而在中型或以上的螢幕時，我們使用了 `md:w-48` 來限制寬度以固定圖片尺寸。
+<!-- - On small screens the image is automatically full width by default. On medium screens and up, we've constrained that width to a fixed size using `md:w-48`. -->
 
-We've only used one breakpoint in this example, but you could easily customize this component at other sizes using the `sm`, `lg`, or `xl` responsive prefixes as well.
+在這個範例裡面我們僅使用一個斷點，但是您也可以使用其他 `sm`、`lg` 或 `xl` 等響應式前綴來簡單的客製化這個元件。
+<!-- We've only used one breakpoint in this example, but you could easily customize this component at other sizes using the `sm`, `lg`, or `xl` responsive prefixes as well. -->
 
 ---
 
-## Mobile First
+## 行動裝置優先
+<!-- ## Mobile First -->
 
-By default, Tailwind uses a mobile first breakpoint system, similar to what you might be used to in other frameworks like Bootstrap.
+在預設情況下，Tailwind 使用了行動裝置優先的斷點系統，如同其它您可能已經熟悉的框架，例如 Bootstrap。
+<!-- By default, Tailwind uses a mobile first breakpoint system, similar to what you might be used to in other frameworks like Bootstrap. -->
 
-What this means is that unprefixed utilities (like `uppercase`) take effect on all screen sizes, while prefixed utilities (like `md:uppercase`) only take effect at the specified breakpoint *and above*.
+表示沒有前綴詞的功能（例如：`uppercase`）會作用在全部的螢幕上，而有前綴詞的功能（例如：`md:uppercase`）只會在指定的斷點及其之上的螢幕生效。
+<!-- What this means is that unprefixed utilities (like `uppercase`) take effect on all screen sizes, while prefixed utilities (like `md:uppercase`) only take effect at the specified breakpoint *and above*. -->
 
-### Targeting mobile screens
+### 定位行動裝置
+<!-- ### Targeting mobile screens -->
 
-Where this approach surprises people most often is that to style something for mobile, you need to use the unprefixed version of a utility, not the `sm:` prefixed version. Don't think of `sm:` as meaning "on small screens", think of it as "at the small *breakpoint*".
+這種方式最讓人驚豔的是針對手機的樣式設計，您需要使用沒有前綴詞的功能，而不是 `sm:` 的前綴詞。不要將 `sm:` 視為 「小螢幕上」，而應該將其視為「小螢幕*斷點*處」
+<!-- Where this approach surprises people most often is that to style something for mobile, you need to use the unprefixed version of a utility, not the `sm:` prefixed version. Don't think of `sm:` as meaning "on small screens", think of it as "at the small *breakpoint*". -->
 
-<TipBad>Don't use <code className="text-sm font-bold text-gray-800">sm:</code> to target mobile devices</TipBad>
+<TipBad>不要使用 <code className="text-sm font-bold text-gray-800">sm:</code> 來定位行動裝置</TipBad>
+{/* <TipBad>Don't use <code className="text-sm font-bold text-gray-800">sm:</code> to target mobile devices</TipBad> */}
 
 ```html
-<!-- This will only center text on screens 640px and wider, not on small screens -->
+<!-- 文字置中僅會作用在大於等於 640px 的螢幕上，而不是小螢幕 -->
 <div class="sm:text-center"></div>
 ```
+<!-- ```html
+This will only center text on screens 640px and wider, not on small screens
+<div class="sm:text-center"></div>
+``` -->
 
-<TipGood>Use unprefixed utilities to target mobile, and override them at larger breakpoints</TipGood>
+<TipGood>使用沒有前綴詞的功能來定位手機，並在較大的斷點覆蓋它們</TipGood>
+{/* <TipGood>Use unprefixed utilities to target mobile, and override them at larger breakpoints</TipGood> */}
 
 ```html
-<!-- This will center text on mobile, and left align it on screens 640px and wider -->
+<!-- 文字置中將會在手機上生效，而當螢幕大於等於 640px 時，將會靠左對齊 -->
 <div class="text-center sm:text-left"></div>
 ```
+<!-- ```html
+This will center text on mobile, and left align it on screens 640px and wider
+<div class="text-center sm:text-left"></div>
+``` -->
 
-For this reason, it's often a good idea to implement the mobile layout for a design first, then layer on any changes that make sense for `sm` screens, followed by `md` screens, etc.
+因此，通常最好優先設計手機的排版，接著在 `sm` 上修改，然後是 `md` ，以此類推。
+<!-- For this reason, it's often a good idea to implement the mobile layout for a design first, then layer on any changes that make sense for `sm` screens, followed by `md` screens, etc. -->
 
-### Targeting a single breakpoint
+### 定位單一斷點
+<!-- ### Targeting a single breakpoint -->
 
-Tailwind's breakpoints only include a `min-width` and don't include a `max-width`, which means any utilities you add at a smaller breakpoint will also be applied at larger breakpoints.
+Tailwind 的斷點僅包含 `min-width` 而沒有 `max-width`，這代表任何功能您新增在較小斷點上，將會同時生效在比其還大的所有斷點。
+<!-- Tailwind's breakpoints only include a `min-width` and don't include a `max-width`, which means any utilities you add at a smaller breakpoint will also be applied at larger breakpoints. -->
 
-If you'd like to apply a utility at one breakpoint only, the solution is to *undo* that utility at larger sizes by adding another utility that counteracts it.
+如果您只想在某個斷點上應用某項功能，只需要在更大的斷點上新增另一個的功能，藉此來*抵銷*前一項功能的效果。
+<!-- If you'd like to apply a utility at one breakpoint only, the solution is to *undo* that utility at larger sizes by adding another utility that counteracts it. -->
 
-Here is an example where the background color is red at the `md` breakpoint, but teal at every other breakpoint:
+在下方的範例裡，背景顏色在 `md` 的斷點上會是紅色，然而其他的斷點皆會是藍綠色。
+<!-- Here is an example where the background color is red at the `md` breakpoint, but teal at every other breakpoint: -->
 
 ```html
 <div class="bg-teal-500 md:bg-red-500 lg:bg-teal-500">
@@ -111,13 +183,16 @@ Here is an example where the background color is red at the `md` breakpoint, but
 </div>
 ```
 
-Notice that **we did not** have to specify a background color for the `sm` breakpoint or the `xl` breakpoint — you only need to specify when a utility should *start* taking effect, not when it should stop.
+請注意，**不必**在 `sm` 或 `xl` 的斷點上指定背景顏色，您只需要指定一個功能何時*開始*生效，而不是何時結束。
+<!-- Notice that **we did not** have to specify a background color for the `sm` breakpoint or the `xl` breakpoint — you only need to specify when a utility should *start* taking effect, not when it should stop. -->
 
 ---
 
-## Customizing breakpoints
+## 客製化斷點
+<!-- ## Customizing breakpoints -->
 
-You can completely customize your breakpoints in your `tailwind.config.js` file:
+在您的 `tailwind.config.js` 檔案中，可以完全地客製化斷點。
+<!-- You can completely customize your breakpoints in your `tailwind.config.js` file: -->
 
 ```js
 // tailwind.config.js
@@ -137,4 +212,5 @@ module.exports = {
 }
 ```
 
-Learn more in the [customizing breakpoints documentation](/docs/breakpoints).
+在 [客製化斷點文件](/docs/breakpoints) 中了解更多。
+<!-- Learn more in the [customizing breakpoints documentation](/docs/breakpoints). -->
