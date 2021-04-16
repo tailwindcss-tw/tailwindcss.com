@@ -1,31 +1,31 @@
 ---
-title: Browser Support
-description: Understanding which browsers Tailwind supports and how to manage vendor prefixes.
+title: 瀏覽器支援 (Browser Support)
+description: 了解 Tailwind 支援哪些瀏覽器及其相關的前綴文字
 ---
 
-As of v2.0, Tailwind CSS is designed for and tested on the latest stable versions of Chrome, Firefox, Edge, and Safari. Tailwind CSS v2.0 does not support any version of IE, including IE 11.
+從 2.0 開始，Tailwind 專注在 Chrome、Firefox、Edge 和 Safari 最新穩定版本上的設計以及測試，Tailwind CSS v2.0 不再支援任何版本的 IE 瀏覽器，包含 IE 11 也不支援。
 
-If you need to support IE 11, we recommend using Tailwind CSS v1.9, which is still an excellent and very productive framework.
+如果你需要支援 IE 11，我們建議使用 Tailwind CSS v1.9，它仍然是一個很棒且有生產力的框架。
 
-Certain features such as `focus-visible` are included but not supported natively by all modern browsers. We've included information about recommended polyfills for those features directly alongside the documentation for the features themselves.
+特定的功能，像是 `focus-visible` 雖然不被所有的現代瀏覽器原生地支援，但也包含在其中。我們已經將這些功能的 polyfills 建議資訊包含在功能本身的文件之中。
 
-## Vendor Prefixes
+## 前綴文字 (Vendor Prefixes)
 
-If you're compiling your CSS using the `tailwindcss` CLI tool, vendor prefixes will be added automatically.
+如果你使用 `tailwindcss` CLI 工具來編譯你的 CSS，前綴文字將被自動加入其中。
 
-If not, we recommend that you use [Autoprefixer](https://github.com/postcss/autoprefixer).
+如果沒有使用 CLI，我們則建議你使用 [Autoprefixer](https://github.com/postcss/autoprefixer)
 
-To use it, install it via npm:
+要使用它，可以透過 npm 來安裝:
 
 ```shell
-# Using npm
+# 使用 npm
 npm install autoprefixer
 
-# Using Yarn
+# 使用 Yarn
 yarn add autoprefixer
 ```
 
-Then add it to the very end of your plugin list in your PostCSS configuration:
+然後將下列這些加入到你的 PostCSS 設定中，插件區塊 (plugin) 的末段
 
 ```js
 module.exports = {
