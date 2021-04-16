@@ -1,5 +1,5 @@
 ---
-title: "背景濾鏡"
+title: "Backdrop Filter (背景濾鏡)"
 description: "啟用或停用在元素上的背景濾鏡功能"
 featureVersion: 'v2.1+'
 ---
@@ -20,7 +20,7 @@ export const classes = {
 
 ## 用法
 
-使用 `backdrop-filter` 來啟用背景濾鏡 ( 跟其他的背景濾鏡功能共用，如 `backdrop-blur` or `backdrop-grayscale`)。而 `backdrop-filter-none` 功能是可移除濾鏡的.
+使用 `backdrop-filter` 來啟用背景濾鏡 (跟其他的背景濾鏡功能共用，如 `backdrop-blur` or `backdrop-grayscale`)。而 `backdrop-filter-none` 功能可移除濾鏡的.
 
 ```html
 <div class="backdrop-filter backdrop-grayscale backdrop-blur-md backdrop-contrast-200 ...">
@@ -30,7 +30,7 @@ export const classes = {
 
 ## 響應式
 
-如要將一個元素的背景亮度控制在特定斷點，在任何一個既有背景亮度功能的前綴加上 `{screen}:` prefix to any existing backdrop filter utility. For example, use `md:backdrop-filter-none` to apply the `backdrop-filter-none` utility at only medium screen sizes and above.
+如要將元素的背景濾鏡控制在特定斷點，在任何一個既有背景濾鏡功能的前綴加上 `{screen}:` 就好。例如，在中型或以上的螢幕尺寸，將 `md:backdrop-filter-none` 加到 `backdrop-filter-none` 功能。
 
 ```html
 <div class="backdrop-filter backdrop-blur-lg **md:backdrop-filter-none** ...">

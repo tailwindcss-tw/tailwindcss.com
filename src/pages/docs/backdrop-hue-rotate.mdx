@@ -1,5 +1,5 @@
 ---
-title: "Backdrop Hue Rotate"
+title: "Backdrop Hue Rotate (背景色相)"
 description: "Utilities for applying backdrop hue-rotate filters to an element."
 featureVersion: 'v2.1+'
 ---
@@ -27,9 +27,10 @@ export const classes = {
   }
 }
 
-## Usage
+## 用法
 
-Use the `backdrop-hue-rotate-{amount}` utilities alongside the `backdrop-filter` utility to blur an element.
+將 `backdrop-hue-rotate-{amount}` 功能跟 `backdrop-filter` 功能搭配使用，即可將元素的背景變模糊
+<!-- Use the `backdrop-hue-rotate-{amount}` utilities alongside the `backdrop-filter` utility to blur an element. -->
 
 ```html
 <div class="backdrop-filter backdrop-hue-rotate-15 ...">
@@ -37,9 +38,11 @@ Use the `backdrop-hue-rotate-{amount}` utilities alongside the `backdrop-filter`
 </div>
 ```
 
-## Responsive
+## 響應式
 
-To control an element's backdrop hue rotation at a specific breakpoint, add a `{screen}:` prefix to any existing backdrop hue-rotate utility. For example, use `md:backdrop-hue-rotate-60` to apply the `backdrop-hue-rotate-60` utility at only medium screen sizes and above.
+如要將元素的背景色相控制在特定斷點，在任何一個既有背景色相功能的前綴加上 `{screen}:` 就好。例如，在中型或以上的螢幕尺寸，將 `md:backdrop-hue-rotate-60` 加到 `backdrop-hue-rotate-60` 功能
+
+<!-- To control an element's backdrop hue rotation at a specific breakpoint, add a `{screen}:` prefix to any existing backdrop hue-rotate utility. For example, use `md:backdrop-hue-rotate-60` to apply the `backdrop-hue-rotate-60` utility at only medium screen sizes and above. -->
 
 ```html
 <div class="backdrop-filter backdrop-hue-rotate-15 **md:backdrop-hue-rotate-60** ...">
@@ -47,14 +50,14 @@ To control an element's backdrop hue rotation at a specific breakpoint, add a `{
 </div>
 ```
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+想知道更多有關 Tailwind 響應式設計功能的訊息，請參考 [響應式設計] (/docs/responsive-design) 文件
 
-## Customizing
+## 客製化
 
-### Variants
+### 應用在變化模式 Variant
 
 <Variants plugin="backdropHueRotate" name="backdrop hue-rotate" />
 
-### Disabling
+### 停用
 
 <Disabling plugin="backdropHueRotate" name="backdrop hue-rotate" />

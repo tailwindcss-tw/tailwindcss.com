@@ -1,5 +1,5 @@
 ---
-title: "Backdrop Grayscale"
+title: "Backdrop Grayscale (背景灰階)"
 description: "Utilities for applying backdrop grayscale filters to an element."
 featureVersion: 'v2.1+'
 ---
@@ -18,9 +18,10 @@ export const classes = {
   }
 }
 
-## Usage
+## 用法
 
-Use the `backdrop-grayscale` and `backdrop-grayscale-0` utilities alongside the `backdrop-filter` utility to whether an element's backdrop should be rendered as grayscale or in full color.
+不論背景要灰階或全彩，將 `backdrop-grayscale` 或 `backdrop-grayscale-0`功能跟 `backdrop-filter`搭配使用即可。
+<!-- Use the `backdrop-grayscale` and `backdrop-grayscale-0` utilities alongside the `backdrop-filter` utility to whether an element's backdrop should be rendered as grayscale or in full color. -->
 
 ```html
 <div class="backdrop-filter backdrop-grayscale ...">
@@ -28,9 +29,11 @@ Use the `backdrop-grayscale` and `backdrop-grayscale-0` utilities alongside the 
 </div>
 ```
 
-## Responsive
+## 響應式
 
-To control an element's backdrop grayscale filter at a specific breakpoint, add a `{screen}:` prefix to any existing backdrop grayscale utility. For example, use `md:backdrop-grayscale-0` to apply the `backdrop-grayscale-0` utility at only medium screen sizes and above.
+如要將元素的背景灰階控制在特定斷點，在任何一個既有背景模灰階功能的前綴加上 `{screen}:` 就好。例如，在中型或以上的螢幕尺寸，將 `md:backdrop-grayscale-0` 加到 `backdrop-grayscale-0`
+
+<!-- To control an element's backdrop grayscale filter at a specific breakpoint, add a `{screen}:` prefix to any existing backdrop grayscale utility. For example, use `md:backdrop-grayscale-0` to apply the `backdrop-grayscale-0` utility at only medium screen sizes and above. -->
 
 ```html
 <div class="backdrop-filter backdrop-grayscale **md:backdrop-grayscale-0** ...">
@@ -38,11 +41,11 @@ To control an element's backdrop grayscale filter at a specific breakpoint, add 
 </div>
 ```
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+想知道更多有關 Tailwind 響應式設計功能的訊息，請參考 [響應式設計] (/docs/responsive-design) 文件
 
-## Customizing
+## 客製化
 
-### Variants
+### 應用在變化模式 Variant
 
 <Variants plugin="backdropGrayscale" name="backdrop grayscale" />
 
