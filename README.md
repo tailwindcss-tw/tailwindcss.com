@@ -4,24 +4,28 @@ Tailwind CSS uses [Next.js](https://nextjs.org/) for its documentation. Here is 
 
 1. Clone this repo
 
-    ```sh
-    git clone https://github.com/tailwindlabs/tailwindcss.com.git
-    ```
+   ```sh
+   # HTTPS
+   git clone https://github.com/tailwindcss-tw/tailwindcss.com.git
+
+   # SSH
+   git clone git@github.com:tailwindcss-tw/tailwindcss.com.git
+   ```
 
 2. Go into the project root directory
 
-    ```sh
-    cd tailwindcss.com
-    ```
+   ```sh
+   cd tailwindcss.com
+   ```
 
 3. Install JS dependencies
 
-    ```sh
-    yarn
-    ```
+   ```sh
+   yarn
+   ```
 
 4. Start the dev server
 
-    ```sh
-    yarn dev
-    ```
+   ```sh
+   yarn dev
+   ```
