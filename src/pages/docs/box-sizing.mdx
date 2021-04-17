@@ -1,6 +1,7 @@
 ---
 title: "Box Sizing"
-description: "Utilities for controlling how the browser should calculate an element's total size."
+# description: "Utilities for controlling how the browser should calculate an element's total size."
+description: "用來決定瀏覽器如何計算元素 (element) 的大小"
 ---
 
 import plugin from 'tailwindcss/lib/plugins/boxSizing'
@@ -9,13 +10,17 @@ import { Disabling } from '@/components/Disabling'
 
 export const classes = { plugin }
 
-## Include borders and padding
+<!-- ## Include borders and padding -->
+## 包含邊框和內距
 
-Use `box-border` to set an element's `box-sizing` to `border-box`, telling the browser to include the element's borders and padding when you give it a height or width.
+<!-- Use `box-border` to set an element's `box-sizing` to `border-box`, telling the browser to include the element's borders and padding when you give it a height or width. -->
+使用 `box-border` 將元素的 `box-sizing` 設置 `border-box` 的話，在你給元素高度和寬度時，瀏覽器會把該元素的邊框和內距給一起包含進去。
 
-This means a 100px &times; 100px element with a 2px border and 4px of padding on all sides will be rendered as 100px &times; 100px, with an internal content area of 88px &times; 88px.
+<!-- This means a 100px &times; 100px element with a 2px border and 4px of padding on all sides will be rendered as 100px &times; 100px, with an internal content area of 88px &times; 88px. -->
+這表示四個邊都有 2px 邊框和 4px 內距的 100px &times; 100px 元素，將會被宣染成 100px &times; 100px 大小，而內容區塊會是 88px &times; 88px。
 
-Tailwind makes this the default for all elements in our [preflight base styles](/docs/preflight).
+<!-- Tailwind makes this the default for all elements in our [preflight base styles](/docs/preflight). -->
+Tailwind 在 [preflight base styles](/docs/preflight) 中對每個元素皆以這個設定為預設。
 
 ```html lightBlue
 <template preview>
@@ -31,11 +36,14 @@ Tailwind makes this the default for all elements in our [preflight base styles](
 </div>
 ```
 
-## Exclude borders and padding
+<!-- ## Exclude borders and padding -->
+## 不包含邊框和內距
 
-Use `box-content` to set an element's `box-sizing` to `content-box`, telling the browser to add borders and padding on top of the element's specified width or height.
+<!-- Use `box-content` to set an element's `box-sizing` to `content-box`, telling the browser to add borders and padding on top of the element's specified width or height. -->
+使用 `box-content` 將元素的 `box-sizing` 設置 `content-box` 的話，瀏覽器會在元素指定的基礎高度和寬度之上再額外加入邊框和內距。
 
-This means a 100px &times; 100px element with a 2px border and 4px of padding on all sides will actually be rendered as 112px &times; 112px, with an internal content area of 100px &times; 100px.
+<!-- This means a 100px &times; 100px element with a 2px border and 4px of padding on all sides will actually be rendered as 112px &times; 112px, with an internal content area of 100px &times; 100px. -->
+這表示四個邊都有 2px 邊框和 4px 內距的 100px &times; 100px 元素，實際上將會被宣染成 112px &times; 112px 的大小，內容區塊則是 100px &times; 100px。
 
 ```html emerald
 <template preview>
@@ -51,9 +59,11 @@ This means a 100px &times; 100px element with a 2px border and 4px of padding on
 </div>
 ```
 
-## Responsive
+<!-- ## Responsive -->
+## 響應式
 
-To control the box-sizing at a specific breakpoint, add a `{screen}:` prefix to any existing box-sizing utility. For example, use `md:box-content` to apply the `box-content` utility at only medium screen sizes and above.
+<!-- To control the box-sizing at a specific breakpoint, add a `{screen}:` prefix to any existing box-sizing utility. For example, use `md:box-content` to apply the `box-content` utility at only medium screen sizes and above. -->
+加上 `{screen}` 前綴詞給任意的 box-sizing 來控制在特定斷點上 box-sizing 效果。例如使用 `md:box-content` 會讓 `box-content` 功能只作用在中等螢幕大小以上的裝置。
 
 ```html
 <div class="box-border **md:box-content** ...">
@@ -61,14 +71,18 @@ To control the box-sizing at a specific breakpoint, add a `{screen}:` prefix to 
 </div>
 ```
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+<!-- For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation. -->
+想要獲得更多關於 Tailwind 響應式設計的資訊，請閱讀 [響應式設計](/docs/responsive-design) 文件。
 
-## Customizing
+<!-- ## Customizing -->
+## 客製化
 
-### Variants
+<!-- ### Variants -->
+### 變化模式
 
 <Variants plugin="boxSizing" name="box-sizing" />
 
-### Disabling
+<!-- ### Disabling -->
+### 停用
 
 <Disabling plugin="boxSizing" name="box-sizing" />
