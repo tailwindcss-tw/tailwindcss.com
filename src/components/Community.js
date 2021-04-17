@@ -15,8 +15,10 @@ export function Community() {
             />
           </svg>
           <div className="flex-auto">
-            <h3 className="font-bold text-gray-900">GitHub Discussions</h3>
-            <p>Connect with members of the Tailwind CSS community.</p>
+            {/* <h3 className="font-bold text-gray-900">GitHub Discussions</h3>
+            <p>Connect with members of the Tailwind CSS community.</p> */}
+            <h3 className="font-bold text-gray-900">GitHub 討論串</h3>
+            <p>串起 Tailwind CSS 的所有成員</p>
           </div>
         </a>
       </li>
@@ -36,8 +38,10 @@ export function Community() {
             />
           </svg>
           <div className="flex-auto">
+            {/* <h3 className="font-bold text-gray-900">Discord</h3>
+            <p>Join our Discord group to chat with other Tailwind users.</p> */}
             <h3 className="font-bold text-gray-900">Discord</h3>
-            <p>Join our Discord group to chat with other Tailwind users.</p>
+            <p>加入我們的 Discord 聊天室來和其他 Tailwind 使用者聊聊吧</p>
           </div>
         </a>
       </li>
@@ -52,8 +56,10 @@ export function Community() {
             />
           </svg>
           <div className="flex-auto">
+            {/* <h3 className="font-bold text-gray-900">Twitter</h3>
+            <p>Follow the Tailwind Twitter account for news and updates.</p> */}
             <h3 className="font-bold text-gray-900">Twitter</h3>
-            <p>Follow the Tailwind Twitter account for news and updates.</p>
+            <p>關注 Tailwind 的 Twitter 帳號以取得最新資訊及更新</p>
           </div>
         </a>
       </li>
@@ -68,8 +74,10 @@ export function Community() {
             />
           </svg>
           <div className="flex-auto">
+            {/* <h3 className="font-bold text-gray-900">YouTube</h3>
+            <p>Watch screencasts and feature tutorials of Tailwind.</p> */}
             <h3 className="font-bold text-gray-900">YouTube</h3>
-            <p>Watch screencasts and feature tutorials of Tailwind.</p>
+            <p>看看 Tailwind 的特色教學與實作影片</p>
           </div>
         </a>
       </li>

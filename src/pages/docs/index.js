@@ -15,53 +15,68 @@ import { ReactComponent as RefactoringUiCompleteLogo } from '@/img/refactoring-u
 
 const whatsNew = [
   {
-    title: 'Focus Ring Utilities',
+    // title: 'Focus Ring Utilities',
+    title: 'Focus 時的輪廓功能',
     version: '2.0+',
     image: require('@/img/docs/focus-ring.svg').ReactComponent,
     href: '/docs/ring-width',
   },
   {
-    title: 'Dark Mode',
+    // title: 'Dark Mode',
+    title: '深色模式',
     version: '2.0+',
     image: require('@/img/docs/dark-mode.svg').ReactComponent,
     href: '/docs/dark-mode',
   },
   {
-    title: 'Extended Color Palette',
+    // title: 'Extended Color Palette',
+    title: '擴充自訂的色票',
     version: '2.0+',
     image: require('@/img/docs/color-palette.svg').ReactComponent,
     href: '/docs/customizing-colors#color-palette-reference',
   },
   {
-    title: 'Extend Variants',
+    // title: 'Extend Variants',
+    title: '擴充變化模式 ( Variants )',
     version: '2.0+',
     image: require('@/img/docs/extend-variants.svg').ReactComponent,
     href: '/docs/configuring-variants#enabling-extra-variants',
   },
   {
-    title: 'Extra Wide Breakpoint',
+    // title: 'Extra Wide Breakpoint',
+    title: '額外的寬斷點',
     version: '2.0+',
     image: require('@/img/docs/breakpoint.svg').ReactComponent,
     href: '/docs/breakpoints',
   },
   {
-    title: 'Shareable Presets',
+    // title: 'Shareable Presets',
+    title: '可共用的預設',
     image: require('@/img/docs/shareable-presets.svg').ReactComponent,
     href: '/docs/presets',
   },
   {
-    title: 'Gradients',
+    // title: 'Gradients',
+    title: '漸層',
     image: require('@/img/docs/gradients.svg').ReactComponent,
     href: '/docs/gradient-color-stops',
   },
   {
-    title: 'Animations',
+    // title: 'Animations',
+    title: '動畫',
     image: require('@/img/docs/animations.svg').ReactComponent,
     href: '/docs/animation',
   },
 ]
 
 const latestUpdates = [
+  {
+    title: 'Tailwind CSS 繁體中文化',
+    date: '2021-04-16T19:00:00.000+08:00',
+    url: '#',
+    description:
+      '非官方團隊 Tailwindcss.tw 正在持續將技術文件進行繁體中文化，很快就會翻譯到您想看的篇章了，請耐心等候。',
+  },
   {
     title: 'Tailwind CSS v2.1',
     date: '2021-04-05T19:00:00.000Z',
@@ -118,23 +133,28 @@ export default function DocsLandingPage() {
   return (
     <div className="px-4 sm:px-6 xl:px-8 pt-10 pb-16">
       <h1 className="text-5xl leading-none font-extrabold text-gray-900 tracking-tight mb-4">
-        Getting started with Tailwind CSS
+        {/* Getting started with Tailwind CSS */}
+        踏入 Tailwind CSS 的世界
       </h1>
       <p className="text-2xl tracking-tight mb-10">
-        Learn Tailwind the way that best matches your learning style.
+        {/* Learn Tailwind the way that best matches your learning style. */}
+        以最適合您的方式來學習 Tailwind
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 xl:gap-8">
         <section className="flex">
           <div className="w-full relative text-white overflow-hidden rounded-3xl flex shadow-lg">
             <div className={`w-full flex md:flex-col bg-gradient-to-br ${gradients.violet[0]}`}>
               <div className="sm:max-w-sm sm:flex-none md:w-auto md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-8">
-                <h2 className="text-xl font-semibold mb-2 text-shadow">Read the docs</h2>
+                {/* <h2 className="text-xl font-semibold mb-2 text-shadow">Read the docs</h2> */}
+                <h2 className="text-xl font-semibold mb-2 text-shadow">閱讀技術文件</h2>
                 <p className="font-medium text-violet-100 text-shadow mb-4">
-                  Learn how to get Tailwind set up in your project.
+                  {/* Learn how to get Tailwind set up in your project. */}
+                  學習如何在您的專案中安裝 Tailwind
                 </p>
                 <Link href="/docs/installation">
                   <a className="mt-auto bg-violet-800 bg-opacity-50 hover:bg-opacity-75 transition-colors duration-200 rounded-xl font-semibold py-2 px-4 inline-flex">
-                    Start learning
+                    {/* Start learning */}
+                    開始學習
                   </a>
                 </Link>
               </div>
@@ -154,15 +174,18 @@ export default function DocsLandingPage() {
           <div className="w-full relative text-white overflow-hidden rounded-3xl flex shadow-lg">
             <div className={`w-full flex md:flex-col bg-gradient-to-br ${gradients.pink[0]}`}>
               <div className="sm:max-w-sm sm:flex-none md:w-auto md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-8">
-                <h2 className="text-xl font-semibold mb-2 text-shadow">Try it in the browser</h2>
+                {/* <h2 className="text-xl font-semibold mb-2 text-shadow">Try it in the browser</h2> */}
+                <h2 className="text-xl font-semibold mb-2 text-shadow">在瀏覽器中試試看</h2>
                 <p className="font-medium text-rose-100 text-shadow mb-4">
-                  Build something with Tailwind in our online playground.
+                  {/* Build something with Tailwind in our online playground. */}
+                  透過我們的線上遊樂場來用 Tailwind 建造一些東西
                 </p>
                 <a
                   href="https://play.tailwindcss.com/"
                   className="mt-auto bg-rose-900 bg-opacity-50 hover:bg-opacity-75 transition-colors duration-200 rounded-xl font-semibold py-2 px-4 inline-flex"
                 >
-                  Start building
+                  {/* Start building */}
+                  開始建置
                 </a>
               </div>
               <div className={`${styles.image} relative md:pl-6 xl:pl-8 hidden sm:block`}>
@@ -176,13 +199,16 @@ export default function DocsLandingPage() {
           <div className="w-full relative text-white overflow-hidden rounded-3xl flex shadow-lg">
             <div className={`w-full flex md:flex-col bg-gradient-to-br ${gradients.amber[0]}`}>
               <div className="sm:max-w-sm sm:flex-none md:w-auto md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-8">
-                <h2 className="text-xl font-semibold mb-2 text-shadow">Watch the screencasts</h2>
+                {/* <h2 className="text-xl font-semibold mb-2 text-shadow">Watch the screencasts</h2> */}
+                <h2 className="text-xl font-semibold mb-2 text-shadow">看教學影片</h2>
                 <p className="font-medium text-amber-100 text-shadow mb-4">
-                  Learn more about Tailwind directly from the team on our channel.
+                  {/* Learn more about Tailwind directly from the team on our channel. */}
+                  從我們的 Youtube 頻道直接學習關於 Tailwind 的一切
                 </p>
                 <Link href="https://www.youtube.com/tailwindlabs">
                   <a className="mt-auto bg-amber-900 bg-opacity-50 hover:bg-opacity-75 transition-colors duration-200 rounded-xl font-semibold py-2 px-4 inline-flex">
-                    Start watching
+                    {/* Start watching */}
+                    開始觀看影片
                   </a>
                 </Link>
               </div>
@@ -201,19 +227,37 @@ export default function DocsLandingPage() {
             <TuiLogo className="w-40 h-auto" />
           </h2>
           <p className="flex-auto text-white text-lg font-medium">
-            <Widont>Beautiful UI components, crafted by the creators of Tailwind CSS</Widont>
+            {/* <Widont>Beautiful UI components, crafted by the creators of Tailwind CSS</Widont> */}
+            <Widont>所有 Tailwind CSS 的創作者所設計研發的漂亮 UI 元件</Widont>
           </p>
           <a
             href="https://tailwindui.com/components"
             className="flex-none bg-white hover:bg-gray-100 transition-colors duration-200 text-gray-900 font-semibold rounded-lg py-3 px-4"
           >
-            Browse components
+            瀏覽元件庫
           </a>
         </section>
+        {/* 自己打廣告在這裡~、 */}
+        {/* <section className="md:col-span-3 flex flex-wrap md:flex-nowrap items-center bg-gray-600 shadow-lg rounded-2xl py-6 md:py-4 px-6 md:pr-5 space-y-4 md:space-y-0 md:space-x-8">
+          <h2 className="flex-none">
+            <span className="sr-only">Tailwind UI</span>
+            <TuiLogo className="w-40 h-auto" />
+          </h2>
+          <p className="flex-auto text-white text-lg font-medium">
+            <Widont>想在這邊打我們自己的廣告，可是沒內容給別人看</Widont>
+          </p>
+          <a
+            href="https://tailwindui.com/components"
+            className="flex-none bg-gray-400 hover:bg-gray-100 transition-colors duration-200 text-gray-900 font-semibold rounded-lg py-3 px-4"
+          >
+            按了還是到元件庫哦
+          </a>
+        </section> */}
       </div>
       <section>
         <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 mt-16 mb-8">
-          What’s new in Tailwind
+          {/* What’s new in Tailwind */}
+          看看 Tailwind 有什麼新東西吧
         </h2>
         <ul className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 xl:gap-8 font-semibold text-gray-900 text-center">
           {whatsNew.map((item) => (
@@ -235,9 +279,11 @@ export default function DocsLandingPage() {
       </section>
       <section>
         <header className="flex items-center justify-between mt-16 mb-8">
-          <h2 className="text-3xl tracking-tight font-extrabold text-gray-900">Latest Updates</h2>
+          {/* <h2 className="text-3xl tracking-tight font-extrabold text-gray-900">Latest Updates</h2> */}
+          <h2 className="text-3xl tracking-tight font-extrabold text-gray-900">最近更新</h2>
           <a href="https://blog.tailwindcss.com" className="font-medium text-gray-900">
-            View all the latest updates
+            {/* View all the latest updates */}
+            瀏覽所有最近更新的內容
           </a>
         </header>
         <ul className="bg-gray-50 rounded-3xl p-2 sm:p-5 xl:p-6">
@@ -305,7 +351,8 @@ export default function DocsLandingPage() {
       </section>
       <section>
         <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 mt-16 mb-8">
-          Get involved
+          {/* Get involved */}
+          想要參與其中？
         </h2>
         <Community />
       </section>
