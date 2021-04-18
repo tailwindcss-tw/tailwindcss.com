@@ -1,6 +1,6 @@
 ---
-title: "Backdrop Invert (背景反轉)"
-description: "將背景反轉濾鏡套用在元素"
+title: "Backdrop Invert (背景負片)"
+description: "將背景負片濾鏡套用在元素"
 featureVersion: 'v2.1+'
 ---
 
@@ -21,7 +21,7 @@ export const classes = {
 ## 用法
 
 <!-- Use the `backdrop-invert` and `backdrop-invert-0` utilities alongside the `backdrop-filter` utility to whether an element should be rendered with inverted backdrop colors or normally. -->
-不論是否要將元素背景渲染成反轉，將 `backdrop-invert` 或 `backdrop-invert-0` 跟 `backdrop-filter` 功能搭配使用。
+不論是否要將元素背景渲染成負片，將 `backdrop-invert` 或 `backdrop-invert-0` 跟 `backdrop-filter` 功能搭配使用。
 
 ```html
 <div class="backdrop-filter backdrop-invert ...">
@@ -32,7 +32,7 @@ export const classes = {
 ## 響應式
 
 <!-- To control an element's backdrop invert filter at a specific breakpoint, add a `{screen}:` prefix to any existing backdrop invert utility. For example, use `md:backdrop-invert-0` to apply the `backdrop-invert-0` utility at only medium screen sizes and above. -->
-如要將元素的背景反轉控制在特定斷點，在任何一個既有背景反轉功能的前綴詞加上 `{screen}:` 。例如，使用 `md:backdrop-invert-0` 時，只有中型或以上的螢幕尺寸有 `backdrop-invert-0` 效果。
+如要將元素的背景負片控制在特定斷點，在任何一個既有背景負片功能的前綴詞加上 `{screen}:` 。例如，使用 `md:backdrop-invert-0` 時，只有中型或以上的螢幕尺寸有 `backdrop-invert-0` 效果。
 
 ```html
 <div class="backdrop-filter backdrop-invert **md:backdrop-invert-0** ...">
