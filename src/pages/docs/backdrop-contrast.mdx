@@ -1,5 +1,5 @@
 ---
-title: "背景對比"
+title: "Backdrop Contrast (背景對比)"
 description: "將背景對比濾鏡套用在元素的功能"
 featureVersion: 'v2.1+'
 ---
@@ -24,8 +24,8 @@ export const classes = {
 }
 
 ## 用法
-
-將 `backdrop-contrast-{amount?}` 功能跟 `backdrop-filter` 功能一起使用即可控制元素的背景對比。
+<!-- Use the backdrop-contrast-{amount?} utilities alongside the backdrop-filter utility to control an element's backdrop contrast. -->
+將 `backdrop-contrast-{amount?}` 功能跟 `backdrop-filter` 功能搭配使用，即可控制元素的背景對比。
 
 ```html
 <div class="backdrop-filter backdrop-contrast-125 ...">
@@ -34,8 +34,8 @@ export const classes = {
 ```
 
 ## 響應式
-
-如要將一個元素的背景亮度控制在特定斷點，在任何一個既有背景對比功能的前綴加上 `{screen}:` 就好。例如，在中型或以上的螢幕尺寸，將 `md:backdrop-contrast-150` 加入 `backdrop-contrast-150` 功能。
+<!-- To control an element's backdrop contrast at a specific breakpoint, add a {screen}: prefix to any existing backdrop contrast utility. For example, use md:backdrop-contrast-150 to apply the backdrop-contrast-150 utility at only medium screen sizes and above. -->
+如要將元素的背景對比控制在特定斷點，在任何一個既有背景對比功能的前綴詞加上 `{screen}:`。例如，使用 `md:backdrop-contrast-150` 時，只有中型或以上的螢幕尺寸有 `backdrop-contrast-150` 效果。
 
 ```html
 <div class="backdrop-filter backdrop-contrast-110 **md:backdrop-contrast-150** ...">
