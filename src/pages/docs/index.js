@@ -75,7 +75,7 @@ const latestUpdates = [
     date: '2021-04-16T19:00:00.000+08:00',
     url: '#',
     description:
-      '非官方團隊 Tailwindcss.tw 正在持續將技術文件進行繁體中文化，很快就會翻譯到您想看的篇章了，請耐心等候。',
+      'Tailwindcss.tw 台灣團隊正在持續將技術文件進行繁體中文化，很快就會翻譯到您想看的篇章了，請耐心等候。',
   },
   {
     title: 'Tailwind CSS v2.1',
