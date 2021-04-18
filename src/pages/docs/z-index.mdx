@@ -1,6 +1,6 @@
 ---
 title: "Z-Index"
-description: "控制元素堆疊順序的功能"
+description: 控制元素堆疊順序的功能
 features:
   responsive: true
   customizable: true
@@ -14,9 +14,9 @@ import { Disabling } from '@/components/Disabling'
 
 export const classes = { plugin }
 
-## Usage
+## 使用方式
 
-Control the stack order (or three-dimensional positioning) of an element in Tailwind, regardless of order it has been displayed, using the `z-{index}` utilities.
+無論原先如何顯示，在 Tailwind 裡使用`z-{index}`功能來控制元素堆疊順序(或3d位置)。
 
 ```html fuchsia
 <template preview class="p-4">
@@ -36,9 +36,9 @@ Control the stack order (or three-dimensional positioning) of an element in Tail
 <div class="**z-0** ...">1</div>
 ```
 
-## Responsive
+## 響應式
 
-To control the z-index of an element at a specific breakpoint, add a `{screen}:` prefix to any existing z-index utility. For example, use `md:z-50` to apply the `z-50` utility at only medium screen sizes and above.
+某些情境下想要控制某元素的 z-index，可在現有 z-index 功能前加上前綴 `{screen}:`。例如：中等以上尺寸螢幕使用 `md:z-50` 以套用 `z-50` 功能。
 
 ```html
 <div class="z-0 **md:z-50** ...">
@@ -46,13 +46,13 @@ To control the z-index of an element at a specific breakpoint, add a `{screen}:`
 </div>
 ```
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+更多有關Tailwind響應式設計的特色，可參考 [Responsive Design](/docs/responsive-design) 文件。
 
-## Customizing
+## 客製化
 
-### Z-Index scale
+### Z-Index 數值
 
-By default, Tailwind provides six numeric `z-index` utilities and an `auto` utility. You change, add, or remove these by editing the `theme.zIndex` section of your Tailwind config.
+Tailwind預設提供6種數字型 `z-index` 功能以及一個 `auto` 功能，你可以編輯 Tailwind 設定檔的 `theme.zIndex` 這部份來新增、修改、或刪除。
 
 ```diff-js
   // tailwind.config.js
@@ -75,9 +75,9 @@ By default, Tailwind provides six numeric `z-index` utilities and an `auto` util
   }
 ```
 
-### Negative values
+### 負數值
 
-If you'd like to add any negative z-index classes that take the same form as Tailwind's [negative margin](/docs/margin#negative-margins) classes, prefix the keys in your config file with a dash:
+如果你想跟 Tailwind 的 [negative margin](/docs/margin#negative-margins) 格式一樣使用負數 z-index 的話，在設定檔的數值前加 '-' 即可。
 
 ```diff-js
   // tailwind.config.js
@@ -92,12 +92,12 @@ If you'd like to add any negative z-index classes that take the same form as Tai
   }
 ```
 
-Tailwind is smart enough to generate classes like `-z-10` when it sees the leading dash, not `z--10` like you might expect.
+當發現開頭是`-`時, Tailwind聰明到可以幫你產生像`-z-10`的class, 而不是你可能會預期的`z--10`。
 
-### Variants
+### 變化模式
 
 <Variants plugin="zIndex" name="z-index" />
 
-### Disabling
+### 停用
 
 <Disabling plugin="zIndex" name="z-index" />
