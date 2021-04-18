@@ -1,6 +1,6 @@
 ---
-title: "Backdrop Opacity"
-description: "Utilities for applying backdrop opacity filters to an element."
+title: "Backdrop Opacity (背景透明度)"
+description: "將背景透明度濾鏡套用在元素的功能"
 featureVersion: 'v2.1+'
 ---
 
@@ -31,9 +31,10 @@ export const classes = {
   }
 }
 
-## Usage
+## 用法
 
-Use the `backdrop-opacity-{amount}` utilities alongside the `backdrop-filter` utility to control the opacity of other backdrop filters applied to an element.
+<!-- Use the `backdrop-opacity-{amount}` utilities alongside the `backdrop-filter` utility to control the opacity of other backdrop filters applied to an element. -->
+將 `backdrop-opacity-{amount}` 功能跟 `backdrop-filter` 搭配使用，即可控制已套用在元素上的其他背景濾鏡的透明度。
 
 ```html
 <div class="backdrop-filter backdrop-opacity-80 ...">
@@ -41,9 +42,10 @@ Use the `backdrop-opacity-{amount}` utilities alongside the `backdrop-filter` ut
 </div>
 ```
 
-## Responsive
+## 響應式
 
-To control an element's backdrop opacity at a specific breakpoint, add a `{screen}:` prefix to any existing backdrop opacity utility. For example, use `md:backdrop-opacity-lg` to apply the `backdrop-opacity-lg` utility at only medium screen sizes and above.
+<!-- To control an element's backdrop opacity at a specific breakpoint, add a `{screen}:` prefix to any existing backdrop opacity utility. For example, use `md:backdrop-opacity-lg` to apply the `backdrop-opacity-lg` utility at only medium screen sizes and above. -->
+如要將元素的背景透明度控制在特定斷點，在任何一個既有背景透明度功能的前綴詞加上 `{screen}:` 。例如，使用 `md:backdrop-opacity-lg` 時，只有中型或以上的螢幕尺寸有 `backdrop-opacity-lg` 效果。
 
 ```html
 <div class="backdrop-filter backdrop-opacity-sm **md:backdrop-opacity-lg** ...">
@@ -51,14 +53,14 @@ To control an element's backdrop opacity at a specific breakpoint, add a `{scree
 </div>
 ```
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+想知道更多有關 Tailwind 響應式設計功能的訊息，請參考 [響應式設計] (/docs/responsive-design) 文件
 
-## Customizing
+## 客製化
 
-### Variants
+### 應用在變化模式 Variant
 
 <Variants plugin="backdropOpacity" name="backdrop opacity" />
 
-### Disabling
+### 停用
 
 <Disabling plugin="backdropOpacity" name="backdrop opacity" />
