@@ -9,7 +9,6 @@ export function Variants({ plugin, name }) {
   const extraVariants = ['responsive', 'hover', 'focus', 'active', 'group-hover']
     .filter((x) => !variants.includes(x))
     .slice(0, 2)
-    .map(translateVariants)
 
   // const opening = `By default, ${
   //   variants.length
@@ -20,7 +19,7 @@ export function Variants({ plugin, name }) {
     variants.length
       ? `只有 ${joinWithAnd(variants).replace('dark', '深色模式 <em>(如果啟用)</em>')} `
       : '沒有'
-  }的 ${name} 變化模式會產生。`
+  }的 ${name} 變化模式 (variants) 會產生。`
 
   return (
     <div className="prose">
@@ -35,7 +34,8 @@ export function Variants({ plugin, name }) {
       <p>
         {/* For example, this config will {variants.length > 0 ? 'also ' : ''}generate{' '}
         {joinWithAnd(extraVariants)} variants: */}
-        舉個例子來說，這個設定將會生成 {joinWithAnd(extraVariants)} 的變化模式。
+        舉個例子來說，這個設定將會生成 {joinWithAnd(extraVariants.map(translateVariants))}{' '}
+        的變化模式。
       </p>
       <ConfigSample path="variants.extend" before="..." add={{ [plugin]: extraVariants }} />
     </div>
