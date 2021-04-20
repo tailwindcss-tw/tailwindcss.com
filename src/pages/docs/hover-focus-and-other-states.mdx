@@ -1,6 +1,8 @@
 ---
-title: Hover, Focus, & Other States
-description: Using utilities to style elements on hover, focus, and more.
+# title: Hover, Focus, & Other States
+title: Hover, Focus 以及其他狀態
+# description: Using utilities to style elements on hover, focus, and more.
+description: 使用 Tailwind 功能來建立元素 (elements) 的 hover, focus 等狀態樣式。
 ---
 
 import { Heading } from '@/components/Heading'
@@ -8,9 +10,11 @@ import { TipCompat } from '@/components/Tip'
 import { DefaultVariantsConfig } from '@/components/DefaultVariantsConfig'
 import { VariantEnabledList } from '@/components/VariantEnabledList'
 
-## <Heading hidden>Overview</Heading>
+<!-- ## <Heading hidden>Overview</Heading> -->
+## <Heading hidden>概述</Heading>
 
-Similar to how Tailwind handles [responsive design](/docs/responsive-design), styling elements on hover, focus, and more can be accomplished by prefixing utilities with the appropriate state variant.
+<!-- Similar to how Tailwind handles [responsive design](/docs/responsive-design), styling elements on hover, focus, and more can be accomplished by prefixing utilities with the appropriate state variant. -->
+就像是 Tailwind 在處理 [響應式設計](/docs/responsive-design) 一樣，使用合適的狀態前綴詞變化模式 (variants) 來設計元素的 hover, focus 等樣式。
 
 ```html purple
 <template preview>
@@ -30,17 +34,21 @@ Similar to how Tailwind handles [responsive design](/docs/responsive-design), st
 </form>
 ```
 
-**Not all state variants are enabled for all utilities by default due to file-size considerations**, but we've tried our best to enable the most commonly used combinations out of the box.
+<!-- **Not all state variants are enabled for all utilities by default due to file-size considerations**, but we've tried our best to enable the most commonly used combinations out of the box. -->
+**因為檔案大小的考量，並非所有的狀態變化模式都預設包含在功能中**，但是我們盡了最大的努力建立出最常見的組合。
 
-For a complete list of which variants are enabled by default, see the [reference table](#default-variants-reference) at the end of this page.
+<!-- For a complete list of which variants are enabled by default, see the [reference table](#default-variants-reference) at the end of this page. -->
+參考最底部的 [參考](#-4) 以得到完整的變化模式列表。
 
-If you need to target a state that Tailwind doesn't support, you can extend the supported variants by [writing a variant plugin](#creating-custom-variants).
+<!-- If you need to target a state that Tailwind doesn't support, you can extend the supported variants by [writing a variant plugin](#creating-custom-variants). -->
+如果你需要使用 Tailwind 所不支援的狀態，可以參閱 [建立自定義變化模式插件](#-3) 來擴充所需要的變化模式。
 
 ---
 
 ## Hover
 
-Add the `hover:` prefix to only apply a utility on hover.
+<!-- Add the `hover:` prefix to only apply a utility on hover. -->
+新增 `hover:` 前綴詞來啟用 hover 功能。
 
 ```html rose
 <template preview>
@@ -60,7 +68,8 @@ Add the `hover:` prefix to only apply a utility on hover.
   <VariantEnabledList variant="hover"/>
 </div>
 
-You can control whether `hover` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file:
+<!-- You can control whether `hover` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file: -->
+你可以在 `tailwind.config.js` 文件中的 `variants` 部分開關特定功能的 `hover` 變化模式：
 
 ```js
 // tailwind.config.js
@@ -78,7 +87,8 @@ module.exports = {
 
 ## Focus
 
-Add the `focus:` prefix to only apply a utility on focus.
+<!-- Add the `focus:` prefix to only apply a utility on focus. -->
+新增 `focus:` 前綴詞來啟用 focus 功能。
 
 ```html lightBlue
 <template preview>
@@ -94,7 +104,8 @@ Add the `focus:` prefix to only apply a utility on focus.
   <VariantEnabledList variant="focus"/>
 </div>
 
-You can control whether `focus` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file:
+<!-- You can control whether `focus` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file: -->
+你可以在 `tailwind.config.js` 文件中的 `variants` 部分開關特定功能的 `focus` 變化模式：
 
 ```js
 // tailwind.config.js
@@ -113,6 +124,7 @@ module.exports = {
 ## Active
 
 Add the `active:` prefix to only apply a utility when an element is active.
+新增 `active:` 前綴詞來啟用當一個元素的狀態是 active 時的 active 功能。
 
 ```html emerald
 <template preview>
@@ -132,7 +144,8 @@ Add the `active:` prefix to only apply a utility when an element is active.
   <VariantEnabledList variant="active"/>
 </div>
 
-You can control whether `active` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file:
+<!-- You can control whether `active` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file: -->
+你可以在 `tailwind.config.js` 文件中的 `variants` 部分開關特定功能的 `active` 變化模式：
 
 ```js
 // tailwind.config.js
@@ -151,6 +164,7 @@ module.exports = {
 ## Group-hover
 
 If you need to style a child element when hovering over a specific parent element, add the `group` class to the parent element and add the `group-hover:` prefix to the utility on the child element.
+如果你需要在 hover 一個父元素時，讓其一個子元素產生樣式變化，在父元素加上 `group` class 並且在子元素新增 `group-hover:` 前綴詞。
 
 ```html indigo
 <template preview>
@@ -170,7 +184,8 @@ If you need to style a child element when hovering over a specific parent elemen
   <VariantEnabledList variant="group-hover"/>
 </div>
 
-You can control whether `group-hover` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file:
+<!-- You can control whether `group-hover` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file: -->
+你可以在 `tailwind.config.js` 文件中的 `variants` 部分開關特定功能的 `group-hover` 變化模式：
 
 ```js
 // tailwind.config.js
@@ -188,7 +203,8 @@ module.exports = {
 
 ## Group-focus
 
-The `group-focus` variant works just like [`group-hover`](#group-hover) except for focus:
+<!-- The `group-focus` variant works just like [`group-hover`](#group-hover) except for focus: -->
+`group-focus` 變化模式的功能就像 [`group-hover`](#group-hover) 一樣，除了 focus：
 
 ```html amber
 <template preview>
@@ -210,7 +226,8 @@ The `group-focus` variant works just like [`group-hover`](#group-hover) except f
   <VariantEnabledList variant="group-focus"/>
 </div>
 
-You can control whether `group-focus` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file:
+<!-- You can control whether `group-focus` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file: -->
+你可以在 `tailwind.config.js` 文件中的 `variants` 部分開關特定功能的 `group-focus` 變化模式：
 
 ```js
 // tailwind.config.js
@@ -228,7 +245,8 @@ module.exports = {
 
 ## Focus-within
 
-Add the `focus-within:` prefix to only apply a utility when a child element has focus.
+<!-- Add the `focus-within:` prefix to only apply a utility when a child element has focus. -->
+新增`focus-within:` 前綴詞讓一個子元素被 focus 時才啟用該功能。
 
 ```html purple
 <template preview>
@@ -256,7 +274,8 @@ Add the `focus-within:` prefix to only apply a utility when a child element has 
   <VariantEnabledList variant="focus-within"/>
 </div>
 
-You can control whether `focus-within` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file:
+<!-- You can control whether `focus-within` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file: -->
+你可以在 `tailwind.config.js` 文件中的 `variants` 部分開關特定功能的 `focus-within` 變化模式：
 
 ```js
 // tailwind.config.js
@@ -274,9 +293,11 @@ module.exports = {
 
 ## Focus-visible
 
-<TipCompat>Note that focus-visible currently requires JS and PostCSS polyfills for sufficient browser support.</TipCompat>
+<!-- <TipCompat>Note that focus-visible currently requires JS and PostCSS polyfills for sufficient browser support.</TipCompat> -->
+<TipCompat>注意！目前 focus-visible 需要 JS 和 PostCSS polyfills 來提供足夠的瀏覽器支援。</TipCompat>
 
-Add the `focus-visible:` prefix to only apply a utility when an element has focus but only if the user is using the keyboard.
+<!-- Add the `focus-visible:` prefix to only apply a utility when an element has focus but only if the user is using the keyboard. -->
+新增 `focus-visible:` 前綴詞讓元素處於 focus 狀態且使用者使用鍵盤時才啟用該功能。
 
 ```html rose
 <template preview>
@@ -298,7 +319,8 @@ Add the `focus-visible:` prefix to only apply a utility when an element has focu
 </button>
 ```
 
-Note that currently only [Chrome, Edge, and Firefox](https://caniuse.com/?search=focus-visible) support `focus-visible` natively, so for sufficient browser support you should install and configure both the [focus-visible JS polyfill](https://github.com/WICG/focus-visible) and the [focus-visible PostCSS polyfill](https://github.com/csstools/postcss-focus-visible). Make sure to include the PostCSS plugin _after_ Tailwind in your list of PostCSS plugins:
+<!-- Note that currently only [Chrome, Edge, and Firefox](https://caniuse.com/?search=focus-visible) support `focus-visible` natively, so for sufficient browser support you should install and configure both the [focus-visible JS polyfill](https://github.com/WICG/focus-visible) and the [focus-visible PostCSS polyfill](https://github.com/csstools/postcss-focus-visible). Make sure to include the PostCSS plugin _after_ Tailwind in your list of PostCSS plugins: -->
+請注意目前只有 [Chrome、Edge 和 Firefox](https://caniuse.com/?search=focus-visible) 支援原生的 `focus-visible` 功能。為了完整的瀏覽器支援，你應該要安裝設定 [focus-visible JS polyfill](https://github.com/WICG/focus-visible) 和 [focus-visible PostCSS polyfill](https://github.com/csstools/postcss-focus-visible)，並在你的 PostCSS 插件列表中於 Tailwind _之後_ 引用：
 
 ```js
 // postcss.config.js
@@ -315,7 +337,8 @@ module.exports = {
   <VariantEnabledList variant="focus-visible"/>
 </div>
 
-You can control whether `focus-visible` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file:
+<!-- You can control whether `focus-visible` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file: -->
+你可以在 `tailwind.config.js` 文件中的 `variants` 部分開關特定功能的 `focus-visible` 變化模式：
 
 ```js
 // tailwind.config.js
@@ -333,9 +356,11 @@ module.exports = {
 
 ## Motion-safe
 
-Add the `motion-safe:` prefix to only apply a utility when the `prefers-reduced-motion` media feature matches `no-preference`.
+<!-- Add the `motion-safe:` prefix to only apply a utility when the `prefers-reduced-motion` media feature matches `no-preference`. -->
+新增 `hover:` 前綴詞讓 `prefers-reduced-motion` 符合 `no-preference` 時才啟用該功能。
 
-For example, this button will only animate on hover if the user hasn't enabled "Reduce motion" on their system.
+<!-- For example, this button will only animate on hover if the user hasn't enabled "Reduce motion" on their system. -->
+舉例來說，這個按鈕只有在使用者沒有啟用 "Redice motion" 時並且 hover 時才會有動畫效果。
 
 ```html lightBlue
 <template preview>
@@ -351,7 +376,8 @@ For example, this button will only animate on hover if the user hasn't enabled "
 </button>
 ```
 
-Note that unlike most other variants, `motion-safe` can be combined with both responsive variants _and_ other variants like `hover`, by stacking them in this order:
+<!-- Note that unlike most other variants, `motion-safe` can be combined with both responsive variants _and_ other variants like `hover`, by stacking them in this order: -->
+跟其他大部分的變化模式不一樣，`motion-safe` 可以結合響應式和其他變化模式，像是 `hover` 一起使用： 
 
 ```html
 <div class="**sm:motion-safe:hover:animate-spin**">
@@ -363,7 +389,8 @@ Note that unlike most other variants, `motion-safe` can be combined with both re
   <VariantEnabledList variant="motion-safe"/>
 </div>
 
-You can control whether `motion-safe` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file:
+<!-- You can control whether `motion-safe` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file: -->
+你可以在 `tailwind.config.js` 文件中的 `variants` 部分開關特定功能的 `motion-safe` 變化模式：
 
 ```js
 // tailwind.config.js
@@ -381,9 +408,11 @@ module.exports = {
 
 ## Motion-reduce
 
-Add the `motion-reduce:` prefix to only apply a utility when the `prefers-reduced-motion` media feature matches `reduce`.
+<!-- Add the `motion-reduce:` prefix to only apply a utility when the `prefers-reduced-motion` media feature matches `reduce`. -->
+新增 `motion-reduce:` 前綴詞讓 `prefers-reduced-motion` 符合 `reduce` 時才啟用該功能。
 
-For example, this button will animate on hover by default, but the animations will be disabled if the user has enabled "Reduce motion" on their system.
+<!-- For example, this button will animate on hover by default, but the animations will be disabled if the user has enabled "Reduce motion" on their system. -->
+舉例來說，在預設情況下，這個按鈕在 hover 會產生動畫，但是如果使用者啟用 "Reduce motion"，則動畫就會失效。
 
 ```html fuchsia
 <template preview>
@@ -399,7 +428,8 @@ For example, this button will animate on hover by default, but the animations wi
 </button>
 ```
 
-Note that unlike most other variants, `motion-reduce` can be combined with both responsive variants _and_ other variants like `hover`, by stacking them in this order:
+<!-- Note that unlike most other variants, `motion-reduce` can be combined with both responsive variants _and_ other variants like `hover`, by stacking them in this order: -->
+跟其他大部分的變化模式不一樣，`motion-reduce` 可以結合響應式和其他變化模式，像是 `hover` 一起使用： 
 
 ```html
 <div class="**sm:motion-reduce:hover:animate-none**">
@@ -411,7 +441,8 @@ Note that unlike most other variants, `motion-reduce` can be combined with both 
   <VariantEnabledList variant="motion-reduce"/>
 </div>
 
-You can control whether `motion-reduce` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file:
+<!-- You can control whether `motion-reduce` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file: -->
+你可以在 `tailwind.config.js` 文件中的 `variants` 部分開關特定功能的 `motion-reduce` 變化模式：
 
 ```js
 // tailwind.config.js
@@ -429,7 +460,8 @@ module.exports = {
 
 ## Disabled
 
-Add the `disabled:` prefix to only apply a utility when an element is disabled.
+<!-- Add the `disabled:` prefix to only apply a utility when an element is disabled. -->
+新增 `disabled:` 前綴詞讓元素處於 disabled 狀態時才啟用該功能。
 
 ```html emerald
 <template preview>
@@ -455,7 +487,8 @@ Add the `disabled:` prefix to only apply a utility when an element is disabled.
   <VariantEnabledList variant="disabled"/>
 </div>
 
-You can control whether `disabled` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file:
+<!-- You can control whether `disabled` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file: -->
+你可以在 `tailwind.config.js` 文件中的 `variants` 部分開關特定功能的 `disabled` 變化模式：
 
 ```js
 // tailwind.config.js
@@ -473,7 +506,8 @@ module.exports = {
 
 ## Visited
 
-Add the `visited:` prefix to only apply a utility when a link has been visited.
+<!-- Add the `visited:` prefix to only apply a utility when a link has been visited. -->
+新增 `visited:` 前綴詞讓連結為 visited 時才啟用該功能。
 
 ```html indigo
 <template preview>
@@ -490,7 +524,8 @@ Add the `visited:` prefix to only apply a utility when a link has been visited.
   <VariantEnabledList variant="visited"/>
 </div>
 
-You can control whether `visited` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file:
+<!-- You can control whether `visited` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file: -->
+你可以在 `tailwind.config.js` 文件中的 `variants` 部分開關特定功能的 `visited` 變化模式：
 
 ```js
 // tailwind.config.js
@@ -508,7 +543,8 @@ module.exports = {
 
 ## Checked
 
-Add the `checked:` prefix to only apply a utility when a radio or checkbox is currently checked.
+<!-- Add the `checked:` prefix to only apply a utility when a radio or checkbox is currently checked. -->
+新增 `checked:` 前綴詞讓 radio 或 checkbox 為 checked 時才啟用該功能。
 
 ```html lightBlue
 <template preview>
@@ -527,7 +563,9 @@ Add the `checked:` prefix to only apply a utility when a radio or checkbox is cu
   <VariantEnabledList variant="checked"/>
 </div>
 
-You can control whether `checked` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file:
+<!-- You can control whether `checked` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file: -->
+你可以在 `tailwind.config.js` 文件中的 `variants` 部分開關特定功能的 `checked` 變化模式：
+
 
 ```js
 // tailwind.config.js
@@ -546,7 +584,8 @@ module.exports = {
 
 ## First-child
 
-Add the `first:` prefix to only apply a utility when it is the first-child of its parent. This is mostly useful when elements are being generated in some kind of loop.
+<!-- Add the `first:` prefix to only apply a utility when it is the first-child of its parent. This is mostly useful when elements are being generated in some kind of loop. -->
+新增 `first:` 前綴詞讓元素為其父元素的 first-child 時才啟用該功能。這在元素透過某些迴圈方式產生時特別有用。
 
 ```html indigo
 <template preview>
@@ -566,12 +605,14 @@ Add the `first:` prefix to only apply a utility when it is the first-child of it
 ```
 
 It's important to note that you should add any `first:` utilities to the child element, not the parent element.
+需要注意的是，你應該要在任意的子元素上新增 `first:` 而不是父元素。
 
 <div>
   <VariantEnabledList variant="first-child"/>
 </div>
 
-You can control whether `first` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file:
+<!-- You can control whether `first` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file: -->
+你可以在 `tailwind.config.js` 文件中的 `variants` 部分開關特定功能的 `first` 變化模式：
 
 ```js
 // tailwind.config.js
@@ -589,7 +630,8 @@ module.exports = {
 
 ## Last-child
 
-Add the `last:` prefix to only apply a utility when it is the last-child of its parent. This is mostly useful when elements are being generated in some kind of loop.
+<!-- Add the `last:` prefix to only apply a utility when it is the last-child of its parent. This is mostly useful when elements are being generated in some kind of loop. -->
+新增 `last:` 前綴詞讓元素為其父元素的 last-child 時才啟用該功能。這在元素透過某些迴圈方式產生時特別有用。
 
 ```html amber
 <template preview>
@@ -608,13 +650,15 @@ Add the `last:` prefix to only apply a utility when it is the last-child of its 
 </div>
 ```
 
-It's important to note that you should add any `last:` utilities to the child element, not the parent element.
+<!-- It's important to note that you should add any `last:` utilities to the child element, not the parent element. -->
+需要注意的是，你應該要在任意的子元素上新增 `last:` 而不是父元素。
 
 <div>
   <VariantEnabledList variant="last-child"/>
 </div>
 
-You can control whether `last` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file:
+<!-- You can control whether `last` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file: -->
+你可以在 `tailwind.config.js` 文件中的 `variants` 部分開關特定功能的 `last` 變化模式：
 
 ```js
 // tailwind.config.js
@@ -632,7 +676,8 @@ module.exports = {
 
 ## Odd-child
 
-Add the `odd:` prefix to only apply a utility when it is an odd-child of its parent. This is mostly useful when elements are being generated in some kind of loop.
+<!-- Add the `odd:` prefix to only apply a utility when it is an odd-child of its parent. This is mostly useful when elements are being generated in some kind of loop. -->
+新增 `odd:` 前綴詞讓元素為其父元素的 odd-child 時才啟用該功能。這在元素透過某些迴圈方式產生時特別有用。
 
 ```html rose
 <template preview>
@@ -652,12 +697,14 @@ Add the `odd:` prefix to only apply a utility when it is an odd-child of its par
 ```
 
 It's important to note that you should add any `odd:` utilities to the child element, not the parent element.
+需要注意的是，你應該要在任意的子元素上新增 `odd:` 而不是父元素。
 
 <div>
   <VariantEnabledList variant="odd-child"/>
 </div>
 
-You can control whether `odd` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file:
+<!-- You can control whether `odd` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file: -->
+你可以在 `tailwind.config.js` 文件中的 `variants` 部分開關特定功能的 `odd` 變化模式：
 
 ```js
 // tailwind.config.js
@@ -675,7 +722,8 @@ module.exports = {
 
 ## Even-child
 
-Add the `even:` prefix to only apply a utility when it is an even-child of its parent. This is mostly useful when elements are being generated in some kind of loop.
+<!-- Add the `even:` prefix to only apply a utility when it is an even-child of its parent. This is mostly useful when elements are being generated in some kind of loop. -->
+新增 `even:` 前綴詞讓元素為其父元素的 even-child 時才啟用該功能。這在元素透過某些迴圈方式產生時特別有用。
 
 ```html fuchsia
 <template preview>
@@ -694,13 +742,15 @@ Add the `even:` prefix to only apply a utility when it is an even-child of its p
 </div>
 ```
 
-It's important to note that you should add any `even:` utilities to the child element, not the parent element.
+<!-- It's important to note that you should add any `even:` utilities to the child element, not the parent element. -->
+需要注意的是，你應該要在任意的子元素上新增 `even:` 而不是父元素。
 
 <div>
   <VariantEnabledList variant="even-child"/>
 </div>
 
-You can control whether `even` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file:
+<!-- You can control whether `even` variants are enabled for a plugin in the `variants` section of your `tailwind.config.js` file: -->
+你可以在 `tailwind.config.js` 文件中的 `variants` 部分開關特定功能的 `even` 變化模式：
 
 ```js
 // tailwind.config.js
@@ -716,11 +766,14 @@ module.exports = {
 
 ---
 
-## Combining with responsive prefixes
+<!-- ## Combining with responsive prefixes -->
+## 結合響應式前綴詞一起使用
 
-State variants are also responsive, meaning you can do things like change an element's hover style at different breakpoints for example.
+<!-- State variants are also responsive, meaning you can do things like change an element's hover style at different breakpoints for example. -->
+狀態變化模式也是響應式的，舉例來說，這代表你可以讓同一個元素依照不同的斷點使用不同的 hover 樣式。
 
-To apply a state variant at a specific breakpoint, add the responsive prefix first, before the state prefix:
+<!-- To apply a state variant at a specific breakpoint, add the responsive prefix first, before the state prefix: -->
+要讓狀態變化模式在一個特定的斷點作用，需要將響應式前綴詞添加在狀態前綴詞的前面：
 
 ```html
 <button class="... hover:bg-green-500 **sm:hover:bg-blue-500**">
@@ -730,9 +783,11 @@ To apply a state variant at a specific breakpoint, add the responsive prefix fir
 
 ---
 
-## Generating variants for custom utilities
+<!-- ## Generating variants for custom utilities -->
+## 為自定義功能新增變化模式
 
-You can generate state variants for your own custom CSS classes by wrapping them with the `@variants` directive:
+<!-- You can generate state variants for your own custom CSS classes by wrapping them with the `@variants` directive: -->
+你可以為你自定義的 CSS class 新增狀態變化模式，只要使用 `@variants` 指令將它們給囊括著：
 
 ```css
 /* Input: */
@@ -758,15 +813,19 @@ You can generate state variants for your own custom CSS classes by wrapping them
 
 ```
 
-For more information, see the [@variants directive documentation](/docs/functions-and-directives#variants).
+<!-- For more information, see the [@variants directive documentation](/docs/functions-and-directives#variants). -->
+在 [@variants 指令](/docs/functions-and-directives#variants) 可以獲得更多的資訊。
 
 ---
 
-## Creating custom variants
+<!-- ## Creating custom variants -->
+## 建立自定義變化模式
 
-You can create your own variants for any states Tailwind doesn't support by default by writing a custom variant plugin.
+<!-- You can create your own variants for any states Tailwind doesn't support by default by writing a custom variant plugin. -->
+你可以藉由撰寫自定義的變化模式插件建立你自己的狀態變化模式，如果 Tailwind 預設不支援的話。
 
-For example, this simple plugin adds support for the `required` pseudo-class variant:
+<!-- For example, this simple plugin adds support for the `required` pseudo-class variant: -->
+舉例來說，這個簡單的插件新增 `required` pseudo-class 變化模式的支援：
 
 ```js
 // tailwind.config.js
@@ -785,15 +844,19 @@ module.exports = {
 }
 ```
 
-Learn more about writing variant plugins in the [variant plugin documentation](/docs/plugins#adding-variants).
+<!-- Learn more about writing variant plugins in the [variant plugin documentation](/docs/plugins#adding-variants). -->
+在 [新增變化模式](/docs/plugins#adding-variants) 中可以獲得更多關於撰寫變化模式插件的資訊。
 
 ---
 
-## Default variants reference
+<!-- ## Default variants reference -->
+## 預設的變化模式參考
 
-Due to file-size considerations, Tailwind does not include all variants for all utilities by default.
+<!-- Due to file-size considerations, Tailwind does not include all variants for all utilities by default. -->
+受限於檔案大小的考量，Tailwind 預設並沒有支援所有功能的變化模式。
 
-To configure which variants are enabled for your project, see the [configuring variants documentation](/docs/configuring-variants).
+<!-- To configure which variants are enabled for your project, see the [configuring variants documentation](/docs/configuring-variants). -->
+參考 [設定變化模式](/docs/configuring-variants) 來為你的專案設置啟用哪些變化模式。
 
 <div>
   <DefaultVariantsConfig />
