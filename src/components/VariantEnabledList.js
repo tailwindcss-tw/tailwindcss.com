@@ -20,9 +20,10 @@ export function VariantEnabledList({ variant }) {
     return (
       <p>
         <strong>
-          By default, the <code>{variant}</code> variant is not enabled for any core plugins
+          {/* By default, the <code>{variant}</code> variant is not enabled for any core plugins */}
+          預設狀況下，<code>{variant}</code> 不支援任何核心功能
         </strong>
-        .
+        。
       </p>
     )
   }
@@ -30,7 +31,8 @@ export function VariantEnabledList({ variant }) {
   return (
     <>
       <p>
-        By default, the <code>{variant}</code> variant is enabled for the following core plugins:
+        {/* By default, the <code>{variant}</code> variant is enabled for the following core plugins: */}
+        預設狀況下，<code>{variant}</code> 變化模式支援下列核心功能：
       </p>
 
       <ul>
