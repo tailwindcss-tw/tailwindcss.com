@@ -1,6 +1,7 @@
 ---
-title: "Background Clip"
-description: "Utilities for controlling the bounding box of an element's background."
+title: "Background Clip (背景材切)"
+# description: "Utilities for controlling the bounding box of an element's background."
+description: "控制元素背景定界框的功能Utilities for controlling the bounding box of an element's background."
 ---
 
 import plugin from 'tailwindcss/lib/plugins/backgroundClip'
@@ -10,9 +11,10 @@ import { Disabling } from '@/components/Disabling'
 
 export const classes = { plugin }
 
-## Usage
+## 用法
 
-Use the `bg-clip-{keyword}` utilities to control the bounding box of an element's background.
+<!-- Use the `bg-clip-{keyword}` utilities to control the bounding box of an element's background. -->
+使用 `bg-clip-{keyword}` 功能來控制元素背景的定界框。
 
 ```html indigo
 <template preview>
@@ -37,6 +39,7 @@ Use the `bg-clip-{keyword}` utilities to control the bounding box of an element'
 ## Cropping to text
 
 Use `bg-clip-text` to crop an element's background to match the shape of the text. Useful for effects where you want a background image to be visible through the text.
+使用 `bg-clip-text` 將元素背景根據文字的形狀進行材切。當你想要在文字上顯示背景圖片的效果時很有用。
 
 ```html emerald
 <template preview>
@@ -54,9 +57,10 @@ Use `bg-clip-text` to crop an element's background to match the shape of the tex
 </div>
 ```
 
-## Responsive
+## 響應式
 
-To control the bounding box of an element's background at a specific breakpoint, add a `{screen}:` prefix to any existing background clip utility. For example, adding the class `md:bg-clip-padding` to an element would apply the `bg-clip-padding` utility at medium screen sizes and above.
+<!-- To control the bounding box of an element's background at a specific breakpoint, add a `{screen}:` prefix to any existing background clip utility. For example, adding the class `md:bg-clip-padding` to an element would apply the `bg-clip-padding` utility at medium screen sizes and above. -->
+如要將元素的背景定界框控制在特定斷點，在任何一個既有背景材切功能的前綴詞加上 `{screen}:` 。例如，使用 `md:bg-clip-padding` 時，只有中型或以上的螢幕尺寸有 `bg-clip-padding` 效果。
 
 ```html
 <div class="bg-clip-border **md:bg-clip-padding**">
@@ -64,14 +68,14 @@ To control the bounding box of an element's background at a specific breakpoint,
 </div>
 ```
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+想知道更多有關 Tailwind 響應式設計功能的訊息，請參考 [響應式設計] (/docs/responsive-design) 文件
 
-## Customizing
+## 客製化
 
-### Variants
+### 變化模式 Variant
 
 <Variants plugin="backgroundClip" />
 
-### Disabling
+### 停用
 
 <Disabling plugin="backgroundClip" />

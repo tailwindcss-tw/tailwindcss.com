@@ -1,6 +1,7 @@
 ---
-title: "Background Attachment"
-description: "Utilities for controlling how a background image behaves when scrolling."
+title: "Background Attachment (背景捲動)"
+# description: "Utilities for controlling how a background image behaves when scrolling."
+description: "捲動時，控制背景圖片行為的功能"
 features:
   responsive: true
   customizable: false
@@ -14,9 +15,10 @@ import { Disabling } from '@/components/Disabling'
 
 export const classes = { plugin }
 
-## Fixed
+## 固定
 
-Use `bg-fixed` to fix the background image relative to the viewport.
+<!-- Use `bg-fixed` to fix the background image relative to the viewport. -->
+在頁面捲動時，使用 `bg-fixed` 固定背景圖片
 
 ```html lightBlue
 <template preview>
@@ -30,7 +32,8 @@ Use `bg-fixed` to fix the background image relative to the viewport.
 
 ## Local
 
-Use `bg-local` to scroll the background image with the container and the viewport.
+<!-- Use `bg-local` to scroll the background image with the container and the viewport. -->
+使用 `bg-local`，背景圖片會跟容器及視區一起捲動。
 
 ```html indigo
 <template preview>
@@ -42,9 +45,10 @@ Use `bg-local` to scroll the background image with the container and the viewpor
 <div class="**bg-local** ..." style="background-image: url(...)"></div>
 ```
 
-## Scroll
+## 捲動
 
-Use `bg-scroll` to scroll the background image with the viewport, but not with the container.
+<!-- Use `bg-scroll` to scroll the background image with the viewport, but not with the container. -->
+使用 `bg-scroll` 時，背景圖片會跟視區一起滾動，但不會跟著容器捲動。 
 
 ```html fuchsia
 <template preview>
@@ -56,9 +60,10 @@ Use `bg-scroll` to scroll the background image with the viewport, but not with t
 <div class="**bg-scroll** ..." style="background-image: url(...)"></div>
 ```
 
-## Responsive
+## 響應式
 
-To control the background attachment of an element at a specific breakpoint, add a `{screen}:` prefix to any existing background attachment utility. For example, use `md:bg-fixed` to apply the `bg-fixed` utility at only medium screen sizes and above.
+<!-- To control the background attachment of an element at a specific breakpoint, add a `{screen}:` prefix to any existing background attachment utility. For example, use `md:bg-fixed` to apply the `bg-fixed` utility at only medium screen sizes and above. -->
+如要將元素的背景滾動控制在特定斷點，在任何一個既有背景滾動功能的前綴詞加上 `{screen}:` 。例如，使用 `md:bg-fixed` 時，只有中型或以上的螢幕尺寸有 `bg-fixed` 效果。
 
 ```html
 <div class="bg-local **md:bg-fixed** ...">
@@ -66,14 +71,14 @@ To control the background attachment of an element at a specific breakpoint, add
 </div>
 ```
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+想知道更多有關 Tailwind 響應式設計功能的訊息，請參考 [響應式設計] (/docs/responsive-design) 文件
 
-## Customizing
+## 客製化
 
-### Variants
+### 變化模式 Variant
 
 <Variants plugin="backgroundAttachment" />
 
-### Disabling
+### 停用
 
 <Disabling plugin="backgroundAttachment" />
