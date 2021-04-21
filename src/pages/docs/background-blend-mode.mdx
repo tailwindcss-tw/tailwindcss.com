@@ -1,6 +1,7 @@
 ---
-title: "Background Blend Mode"
-description: "Utilities for controlling how an element's background image should blend with its background color."
+title: "Background Blend Mode (背景混合模式)"
+# description: "Utilities for controlling how an element's background image should blend with its background color."
+description: "控制將元素的背景圖片跟背景顏色混合的功能"
 featureVersion: 'v2.1+'
 ---
 
@@ -10,9 +11,10 @@ import { Disabling } from '@/components/Disabling'
 
 export const classes = { plugin }
 
-## Usage
+## 用法
 
-Use the `bg-blend-{mode}` utilities to control how an element's background image should be blended its background color.
+<!-- Use the `bg-blend-{mode}` utilities to control how an element's background image should be blended its background color. -->
+使用 `bg-blend-{mode}` 功能來控制元素的背景照片跟背景顏色該怎麼混合。
 
 ```html
 <div class="bg-blend-multiply ...">
@@ -20,9 +22,10 @@ Use the `bg-blend-{mode}` utilities to control how an element's background image
 </div>
 ```
 
-## Responsive
+## 響應式
 
-To control the background-blend-mode property at a specific breakpoint, add a `{screen}:` prefix to any existing background-blend-mode utility. For example, use `md:bg-blend-darken` to apply the `bg-blend-darken` utility at only medium screen sizes and above.
+<!-- To control the background-blend-mode property at a specific breakpoint, add a `{screen}:` prefix to any existing background-blend-mode utility. For example, use `md:bg-blend-darken` to apply the `bg-blend-darken` utility at only medium screen sizes and above. -->
+如要將元素的背景混合模式控制在特定斷點，在任何一個既有背景混合模式功能的前綴詞加上 `{screen}:` 。例如，使用 `md:bg-blend-darken` 時，只有中型或以上的螢幕尺寸有 `bg-blend-darken` 效果。
 
 ```html
 <div class="bg-blend-lighten **md:bg-blend-darken** ...">
@@ -30,14 +33,14 @@ To control the background-blend-mode property at a specific breakpoint, add a `{
 </div>
 ```
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+想知道更多有關 Tailwind 響應式設計功能的訊息，請參考 [響應式設計] (/docs/responsive-design) 文件
 
-## Customizing
+## 客製化
 
-### Variants
+### 變化模式 Variant
 
 <Variants plugin="backgroundBlendMode" name="background-blend-mode" />
 
-### Disabling
+### 停用
 
 <Disabling plugin="backgroundBlendMode" name="background-blend-mode" />
