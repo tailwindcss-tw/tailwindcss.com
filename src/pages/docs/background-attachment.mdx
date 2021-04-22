@@ -1,7 +1,7 @@
 ---
-title: "Background Attachment (背景捲動)"
+title: "Background Attachment (背景滾動)"
 # description: "Utilities for controlling how a background image behaves when scrolling."
-description: "捲動時，控制背景圖片行為的功能"
+description: "滾動時，控制背景圖片行為的功能"
 features:
   responsive: true
   customizable: false
@@ -33,7 +33,7 @@ export const classes = { plugin }
 ## Local
 
 <!-- Use `bg-local` to scroll the background image with the container and the viewport. -->
-使用 `bg-local`，背景圖片會跟容器及視區一起捲動。
+使用 `bg-local`，背景圖片會隨著 container 及 viewport 一起滾動。
 
 ```html indigo
 <template preview>
@@ -45,10 +45,10 @@ export const classes = { plugin }
 <div class="**bg-local** ..." style="background-image: url(...)"></div>
 ```
 
-## 捲動
+## 滾動
 
 <!-- Use `bg-scroll` to scroll the background image with the viewport, but not with the container. -->
-使用 `bg-scroll` 時，背景圖片會跟視區一起滾動，但不會跟著容器捲動。 
+使用 `bg-scroll` 時，背景圖片會隨著 viewport 一起滾動，，而不是隨著 container 滾動。 
 
 ```html fuchsia
 <template preview>
