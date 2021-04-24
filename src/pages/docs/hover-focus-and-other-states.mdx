@@ -38,17 +38,17 @@ import { VariantEnabledList } from '@/components/VariantEnabledList'
 **因為檔案大小的考量，並非所有的狀態變化模式都預設包含在功能中**，但是我們盡了最大的努力建立出最常見的組合。
 
 <!-- For a complete list of which variants are enabled by default, see the [reference table](#default-variants-reference) at the end of this page. -->
-參考最底部的 [參考](#-4) 以得到完整的變化模式列表。
+想知道全部的預設變化模式，請 [參考](#-4) 頁面最底部變化模式的完整列表。
 
 <!-- If you need to target a state that Tailwind doesn't support, you can extend the supported variants by [writing a variant plugin](#creating-custom-variants). -->
-如果你需要使用 Tailwind 所不支援的狀態，可以參閱 [建立自定義變化模式插件](#-3) 來擴充所需要的變化模式。
+如果你需要使用 Tailwind 不支援的狀態，可以參閱 [建立自定義變化模式插件](#-3) 來擴充所需要的變化模式。
 
 ---
 
 ## Hover
 
 <!-- Add the `hover:` prefix to only apply a utility on hover. -->
-新增 `hover:` 前綴詞來啟用 hover 功能。
+新增 `hover:` 前綴詞讓元素處於 hover 狀態時才啟用該功能。
 
 ```html rose
 <template preview>
@@ -88,7 +88,7 @@ module.exports = {
 ## Focus
 
 <!-- Add the `focus:` prefix to only apply a utility on focus. -->
-新增 `focus:` 前綴詞來啟用 focus 功能。
+新增 `focus:` 前綴詞讓元素處於 focus 狀態時才啟用該功能。
 
 ```html lightBlue
 <template preview>
@@ -124,7 +124,7 @@ module.exports = {
 ## Active
 
 Add the `active:` prefix to only apply a utility when an element is active.
-新增 `active:` 前綴詞來啟用當一個元素的狀態是 active 時的 active 功能。
+新增 `active:` 前綴詞讓元素處於 active 狀態時才啟用該功能。
 
 ```html emerald
 <template preview>
@@ -246,7 +246,7 @@ module.exports = {
 ## Focus-within
 
 <!-- Add the `focus-within:` prefix to only apply a utility when a child element has focus. -->
-新增`focus-within:` 前綴詞讓一個子元素被 focus 時才啟用該功能。
+新增 `focus-within:` 前綴詞讓一個子元素被 focus 時才啟用該功能。
 
 ```html purple
 <template preview>
@@ -357,10 +357,10 @@ module.exports = {
 ## Motion-safe
 
 <!-- Add the `motion-safe:` prefix to only apply a utility when the `prefers-reduced-motion` media feature matches `no-preference`. -->
-新增 `hover:` 前綴詞讓 `prefers-reduced-motion` 符合 `no-preference` 時才啟用該功能。
+新增 `motion-safe:` 前綴詞讓 `prefers-reduced-motion` 符合 `no-preference` 時才啟用該功能。
 
 <!-- For example, this button will only animate on hover if the user hasn't enabled "Reduce motion" on their system. -->
-舉例來說，這個按鈕只有在使用者沒有啟用 "Redice motion" 時並且 hover 時才會有動畫效果。
+舉例來說，這個按鈕只有在使用者沒有啟用 "Reduce motion" 時並且 hover 時才會有動畫效果。
 
 ```html lightBlue
 <template preview>
@@ -544,7 +544,7 @@ module.exports = {
 ## Checked
 
 <!-- Add the `checked:` prefix to only apply a utility when a radio or checkbox is currently checked. -->
-新增 `checked:` 前綴詞讓 radio 或 checkbox 為 checked 時才啟用該功能。
+新增 `checked:` 前綴詞讓 radio 或 checkbox 的狀態為 checked 時才啟用該功能。
 
 ```html lightBlue
 <template preview>
@@ -585,7 +585,7 @@ module.exports = {
 ## First-child
 
 <!-- Add the `first:` prefix to only apply a utility when it is the first-child of its parent. This is mostly useful when elements are being generated in some kind of loop. -->
-新增 `first:` 前綴詞讓元素為其父元素的 first-child 時才啟用該功能。這在元素透過某些迴圈方式產生時特別有用。
+新增 `first:` 前綴詞使得當該元素為其父元素的第一個子元素 (first-child) 時才啟用該功能。這在元素透過某些迴圈方式產生時特別有用。
 
 ```html indigo
 <template preview>
@@ -631,7 +631,7 @@ module.exports = {
 ## Last-child
 
 <!-- Add the `last:` prefix to only apply a utility when it is the last-child of its parent. This is mostly useful when elements are being generated in some kind of loop. -->
-新增 `last:` 前綴詞讓元素為其父元素的 last-child 時才啟用該功能。這在元素透過某些迴圈方式產生時特別有用。
+新增 `last:` 前綴詞使得當該元素為其父元素的最後一個子元素 (last-child) 時才啟用該功能。這在元素透過某些迴圈方式產生時特別有用。
 
 ```html amber
 <template preview>
@@ -677,7 +677,7 @@ module.exports = {
 ## Odd-child
 
 <!-- Add the `odd:` prefix to only apply a utility when it is an odd-child of its parent. This is mostly useful when elements are being generated in some kind of loop. -->
-新增 `odd:` 前綴詞讓元素為其父元素的 odd-child 時才啟用該功能。這在元素透過某些迴圈方式產生時特別有用。
+新增 `odd:` 前綴詞使得當該元素為其父元素的奇數子元素 (odd-child) 時才啟用該功能。這在元素透過某些迴圈方式產生時特別有用。
 
 ```html rose
 <template preview>
@@ -723,7 +723,7 @@ module.exports = {
 ## Even-child
 
 <!-- Add the `even:` prefix to only apply a utility when it is an even-child of its parent. This is mostly useful when elements are being generated in some kind of loop. -->
-新增 `even:` 前綴詞讓元素為其父元素的 even-child 時才啟用該功能。這在元素透過某些迴圈方式產生時特別有用。
+新增 `even:` 前綴詞使得當該元素為其父元素的偶數子元素 (even-child) 時才啟用該功能。這在元素透過某些迴圈方式產生時特別有用。
 
 ```html fuchsia
 <template preview>
