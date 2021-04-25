@@ -10,7 +10,7 @@ import { TipGood, TipBad } from '@/components/Tip'
 ## @tailwind
 
 <!-- Use the `@tailwind` directive to insert Tailwind's `base`, `components`, `utilities` and `screens` styles into your CSS. -->
-使用 `@tailwind` 指令將會把 Tailwind 的 `base`、`components`、`utilities` 和 `screens` 樣式插入到你的 CSS 中。
+使用 `@tailwind` 指令可以把 Tailwind 的 `base`、`components`、`utilities` 和 `screens` 樣式插入到你的 CSS 中。
 
 ```css
 /**
@@ -56,7 +56,7 @@ import { TipGood, TipBad } from '@/components/Tip'
 ```
 
 <!-- Note that classes are applied based on their location in your original CSS, not based on the order you list them after the `@apply` directive. This is to ensure that the behavior you get when extracting a list of classes with `@apply` matches how those classes behave when listed directly in your HTML. -->
-請注意 class 是依照他們在你原本 CSS 中的位置順序來應用的，而不是使用 `@apply` 指令的順序，這是為了確保 `@apply` class 列表符合他們在你的 HTML 中的順序行為。
+請注意 class 是依照他們在你原本 CSS 中的位置順序來應用的，而不是使用 `@apply` 指令的順序，這是為了確保使用 `@apply` 時的表現與在 HTML 裡使用 class 的結果相同。
 
 ```css
 /* Input */
@@ -203,7 +203,7 @@ import { TipGood, TipBad } from '@/components/Tip'
 Tailwind 會自動地將使用 `@layer` 指令的 CSS 搬移到符合 `@tailwind` 規定的相同位置，所以你不需要擔心因為 CSS 順序關係而產生的優先權問題。
 
 <!-- Wrapping any custom CSS in a `@layer` directive also tells Tailwind to consider those styles for purging when purging that layer. Read our [documentation on optimizing for production](/docs/optimizing-for-production) for more details. -->
-將自定義的 CSS 使用 `@layer` 囊括住也可以告知 Tailwind 在清除不必要的 CSS 會檢查這些樣式，詳細可以閱讀我們的 [生產環境優化](/docs/optimizing-for-production)。
+將自定義的 CSS 使用 `@layer` 囊括住也可以告知 Tailwind 在清除不必要的 CSS 時會一併檢查這些樣式，詳細可以閱讀我們的 [生產環境優化](/docs/optimizing-for-production)。
 
 ---
 
@@ -337,7 +337,7 @@ Tailwind 會自動地將使用 `@layer` 指令的 CSS 搬移到符合 `@tailwind
 ```
 
 <!-- The responsive variants will be added to Tailwind's existing media queries at the end of your stylesheet. This makes sure that classes with a responsive prefix always defeat non-responsive classes that are targeting the same CSS property. -->
-響應式變化模式會被加入到 Tailwind 現存的媒體查詢 (media queries) 區域之後，確保這些響應式前綴詞的 class 會比沒有響應式的 class 擁有更高的優先權。
+響應式變化模式會被加入到 Tailwind 現存的媒體查詢 (media queries) 區域之後，並且確保這些響應式前綴詞的 class 會比沒有響應式的 class 擁有更高的優先權。
 
 ---
 
@@ -393,7 +393,7 @@ Tailwind 會自動地將使用 `@layer` 指令的 CSS 搬移到符合 `@tailwind
 ```
 
 <!-- Since Tailwind uses a [nested object syntax](/docs/colors#nested-object-syntax) to define its default color palette, make sure to use dot notation to access the nested colors. -->
-自從 Tailwind 使用 [巢狀語法](/docs/colors#nested-object-syntax) 來定義預設的調色盤之後，確保使用小數點來使用這些巢狀結構的顏色。 
+由於 Tailwind 使用 [巢狀語法](/docs/colors#nested-object-syntax) 來定義預設的調色盤，請確保使用小數點來使用這些巢狀結構的顏色。  
 
 <!-- <TipBad>Don't use the dash syntax when accessing nested color values</TipBad> -->
 <TipBad>不要使用橫線 (dash) 語法來獲取顏色。</TipBad>
