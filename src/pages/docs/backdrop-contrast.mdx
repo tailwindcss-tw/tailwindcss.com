@@ -6,6 +6,7 @@ featureVersion: 'v2.1+'
 
 import { Variants } from '@/components/Variants'
 import { Disabling } from '@/components/Disabling'
+import { Responsive } from '@/components/Responsive.mdx'
 
 export const classes = {
   plugin: function () {
@@ -23,7 +24,7 @@ export const classes = {
   }
 }
 
-## 用法
+## Usage
 <!-- Use the backdrop-contrast-{amount?} utilities alongside the backdrop-filter utility to control an element's backdrop contrast. -->
 將 `backdrop-contrast-{amount?}` 功能跟 `backdrop-filter` 功能搭配使用，即可控制元素的背景對比。
 
@@ -33,9 +34,9 @@ export const classes = {
 </div>
 ```
 
-## 響應式
+## Responsive
 <!-- To control an element's backdrop contrast at a specific breakpoint, add a {screen}: prefix to any existing backdrop contrast utility. For example, use md:backdrop-contrast-150 to apply the backdrop-contrast-150 utility at only medium screen sizes and above. -->
-如要將元素的背景對比控制在特定斷點，在任何一個既有背景對比功能的前綴詞加上 `{screen}:`。例如，使用 `md:backdrop-contrast-150` 時，只有中型或以上的螢幕尺寸有 `backdrop-contrast-150` 效果。
+如要讓元素的背景對比有響應式效果，可在現有背景對比功能前加上前綴詞 `{screen}:` 。例如：中型或以上的螢幕尺寸使用 `md:backdrop-contrast-150` 以套用 `backdrop-contrast-150` 功能。
 
 ```html
 <div class="backdrop-filter backdrop-contrast-110 **md:backdrop-contrast-150** ...">
@@ -43,14 +44,14 @@ export const classes = {
 </div>
 ```
 
-想知道更多有關 Tailwind 響應式設計功能的訊息，請參考 [響應式設計] (/docs/responsive-design) 文件
+<Responsive />
 
-## 客製化
+## Customizing
 
-### 變化模式 Variant
+### Variant
 
 <Variants plugin="backdropContrast" name="backdrop contrast" />
 
-### 停用
+### Disabling
 
 <Disabling plugin="backdropContrast" name="backdrop contrast" />

@@ -6,6 +6,7 @@ featureVersion: 'v2.1+'
 
 import { Variants } from '@/components/Variants'
 import { Disabling } from '@/components/Disabling'
+import { Responsive } from '@/components/Responsive.mdx'
 
 export const classes = {
   plugin: function () {
@@ -18,7 +19,7 @@ export const classes = {
   }
 }
 
-## 用法
+## Usage
 <!-- Use the backdrop-filter utility to enable backdrop filters (in combination with other backdrop filter utilities like backdrop-blur or backdrop-grayscale), and the backdrop-filter-none utility to remove filters. -->
 使用 `backdrop-filter` 功能啟用背景濾鏡 ( 跟其他的背景濾鏡功能像 `backdrop-blur` 或 `backdrop-grayscale` 搭配使用)。另外，使用 `backdrop-filter-none` 功能移除濾鏡.
 
@@ -28,9 +29,9 @@ export const classes = {
 </div>
 ```
 
-## 響應式
+## Responsive
 <!-- To control backdrop filters at a specific breakpoint, add a {screen}: prefix to any existing backdrop filter utility. For example, use md:backdrop-filter-none to apply the backdrop-filter-none utility at only medium screen sizes and above. -->
-如要將元素的背景濾鏡控制在特定斷點，在任何一個既有背景濾鏡功能的前綴詞加上 `{screen}:` 。例如，使用 `md:backdrop-filter-none` 時，只有中型或以上的螢幕尺寸有 `backdrop-filter-none` 效果。
+如要讓元素的背景濾鏡有響應式效果，可在現有背景濾鏡功能前加上前綴詞 `{screen}:` 。例如：中型或以上的螢幕尺寸使用 `md:backdrop-filter-none` 以套用 `backdrop-filter-none` 功能。
 
 ```html
 <div class="backdrop-filter backdrop-blur-lg **md:backdrop-filter-none** ...">
@@ -38,14 +39,14 @@ export const classes = {
 </div>
 ```
 
-想知道更多有關 Tailwind 響應式設計功能的訊息，請參考 [響應式設計] (/docs/responsive-design) 文件
+<Responsive />
 
-## 客製化
+## Customizing
 
-### 變化模式 Variant
+### Variant
 
 <Variants plugin="backdropFilter" name="backdrop-filter" />
 
-### 停用
+### Disabling
 
 <Disabling plugin="backdropFilter" name="backdrop-filter" />
