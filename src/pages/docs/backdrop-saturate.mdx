@@ -6,6 +6,7 @@ featureVersion: 'v2.1+'
 
 import { Variants } from '@/components/Variants'
 import { Disabling } from '@/components/Disabling'
+import { Responsive } from '@/components/Responsive.mdx'
 
 export const classes = {
   plugin: function () {
@@ -35,7 +36,7 @@ export const classes = {
 ## 響應式
 
 <!-- To control an element's backrop saturation at a specific breakpoint, add a `{screen}:` prefix to any existing backdrop saturate utility. For example, use `md:backdrop-saturate-150` to apply the `backdrop-saturate-150` utility at only medium screen sizes and above. -->
-如要將元素的背景飽和度控制在特定斷點，在任何一個既有背景飽和度功能的前綴詞加上 `{screen}:` 。例如，使用 `md:backdrop-saturate-150` 時，只有中型或以上的螢幕尺寸有 `backdrop-saturate-150` 效果。
+如要讓元素的背景飽和度有響應式效果，可在現有背景飽和度功能前加上前綴詞 `{screen}:` 。例如：中型或以上的螢幕尺寸使用 `md:backdrop-saturate-150`以套用 `backdrop-saturate-150` 功能。
 
 ```html
 <div class="backdrop-filter backdrop-saturate-110 **md:backdrop-saturate-150** ...">
@@ -43,7 +44,7 @@ export const classes = {
 </div>
 ```
 
-想知道更多有關 Tailwind 響應式設計功能的訊息，請參考 [響應式設計] (/docs/responsive-design) 文件
+<Responsive />
 
 ## 客製化
 
