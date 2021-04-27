@@ -33,7 +33,8 @@ export function Heading({
   return (
     <Component
       className={clsx('group flex whitespace-pre-wrap', className)}
-      id={id}
+      // id={id}
+      id={children}
       ref={ref}
       style={{ ...(hidden ? { marginBottom: 0 } : {}), ...style }}
       {...props}
@@ -41,7 +42,8 @@ export function Heading({
       {!hidden && (
         // eslint-disable-next-line
         <a
-          href={`#${id}`}
+          // href={`#${id}`}
+          href={`#${children}`}
           className="absolute after:hash opacity-0 group-hover:opacity-100"
           style={{ marginLeft: '-1em', paddingRight: '0.5em', boxShadow: 'none', color: '#a1a1aa' }}
           aria-label="Anchor"
