@@ -211,7 +211,7 @@ module.exports = {
 ### 移除全部未使用之樣式
 
 <!-- By default, Tailwind will only remove unused classes that it generates itself, or has been explicitly wrapped in a `@layer` directive. It will _not_ remove unused styles from third-party CSS you pull in to your project, like a datepicker library you pull in for example. -->
-預設情形下，Tailwind 僅會移除其自行生成樣式中未使用的部分，或是已經被明確包在 `@layer` 的 directive 裡面，並 _不會_ 移除你自行額外加入專案裡的第三方插件中未使用的 CSS 樣式，例如 datepicker。
+預設情形下，Tailwind 僅會移除其自行生成樣式中未使用的部分，或是已經被明確包在 `@layer` 的指令 (directive) 裡面，並 _不會_ 移除你自行額外加入專案裡的第三方插件中未使用的 CSS 樣式，例如 datepicker。
 
 ```css
 /* 這些樣式會被清除 */
@@ -231,7 +231,7 @@ module.exports = {
 ```
 
 <!-- This is to avoid accidentally removing styles that you might need but are not directly referenced in your templates, like classes that are only referenced deep in your `node_modules` folder that are part of some other dependency. -->
-這是為了避免意外地移除你可能需要但沒有直接出現在樣板中的樣式，例如你從 `node_modules` 資料夾深處之中引用一部分依賴檔 (dependencies) 的 class。
+這是為了避免意外地移除你可能需要但沒有直接出現在樣板中的樣式，例如你從 `node_modules` 資料夾深處之中引用一部分依賴檔案 (dependencies) 的 class。
 
 <!-- If you really want to remove _all_ unused styles, set `mode: 'all'` and `preserveHtmlElements: false` and **be very careful** to provide the paths to _all_ files that might reference any classes or HTML elements: -->
 如果你真的想要移除 _全部_ 未使用樣式，請設定 `mode: 'all'` 與 `preserveHtmlElements: false` 加上**非常小心地**寫入 _全部_ 可能引用任何 class 或 HTML 元素的檔案路徑。
@@ -432,7 +432,7 @@ module.exports = {
 ### 停用未使用的核心插件和變化模式
 
 <!-- If you don't expect to need a certain utility plugin in your project at all, you can disable it completely by setting it to `false` in the `corePlugins` section of your config file: -->
-如果你預期在專案中不會使用到某些 utility plugin，可以在設定檔中把 `corePlugins` 設為 `false` 來完全停用它們：
+如果你預期在專案中不會使用到某些功能插件，可以在設定檔中把 `corePlugins` 設為 `false` 來完全停用它們：
 
 ```js
 // tailwind.config.js
@@ -462,7 +462,7 @@ module.exports = {
 上面的範例將會停用除了 margin 和 padding 之外的功能。
 
 <!-- If you need a utility but don't need the responsive versions, set its variants to an empty array to generate 83% fewer classes: -->
-如果你不需要響應式功能，將其 variants 設為空陣列可以減少產生 83% 的 classes。
+如果你不需要響應式功能，將其變化模式設為空陣列可以減少產生 83% 的 class。
 
 ```js
 module.exports = {
