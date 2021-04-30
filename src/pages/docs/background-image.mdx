@@ -1,7 +1,7 @@
 ---
 title: "Background Image (背景圖片)"
 # description: "Utilities for controlling an element's background image."
-description: "控制元素背景的功能"
+description: "控制元素 (Element) 背景的功能"
 ---
 
 import plugin from 'tailwindcss/lib/plugins/backgroundImage'
@@ -29,7 +29,7 @@ export const classes = { plugin }
 ## 響應式
 
 <!-- To control the background image of an element at a specific breakpoint, add a `{screen}:` prefix to any existing background image utility. For example, use `md:bg-gradient-to-r` to apply the `bg-gradient-to-r` utility at only medium screen sizes and above. -->
-如要讓元素的背景圖片有響應式效果，可在現有背景圖片功能前加上前綴詞 `{screen}:` 。例如：中型或以上的螢幕尺寸使用 `md:bg-gradient-to-r` 以套用 `bg-gradient-to-r` 功能。
+如要讓元素的背景圖片有響應式效果，可在現有背景圖片功能前加上前綴詞 `{screen}:`。例如：中型或以上的螢幕尺寸使用 `md:bg-gradient-to-r` 以套用 `bg-gradient-to-r` 功能。
 
 ```html
 <div class="bg-gradient-to-l **md:bg-gradient-to-r** ..."></div>
@@ -65,7 +65,7 @@ Tailwind 預設將用來創造線性漸層背景效果的背景圖片功能分�
 它們不僅是漸層，也可是任何你需要的背景圖片。
 
 <!-- These classes will take the form `bg-{key}`, so `hero-pattern` will become `bg-hero-pattern` for example. -->
-這些 classes 可使用 `bg-{key}` 格式，例如 `hero-pattern` 能變成 `bg-hero-pattern` 。
+這些 classes 可使用 `bg-{key}` 格式，例如 `hero-pattern` 能變成 `bg-hero-pattern`。
 
 ### 變化模式
 
