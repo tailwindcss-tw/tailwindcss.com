@@ -29,7 +29,8 @@ function TableOfContents({ tableOfContents, currentSection }) {
   return (
     <>
       <h5 className="text-gray-900 uppercase tracking-wide font-semibold mb-3 text-sm lg:text-xs">
-        On this page
+        {/* On this page */}
+        在此頁面
       </h5>
       <ul className="overflow-x-hidden text-gray-500 font-medium">
         {tableOfContents.map((section) => {
@@ -41,7 +42,7 @@ function TableOfContents({ tableOfContents, currentSection }) {
             <Fragment key={section.slug}>
               <li>
                 <a
-                  href={`#${section.slug}`}
+                  href={`#${section.title}`}
                   onClick={closeNav}
                   className={clsx(
                     'block transform transition-colors duration-200 py-2 hover:text-gray-900',
@@ -65,7 +66,7 @@ function TableOfContents({ tableOfContents, currentSection }) {
                     key={subsection.slug}
                   >
                     <a
-                      href={`#${subsection.slug}`}
+                      href={`#${subsection.title}`}
                       onClick={closeNav}
                       className={clsx(
                         'block py-2 transition-colors duration-200 hover:text-gray-900 font-medium',
