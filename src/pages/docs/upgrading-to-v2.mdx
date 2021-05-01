@@ -1,15 +1,15 @@
 ---
 # title: "Upgrade Guide"
-title: "升級指南 (Upgrade Guide)"
+title: "升級指南"
 # description: "Upgrading from Tailwind CSS v1.x to v2.0."
 description: "將你的 Tailwind CSS 從 v1.x 升級至 v2.0."
 ---
 
 <!-- Tailwind CSS v2.0 is the first new major version since v1.0 was released in May 2019, and as such it includes a handful of small breaking changes. -->
-Tailwind CSS v2.0 是自從 2019 年 5 月發表 v1.0 以來，第一個新的主要版本，因此它會帶來一些很小的與舊版本上相容性的變更。
+Tailwind CSS v2.0 是自從 2019 年 5 月發表 v1.0 以來，第一個新的主要版本，因此它會帶來一些與舊版本相容性上的小型變更。
 
 <!-- We don't take breaking changes lightly and have worked hard to make sure the upgrade path is as simple as possible. For most projects, upgrading should take less than 30 minutes. -->
-我們沒有草率的做出相容性的變更，並且我們努力地確保升級的路徑盡可能的相對簡單。對於大部分的專案，升級將會在 30 分鐘內完成。
+我們沒有草率地做出相容性的重大變更，並且我們努力確保升級方式盡可能的相對簡單。對於大部分的專案而言，升級都能在 30 分鐘內完成。
 
 <!-- If your project uses the `@tailwindcss/ui` plugin, be sure to read the [Tailwind UI for Tailwind CSS v2.0 upgrade guide](https://tailwindui.com/changes-for-v2) as well. -->
 如果你的專案有使用 `@tailwindcss/ui` 此擴充套件的話, 請務必閱讀此教學流程。[Tailwind UI for Tailwind CSS v2.0 upgrade guide](https://tailwindui.com/changes-for-v2)。
@@ -23,7 +23,7 @@ Tailwind CSS v2.0 是自從 2019 年 5 月發表 v1.0 以來，第一個新的�
 Tailwind CSS v2.0 已經將 PostCSS 更新至最新版本，所以在更新 Tailwind 的同時還需要安裝 `postcss` 以及 `autoprefixer` 作為 PostCSS 對應的依賴套件。
 
 <!-- Update Tailwind and install PostCSS and autoprefixer using npm: -->
-使用更新 Tailwind 以及安裝 PostCSS 和 autoprefixer：
+使用 npm 更新 Tailwind 以及安裝 PostCSS 和 autoprefixer：
 
 ```shell
 npm install tailwindcss@latest postcss@latest autoprefixer@latest
@@ -33,10 +33,10 @@ npm install tailwindcss@latest postcss@latest autoprefixer@latest
 如果你在這裡遇到問題，你可能需要使用 PostCSS 7 相容性版本來取代。 [PostCSS 7 compatibility build](/docs/installation#post-css-7-compatibility-build)。
 
 <!-- ## Support for IE 11 has been dropped -->
-## 已經不再支援 IE 11 
+## 不再支援 IE 11 
 
 <!-- Prior to v2.0, we tried our best to make sure features we included in Tailwind worked in IE 11 whenever possible. This added considerable maintenance burden as well as increased build sizes (even when purging unused styles), so we have decided to drop support for IE 11 as of v2.0. -->
-在 2.0 版本之前，我們努力的讓所有在 Tailwind 的功能在 IE 11 上都能正常的使用。但這對我們來說在開發及維護上造成相當大的負擔，以及增加了在打包之後的總體大小(即使清理了所有未使用的樣式)，所以我們決定在 2.0 版本不再支援 IE 11。 
+在 2.0 版本之前，我們努力的讓所有 Tailwind 的功能都能在  IE 11 上正常的使用。但這對我們來說，開發及維護上造成相當大的負擔，以及增加了打包之後的總體大小(即使清理了所有未使用的樣式)，所以我們決定 2.0 版本不再支援 IE 11。 
 
 <!-- If you need to support IE 11, we recommend continuing to use Tailwind CSS v1.9 until you no longer need to support IE. -->
 如果你還是需要使用 IE 11，推薦你使用 Tailwind CSS v1.9 直到你可以完全脫離 IE 的魔爪再進行升級。
@@ -85,7 +85,7 @@ Tailwind CSS v2.0 已經不再支援 Node.js 8 或是 10 的版本 。 在打包
 未來我們有可能會繼續使用 `experimental` 選項來實現我們新的功能想法，但就不會繼續使用 `future` 這個選項。
 
 <!-- ## Update renamed utility classes -->
-## 功能性 class的重新命名
+## 功能性 class 的重新命名
 
 <!-- A small number of utilities have been renamed in v2.0: -->
 在 v2.0 版本中，有一小部分的功能性 class 被重新命名：
@@ -107,7 +107,7 @@ Tailwind CSS v2.0 已經不再支援 Node.js 8 或是 10 的版本 。 在打包
 ## 如果你有需要的話，請為了你的 fontWeight 開啟 hover 及 foucs
 
 <!-- The `hover` and `focus` variants have been disabled for the `fontWeight` plugin by default, as changing font-weight like this tends to cause layout jank so it's uncommon to actually do it anyways. -->
-在 `fontWeight` 預設裡面，是沒有開啟 `hover` 跟 `focus`的，因為隨意變更你的字體粗細，會容易使你的畫面變得奇怪，所以正常來說我們不會這樣使用。
+在 `fontWeight` 預設裡面，是沒有開啟 `hover` 跟 `focus` 的，因為隨意變更你的字體粗細，會容易使你的畫面變得奇怪，所以正常來說我們不會這樣使用。
 
 <!-- If you need these in your project, re-enable them in your `tailwind.config.js` file: -->
 但假如你需要的話，你還是可以在 `tailwind.config.js` 這個檔案重新開啟它：
@@ -198,7 +198,7 @@ module.exports = {
 ```
 
 <!-- ## Configure your breakpoints explicitly -->
-## 你可以調整你所需要的頁面斷點
+## 你可以調整你所需要的頁面斷點 (Breakpoint)
 
 <!-- Tailwind CSS v2.0 adds a new `2xl` breakpoint which will affect any situations where you've used the `container` class. If this impacts you, remove the `2xl` breakpoint by overriding `screens` with your existing breakpoints:-->
 在 Tailwind CSS v2.0 新加入了 `2xl` 頁面斷點，這將會影響所有你已經使用的 `container` 功能。請注意！如果這功能影響了你，請移除 `2xl` 這個頁面斷點，並將下列的 `screens` 覆寫到你已經擁有的螢幕斷點：
@@ -228,13 +228,13 @@ module.exports = {
 ## 你可以調整你自己的調色盤
 
 <!-- **If you are already using a custom color palette, no changes are required and you can safely skip this step.**-->
-**請注意！ 如果你已經有自己的調色盤，可以放心地跳過這個步驟，不用做任何修改**
+**如果你已經有自己的調色盤，可以放心地跳過這個步驟，不用做任何修改**
 
 <!-- The default color palette has changed considerably in Tailwind CSS v2.0 and is not designed to be a drop-in replacement for the color palette that was included in v1. -->
 在 Tailwind CSS v2.0 中，我們修改了新的預設顏色，但並不是為了要取代 v1 版本中的配色。
 
 <!-- If you're using the default color palette, you should configure it explicitly to override the new default palette with the colors your site is already using. -->
-如果你正在使用 v1 版本中的預設調色盤，那你應該將以下的預設顏色，覆蓋到你的現在用的設定文件。
+如果你正在使用 v1 版本中的預設調色盤，那你應該將以下的預設顏色，覆蓋到你現在用的設定文件。
 
 <!-- Here is an example `tailwind.config.js` file that includes the default colors from v1: -->
 以下是 v1 `tailwind.config.js` 中，所擁有的預設顏色：
@@ -372,7 +372,7 @@ module.exports = {
 ## 你可以調整你自己的字體大小
 
 <!-- **If you are already using a custom typography scale, no changes are required and you can safely skip this step.** -->
-**請注意！ 如果你已經有自己的字體大小，可以放心地跳過這個步驟，不用做任何修改**
+**如果你已經有自己的字體大小，可以放心地跳過這個步驟，不用做任何修改**
 
 <!-- In v2.0, each font-size utility includes a sensible size-specific line-height by default, so for example `text-sm` automatically sets a line-height of `1.25rem`. -->
 在 v2.0 版本中，字體大小都預設了字體行高，打個比方 `text-sm` 就自動的將行高設定成 `1.25rem`。
@@ -404,7 +404,7 @@ module.exports = {
 ```
 
 <!-- Alternatively, you can go through your HTML and explicitly add a `leading` utility anywhere where you were depending on an inherited line-height: -->
-另外，你也可以在每個你有使用到行高( lineHeight )的部分，新增 `leading` 這項功能。
+另外，你也可以在每個你有使用到行高 (line-height) 的部分，新增 `leading` 這項功能。
 
 ```diff-html
 - <p class="text-lg">...</p>
@@ -412,10 +412,10 @@ module.exports = {
 ```
 
 <!-- ## Update default theme keys to DEFAULT -->
-## Update default theme keys to DEFAULT
+##  在 theme 裡把 default 換成 DEFAULT
 
 <!-- In Tailwind CSS v1.x, the `default` keyword in various `theme` sections of the `tailwind.config.js` section sometimes meant "don't add a suffix to the class name". -->
-在 Tailwind CSS v1.x 中， `default` 這個關鍵字，被用在 `tailwind.config.js` 裡 `theme` 的每一個預設大小，代表你不需要在後綴增加其他大小來調整。
+在 Tailwind CSS v1.x 中，`default` 這個關鍵字，被用在 `tailwind.config.js` 裡 `theme` 的每一個預設大小，代表你不需要在後綴增加其他大小來調整。
 
 <!-- For example, this configuration: -->
 打個比方，以下是 v1.x 的範例
@@ -436,10 +436,10 @@ module.exports = {
 ```
 
 <!-- ...would generated a `rounded` class with a `border-radius` of `0.25rem`, _not_ a `rounded-default` class. -->
-...這將會產生一個 `rounded` 的功能，並且它的 `border-radius` 為 `0.25rem`， 並不是一個 `rounded-default` 功能。
+...這將會產生一個 `rounded` 的功能，並且它的 `border-radius` 為 `0.25rem`，並不是一個 `rounded-default` 功能。
 
 <!-- In Tailwind CSS v2.0, we've updated all special usage of `default` to uppercase `DEFAULT` instead: -->
-在 Tailwind CSS v2.0 中 , 我們把所有 `default` 通通換成了大寫的 `DEFAULT` ：
+在 Tailwind CSS v2.0 中，我們把所有 `default` 通通換成了大寫的 `DEFAULT` ：
 
 ```js
 // tailwind.config.js
@@ -457,7 +457,7 @@ module.exports = {
 ```
 
 <!-- Lowercase `default` will be treated like any other string, so a `default` value under `borderRadius` _will_ generate a `rounded-default` class in Tailwind CSS v.2.0.Z -->
-在 Tailwind CSS v.2.0 中，小寫的 `default` 會被當成一般字串來看到, 所以在 `borderRadius` 的 `default` 將會創造一個 `rounded-default` 。
+在 Tailwind CSS v.2.0 中，小寫的 `default` 會被當成一般字串來看到，所以在 `borderRadius` 的 `default` 將會創造一個 `rounded-default`。
 
 <!-- You should update all usage of `default` in your config file to `DEFAULT`, _except_ where you actually want to generate a `{utility}-default` class, like for `cursor-default`. -->
 你應該在你的設定文件中更新 `default` 讓他成為 `DEFAULT`，除非你真的需要 `{utility}-default` 這樣的功能，例如 `cursor-default`。
@@ -469,7 +469,7 @@ module.exports = {
 ## 記得將 extend 移到上層
 
 <!-- In Tailwind CSS v1.0, theme changes under `extend` were merged shallowly. So this configuration would override _all_ of the purple colors: -->
-在 Tailwind CSS v1.0 中， `theme` 的 `extend` 結構是會向上合併的，因此這樣，以下這個設定可能會覆蓋掉所有的紫色。
+在 Tailwind CSS v1.0 中，`theme` 的 `extend` 結構是會淺層合併的，因此下列的設定會覆蓋掉所有的紫色。
 
 ```js
 // tailwind.config.js
@@ -489,10 +489,10 @@ module.exports = {
 ```
 
 <!-- In v2.0, these are merged deeply, so the above configuration would still generate the default `purple-100` to `purple-900` shades in addition to the custom `purple-light`, `purple-medium`, and `purple-dark` shades. -->
-在 Tailwind CSS v2.0 中，結構是會向下合併的，所以根據上面這個設定產生出預設的 `purple-100` 到 `purple-900` 以及你新增的 `purple-light` 、 `purple-medium` 以及 `purple-dark` 色調。
+在 Tailwind CSS v2.0 中，結構是深層合併的，所以根據上面這個設定產生出預設的 `purple-100` 到 `purple-900` 以及你新增的 `purple-light`、`purple-medium` 以及 `purple-dark` 色調。
 
 <!-- For the most part this is just helpful, but if you were depending on the shallow merging you will want to move your customizations to the top-level, and manually merge in the other top-level colors:  -->
-這在大部分的狀況是有用的， 但如果你的顏色的結構是需要向上合併的話，還是會有問題, 所以你可能要自己手動修改你所新增的，將它往上跟預設的顏色合併在一起。
+這在大部分的狀況是有用的， 但如果你的顏色的結構是需要淺層合併的話，還是會有問題, 所以你可能要自己手動修改你所新增的，將它往上跟預設的顏色合併在一起。
 
 ```js
 const defaultTheme = require('tailwindcss/defaultTheme')
@@ -516,7 +516,7 @@ module.exports = {
 
 
 <!-- ## Update `@apply` statements that rely on class order -->
-## 更新你加入 @apply 的 class 順序
+## 更新加入 @apply 的 class 順序
 
 <!-- The `@apply` feature has gotten a lot more powerful in v2.0, but a few behaviors needed to change to make that possible. -->
 `@apply` 在 v2.0 中，他變得更強了, 所以可能需要調整一下原本使用的方法。
@@ -525,12 +525,12 @@ module.exports = {
 以前, class 是照你在 CSS 裡面所寫的順序來出現的。
 
 ```css
-/* 你寫的 */
+/* Input */
 .my-class {
   @apply pt-5 p-4;
 }
 
-/* 渲染之後輸出的 */
+/* Output */
 .my-class {
   padding-top: 1.25rem;
   padding: 1rem;
@@ -538,15 +538,15 @@ module.exports = {
 ```
 
 <!-- Now, classes are applied in the order they appear in the original CSS: -->
-現在, class 會照他在原生 CSS 中所出現的順序所出現。
+現在, class 會照它在原生 CSS 中所出現的順序所出現。
 
 ```css
-/* 你寫的 */
+/* Input */
 .my-class {
   @apply pt-5 p-4;
 }
 
-/* 渲染之後輸出的 */
+/* Output */
 .my-class {
   padding: 1rem;
   padding-top: 1.25rem;
@@ -578,10 +578,11 @@ module.exports = {
 ## 請記得在每一個 @apply 加入你自己自訂前綴詞
 
 <!-- In Tailwind CSS v1.0, you could `@apply` unprefixed utilities even if you had configured a prefix. -->
-在 Tailwind CSS v1.0 版本中， 你可以 `@apply` 不帶有你自訂前綴詞的功能 class。
+在 Tailwind CSS v1.0 版本中，你可以 `@apply` 不帶有自訂前綴詞的功能 class。
 
 <!-- This is no longer supported in v2.0, so if you have a prefix (like `tw-`) configured for your site, you'll need to make sure you include that whenever you use `@apply`: -->
-在 v2.0 版本中不再支援這個方式, 所以如果你有自訂前綴詞的話 (像是 `tw-`) ，你需要確保在你有使用到 `@apply` 前綴詞的功能 class 的地方，加入你的自訂前綴詞。
+在 v2.0 版本中不再支援這個方式, 如果你有自訂的前綴詞 (像是 `tw-`)，你需要確保在使用 `@apply` 時有使用這個前綴詞。
+
 
 ```css
 .my-class {
@@ -590,7 +591,7 @@ module.exports = {
 ```
 
 <!-- ## Remove leading dot from @apply statements -->
-## 請在 @apply 刪除所有功能性 class 前導
+## 請刪除在 @apply 中的所有前導小數點 (dot)
 
 <!-- We used to support writing `@apply` statements with an optional leading `.` character: -->
 我們曾經支援在 `@apply` 裡，讓所有 class 加入前導 `.`：
@@ -602,7 +603,7 @@ module.exports = {
 ```
 
 <!-- We don't support this anymore, so update any `@apply` statements and remove the dot: -->
-但是現在不再支援在 `@apply` 加入前導 `.` ，所以請刪除你在 `@apply` 中所加入前導的 `.`：
+但是現在不再支援在 `@apply` 加入前導 `.`，所以請刪除你在 `@apply` 中所加入前導的 `.`：
 
 ```css
 .my-class {
@@ -611,7 +612,7 @@ module.exports = {
 ```
 
 <!-- The following regex can be useful to find and remove the leading dots in your `@apply` statements: -->
-你可以利用這個正則表達式來快速找到所有 `@apply` 中所出現的前導 `.` 並且刪除他。
+你可以利用這個正則表達式來快速找到所有 `@apply` 中所出現的前導 `.` 並且刪除它。
 
 ```regex
 (?<=@apply.*)\.
@@ -637,10 +638,10 @@ module.exports = {
 ## 移除了 scrolling-touch 和 scrolling-auto
 
 <!-- Since iOS 13 stopped supporting the `-webkit-overflow-scrolling` property, we've removed these two utilities from v2.0. -->
-由於 iOS 13 已經不支援 `-webkit-overflow-scrolling` 這個屬性， 所以我們將這兩個功能從 v2.0 中移除。
+由於 iOS 13 已經不支援 `-webkit-overflow-scrolling` 這個屬性，所以我們將這兩個功能從 v2.0 中移除。
 
 <!-- If you still need them because you are building something for older iOS versions, you can add them yourself as custom utilities:  -->
-如果你還是需要他們在，就是那些會需要在舊版本的 iOS 上執行的專案，你可以在自訂的 `utilities` 上增加。
+如果你還是需要他們，就是那些會需要在舊版本的 iOS 上執行的專案，你可以在自訂的 `utilities` 上增加。
 
 ```css
 @tailwind base;
@@ -663,7 +664,7 @@ module.exports = {
 ## 更新 theme 在陣列內的讀取方式
 
 <!-- The `theme` function (in CSS, the `tailwind.config.js` file, and in the plugin API) is more intelligent in v2.0 and no longer requires you to manually join arrays or access the first index explicitly.  -->
-`theme` 功能在 v2.0 版本，讀取方式更聰明了，(在 CSS 、 `tailwind.config.js` 或是功能裡的 API) 不需要你手動的再加入第一個索引值。
+`theme` 功能在 v2.0 版本，讀取方式更聰明了，(在 CSS、`tailwind.config.js` 或是功能裡的 API) 不需要你手動的再加入第一個索引值。
 
 ```js
 // tailwind.config.js
@@ -680,11 +681,11 @@ module.exports = {
     plugin(({ addBase, theme }) => {
       addBase({
         h1: {
-          // 以前
+          // Before
           fontSize: theme('fontSize.xl')[0],
           fontFamily: theme('fontFamily.sans').join(','),
 
-          // 現在
+          // Now
           fontSize: theme('fontSize.xl'),
           fontFamily: theme('fontFamily.sans'),
         }
@@ -698,7 +699,7 @@ module.exports = {
 如果因為任何原因你需要使用原始的檔案結構，你可以使用 `config` 功能來替代。
 
 <!-- ## Add hidden to any template tags within space or divide elements -->
-## 到任何一個有使用到 space 或 divide 元素 template 標籤新增 hidden 
+## 在任何一個有使用到 space 或 divide 元素 template 標籤新增 hidden 
 
 <!-- We used to have a special rule for ignoring `template` elements when using the `space-x/y` and `divide-x/y` utilities, mostly to make life easier for Alpine.js users. -->
 我們曾經有一個特別的規則，我們會在 `template` 忽略掉 `space-x/y` 以及 `divide-x/y` 功能，這樣的目的是為了方便 Alpine.js 的使用者。
@@ -725,7 +726,7 @@ module.exports = {
 因為我們已經更新了 [PurgeCSS 3.0](https://github.com/FullHuman/purgecss/releases/tag/v3.0.0)
 
 <!-- For example, if you were using `whitelist`, you'll want to update this to `safelist`:  -->
-如果你在 options 有用到設定 PurgeCSS 的部分，你會需要更新 `options` 裡的設定。
+如果你在設定檔中有使用到 PurgeCSS 的部分，你會需要更新 `options` 裡的設定。
 
 <!-- For example, if you were using whitelist, you'll want to update this to safelist: -->
 打個比方，如果你有用到 `whitelist` 你必須要改成 `safelist`：
@@ -746,13 +747,13 @@ module.exports = {
 ```
 
 <!-- If you weren't using the `options` key, you don't need to do anything. -->
-如果你沒有用到 `options` 你不需要做任何的更新。
+如果你沒有用到 `options`，你不需要做任何的更新。
 
 <!-- ## Disable preserveHtmlElements if using a custom PurgeCSS extractor -->
-## 如果你有自訂 PurgeCSS 萃取器，請取消 preserveHtmlElements 選項
+## 如果你有自訂 PurgeCSS 萃取器，請停用 preserveHtmlElements 選項
 
 <!-- In v1.0, Tailwind ignored the `preserveHtmlElements` option if you were using a custom extractor. This option is now properly respected in v2.0, so if you want to disable it you'll need to do so explicitly:  -->
-在 v1.0 版本裡，Tailwind 會忽略 `preserveHtmlElements` 在你自訂 PurgeCSS 萃取器裡。現在這個選項在 v2.0 版本裡，不會再被忽略，只是你如果不需要，記得在選項裡取消。
+在 v1.0 版本裡，如果你使用了自訂的萃取器，Tailwind 會忽略 preserveHtmlElements 這個選項設定。現在這個選項在 v2.0 版本裡，不會再被忽略，只是你如果不需要，記得在選項裡取消。
 
 ```diff-js
   // tailwind.config.js
@@ -775,10 +776,10 @@ module.exports = {
 ## 記得在 keyframe 裡加入前綴詞
 
 <!-- If you've configured a prefix in your `tailwind.config.js` file, Tailwind v2.0 will automatically apply that prefix to any keyframes declarations in your `theme`. -->
-如果你在 `tailwind.config.js` 裡有自訂前綴, Tailwind v2.0 會幫你自動加入前綴到 keyframes 裡的 `theme`。
+如果你在 `tailwind.config.js` 裡有自訂前綴詞，Tailwind v2.0 會自動將這些前綴詞加到你在 `theme` 所使用的 keyframes 之中。
 
 <!-- If you are referencing any configured keyframes in custom CSS, you'll want to make sure you add your prefix:  -->
-但是如果你有任何自訂的 CSS 裡用到 keyframes， 請記得加入你的自訂前綴：
+但是如果你有任何自訂的 CSS 裡用到 keyframes，請記得加入你的自訂前綴詞：
 
 ```diff-css
   .my-class {
@@ -788,4 +789,4 @@ module.exports = {
 ```
 
 <!-- This only matters if you've configured a prefix _and_ you're referencing configured keyframes in custom CSS files. If this affects more than two people on the entire planet I will be absolutely amazed. -->
-這只會發生在你使用自訂前綴且在你的自訂 CSS 裡才會受影響，如果這會影響到這個星球上兩個人以上，我絕對會嚇死。
+這只會發生在你使用自訂前綴詞 _並且_ 引用在自訂 CSS 中的 keyframes 時才會受影響，如果這會影響到這個星球上兩個人以上，我絕對會嚇死。
