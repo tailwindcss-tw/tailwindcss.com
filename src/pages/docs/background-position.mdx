@@ -1,6 +1,7 @@
 ---
-title: "Background Position"
-description: "Utilities for controlling the position of an element's background image."
+title: "Background Position (背景位置)"
+# description: "Utilities for controlling the position of an element's background image."
+description: "控制元素 (Element) 背景圖片位置的功能"
 features:
   responsive: true
   customizable: false
@@ -12,12 +13,14 @@ import plugin from 'tailwindcss/lib/plugins/backgroundPosition'
 import { ConfigSample } from '@/components/ConfigSample'
 import { Variants } from '@/components/Variants'
 import { Disabling } from '@/components/Disabling'
+import Responsive from '@/components/Responsive.mdx'
 
 export const classes = { plugin }
 
-## Usage
+## 用法
 
-Use the `bg-{side}` utilities to control the position of an element's background image.
+<!-- Use the `bg-{side}` utilities to control the position of an element's background image. -->
+使用 `bg-{side}` 功能來控制元素背景圖片的位置。
 
 ```html lightBlue
 <template preview>
@@ -76,21 +79,23 @@ Use the `bg-{side}` utilities to control the position of an element's background
 <div class="bg-no-repeat **bg-right-bottom** ..." style="background-image: url(...);"></div>
 ```
 
-## Responsive
+## 響應式
 
-To control the position of an element's background image at a specific breakpoint, add a `{screen}:` prefix to any existing background position utility. For example, adding the class `md:bg-top` to an element would apply the `bg-top` utility at medium screen sizes and above.
+<!-- To control the position of an element's background image at a specific breakpoint, add a `{screen}:` prefix to any existing background position utility. For example, adding the class `md:bg-top` to an element would apply the `bg-top` utility at medium screen sizes and above. -->
+如要讓元素的背景圖片位置有響應式效果，可在現有背景裁切功能前加上前綴詞 `{screen}:` 。例如：中型或以上的螢幕尺寸使用 `md:bg-top` 以套用 `bg-top` 功能。
 
 ```html
 <div class="bg-center **md:bg-top** ..." style="background-image: url(...)"></div>
 ```
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+<Responsive />
 
-## Customizing
+## 客製化
 
-### Background Positions
+### 背景位置
 
-By default, Tailwind provides nine `background-position` utilities. You change, add, or remove these by editing the `theme.backgroundPosition` section of your Tailwind config.
+<!-- By default, Tailwind provides nine `background-position` utilities. You change, add, or remove these by editing the `theme.backgroundPosition` section of your Tailwind config. -->
+Tailwind預設提供九種 `background-position` 功能。你可以編輯 Tailwind config 中的 `theme.backgroundPosition` 來變更、新增、移除這些功能。
 
 ```diff-js
   // tailwind.config.js
@@ -113,10 +118,10 @@ By default, Tailwind provides nine `background-position` utilities. You change, 
   }
 ```
 
-### Variants
+### 變化模式
 
 <Variants plugin="backgroundPosition" />
 
-### Disabling
+### 停用
 
 <Disabling plugin="backgroundPosition" />
