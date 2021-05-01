@@ -1,17 +1,21 @@
 ---
-title: "Background Opacity"
-description: "Utilities for controlling the opacity of an element's background color."
+title: "Background Opacity (背景透明度)"
+# description: "Utilities for controlling the opacity of an element's background color."
+description: "控制元素 (Element) 背景顏色透明度的功能."
 ---
 
 import plugin from 'tailwindcss/lib/plugins/backgroundOpacity'
 import { Variants } from '@/components/Variants'
 import { Disabling } from '@/components/Disabling'
+import Responsive from '@/components/Responsive.mdx'
+
 
 export const classes = { plugin }
 
-## Usage
+## 用法
 
-Control the opacity of an element's background color using the `bg-opacity-{amount}` utilities.
+<!-- Control the opacity of an element's background color using the `bg-opacity-{amount}` utilities. -->
+使用 `bg-opacity-{amount}` 功能來控制元素背景顏色的透明度。
 
 ```html indigo
 <template preview>
@@ -31,9 +35,10 @@ Control the opacity of an element's background color using the `bg-opacity-{amou
 <div class="bg-indigo-600 **bg-opacity-0** ..."></div>
 ```
 
-## Responsive
+## 響應式
 
-To control an element's background color opacity at a specific breakpoint, add a `{screen}:` prefix to any existing background color opacity utility. For example, use `md:bg-opacity-50` to apply the `bg-opacity-50` utility at only medium screen sizes and above.
+<!-- To control an element's background color opacity at a specific breakpoint, add a `{screen}:` prefix to any existing background color opacity utility. For example, use `md:bg-opacity-50` to apply the `bg-opacity-50` utility at only medium screen sizes and above. -->
+如要讓元素的背景顏色透明度有響應式效果，可在現有背景顏色透明度功能前加上前綴詞 `{screen}:`。例如：中型或以上的螢幕尺寸使用 `md:bg-opacity-50` 以套用 `bg-opacity-50` 功能。
 
 ```html
 <div class="bg-blue-500 bg-opacity-75 **md:bg-opacity-50**">
@@ -41,11 +46,12 @@ To control an element's background color opacity at a specific breakpoint, add a
 </div>
 ```
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+<Responsive />
 
-## Customizing
+## 客製化
 
-To customize the opacity values for all opacity-related utilities at once, use the `opacity` section of your `tailwind.config.js` theme configuration:
+<!-- To customize the opacity values for all opacity-related utilities at once, use the `opacity` section of your `tailwind.config.js` theme configuration: -->
+使用你 `tailwind.config.js` 中的 `opacity` 可一次自訂所有跟透明度相關的值。
 
 ```diff-js
   // tailwind.config.js
@@ -62,7 +68,8 @@ To customize the opacity values for all opacity-related utilities at once, use t
   }
 ```
 
-If you want to customize only the background opacity utilities, use the `backgroundOpacity` section:
+<!-- If you want to customize only the background opacity utilities, use the `backgroundOpacity` section: -->
+如你想只自訂背景透明度功能，使用 `backgroundOpacity`:
 
 ```diff-js
   // tailwind.config.js
@@ -79,12 +86,13 @@ If you want to customize only the background opacity utilities, use the `backgro
   }
 ```
 
-Learn more about customizing the default theme in the [theme customization documentation](/docs/theme#customizing-the-default-theme).
+<!-- Learn more about customizing the default theme in the [theme customization documentation](/docs/theme#customizing-the-default-theme). -->
+更多有關自訂預設主題的資訊，可參考 [theme customization documentation](/docs/theme#customizing-the-default-theme)。
 
-### Variants
+### 變化模式
 
 <Variants plugin="backgroundOpacity" />
 
-### Disabling
+### 停用
 
 <Disabling plugin="backgroundOpacity" />
