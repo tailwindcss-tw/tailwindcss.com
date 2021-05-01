@@ -1,12 +1,14 @@
 ---
-title: Customizing Spacing
+title: 間距 (Customizing Spacing)
 shortTitle: Spacing
-description: Customizing the default spacing and sizing scale for your project.
+# description: Customizing the default spacing and sizing scale for your project.
+description: 為你的專案自訂預設的間距、尺寸大小
 ---
 
 import { SpacingScale } from '@/components/SpacingScale'
 
-Use the `spacing` key in the `theme` section of your `tailwind.config.js` file to customize Tailwind's [default spacing/sizing scale](#default-spacing-scale).
+<!-- Use the `spacing` key in the `theme` section of your `tailwind.config.js` file to customize Tailwind's [default spacing/sizing scale](#default-spacing-scale). -->
+在 `tailwind.config.js` 檔案裡的 `theme` 使用 `spacing` 來指定 Tailwind 的 [預設間距/尺寸 大小](#default-spacing-scale)。
 
 ```js
 // tailwind.config.js
@@ -24,14 +26,16 @@ module.exports = {
 }
 ```
 
-By default the spacing scale is inherited by the `padding`, `margin`, `width`, `height`, `maxHeight`, `gap`, `inset`, `space`, and `translate` core plugins.
+<!-- By default the spacing scale is inherited by the `padding`, `margin`, `width`, `height`, `maxHeight`, `gap`, `inset`, `space`, and `translate` core plugins. -->
+在預設情況下，間距大小會被 `padding`, `margin`, `width`, `height`, `maxHeight`, `gap`, `inset`, `space`, 和 `translate` 等核心插件繼承。
 
 ---
 
-## Extending the default spacing scale
+<!-- ## Extending the default spacing scale -->
+## 擴充預設的間距大小設定
 
-
-As described in the [theme documentation](/docs/theme#extending-the-default-theme), if you'd like to extend the default spacing scale, you can do so using the `theme.extend.spacing` section of your `tailwind.config.js` file:
+<!-- As described in the [theme documentation](/docs/theme#extending-the-default-theme), if you'd like to extend the default spacing scale, you can do so using the `theme.extend.spacing` section of your `tailwind.config.js` file: -->
+如同 [theme documentation](/docs/theme#extending-the-default-theme) 所描述，如果你想擴充預設的間距大小設定，你可以在 `tailwind.config.js` 裡的 `theme.extend.spacing` 區段進行設定：
 
 ```js
 // tailwind.config.js
@@ -49,13 +53,17 @@ module.exports = {
 }
 ```
 
-This will generate classes like `p-13`, `m-15`, and `h-128` in addition to all of Tailwind's default spacing/sizing utilities.
+<!-- This will generate classes like `p-13`, `m-15`, and `h-128` in addition to all of Tailwind's default spacing/sizing utilities. -->
+這將會增加 `p-13`, `m-15`, 和 `h-128` 的 class 到 Tailwind 的預設間距/尺寸功能裡。
+
 
 ---
 
-## Overriding the default spacing scale
+<!-- ## Overriding the default spacing scale -->
+## 覆寫預設間距大小
 
-As described in the [theme documentation](/docs/theme#overriding-the-default-theme), if you'd like to override the default spacing scale, you can do so using the `theme.spacing` section of your `tailwind.config.js` file:
+<!-- As described in the [theme documentation](/docs/theme#overriding-the-default-theme), if you'd like to override the default spacing scale, you can do so using the `theme.spacing` section of your `tailwind.config.js` file: -->
+如同 [theme documentation](/docs/theme#extending-the-default-theme) 所描述，如果你想要覆寫預設的間距大小設定，你可以在 `tailwind.config.js` 裡的 `theme.extend.spacing` 區段進行設定：
 
 ```js
 // tailwind.config.js
@@ -71,12 +79,15 @@ module.exports = {
 }
 ```
 
-This will disable Tailwind's default spacing scale and generate classes like `p-sm`, `m-md`, `w-lg`, and `h-xl` instead.
+<!-- This will disable Tailwind's default spacing scale and generate classes like `p-sm`, `m-md`, `w-lg`, and `h-xl` instead. -->
+這將會禁用 Tailwind 裡預設的間距設定，並且建立 `p-sm`, `m-md`, `w-lg` 和 `h-xl` 的 class 取代原有的設定。
 
 ---
 
-## Default spacing scale
+<!-- ## Default spacing scale -->
+## 預設間距大小
 
-By default, Tailwind includes a generous and comprehensive numeric spacing scale. The values are proportional, so `16` is twice as much spacing as `8` for example. One spacing unit is equal to `0.25rem`, which translates to `4px` by default in common browsers.
+<!-- By default, Tailwind includes a generous and comprehensive numeric spacing scale. The values are proportional, so `16` is twice as much spacing as `8` for example. One spacing unit is equal to `0.25rem`, which translates to `4px` by default in common browsers. -->
+在預設中，Tailwind 包含大量且全面的間距大小設定。這些數值是成比例的，例如 `16` 是 `8` 的兩倍。一個間距單元是 `0.25rem`，這在常見的瀏覽器中會被轉換為 `4px` 。
 
 <SpacingScale />
