@@ -1,17 +1,26 @@
 ---
-title: "Object Fit"
-description: "Utilities for controlling how a replaced element's content should be resized."
+# title: "Object Fit"
+title: "Object Fit (物件適配)"
+# description: "Utilities for controlling how a replaced element's content should be resized."
+description: "控制元素 (Element) 在容器中如何重新調整大小"
 ---
 
 import plugin from 'tailwindcss/lib/plugins/objectFit'
 import { Variants } from '@/components/Variants'
 import { Disabling } from '@/components/Disabling'
+import Responsive from '@/components/Responsive.mdx'
 
 export const classes = { plugin }
 
-## Contain
+<!-- ## Contain -->
+## 容納
 
-Resize an element's content to stay contained within its container using `.object-contain`.
+<!-- Resize an element's content to stay contained within its container using `.object-contain`. -->
+使用 `.object-contain` 功能讓內容可以完全顯示在元素的容器中。
+
+也就是內容縮放時若先碰到上下邊界，則內容高度與容器高度相同；
+若先碰到的是左右邊界，則內容寬度會與容器寬度保持相同，內容仍然保持原本長寬比例。
+以下就是內容縮放時先碰到上下邊界的範例。
 
 ```html rose
 <template preview>
@@ -25,9 +34,13 @@ Resize an element's content to stay contained within its container using `.objec
 </div>
 ```
 
-## Cover
+<!-- ## Cover -->
+## 覆蓋
 
-Resize an element's content to cover its container using `.object-cover`.
+<!-- Resize an element's content to cover its container using `.object-cover`. -->
+使用 `.object-cover` 功能讓內容可以覆蓋在元素的容器中。
+
+這個覆蓋是以寬度為主，會將內容縮放到與容器寬度一致，高度則超出不管，內容仍然保持原本長寬比例。
 
 ```html indigo
 <template preview>
@@ -41,9 +54,13 @@ Resize an element's content to cover its container using `.object-cover`.
 </div>
 ```
 
-## Fill
+<!-- ## Fill -->
+## 填滿
 
-Stretch an element's content to fit its container using `.object-fill`.
+<!-- Stretch an element's content to fit its container using `.object-fill`. -->
+使用 `.object-fill` 功能將內容拉伸到填滿元素容器。
+
+也就是使內容的寬度與高度拉伸到容器大小，不保持原本的長寬比例，***所以內容有可能看起來會變形***。
 
 ```html lightBlue
 <template preview>
@@ -57,9 +74,11 @@ Stretch an element's content to fit its container using `.object-fill`.
 </div>
 ```
 
-## None
+<!-- ## None -->
+## 不適配
 
-Display an element's content at its original size ignoring the container size using `.object-none`.
+<!-- Display an element's content at its original size ignoring the container size using `.object-none`. -->
+若不希望內容隨著容器大小發生變化、想讓內容保持原本的大小，使用 `.object-none`。
 
 ```html amber
 <template preview>
@@ -73,9 +92,10 @@ Display an element's content at its original size ignoring the container size us
 </div>
 ```
 
-## Scale Down
+<!-- ## Scale Down -->
+## 縮小
 
-Display an element's content at its original size but scale it down to fit its container if necessary using `.object-scale-down`.
+使用 `.object-scale-down` 功能在容器大小不足以完全顯示內容能時使內容以 `.object-contain` 的方式縮放。
 
 ```html emerald
 <template preview>
@@ -89,9 +109,11 @@ Display an element's content at its original size but scale it down to fit its c
 </div>
 ```
 
-## Responsive
+<!-- ## Responsive -->
+## 響應式
 
-To control how a replaced element's content should be resized only at a specific breakpoint, add a `{screen}:` prefix to any existing object fit utility. For example, adding the class `md:object-scale-down` to an element would apply the `object-scale-down` utility at medium screen sizes and above.
+<!-- To control how a replaced element's content should be resized only at a specific breakpoint, add a `{screen}:` prefix to any existing object fit utility. For example, adding the class `md:object-scale-down` to an element would apply the `object-scale-down` utility at medium screen sizes and above. -->
+如要讓元素背景圖片的重覆顯示有響應式效果，可在現有背景重覆顯示功能前加上前綴詞 `{screen}:` 。例如：中型或以上的螢幕尺寸使用 `md:object-scale-down` 以套用 `object-scale-down` 功能。
 
 ```html
 <div>
@@ -99,14 +121,18 @@ To control how a replaced element's content should be resized only at a specific
 </div>
 ```
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+<!-- For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation. -->
+<Responsive />
 
-## Customizing
+<!-- ## Customizing -->
+## 客製化
 
-### Variants
+<!-- ### Variants -->
+### 變化模式
 
 <Variants plugin="objectFit" name="object-fit" />
 
-### Disabling
+<!-- ### Disabling -->
+### 停用
 
 <Disabling plugin="objectFit" name="object-fit" />
