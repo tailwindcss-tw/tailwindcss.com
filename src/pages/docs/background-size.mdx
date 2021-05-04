@@ -1,6 +1,7 @@
 ---
-title: "Background Size"
-description: "Utilities for controlling the background size of an element's background image."
+title: "Background Size (背景尺寸)"
+# description: "Utilities for controlling the background size of an element's background image."
+description: "控制元素 (Element) 背景圖片尺寸的功能"
 features:
   responsive: true
   customizable: false
@@ -11,12 +12,14 @@ features:
 import plugin from 'tailwindcss/lib/plugins/backgroundSize'
 import { Variants } from '@/components/Variants'
 import { Disabling } from '@/components/Disabling'
+import Responsive from '@/components/Responsive.mdx'
 
 export const classes = { plugin }
 
 ## Auto
 
-Use `bg-auto` to display the background image at its default size.
+<!-- Use `bg-auto` to display the background image at its default size. -->
+使用 `bg-auto` 顯示背景圖片預設尺寸。
 
 ```html amber
 <template preview>
@@ -29,7 +32,8 @@ Use `bg-auto` to display the background image at its default size.
 
 ## Cover
 
-Use `bg-cover` to scale the background image until it fills the background layer.
+<!-- Use `bg-cover` to scale the background image until it fills the background layer. -->
+使用 `bg-cover` 將背景圖片放大至填滿整個背景。
 
 ```html emerald
 <template preview>
@@ -42,7 +46,8 @@ Use `bg-cover` to scale the background image until it fills the background layer
 
 ## Contain
 
-Use `bg-contain` to scale the background image to the outer edges without cropping or stretching.
+<!-- Use `bg-contain` to scale the background image to the outer edges without cropping or stretching. -->
+使用 `bg-contain` 將背景圖片在不裁切或延伸的情形下，縮小到容器外緣。
 
 ```html indigo
 <template preview>
@@ -53,19 +58,21 @@ Use `bg-contain` to scale the background image to the outer edges without croppi
 <div class="bg-contain bg-center ..." style="background-image: url(...)"></div>
 ```
 
-## Responsive
+## 響應式
 
-To control the size of an element's background image at a specific breakpoint, add a `{screen}:` prefix to any existing background size utility. For example, adding the class `md:bg-contain` to an element would apply the `bg-contain` utility at medium screen sizes and above.
+<!-- To control the size of an element's background image at a specific breakpoint, add a `{screen}:` prefix to any existing background size utility. For example, adding the class `md:bg-contain` to an element would apply the `bg-contain` utility at medium screen sizes and above. -->
+如要讓元素的背景尺寸有響應式效果，可在現有背景尺寸功能前加上前綴詞 `{screen}:` 。例如：中型或以上的螢幕尺寸使用 `md:bg-contain` 以套用 `bg-contain` 功能。
 
 ```html
 <div class="bg-auto **md:bg-contain** ..."></div>
 ```
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+<Responsive />
 
-## Customizing
+## 客製化
 
-By default, Tailwind provides utilities for `auto`, `cover`, and `contain` background sizes. You can change, add, or remove these by editing the `theme.backgroundSize` section of your config.
+<!-- By default, Tailwind provides utilities for `auto`, `cover`, and `contain` background sizes. You can change, add, or remove these by editing the `theme.backgroundSize` section of your config. -->
+Tailwind 預設有 `auto`、`cover`、`contain` 這三個功能。你可以編輯 `theme.backgroundSize` 來變更、新增或移除這些功能。
 
 ```diff-js
   // tailwind.config.js
@@ -82,10 +89,10 @@ By default, Tailwind provides utilities for `auto`, `cover`, and `contain` backg
   }
 ```
 
-### Variants
+### 變化模式
 
 <Variants plugin="backgroundSize" />
 
-### Disabling
+### 停用
 
 <Disabling plugin="backgroundSize" />
