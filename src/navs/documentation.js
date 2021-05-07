@@ -59,15 +59,13 @@ export const documentationNav = {
     pages['visibility'],
     pages['z-index'],
   ],
-  '彈性化排版 (Flexbox)': [
+  'Flexbox and Grid': [
     pages['flex-direction'],
     pages['flex-wrap'],
     pages['flex'],
     pages['flex-grow'],
     pages['flex-shrink'],
     pages['order'],
-  ],
-  '網格 (Grid)': [
     pages['grid-template-columns'],
     pages['grid-column'],
     pages['grid-template-rows'],
@@ -76,8 +74,6 @@ export const documentationNav = {
     pages['grid-auto-columns'],
     pages['grid-auto-rows'],
     pages['gap'],
-  ],
-  '對齊 (Box Alignment)': [
     pages['justify-content'],
     pages['justify-items'],
     pages['justify-self'],

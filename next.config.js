@@ -1,14 +1,15 @@
-const path = require('path');
-const querystring = require('querystring');
-const { createLoader } = require('simple-functional-loader');
-const frontMatter = require('front-matter');
-const { withTableOfContents } = require('./remark/withTableOfContents');
-const { withSyntaxHighlighting } = require('./remark/withSyntaxHighlighting');
-const { withProse } = require('./remark/withProse');
-const { withNextLinks } = require('./remark/withNextLinks');
-const minimatch = require('minimatch');
-const withCodeSamples = require('./remark/withCodeSamples');
-const { withPrevalInstructions } = require('./remark/withPrevalInstructions');
+const path = require('path')
+const querystring = require('querystring')
+const { createLoader } = require('simple-functional-loader')
+const frontMatter = require('front-matter')
+const { withTableOfContents } = require('./remark/withTableOfContents')
+const { withSyntaxHighlighting } = require('./remark/withSyntaxHighlighting')
+const { withProse } = require('./remark/withProse')
+const { withNextLinks } = require('./remark/withNextLinks')
+const { withLinkRoles } = require('./rehype/withLinkRoles')
+const minimatch = require('minimatch')
+const withCodeSamples = require('./remark/withCodeSamples')
+const { withPrevalInstructions } = require('./remark/withPrevalInstructions')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
@@ -87,6 +88,9 @@ module.exports = withBundleAnalyzer({
               withTableOfContents,
               withSyntaxHighlighting,
               withNextLinks,
+            ],
+            rehypePlugins: [
+              withLinkRoles,
             ],
           },
         },
