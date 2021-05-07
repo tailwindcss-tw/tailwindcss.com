@@ -1,16 +1,20 @@
 ---
-title: Configuration
-description: A guide to configuring and customizing your Tailwind installation.
+# title: Configuration
+title: 配置 (Configuration)
+# description: A guide to configuring and customizing your Tailwind installation.
+description: 設定與客製化 Tailwind 安裝的指南
 ---
 
 import { CorePluginReference } from '@/components/CorePluginReference'
 
-Because Tailwind is a framework for building bespoke user interfaces, it has been designed from the ground up with customization in mind.
+<!-- Because Tailwind is a framework for building bespoke user interfaces, it has been designed from the ground up with customization in mind. -->
+因為 Tailwind 是一套建立客製化使用者介面的框架，從一開始就為了考量客製化而設計。
 
-By default, Tailwind will look for an optional `tailwind.config.js` file at the root of your project where you can define any customizations.
+<!-- By default, Tailwind will look for an optional `tailwind.config.js` file at the root of your project where you can define any customizations. -->
+預設情況下，Tailwind 會在你的專案根目錄尋找可選的 `tailwind.config.js` 檔案，你可以在其中定義任何客製化的設定。
 
 ```js
-// Example `tailwind.config.js` file
+// `tailwind.config.js` 範例檔案
 const colors = require('tailwindcss/colors')
 
 module.exports = {
@@ -44,23 +48,27 @@ module.exports = {
 }
 ```
 
-Every section of the config file is optional, so you only have to specify what you'd like to change. Any missing sections will fall back to Tailwind's [default configuration](https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js).
+<!-- Every section of the config file is optional, so you only have to specify what you'd like to change. Any missing sections will fall back to Tailwind's [default configuration](https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js). -->
+設定檔案中的任何部分都是可選的，因此你只需要指定你想更改的地方。任何缺少的部分都會使用 Tailwind 的 [預設設定](https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js)。
 
-## Creating your configuration file
+<!-- ## Creating your configuration file -->
+## 製作專屬於你的設定檔
 
-Generate a Tailwind config file for your project using the Tailwind CLI utility included when you install the `tailwindcss` npm package:
+<!-- Generate a Tailwind config file for your project using the Tailwind CLI utility included when you install the `tailwindcss` npm package: -->
+使用 Tailwind CLI 來為你的專案產生一個 Tailwind 設定檔，當安裝 `tailwindcss` npm 插件包時會連同 Tailwind CLI 一起安裝。
 
 ```shell
 npx tailwindcss init
 ```
 
-This will create a minimal `tailwind.config.js` file at the root of your project:
+<!-- This will create a minimal `tailwind.config.js` file at the root of your project: -->
+上述指令將會在專案的根目錄建立一個最低限度的 `tailwind.config.js` 檔案。
 
 ```js
 // tailwind.config.js
 module.exports = {
   purge: [],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: false, // 或 'media' 或 'class'
   theme: {
     extend: {},
   },
@@ -71,15 +79,18 @@ module.exports = {
 }
 ```
 
-### Using a different file name
+<!-- ### Using a different file name -->
+### 使用不同的檔案名稱
 
-To use a name other than `tailwind.config.js`, pass it as an argument on the command-line:
+<!-- To use a name other than `tailwind.config.js`, pass it as an argument on the command-line: -->
+如果檔案名稱不想使用 `tailwind.config.js`，只需要將你想的使用的名稱打在命令列 (command-line) 即可：
 
 ```shell
 npx tailwindcss init tailwindcss-config.js
 ```
 
-If you use a custom file name, you will need to specify it when including Tailwind as a plugin in your PostCSS configuration as well:
+<!-- If you use a custom file name, you will need to specify it when including Tailwind as a plugin in your PostCSS configuration as well: -->
+如果使用自定義的檔案名稱，必須要將 Tailwind 作為插件引入 PostCSS 設定檔的同時，為其指定你的檔案名稱。
 
 ```js
 // postcss.config.js
@@ -90,15 +101,18 @@ module.exports = {
 }
 ```
 
-### Generating a PostCSS configuration file
+<!-- ### Generating a PostCSS configuration file -->
+### 產生 PostCSS 設定檔
 
-Use the `-p` flag if you'd like to also generate a basic `postcss.config.js` file alongside your `tailwind.config.js` file:
+<!-- Use the `-p` flag if you'd like to also generate a basic `postcss.config.js` file alongside your `tailwind.config.js` file: -->
+使用 `-p` 可以讓你在 `tailwind.config.js` 的同一層資料夾中產生一個基本版的 `postcss.config.js` 檔案：
 
 ```shell
 npx tailwindcss init -p
 ```
 
-This will generate a `postcss.config.js` file in your project that looks like this:
+<!-- This will generate a `postcss.config.js` file in your project that looks like this: -->
+上述指令將會在你的專案中產生如同下方範例的 `postcss.config.js` 檔案： 
 
 ```js
 module.exports = {
@@ -109,21 +123,27 @@ module.exports = {
 }
 ```
 
-### Scaffolding the entire default configuration
+<!-- ### Scaffolding the entire default configuration -->
+### 搭建完整的預設設定檔
 
-For most users we encourage you to keep your config file as minimal as possible, and only specify the things you want to customize.
+<!-- For most users we encourage you to keep your config file as minimal as possible, and only specify the things you want to customize. -->
+我們鼓勵多數的使用者盡量讓設定檔保持得越小越好，並且僅寫入想客製化的部分。
 
-If you'd rather scaffold a complete configuration file that includes all of Tailwind's default configuration, use the `--full` option:
+<!-- If you'd rather scaffold a complete configuration file that includes all of Tailwind's default configuration, use the `--full` option: -->
+如果你真的想要建構一個設定檔，其包含完整的 Tailwind 預設設定，請使用 `--full` 選項。
 
 ```shell
 npx tailwindcss init --full
 ```
 
-You'll get a file that matches the [default configuration file](https://unpkg.com/browse/tailwindcss@latest/stubs/defaultConfig.stub.js) Tailwind uses internally.
+<!-- You'll get a file that matches the [default configuration file](https://unpkg.com/browse/tailwindcss@latest/stubs/defaultConfig.stub.js) Tailwind uses internally. -->
+輸入上述指令將會得到一個與 Tailwind 內部使用的 [預設配置檔](https://unpkg.com/browse/tailwindcss@latest/stubs/defaultConfig.stub.js) 相同的檔案
 
-## Theme
+<!-- ## Theme -->
+## 主題
 
-The `theme` section is where you define your color palette, fonts, type scale, border sizes, breakpoints — anything related to the visual design of your site.
+<!-- The `theme` section is where you define your color palette, fonts, type scale, border sizes, breakpoints — anything related to the visual design of your site. -->
+`theme` 區域可以讓你定義調色盤、文字、樣式量表 (type scale)、邊線尺寸、斷點...等，任何與網站上視覺設計有關的屬性。
 
 ```js
 // tailwind.config.js
@@ -152,11 +172,14 @@ module.exports = {
 }
 ```
 
-Learn more about the default theme and how to customize it in the [theme configuration guide](/docs/theme).
+<!-- Learn more about the default theme and how to customize it in the [theme configuration guide](/docs/theme). -->
+在 [主題設定指南](/docs/theme) 可以了解關於預設主題以及如何客製化。
 
-## Variants
+<!-- ## Variants -->
+## 變化模式
 
-The `variants` section lets you control which [variants](/docs/hover-focus-and-other-states) are generated for each core utility plugin.
+<!-- The `variants` section lets you control which [variants](/docs/hover-focus-and-other-states) are generated for each core utility plugin. -->
+`variants` 區塊讓你可以控制為哪個核心功能插件產生 [變化模式](/docs/hover-focus-and-other-states)。
 
 ```js
 // tailwind.config.js
@@ -171,11 +194,14 @@ module.exports = {
 }
 ```
 
-Learn more in the [variants configuration guide](/docs/configuring-variants).
+<!-- Learn more in the [variants configuration guide](/docs/configuring-variants). -->
+在 [變化模式設定指南](/docs/configuring-variants) 了解更多
 
-## Plugins
+<!-- ## Plugins -->
+## 插件
 
-The `plugins` section allows you to register plugins with Tailwind that can be used to generate extra utilities, components, base styles, or custom variants.
+<!-- The `plugins` section allows you to register plugins with Tailwind that can be used to generate extra utilities, components, base styles, or custom variants. -->
+`plugins` 區域讓你可以在 Tailwind 註冊插件，而這些插件可以用來生成額外的功能、元件、基礎樣式或是自定義變化模式。
 
 ```js
 // tailwind.config.js
@@ -189,11 +215,14 @@ module.exports = {
 }
 ```
 
-Learn more about writing your own plugins in the [plugin authoring guide](/docs/plugins).
+<!-- Learn more about writing your own plugins in the [plugin authoring guide](/docs/plugins). -->
+在 [插件撰寫指南](/docs/plugins) 了解怎麼製作自己的插件。
 
-## Presets
+<!-- ## Presets -->
+## 預設定
 
-The `presets` section allows you to specify your own custom base configuration instead of using Tailwind's default base configuration.
+<!-- The `presets` section allows you to specify your own custom base configuration instead of using Tailwind's default base configuration. -->
+`presets` 區域可以使你指定自訂的基本配置，而不是使用 Tailwind 的預設基礎配置。
 
 ```js
 // tailwind.config.js
@@ -202,7 +231,7 @@ module.exports = {
     require('@acmecorp/base-tailwind-config')
   ],
 
-  // Project-specific customizations
+  // 專案特定的客製化設定
   theme: {
     //...
   },
@@ -210,13 +239,17 @@ module.exports = {
 }
 ```
 
-Learn more about presets in the [presets documentation](/docs/presets).
+<!-- Learn more about presets in the [presets documentation](/docs/presets). -->
+在 [預設定文件](/docs/presets) 了解更多關於預設定。
 
-## Prefix
+<!-- ## Prefix -->
+## 前輟詞
 
-The `prefix` option allows you to add a custom prefix to all of Tailwind's generated utility classes. This can be really useful when layering Tailwind on top of existing CSS where there might be naming conflicts.
+<!-- The `prefix` option allows you to add a custom prefix to all of Tailwind's generated utility classes. This can be really useful when layering Tailwind on top of existing CSS where there might be naming conflicts. -->
+`prefix` 選項讓你可以新增自訂的前輟詞於 Tailwind 產生的所有功能 class，當 Tailwind 和一個已存在 CSS 的出現命名衝突時，這個功能會非常有用。 
 
-For example, you could add a `tw-` prefix by setting the `prefix` option like so:
+<!-- For example, you could add a `tw-` prefix by setting the `prefix` option like so: -->
+例如，你可以在 `prefix` 選項新增 `tw-` 前輟詞，如下：
 
 ```js
 // tailwind.config.js
@@ -225,7 +258,8 @@ module.exports = {
 }
 ```
 
-Now every class will be generated with the configured prefix:
+<!-- Now every class will be generated with the configured prefix: -->
+現在每個 class 都會產生你設定的前輟詞
 
 ```css
 .tw-text-left {
@@ -237,10 +271,11 @@ Now every class will be generated with the configured prefix:
 .tw-text-right {
   text-align: right;
 }
-/* etc. */
+/* 等等... */
 ```
 
-It's important to understand that this prefix is added _after_ any variant prefixes. That means that classes with responsive or state prefixes like `sm:` or `hover:` will still have the responsive or state prefix *first*, with your custom prefix appearing after the colon:
+<!-- It's important to understand that this prefix is added _after_ any variant prefixes. That means that classes with responsive or state prefixes like `sm:` or `hover:` will still have the responsive or state prefix *first*, with your custom prefix appearing after the colon: -->
+請務必了解，這個自訂前輟詞是被加在任何變化模式的前輟詞 _後面_，這代表若 class 帶有響應式或狀態的前輟詞，像是 `sm:` 或是 `hover:`，將會 *優先* 將其置入於 class 前面，然後在冒號的後面才會是你自訂的前輟詞：
 
 ```html
 <div class="tw-text-lg md:tw-text-xl tw-bg-red-500 **hover:tw-bg-blue-500**">
@@ -248,9 +283,11 @@ It's important to understand that this prefix is added _after_ any variant prefi
 </div>
 ```
 
-Prefixes are only added to classes generated by Tailwind; **no prefix will be added to your own custom classes.**
+<!-- Prefixes are only added to classes generated by Tailwind; **no prefix will be added to your own custom classes.** -->
+前輟詞僅會新增到由 Tailwind 產生的 class；**你自行新增的 class 並不會被加上前輟詞**
 
-That means if you add your own responsive utility like this:
+<!-- That means if you add your own responsive utility like this: -->
+意思是，如果你自行新增響應式功能，如下：
 
 ```css
 @variants hover {
@@ -258,14 +295,16 @@ That means if you add your own responsive utility like this:
 }
 ```
 
-...the generated responsive classes will not have your configured prefix:
+<!-- ...the generated responsive classes will not have your configured prefix: -->
+...產生的響應式 class 將不會有你設定的前輟詞：
 
 ```css
 .bg-brand-gradient { /* ... */ }
 .hover\:bg-brand-gradient:hover { /* ... */ }
 ```
 
-If you'd like to prefix your own utilities as well, just add the prefix to the class definition:
+<!-- If you'd like to prefix your own utilities as well, just add the prefix to the class definition: -->
+如果你也想要在自訂的功能上產生前輟，可以直接在定義 class 時加上前輟：
 
 ```css
 @variants hover {
@@ -275,9 +314,11 @@ If you'd like to prefix your own utilities as well, just add the prefix to the c
 
 ## Important
 
-The `important` option lets you control whether or not Tailwind's utilities should be marked with `!important`. This can be really useful when using Tailwind with existing CSS that has high specificity selectors.
+<!-- The `important` option lets you control whether or not Tailwind's utilities should be marked with `!important`. This can be really useful when using Tailwind with existing CSS that has high specificity selectors. -->
+`important` 選項讓你可以自由控制是否為 Tailwind 的功能加上 `!important`，這對於 Tailwind 與其他權重較高的 CSS 搭配的使用情境下非常有幫助。
 
-To generate utilities as `!important`, set the `important` key in your configuration options to `true`:
+<!-- To generate utilities as `!important`, set the `important` key in your configuration options to `true`: -->
+產生 `!important` 功能只需要在 `important` 選項設定為 `true` 即可：
 
 ```js
 // tailwind.config.js
@@ -286,7 +327,8 @@ module.exports = {
 }
 ```
 
-Now all of Tailwind's utility classes will be generated as `!important`:
+<!-- Now all of Tailwind's utility classes will be generated as `!important`: -->
+現在全部的 Tailwind 功能 class 將會產生 `!important`：
 
 ```css
 .leading-none {
@@ -298,12 +340,14 @@ Now all of Tailwind's utility classes will be generated as `!important`:
 .leading-snug {
   line-height: 1.375 !important;
 }
-/* etc. */
+/* ...等等 */
 ```
 
-Note that any of your own custom utilities **will not** automatically be marked as `!important` by enabling this option.
+<!-- Note that any of your own custom utilities **will not** automatically be marked as `!important` by enabling this option. -->
+請注意，設定此選項**將不會**自動為任何自定義的功能加上 `!important`。
 
-If you'd like to make your own utilities `!important`, just add `!important` to the end of each declaration yourself:
+<!-- If you'd like to make your own utilities `!important`, just add `!important` to the end of each declaration yourself: -->
+如果你想在你自己的功能加上 `!important`，只要自行在每個宣告的結尾加上 `!important` 即可：
 
 ```css
 @responsive {
@@ -313,11 +357,14 @@ If you'd like to make your own utilities `!important`, just add `!important` to 
 }
 ```
 
-### Selector strategy
+<!-- ### Selector strategy -->
+### 選擇器 (Selector) 策略
 
-Setting `important` to `true` can introduce some issues when incorporating third-party JS libraries that add inline styles to your elements. In those cases, Tailwind's `!important` utilities defeat the inline styles, which can break your intended design.
+<!-- Setting `important` to `true` can introduce some issues when incorporating third-party JS libraries that add inline styles to your elements. In those cases, Tailwind's `!important` utilities defeat the inline styles, which can break your intended design. -->
+`important` 設為 `true` 可能會導致一些問題，像是使用第三方 JS 插件時所新增的行內樣式，將會被 Tailwind 產生之 `!important` 功能因權重被壓過去，最後破壞了你預期的設計。
 
-To get around this, you can set `important` to an ID selector like `#app` instead:
+<!-- To get around this, you can set `important` to an ID selector like `#app` instead: -->
+為了解決這個問題，你可以為一個 ID 選擇器設定 `important`，例如 `#app`：
 
 ```js
 // tailwind.config.js
@@ -326,11 +373,14 @@ module.exports = {
 }
 ```
 
-This configuration will prefix all of your utilities with the given selector, effectively increasing their specificity without actually making them `!important`.
+<!-- This configuration will prefix all of your utilities with the given selector, effectively increasing their specificity without actually making them `!important`. -->
+這個設定將會以你賦予的選擇器為功能加上前輟，可以有效的增加權重，而不需使用 `!important`。
 
-After you specify the `important` selector, you'll need to ensure that the root element of your site matches it.  Using the example above, we would need to set our root element's `id` attribute to `app` in order for styles to work properly.
+<!-- After you specify the `important` selector, you'll need to ensure that the root element of your site matches it.  Using the example above, we would need to set our root element's `id` attribute to `app` in order for styles to work properly. -->
+在 `important` 指定選擇器之後，你將需要確保該網站的根元素與其相符合，以上面為例，我們需要將根元素的 `id` 屬性設為 `app` 即可使樣式順利生效。
 
-After your configuration is all set up and your root element matches the selector in your Tailwind config, all of Tailwind's utilities will have a high enough specificity to defeat other classes used in your project, **without** interfering with inline styles:
+<!-- After your configuration is all set up and your root element matches the selector in your Tailwind config, all of Tailwind's utilities will have a high enough specificity to defeat other classes used in your project, **without** interfering with inline styles: -->
+將根元素與你的 Tailwind 設定的選擇器設定完成後，Tailwind 的全部功能之權重將足以壓過專案中的其他 class，亦**不**干擾其他行內樣式：
 
 ```html
 <html>
@@ -343,23 +393,26 @@ After your configuration is all set up and your root element matches the selecto
 <body id="app">
   <div class="high-specificity">
     <div class="nested">
-      <!-- Will be red-500 -->
+      <!-- 將會是 red-500 -->
       <div class="selector text-red-500"><!-- ... --></div>
     </div>
   </div>
 
-  <!-- Will be #bada55 -->
+  <!-- 將會是 #bada55 -->
   <div class="text-red-500" style="color: #bada55;"><!-- ... --></div>
 </body>
 </html>
 ```
 
 
-## Separator
+<!-- ## Separator -->
+## 分隔符號 (Separator)
 
-The `separator` option lets you customize what character or string should be used to separate variant prefixes (screen sizes, `hover`, `focus`, etc.) from utility names (`text-center`, `items-end`, etc.).
+<!-- The `separator` option lets you customize what character or string should be used to separate variant prefixes (screen sizes, `hover`, `focus`, etc.) from utility names (`text-center`, `items-end`, etc.). -->
+`separator` 選項讓你可以自訂字元或字串，它用來分隔變化模式前輟詞 (畫面尺寸、`hover`、`focus`...等等) 與功能名稱 (`text-center`、`items-end`...等等)。
 
-We use a colon by default (`:`), but it can be useful to change this if you're using a templating language like [Pug](https://pugjs.org) that doesn't support special characters in class names.
+<!-- We use a colon by default (`:`), but it can be useful to change this if you're using a templating language like [Pug](https://pugjs.org) that doesn't support special characters in class names. -->
+我們預設使用分號 (`:`)，但如果你使用模板語言時，改變其預設值將會很有幫助，例如 [Pug](https://pugjs.org) 並不支援在 class 名稱中使用特殊符號。
 
 ```js
 // tailwind.config.js
@@ -368,11 +421,14 @@ module.exports = {
 }
 ```
 
-## Variant Order
+<!-- ## Variant Order -->
+## 變化模式順序
 
-If you are using the `extend` feature to enable extra variants, those variants are automatically sorted to respect a sensible default variant order.
+<!-- If you are using the `extend` feature to enable extra variants, those variants are automatically sorted to respect a sensible default variant order. -->
+如果你使用 `extend` 功能來啟用額外的變化模式，這些變化模式會自動排序，並遵守合理的預設變化模式順序。
 
-You can customize this if necessary under the `variantOrder` key:
+<!-- You can customize this if necessary under the `variantOrder` key: -->
+如果你需要客製化，可以在 `variantOrder` 定義：
 
 ```js
 // tailwind.config.js
@@ -397,11 +453,14 @@ module.exports = {
 }
 ```
 
-## Core Plugins
+<!-- ## Core Plugins -->
+## 核心插件
 
-The `corePlugins` section lets you completely disable classes that Tailwind would normally generate by default if you don't need them for your project.
+<!-- The `corePlugins` section lets you completely disable classes that Tailwind would normally generate by default if you don't need them for your project. -->
+在你的專案裡若有任何不需要使用的 Tailwind 預設產生之 class，可以在 `corePlugins` 區域完全地停用。
 
-If you don't provide any `corePlugins` configuration, all core plugins will be enabled by default:
+<!-- If you don't provide any `corePlugins` configuration, all core plugins will be enabled by default: -->
+如果你不設定 `corePlugins`，全部的插件在預設情形將會啟用。
 
 ```js
 // tailwind.config.js
@@ -410,7 +469,8 @@ module.exports = {
 }
 ```
 
-If you'd like to disable specific core plugins, provide an object for `corePlugins` that sets those plugins to `false`:
+<!-- If you'd like to disable specific core plugins, provide an object for `corePlugins` that sets those plugins to `false`: -->
+如果你想停用特定的核心插件，可以為 `corePlugins` 設定一個物件，其包含這些插件並設定為 `false`：
 
 ```js
 // tailwind.config.js
@@ -423,7 +483,8 @@ module.exports = {
 }
 ```
 
-If you'd like to safelist which core plugins should be enabled, provide an array that includes a list of the core plugins you'd like to use:
+<!-- If you'd like to safelist which core plugins should be enabled, provide an array that includes a list of the core plugins you'd like to use: -->
+如果你想設定一個安全清單，請使用陣列來包含欲被啟用的核心插件。
 
 ```js
 // tailwind.config.js
@@ -437,7 +498,8 @@ module.exports = {
 }
 ```
 
-If you'd like to disable all of Tailwind's core plugins and simply use Tailwind as a tool for processing your own custom plugins, provide an empty array:
+<!-- If you'd like to disable all of Tailwind's core plugins and simply use Tailwind as a tool for processing your own custom plugins, provide an empty array: -->
+如果你想停用全部的 Tailwind 核心插件，並將 Tailwind 當作一個處理客製化插件的工具，請給予其空陣列。
 
 ```js
 // tailwind.config.js
@@ -447,15 +509,19 @@ module.exports = {
 ```
 
 
-Here's a list of every core plugin for reference:
+<!-- Here's a list of every core plugin for reference: -->
+請參考下方列出的全部核心插件：
 
 <CorePluginReference />
 
-## Referencing in JavaScript
+<!-- ## Referencing in JavaScript -->
+## 在 JavaScript 中引用
 
-It can often be useful to reference your configuration values in your own client-side JavaScript — for example to access some of your theme values when dynamically applying inline styles in a React or Vue component.
+<!-- It can often be useful to reference your configuration values in your own client-side JavaScript — for example to access some of your theme values when dynamically applying inline styles in a React or Vue component. -->
+在用戶端的 JavaScript 引用你的配置值通常非常有用，例如在 React 或 Vue 元件中動態的取得主題的值並將其使用在行內樣式。
 
-To make this easy, Tailwind provides a `resolveConfig` helper you can use to generate a fully merged version of your configuration object:
+<!-- To make this easy, Tailwind provides a `resolveConfig` helper you can use to generate a fully merged version of your configuration object: -->
+為了使其容易使用，Tailwind 提供了 `resolveConfig` 來幫助你產生完整合併版本的配置物件：
 
 ```js
 import resolveConfig from 'tailwindcss/resolveConfig'
@@ -473,4 +539,5 @@ fullConfig.theme.boxShadow['2xl']
 // => '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
 ```
 
-Note that this will transitively pull in a lot of our build-time dependencies, resulting in bigger bundle client-side size. To avoid this, we recommend using a tool like [babel-plugin-preval](https://github.com/kentcdodds/babel-plugin-preval) to generate a static version of your configuration at build-time.
+<!-- Note that this will transitively pull in a lot of our build-time dependencies, resulting in bigger bundle client-side size. To avoid this, we recommend using a tool like [babel-plugin-preval](https://github.com/kentcdodds/babel-plugin-preval) to generate a static version of your configuration at build-time. -->
+請注意這將會過渡地引入我們建構時的依賴，造成用戶端的打包結果非常大，為避免如此，我們建議使用工具像 [babel-plugin-preval](https://github.com/kentcdodds/babel-plugin-preval)，它可以在建構時產生靜態版本的配置檔。
