@@ -1,7 +1,9 @@
 ---
-title: Customizing Colors
-shortTitle: Colors
-description: Customizing the default color palette for your project.
+title: Customizing Colors (客製化色彩)
+shortTitle: Colors (色彩)
+# description: Customizing the default color palette for your project.
+description: 為你的專案自訂預設的調色盤
+
 ---
 
 import { Heading } from '@/components/Heading'
@@ -10,7 +12,8 @@ import { TipGood, TipBad } from '@/components/Tip'
 
 ## <Heading hidden>Overview</Heading>
 
-Tailwind includes an expertly-crafted default color palette out-of-the-box that is a great starting point if you don't have your own specific branding in mind.
+<!-- Tailwind includes an expertly-crafted default color palette out-of-the-box that is a great starting point if you don't have your own specific branding in mind. -->
+Tailwind 包含一個開箱即用的專業設計預設調色盤，如果你不考慮自己的特定品牌，這是一個很好的起點。
 
 <div className="mt-10"></div>
 
@@ -27,7 +30,8 @@ Tailwind includes an expertly-crafted default color palette out-of-the-box that 
 
 <div className="mt-10"></div>
 
-But when you do need to customize your palette, you can configure your colors under the `colors` key in the `theme` section of your `tailwind.config.js` file:
+<!-- But when you do need to customize your palette, you can configure your colors under the `colors` key in the `theme` section of your `tailwind.config.js` file: -->
+但是當你需要客製化你的調色盤時，你可以在 `tailwind.config.js` 檔案的 `theme` 中的 `colors` 配置你的色彩：
 
 ```js
 // tailwind.config.js
@@ -40,13 +44,16 @@ module.exports = {
 }
 ```
 
-When it comes to building a custom color palette, you can either [curate your colors](#curating-colors) from our extensive included color palette, or [configure your own custom colors](#custom-colors) by adding your specific color values directly.
+<!-- When it comes to building a custom color palette, you can either [curate your colors](#curating-colors) from our extensive included color palette, or [configure your own custom colors](#custom-colors) by adding your specific color values directly. -->
+當涉及到建立客製化調色盤時，你可以從我們豐富的調色盤中 [策劃你的色彩](#curating-colors) 或是透過新增特定的色彩來 [配置你的客製化色彩](#custom-colors)。
 
 ---
 
-## Curating colors
+<!-- ## Curating colors -->
+## 策劃色彩
 
-If you don't have a set of completely custom colors in mind for your project, you can curate your colors from our complete color palette by importing `'tailwindcss/colors'` into your config file and choosing the colors you like.
+<!-- If you don't have a set of completely custom colors in mind for your project, you can curate your colors from our complete color palette by importing `'tailwindcss/colors'` into your config file and choosing the colors you like. -->
+如果你的專案沒有一套完整客製化的色彩，你可以透過引入 `'tailwindcss/colors'` 至你的 config 檔案並挑選你喜歡的色彩，從我們完整的調色盤中策劃你的色彩。
 
 ```js
 // tailwind.config.js
@@ -68,17 +75,22 @@ module.exports = {
 }
 ```
 
-Don't forget to include `transparent` and `current` if you'd like those available in your project.
+<!-- Don't forget to include `transparent` and `current` if you'd like those available in your project. -->
+別忘了引入 `transparent` 和 `current`，如果你想在專案中可以使用的話。
 
-Although each color has a specific name, you're encouraged to alias them however you like in your own projects. We even do this in the default configuration, aliasing `coolGray` to `gray`, `violet` to `purple`, `amber` to `yellow`, and `emerald` to `green`.
+<!-- Although each color has a specific name, you're encouraged to alias them however you like in your own projects. We even do this in the default configuration, aliasing `coolGray` to `gray`, `violet` to `purple`, `amber` to `yellow`, and `emerald` to `green`. -->
+雖然每個色彩都有一個特定的名稱，但我們鼓勵你在自己的專案中按照自己的喜好命名。我們甚至在預設配置也是這樣做的，將 `coolGray` 命名為 `gray`， `violet` 命名為 `purple`， `amber` 命名為 `yellow` 及 `emerald` 命名為 `green`。
 
-See our [complete color palette reference](#color-palette-reference) to see the colors that are available to choose from by default.
+<!-- See our [complete color palette reference](#color-palette-reference) to see the colors that are available to choose from by default. -->
+請參閱我們 [完整調色盤參考](#color-palette-reference)，查看預設可供選擇的色彩
 
 ---
 
-## Custom colors
+<!-- ## Custom colors -->
+## 客製色彩
 
-You can build a completely custom palette by adding your own color values from scratch:
+<!-- You can build a completely custom palette by adding your own color values from scratch: -->
+你可以從頭開始透過新增自己的色彩來建立一個完整客製的調色盤：
 
 ```js
 // tailwind.config.js
@@ -109,13 +121,16 @@ module.exports = {
 }
 ```
 
-By default, these colors are automatically shared by all color-driven utilities, like `textColor`, `backgroundColor`, `borderColor`, and more.
+<!-- By default, these colors are automatically shared by all color-driven utilities, like `textColor`, `backgroundColor`, `borderColor`, and more. -->
+預設情況下，這些色彩會被所有色彩驅動的功能自動共享，如 `textColor`, `backgroundColor`, `borderColor` 等。
 
 ---
 
-## Color object syntax
+<!-- ## Color object syntax -->
+## 色彩物件語法
 
-You can see above that we've defined our colors using a nested object notation where the nested keys are added to the base color name as modifiers:
+<!-- You can see above that we've defined our colors using a nested object notation where the nested keys are added to the base color name as modifiers: -->
+你可以看到，上面我們使用巢狀物件符號來定義我們的色彩，其中巢狀的鍵值作為修飾符新增到基本色彩名稱中：
 
 ```js
 // tailwind.config.js
@@ -132,11 +147,14 @@ module.exports = {
 }
 ```
 
-The different segments of the color name are combined to form class names like `bg-indigo-light`.
+<!-- The different segments of the color name are combined to form class names like `bg-indigo-light`. -->
+色彩名稱的不同部分組合成 class 名稱，如 bg-indigo-light。
 
-Like many other places in Tailwind, the `DEFAULT` key is special and means "no modifier", so this configuration would generate classes like `text-indigo` and `bg-indigo`, not `text-indigo-DEFAULT` or `bg-indigo-DEFAULT`.
+<!-- Like many other places in Tailwind, the `DEFAULT` key is special and means "no modifier", so this configuration would generate classes like `text-indigo` and `bg-indigo`, not `text-indigo-DEFAULT` or `bg-indigo-DEFAULT`. -->
+像 Tailwind 中的許多地方一樣，`DEFAULT` 鍵值是特殊的，意思是「無修飾符」，所以此配置會產生如 `text-indigo` 和 `bg-indigo` 的 classes，而不是 `text-indigo-DEFAULT` 或 `bg-indigo-DEFAULT`。
 
-You can also define your colors as simple strings instead of objects:
+<!-- You can also define your colors as simple strings instead of objects: -->
+你也可以將色彩定義為簡單的字串而不是物件：
 
 ```js
 // tailwind.config.js
@@ -151,7 +169,8 @@ module.exports = {
 }
 ```
 
-Note that when accessing colors using the `theme()` function you need to use the same notation you used to define them.
+<!-- Note that when accessing colors using the `theme()` function you need to use the same notation you used to define them. -->
+請注意，當使用 `theme()` 存取顏色時，你需要使用與定義顏色相同的符號。
 
 ```js
 // tailwind.config.js
@@ -175,9 +194,11 @@ module.exports = {
 
 ---
 
-## Extending the defaults
+<!-- ## Extending the defaults -->
+## 延伸預設值
 
-As described in the [theme documentation](/docs/theme#extending-the-default-theme), if you'd like to extend the default color palette rather than override it, you can do so using the `theme.extend.colors` section of your `tailwind.config.js` file:
+<!-- As described in the [theme documentation](/docs/theme#extending-the-default-theme), if you'd like to extend the default color palette rather than override it, you can do so using the `theme.extend.colors` section of your `tailwind.config.js` file: -->
+正如 [主題文件](/docs/theme#extending-the-default-theme) 中所述，如果你想延伸預設調色盤而不是覆蓋它，你可以使用 `tailwind.config.js` 檔案中的 `theme.extend.colors` 來實現：
 
 ```js
 // tailwind.config.js
@@ -192,10 +213,11 @@ module.exports = {
 }
 ```
 
-This will generate classes like `bg-regal-blue` in addition to all of Tailwind's default colors.
+<!-- This will generate classes like `bg-regal-blue` in addition to all of Tailwind's default colors. -->
+除了所有 Tailwind 預設的色彩，這將產生像 `bg-regal-blue` 這樣的 classes，
 
-These extensions are merged deeply, so if you'd like to add an additional shade to one of Tailwind's default colors, you can do so like this:
-
+<!-- These extensions are merged deeply, so if you'd like to add an additional shade to one of Tailwind's default colors, you can do so like this: -->
+這些延伸是深度合併的，所以如果你想在 Tailwind 的預設色彩中新增一個額外的陰影，你可以這樣做：
 
 ```js
 // tailwind.config.js
@@ -212,15 +234,19 @@ module.exports = {
 }
 ```
 
-This will add classes like `bg-blue-450` without losing existing classes like `bg-blue-400` or `bg-blue-500`.
+<!-- This will add classes like `bg-blue-450` without losing existing classes like `bg-blue-400` or `bg-blue-500`. -->
+這將新增像 `bg-blue-450` 這樣的 classes，而不會失去像 `bg-blue-400` 或 `bg-blue-500` 這樣現有的 classes。
 
 ---
 
-## Disabling a default color
+<!-- ## Disabling a default color -->
+## 禁用一個預設色彩
 
-If you'd like to disable a default color because you aren't using it in your project, the easiest approach is to just build a new color palette that doesn't include the color you'd like to disable.
+<!-- If you'd like to disable a default color because you aren't using it in your project, the easiest approach is to just build a new color palette that doesn't include the color you'd like to disable. -->
+如果你想要禁用一個因為你沒有在專案使用的預設色彩，最簡單的方法是建立一個新的調色盤，不包括你想禁用的色彩。
 
-For example, this `tailwind.config.js` file excludes teal, orange, and pink, but includes the rest of the default colors:
+<!-- For example, this `tailwind.config.js` file excludes teal, orange, and pink, but includes the rest of the default colors: -->
+例如，這個 `tailwind.config.js` 檔案不包括 teal, orange 和 pink，但包括其餘的預設色彩。
 
 ```js
 // tailwind.config.js
@@ -242,15 +268,19 @@ module.exports = {
 }
 ```
 
-Alternatively, you could leave the color palette untouched and rely on [tree-shaking unused styles](/docs/optimizing-for-production) to remove the colors you're not using.
+<!-- Alternatively, you could leave the color palette untouched and rely on [tree-shaking unused styles](/docs/optimizing-for-production) to remove the colors you're not using. -->
+此外，你也可以不調整調色盤，依靠 [tree-shaking 未使用的樣式](/docs/optimizing-for-production) 來移除你不使用的色彩。
 
 ---
 
-## Naming your colors
+<!-- ## Naming your colors -->
+## 為你的色彩命名
 
-Tailwind uses literal color names _(like red, green, etc.)_ and a numeric scale _(where 50 is light and 900 is dark)_ by default. This ends up being fairly practical for most projects, but there are good reasons to use other naming conventions as well.
+<!-- Tailwind uses literal color names _(like red, green, etc.)_ and a numeric scale _(where 50 is light and 900 is dark)_ by default. This ends up being fairly practical for most projects, but there are good reasons to use other naming conventions as well. -->
+Tailwind 使用字面的色彩名稱 _(像是紅色、綠色等)_ 和一個預設的數字比例 _(其中50為淺色、900為深色)_。這對大多數專案來說是相當實用的，但也有充分的理由使用其他命名規範。
 
-For example, if you're working on a project that needs to support multiple themes, it might make sense to use more abstract names like `primary` and `secondary`:
+<!-- For example, if you're working on a project that needs to support multiple themes, it might make sense to use more abstract names like `primary` and `secondary`: -->
+例如，如果你正在做一個需要支援多種主題的專案，那麼使用像 `primary` 和 `secondary` 這樣更抽象的名稱可能是有道理的。
 
 ```js
 // tailwind.config.js
@@ -265,7 +295,8 @@ module.exports = {
 }
 ```
 
-You can configure those colors explicitly like we have above, or you can pull in colors from our complete color palette and alias them:
+<!-- You can configure those colors explicitly like we have above, or you can pull in colors from our complete color palette and alias them: -->
+你可以像我們上面那樣明確地配置這些顏色，也可以從我們完整的調色盤中新增顏色並為它們取個別名。
 
 ```js
 // tailwind.config.js
@@ -282,7 +313,8 @@ module.exports = {
 }
 ```
 
-You could even define these colors using CSS custom properties (variables) to make it easy to switch themes on the client:
+<!-- You could even define these colors using CSS custom properties (variables) to make it easy to switch themes on the client: -->
+你甚至可以用 CSS 客製化屬性 (變數) 來定義這些顏色，以便在用戶端輕易地切換主題。
 
 ```js
 // tailwind.config.js
@@ -310,22 +342,27 @@ module.exports = {
 @tailwind utilities;
 ```
 
-*Note that colors defined using custom properties will not work with color opacity utilities like `bg-opacity-50` without additional configuration. See [this example repository](https://github.com/adamwathan/tailwind-css-variable-text-opacity-demo) for more information on how to make this work.*
-
-
----
-
-## Generating colors
-
-A common question we get is "how do I generate the 50–900 shades of my own custom colors?".
-
-Bad news, color is complicated and despite trying dozens of different tools, we've yet to find one that does a good job generating these sorts of color palettes. We picked all of Tailwind's default colors by hand, meticulously balancing them by eye and testing them in real designs to make sure we were happy with them.
+<!-- *Note that colors defined using custom properties will not work with color opacity utilities like `bg-opacity-50` without additional configuration. See [this example repository](https://github.com/adamwathan/tailwind-css-variable-text-opacity-demo) for more information on how to make this work.* -->
+*請注意，如果沒有其他的配置，使用客製化屬性的色彩將無法與色彩不透明功能一起使用，像是 `bg-opacity-50`。更多有關如何進行此工作的資訊，請參考 [此範例 repository](https://github.com/adamwathan/tailwind-css-variable-text-opacity-demo)。*
 
 ---
 
-## Color palette reference
+<!-- ## Generating colors -->
+## 產生顏色
 
-This is a list of all of the colors available when you import `tailwindcss/colors` into your `tailwind.config.js` file.
+<!-- A common question we get is "how do I generate the 50–900 shades of my own custom colors?". -->
+我們常見的一個問題是「如何產生自己客製色彩的 50 - 900 陰影？」
+
+<!-- Bad news, color is complicated and despite trying dozens of different tools, we've yet to find one that does a good job generating these sorts of color palettes. We picked all of Tailwind's default colors by hand, meticulously balancing them by eye and testing them in real designs to make sure we were happy with them. -->
+壞消息是，色彩是複雜的，儘管嘗試了幾十種不同的工具，我們還沒有找到一個能很好產生這種調色盤的工具。我們手工挑選了所有 Tailwind 的預設色彩，透過肉眼仔細地平衡它們，並在實際設計中對其進行測試，以確保我們對它們感到滿意。
+
+---
+
+<!-- ## Color palette reference -->
+## 調色盤參考
+
+<!-- This is a list of all of the colors available when you import `tailwindcss/colors` into your `tailwind.config.js` file. -->
+當你把 `tailwindcss/colors` 引入到 `tailwind.config.js` 檔案中時，這是所有可以使用的色彩列表。
 
 ```js
 // tailwind.config.js
@@ -346,7 +383,8 @@ module.exports = {
 }
 ```
 
-Although each color has a specific name, you're encouraged to alias them however you like in your own projects.
+<!-- Although each color has a specific name, you're encouraged to alias them however you like in your own projects. -->
+雖然每種色彩都有一個特定的名稱，但我們鼓勵你在自己的專案中按照自己的喜好命名。
 
 <div className="mt-10"></div>
 
