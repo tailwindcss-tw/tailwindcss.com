@@ -151,7 +151,7 @@ module.exports = {
 色彩名稱的不同部分組合成 class 名稱，如 bg-indigo-light。
 
 <!-- Like many other places in Tailwind, the `DEFAULT` key is special and means "no modifier", so this configuration would generate classes like `text-indigo` and `bg-indigo`, not `text-indigo-DEFAULT` or `bg-indigo-DEFAULT`. -->
-像 Tailwind 中的許多地方一樣，`DEFAULT` 鍵值是特殊的，意思是「無修飾符」，所以此配置會產生如 `text-indigo` 和 `bg-indigo` 的 classes，而不是 `text-indigo-DEFAULT` 或 `bg-indigo-DEFAULT`。
+像 Tailwind 中的許多地方一樣，`DEFAULT` 鍵值是特殊的，意思是「無修飾符」，所以此配置會產生如 `text-indigo` 和 `bg-indigo` 的 class，而不是 `text-indigo-DEFAULT` 或 `bg-indigo-DEFAULT`。
 
 <!-- You can also define your colors as simple strings instead of objects: -->
 你也可以將色彩定義為簡單的字串而不是物件：
@@ -214,7 +214,7 @@ module.exports = {
 ```
 
 <!-- This will generate classes like `bg-regal-blue` in addition to all of Tailwind's default colors. -->
-除了所有 Tailwind 預設的色彩，這將產生像 `bg-regal-blue` 這樣的 classes，
+除了所有 Tailwind 預設的色彩，這將產生像 `bg-regal-blue` 這樣的 class，
 
 <!-- These extensions are merged deeply, so if you'd like to add an additional shade to one of Tailwind's default colors, you can do so like this: -->
 這些延伸是深度合併的，所以如果你想在 Tailwind 的預設色彩中新增一個額外的陰影，你可以這樣做：
@@ -235,18 +235,18 @@ module.exports = {
 ```
 
 <!-- This will add classes like `bg-blue-450` without losing existing classes like `bg-blue-400` or `bg-blue-500`. -->
-這將新增像 `bg-blue-450` 這樣的 classes，而不會失去像 `bg-blue-400` 或 `bg-blue-500` 這樣現有的 classes。
+這將新增像 `bg-blue-450` 這樣的 class，而不會失去像 `bg-blue-400` 或 `bg-blue-500` 這樣現有的 class。
 
 ---
 
 <!-- ## Disabling a default color -->
-## 禁用一個預設色彩
+## 停用一個預設色彩
 
 <!-- If you'd like to disable a default color because you aren't using it in your project, the easiest approach is to just build a new color palette that doesn't include the color you'd like to disable. -->
-如果你想要禁用一個因為你沒有在專案使用的預設色彩，最簡單的方法是建立一個新的調色盤，不包括你想禁用的色彩。
+如果你想要停用專案中沒有使用到的預設色彩，最簡單的方法是建立一個新的調色盤，並且不要包含你不打算使用的色彩。
 
 <!-- For example, this `tailwind.config.js` file excludes teal, orange, and pink, but includes the rest of the default colors: -->
-例如，這個 `tailwind.config.js` 檔案不包括 teal, orange 和 pink，但包括其餘的預設色彩。
+例如，這個 `tailwind.config.js` 檔案不包括 teal、orange 和 pink，但包括其餘的預設色彩。
 
 ```js
 // tailwind.config.js
