@@ -1,7 +1,8 @@
 ---
-title: Configuring Variants
-shortTitle: Variants
-description: Configuring which utility variants are enabled in your project.
+title: 配置變化模式 (Configuring Variants)
+shortTitle: 變化模式 (Variants)
+# description: Configuring which utility variants are enabled in your project.
+description: 為你的專案配置啟用哪些功能變化模式。
 ---
 
 import { Heading } from '@/components/Heading'
@@ -10,7 +11,8 @@ import { TipGood, TipBad } from '@/components/Tip'
 
 ## <Heading hidden>Overview</Heading>
 
-The `variants` section of your `tailwind.config.js` file is where you control which variants should be enabled for each core plugin:
+<!-- The `variants` section of your `tailwind.config.js` file is where you control which variants should be enabled for each core plugin: -->
+在 `tailwind.config.js` 檔案中的 `variants` 是你控制每個核心插件應該啟用哪些變化模式的地方。
 
 ```js
 // tailwind.config.js
@@ -27,10 +29,13 @@ module.exports = {
 }
 ```
 
-Each property is a core plugin name pointing to an array of variants to generate for that plugin.
+<!-- Each property is a core plugin name pointing to an array of variants to generate for that plugin. -->
+每個屬性都是一個核心插件名稱，指向要為該插件產生的變化模式陣列。
 
-The following variants are supported out of the box:
+<!-- The following variants are supported out of the box: -->
+以下為支援開箱即用的變化模式：
 
+<!-- 
 | Variant | Description |
 | --- | --- |
 | `responsive` | Responsive variants like `sm`, `md`, `lg`, and `xl`. |
@@ -51,21 +56,45 @@ The following variants are supported out of the box:
 | `focus-visible` | Targets the `focus-visible` pseudo-class. |
 | `active` | Targets the `active` pseudo-class. |
 | `disabled` | Targets the `disabled` pseudo-class. |
+-->
 
-For more information about how variants work, read our documentation on [responsive variants](/docs/responsive-design), [dark mode variants](/docs/dark-mode), and [hover, focus and other state variants](/docs/hover-focus-and-other-states).
+| 變化模式 | 描述 |
+| --- | --- |
+| `responsive` | 響應式變化模式，如 `sm`、`md`、`lg` 和 `xl`。 |
+| `dark` | 觸發深色模式。 |
+| `motion-safe` | 觸發 `prefers-reduced-motion: no-preference` 媒體查詢 (media query)。 |
+| `motion-reduce` | 觸發 `prefers-reduced-motion: reduce` 媒體查詢 (media query)。 |
+| `first` | 觸發 `first-child` pseudo-class。 |
+| `last` | 觸發 `last-child` pseudo-class。 |
+| `odd` | 觸發 `odd-child` pseudo-class。 |
+| `even` | 觸發 `even-child` pseudo-class。 |
+| `visited` | 觸發 `visited` pseudo-class。 |
+| `checked` | 觸發 `checked` pseudo-class。 |
+| `group-hover` | 當被標記的父層 (parent) 符合 `hover` pseudo-class 時，觸發元素。 |
+| `group-focus` | 當被標記的父層 (parent) 符合 `focus` pseudo-class 時，觸發元素。 |
+| `focus-within` | 觸發 `focus-within` pseudo-class。 |
+| `hover` | 觸發 `hover` pseudo-class。 |
+| `focus` | 觸發 `focus` pseudo-class。 |
+| `focus-visible` | 觸發 `focus-visible` pseudo-class。 |
+| `active` | 觸發 `active` pseudo-class。 |
+| `disabled` | 觸發 `disabled` pseudo-class。 |
+
+<!-- For more information about how variants work, read our documentation on [responsive variants](/docs/responsive-design), [dark mode variants](/docs/dark-mode), and [hover, focus and other state variants](/docs/hover-focus-and-other-states). -->
+更多有關變化模式如何作用的資訊，請閱讀我們的文件 [響應式變化模式](/docs/responsive-design)、[深色模式變化模式](/docs/dark-mode) 和 [hover、focus 和其他狀態變化模式](/docs/hover-focus-and-other-states)。
 
 ---
 
+<!-- ## Enabling extra variants -->
+## 啟用額外變化模式
 
-## Enabling extra variants
-
-If you'd like to enable extra variants for a plugin in addition to the defaults, you can configure your variants using the `extend` keyword, similar to how you can use extend inside of the `theme` section:
+<!-- If you'd like to enable extra variants for a plugin in addition to the defaults, you can configure your variants using the `extend` keyword, similar to how you can use extend inside of the `theme` section: -->
+如果你想為插件啟用除了預設值以外的變化模式，你可以使用 `extend` 配置你的變化模式，如同你如何在 `theme` 使用 `extend`。
 
 ```js
 // tailwind.config.js
 module.exports = {
   variants: {
-    // The 'active' variant will be generated in addition to the defaults
+    // 除預設值外，還將產生 'active' 變化模式
     extend: {
       backgroundColor: ['active']
     }
@@ -73,31 +102,38 @@ module.exports = {
 }
 ```
 
-Because [the order of variants is important](/docs/configuring-variants#ordering-variants), any variants added under the `extend` key are automatically ordered for you using a sensible default variant order. You can customize this order using the [variantOrder](/docs/configuration#variant-order) option if necessary.
+<!-- Because [the order of variants is important](/docs/configuring-variants#ordering-variants), any variants added under the `extend` key are automatically ordered for you using a sensible default variant order. You can customize this order using the [variantOrder](/docs/configuration#variant-order) option if necessary. -->
+因為 [變化模式的順序很重要](/docs/configuring-variants#ordering-variants)，在 `extend` 下新增的任何變化模式都會使用合理的預設變化模式順序自動為你排序。若有需要，你可以選擇使用 [variantOrder](/docs/configuration#variant-order) 客製化順序。
 
 ---
 
-## Overriding default variants
+<!-- ## Overriding default variants -->
+## 覆蓋預設變化模式
 
-Any variants configured directly under the `variants` key will **override** the default variants for that plugin.
+<!-- Any variants configured directly under the `variants` key will **override** the default variants for that plugin. -->
+任何在 `variants` 下直接配置的變化模式，將**覆蓋**該插件的預設變化模式。
 
 ```js
 // tailwind.config.js
 module.exports = {
   variants: {
-    // Only 'active' variants will be generated
+    // 只會產生 'active' 變化模式
     backgroundColor: ['active'],
   },
 }
 ```
 
-When overriding the default variants, make sure you always specify _all_ the variants you'd like to enable, not just the new ones you'd like to add.
+<!-- When overriding the default variants, make sure you always specify _all_ the variants you'd like to enable, not just the new ones you'd like to add. -->
+當覆蓋預設變化模式時，確保你總是指定 _所有_ 你想啟用的變化模式，而不僅僅是你想新增的新變化模式。
 
-### Ordering variants
+<!-- ### Ordering variants -->
+### 排序變化模式
 
-It's important to note that when overriding variants, **variants are generated in the order you specify them**, so variants at the end of the list will take precedence over variants at the beginning of the list.
+<!-- It's important to note that when overriding variants, **variants are generated in the order you specify them**, so variants at the end of the list will take precedence over variants at the beginning of the list. -->
+值得注意的是，當覆蓋變化模式時，**變化模式會按照你指定的順序生成**，因此在清單最後的變化模式將優先於在清單一開始的變化模式。
 
-For example, here `focus` variants have the highest precedence for `backgroundColor` utilities, but `hover` variants have the highest precedence for `borderColor` utilities:
+<!-- For example, here `focus` variants have the highest precedence for `backgroundColor` utilities, but `hover` variants have the highest precedence for `borderColor` utilities: -->
+例如，在這裡 `focus` 變化模式於 `backgroundColor` 功能中具有最高優先權，但於 `borderColor` 功能中則是 `hover` 變化模式具有最高優先權。
 
 ```js
 // tailwind.config.js
@@ -110,7 +146,7 @@ module.exports = {
 ```
 
 ```css
-/* Generated CSS */
+/* 產生 CSS */
 
 .bg-black { background-color: #000 }
 .bg-white { background-color: #fff }
@@ -137,25 +173,32 @@ module.exports = {
 /* ... */
 ```
 
-This means that given the following HTML:
+<!-- This means that given the following HTML: -->
+這意味著，給定以下 HTML：
 
 ```html
 <input class="focus:bg-white hover:bg-black focus:border-white hover:border-black">
 ```
 
-...if the input was hovered _and_ focused at the same time, the background would be white but the border would be black.
+<!-- ...if the input was hovered _and_ focused at the same time, the background would be white but the border would be black. -->
+...如果輸入框同時 hover _和_ focus，背景將是白色的，但邊框將是黑色的。
 
-Generating variants in order this way gives you the most flexibility as an end-user, but it's also a sharp tool and can have unintended consequences if you aren't careful. We recommend [enabling extra variants](#enabling-extra-variants) instead of overriding the defaults whenever possible, and using this feature only as an escape hatch.
+<!-- Generating variants in order this way gives you the most flexibility as an end-user, but it's also a sharp tool and can have unintended consequences if you aren't careful. We recommend [enabling extra variants](#enabling-extra-variants) instead of overriding the defaults whenever possible, and using this feature only as an escape hatch. -->
+作為終端使用者，按順序產生變化模式能為你帶來最大的彈性，但它也是一個利器，如果你不小心，可能會產生意想不到的後果。我們建議 [啟用額外變化模式](#enabling-extra-variants) 而不是盡可能地覆蓋預設值，並且只把此功能視為應急的辦法。
 
 ---
 
-## Special variants
+<!-- ## Special variants -->
+## 特殊變化模式
 
-### Responsive
+<!-- ### Responsive -->
+### 響應式
 
-The `responsive` variant is a special case in Tailwind and is _not_ impacted by the order you list in your variants configuration.
+<!-- The `responsive` variant is a special case in Tailwind and is _not_ impacted by the order you list in your variants configuration. -->
+在 Tailwind 中，`responsive` 變化模式是一種特殊的情況，並且 _不會_ 受到你在變化模式配置中列出的順序的影響。
 
-This is because the `responsive` variant automatically _stacks_ with other variants, meaning that if you specify both `responsive` and `hover` variants for a utility, Tailwind will generate _responsive hover_ variants as well:
+<!-- This is because the `responsive` variant automatically _stacks_ with other variants, meaning that if you specify both `responsive` and `hover` variants for a utility, Tailwind will generate _responsive hover_ variants as well: -->
+這是因為 `responsive` 變化模式會自動與其他變化模式 _堆疊_ 在一起，這意味著如果你為一個功能指定了  `responsive` 和 `hover` 變化模式，Tailwind 也會產生 _responsive hover_ 變化模式。
 
 ```js
 // tailwind.config.js
@@ -167,23 +210,33 @@ module.exports = {
 }
 ```
 
-Responsive variants are grouped together and inserted at the end of your stylesheet by default to avoid specificity issues, regardless of where `responsive` appears in your `variants` list.
+<!-- Responsive variants are grouped together and inserted at the end of your stylesheet by default to avoid specificity issues, regardless of where `responsive` appears in your `variants` list. -->
+不論 `responsive` 出現在 `variants` 清單中的哪裡，響應式變化模式都會被群組在一起，並且預設插入樣式表的最後，以避免特異性問題。
 
-If you'd like to customize this behavior for whatever reason, you can use the [@tailwind screens](/docs/functions-and-directives#tailwind) directive to specify where responsive variants should be inserted.
+<!-- If you'd like to customize this behavior for whatever reason, you can use the [@tailwind screens](/docs/functions-and-directives#tailwind) directive to specify where responsive variants should be inserted. -->
+如果你基於任何原因想要客製化此行為，你可以使用 [@tailwind screens](/docs/functions-and-directives#tailwind) 指令來指定響應式變化模式應該插入的位置。
 
-### Dark, motion-safe, and motion-reduce
+<!-- ### Dark, motion-safe, and motion-reduce -->
+### Dark、motion-safe 和 motion-reduce
 
-The `dark`, `motion-safe`, and `motion-reduce` variants also stack with other variants, but unlike `responsive`, they stack in the same "slot", so you can combine them with both `responsive` and simple state variants, but not with each other.
+<!-- The `dark`, `motion-safe`, and `motion-reduce` variants also stack with other variants, but unlike `responsive`, they stack in the same "slot", so you can combine them with both `responsive` and simple state variants, but not with each other. -->
+`dark`、`motion-safe` 和 `motion-reduce` 變化模式也會與其他變化模式堆疊，但與 `responsive`
+不同的是，它們疊加在同一個「slot (插槽)」中，所以你可以將它們與 `responsive` 和簡單狀態變化模式結合，但不能互相結合。
 
-The order of these variants matter relative to each other, but not relative to other variants. There is just about no situation imaginable where these would conflict with each other in practice, so this ends up being a non-issue anyways.
+<!-- The order of these variants matter relative to each other, but not relative to other variants. There is just about no situation imaginable where these would conflict with each other in practice, so this ends up being a non-issue anyways. -->
+這些變化模式的順序對於它們彼此之間來說很重要，但對於其他變化模式來說不重要。在實際上，幾乎無法想像這些變化模式會有相互衝突的情況，所以無論如何，這最終都不會成為問題。
 
-You can include these variants in any order in your `variants` configuration and never notice the difference.
+<!-- You can include these variants in any order in your `variants` configuration and never notice the difference. -->
+你可以在 `variants` 配置中，以任何順序引入這些變化模式，並且永遠不會注意到它們之間的差異。
 
-### Default
+<!-- ### Default -->
+### 預設值
 
-You can use the special `DEFAULT` variant to control where the normal, non-prefixed version of a utility is generated relative to the other variants.
+<!-- You can use the special `DEFAULT` variant to control where the normal, non-prefixed version of a utility is generated relative to the other variants. -->
+相較於其他變化模式，你可以使用特殊的 `DEFAULT` 變化模式來控制產生一個普通且無前綴版本的功能。
 
-This is an advanced feature and only really useful if you have a custom variant (like `children` in the example below) that should have a lower precedence than the normal version of a utility.
+<!-- This is an advanced feature and only really useful if you have a custom variant (like `children` in the example below) that should have a lower precedence than the normal version of a utility. -->
+這是一個進階功能，只有當你有客製化變化模式 (像是下方範例中的 `children`)，它的優先級低於普通版本的功能時，此功能才真正有用。
 
 ```js
 // tailwind.config.js
@@ -195,7 +248,7 @@ module.exports = {
 ```
 
 ```css
-/* Generated CSS */
+/* 產生 CSS */
 
 .children\:bg-black > * { background-color: #000; }
 .children\:bg-white > * { background-color: #fff; }
@@ -213,15 +266,19 @@ module.exports = {
 /* ... */
 ```
 
-Learn more about creating custom variants in the [variant plugin documentation](/docs/plugins#adding-variants).
+<!-- Learn more about creating custom variants in the [variant plugin documentation](/docs/plugins#adding-variants). -->
+在 [變化模式插件文件](/docs/plugins#adding-variants) 中，了解更多關於新增客製化變化模式的資訊。
 
 ---
 
-## Using custom variants
+<!-- ## Using custom variants -->
+## 使用客製化變化模式
 
-If you've written or installed a [plugin](/docs/plugins) that adds a new variant, you can enable that variant by including it in your variants configuration just like if it were a built-in variant.
+<!-- If you've written or installed a [plugin](/docs/plugins) that adds a new variant, you can enable that variant by including it in your variants configuration just like if it were a built-in variant. -->
+如果你撰寫或安裝 [插件](/docs/plugins)，這個插件增加了一個新的變化模式，你可以在你的變化模式配置中引入它來啟用這個變化模式，就像是個內建變化模式一樣。
 
-For example, the [tailwindcss-interaction-variants plugin](https://github.com/benface/tailwindcss-interaction-variants) adds a `group-disabled` variant (among others):
+<!-- For example, the [tailwindcss-interaction-variants plugin](https://github.com/benface/tailwindcss-interaction-variants) adds a `group-disabled` variant (among others): -->
+例如，[tailwindcss-interaction-variants 插件](https://github.com/benface/tailwindcss-interaction-variants) 增加了一個 `group-disabled` 變化模式 (其中之一)：
 
 ```js
 // tailwind.config.js
@@ -235,11 +292,14 @@ For example, the [tailwindcss-interaction-variants plugin](https://github.com/be
 }
 ```
 
-Learn more about creating custom variants in the [variant plugin documentation](/docs/plugins#adding-variants).
+<!-- Learn more about creating custom variants in the [variant plugin documentation](/docs/plugins#adding-variants). -->
+在 [變化模式插件文件](/docs/plugins#adding-variants) 中，了解更多關於新增客製化變化模式的資訊。
 
-### Ordering custom variants
+<!-- ### Ordering custom variants -->
+### 排序客製化變化模式
 
-If you'd like to specify a default sort position for a custom variant, override your `variantOrder` to include the custom variant:
+<!-- If you'd like to specify a default sort position for a custom variant, override your `variantOrder` to include the custom variant: -->
+如果你想要為客製化變化模式指定一個預設的排序位置，覆蓋你的 `variantOrder` 來包含客製化變化模式。
 
 ```js
 // tailwind.config.js
@@ -259,7 +319,7 @@ module.exports = {
     'focus',
     'focus-visible',
     'active',
-    'group-disabled', // Custom variant
+    'group-disabled', // 客製化變化模式
     'disabled',
   ],
   variants: {
@@ -270,12 +330,15 @@ module.exports = {
 }
 ```
 
-You'll need to specify the entire list when overriding the `variantOrder` to include any custom variants.
+<!-- You'll need to specify the entire list when overriding the `variantOrder` to include any custom variants. -->
+你需要在覆蓋 `variantOrder` 時指定整個清單，來包含任何客製化變化模式。
 
 ---
 
-## Default variants reference
+<!-- ## Default variants reference -->
+## 預設變化模式參考
 
-Here is a complete reference of Tailwind's default variants configuration, which can be useful when you'd like to add a new variant while preserving the defaults.
+<!-- Here is a complete reference of Tailwind's default variants configuration, which can be useful when you'd like to add a new variant while preserving the defaults. -->
+這是 Tailwind 預設變化模式配置的完整參考，當你想新增一個新的變化模式且同時保留預設值時，它會很有用。
 
 <DefaultVariantsConfig />
