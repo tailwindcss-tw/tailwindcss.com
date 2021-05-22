@@ -1,8 +1,8 @@
 ---
-title: Customizing Colors (客製化色彩)
-shortTitle: Colors (色彩)
+title: 客製化色彩 (Customizing Colors)
+shortTitle: 色彩 (Colors)
 # description: Customizing the default color palette for your project.
-description: 為你的專案自訂預設的調色盤
+description: 為你的專案自訂預設的調色盤。
 
 ---
 
@@ -38,7 +38,7 @@ Tailwind 包含一個開箱即用的專業設計預設調色盤，如果你不�
 module.exports = {
   theme: {
     colors: {
-      // Configure your color palette here
+      // 在這裡配置你的調色盤
     }
   }
 }
@@ -122,7 +122,7 @@ module.exports = {
 ```
 
 <!-- By default, these colors are automatically shared by all color-driven utilities, like `textColor`, `backgroundColor`, `borderColor`, and more. -->
-預設情況下，這些色彩會被所有色彩驅動的功能自動共享，如 `textColor`, `backgroundColor`, `borderColor` 等。
+預設情況下，這些色彩會被所有色彩驅動的功能自動共享，如 `textColor`、`backgroundColor`、`borderColor` 等。
 
 ---
 
@@ -214,7 +214,7 @@ module.exports = {
 ```
 
 <!-- This will generate classes like `bg-regal-blue` in addition to all of Tailwind's default colors. -->
-除了所有 Tailwind 預設的色彩，這將產生像 `bg-regal-blue` 這樣的 class，
+除了所有 Tailwind 預設的色彩，這將產生像 `bg-regal-blue` 這樣的 class。
 
 <!-- These extensions are merged deeply, so if you'd like to add an additional shade to one of Tailwind's default colors, you can do so like this: -->
 這些延伸是深度合併的，所以如果你想在 Tailwind 的預設色彩中新增一個額外的陰影，你可以這樣做：
@@ -277,7 +277,7 @@ module.exports = {
 ## 為你的色彩命名
 
 <!-- Tailwind uses literal color names _(like red, green, etc.)_ and a numeric scale _(where 50 is light and 900 is dark)_ by default. This ends up being fairly practical for most projects, but there are good reasons to use other naming conventions as well. -->
-Tailwind 使用字面的色彩名稱 _(像是紅色、綠色等)_ 和一個預設的數字比例 _(其中50為淺色、900為深色)_。這對大多數專案來說是相當實用的，但也有充分的理由使用其他命名規範。
+Tailwind 使用字面的色彩名稱 _(像是紅色、綠色等)_ 和一個預設的數字比例 _(其中 50 為淺色、900 為深色)_。這對大多數專案來說是相當實用的，但也有充分的理由使用其他命名規範。
 
 <!-- For example, if you're working on a project that needs to support multiple themes, it might make sense to use more abstract names like `primary` and `secondary`: -->
 例如，如果你正在做一個需要支援多種主題的專案，那麼使用像 `primary` 和 `secondary` 這樣更抽象的名稱可能是有道理的。
@@ -351,7 +351,7 @@ module.exports = {
 ## 產生顏色
 
 <!-- A common question we get is "how do I generate the 50–900 shades of my own custom colors?". -->
-我們常見的一個問題是「如何產生自己客製色彩的 50 - 900 陰影？」
+我們常見的一個問題是「如何產生自己客製色彩的 50-900 陰影？」
 
 <!-- Bad news, color is complicated and despite trying dozens of different tools, we've yet to find one that does a good job generating these sorts of color palettes. We picked all of Tailwind's default colors by hand, meticulously balancing them by eye and testing them in real designs to make sure we were happy with them. -->
 壞消息是，色彩是複雜的，儘管嘗試了幾十種不同的工具，我們還沒有找到一個能很好產生這種調色盤的工具。我們手工挑選了所有 Tailwind 的預設色彩，透過肉眼仔細地平衡它們，並在實際設計中對其進行測試，以確保我們對它們感到滿意。
@@ -371,7 +371,7 @@ const colors = require('tailwindcss/colors')
 module.exports = {
   theme: {
     colors: {
-      // Build your palette here
+      // 在這裡建立你的調色盤
       transparent: 'transparent',
       current: 'currentColor',
       gray: colors.trueGray,
