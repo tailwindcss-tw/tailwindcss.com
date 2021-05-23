@@ -1,6 +1,7 @@
 ---
 title: "Container"
-description: "A component for fixing an element's width to the current breakpoint."
+# description: "A component for fixing an element's width to the current breakpoint."
+description: "根據當前斷點固定元素(elemnet)的寬度的元件"
 ---
 
 import { defaultConfig } from '@/utils/defaultConfig'
@@ -54,11 +55,14 @@ export const classes = (
 
 ## Usage
 
-The `container` class sets the `max-width` of an element to match the `min-width` of the current breakpoint. This is useful if you'd prefer to design for a fixed set of screen sizes instead of trying to accommodate a fully fluid viewport.
+<!-- The `container` class sets the `max-width` of an element to match the `min-width` of the current breakpoint. This is useful if you'd prefer to design for a fixed set of screen sizes instead of trying to accommodate a fully fluid viewport. -->
+`container` class設定元素的`max-width`來匹配當前斷點的`min-width`。這對於想要依照固定螢幕尺寸而非動態
 
-Note that unlike containers you might have used in other frameworks, **Tailwind's container does not center itself automatically and does not have any built-in horizontal padding.**
+<!-- Note that unlike containers you might have used in other frameworks, **Tailwind's container does not center itself automatically and does not have any built-in horizontal padding.** -->
+請注意這可能跟你以往所使用的框架的 container不一樣。 **Tailwind的 container 不會自動置中，也沒有內置的水瓶內間距。**
 
-To center a container, use the `mx-auto` utility:
+<!-- To center a container, use the `mx-auto` utility: -->
+使用`mx-auto`功能來置中 container。
 
 ```html
 <div class="container **mx-auto**">
@@ -66,7 +70,8 @@ To center a container, use the `mx-auto` utility:
 </div>
 ```
 
-To add horizontal padding, use the `px-{size}` utilities:
+<!-- To add horizontal padding, use the `px-{size}` utilities: -->
+使用`px-{size}`功能來增加水平內間距。
 
 ```html
 <div class="container mx-auto **px-4**">
@@ -74,11 +79,14 @@ To add horizontal padding, use the `px-{size}` utilities:
 </div>
 ```
 
-If you'd like to center your containers by default or include default horizontal padding, see the [customization options](#customizing) below.
+<!-- If you'd like to center your containers by default or include default horizontal padding, see the [customization options](#customizing) below. -->
+假如你喜歡使用預設的方式來置中或者增加預設水平內間距，可以查看下面的[#自定義選項](#customizing)。
 
-## Responsive variants
+<!-- ## Responsive variants -->
+## 響應式變化模式
 
-The `container` class also includes responsive variants like `md:container` by default that allow you to make something behave like a container at only a certain breakpoint and up:
+<!-- The `container` class also includes responsive variants like `md:container` by default that allow you to make something behave like a container at only a certain breakpoint and up: -->
+`container` class也包含響應式變化模式。像是預設的`md:container`能讓你的某些東西在某個斷點或者某些斷點表現得像一個 container。
 
 ```html
 <!-- Full-width fluid until the `md` breakpoint, then lock to container -->
@@ -87,11 +95,14 @@ The `container` class also includes responsive variants like `md:container` by d
 </div>
 ```
 
-## Customizing
+<!-- ## Customizing -->
+## 客製化
 
-### Centering by default
+<!-- ### Centering by default -->
+### 預設置中
 
-To center containers by default, set the `center` option to `true` in the `theme.container` section of your config file:
+<!-- To center containers by default, set the `center` option to `true` in the `theme.container` section of your config file: -->
+預設居中 container。在你的config文件裡`theme.container`中設定`center`選項為`true`。
 
 ```js
 // tailwind.config.js
@@ -104,9 +115,11 @@ module.exports = {
 }
 ```
 
-### Horizontal padding
+<!-- ### Horizontal padding -->
+### 水瓶內間距
 
-To add horizontal padding by default, specify the amount of padding you'd like using the `padding` option in the `theme.container` section of your config file:
+<!-- To add horizontal padding by default, specify the amount of padding you'd like using the `padding` option in the `theme.container` section of your config file: -->
+預設加上水平內間距，請在你的config文件裡`theme.container`中設定你所想要的數值在`padding`選項。
 
 ```js
 // tailwind.config.js
@@ -119,7 +132,8 @@ module.exports = {
 }
 ```
 
-If you want to specify a different padding amount for each breakpoint, use an object to provide a `default` value and any breakpoint-specific overrides:
+<!-- If you want to specify a different padding amount for each breakpoint, use an object to provide a `default` value and any breakpoint-specific overrides: -->
+假如你想在不同的斷點上設定不同的內間距，可以使用一個物件來在不同的斷點覆蓋`default`的值。
 
 ```js
 // tailwind.config.js
@@ -138,9 +152,12 @@ module.exports = {
 };
 ```
 
-### Disabling responsive variants
+<!-- ### Disabling responsive variants -->
+### 停用響應式變化模式
 
-If you'd like to disable the responsive variants, you can do so using by setting `container` to an empty array in the `variants` section of your `tailwind.config.js` file:
+<!-- If you'd like to disable the responsive variants, you can do so using by setting `container` to an empty array in the `variants` section of your `tailwind.config.js` file: -->
+倘若你想停用響應式變化模式，可以在你的`tailwind.config.js`文件裡的`variants`物件內的`container`設定為空陣列。
+
 
 ```diff-js
   // tailwind.config.js
@@ -152,9 +169,11 @@ If you'd like to disable the responsive variants, you can do so using by setting
   }
 ```
 
-### Disabling entirely
+<!-- ### Disabling entirely -->
+### 全部停用
 
-If you don't plan to use the `container` class in your project, you can disable it entirely by setting the `container` property to `false` in the `corePlugins` section of your config file:
+<!-- If you don't plan to use the `container` class in your project, you can disable it entirely by setting the `container` property to `false` in the `corePlugins` section of your config file: -->
+如果你沒計劃在你的專案裡使用`container` class，你可以在你的 config文件裡的 `corePlugins`物件內的 `container` 屬性設定為`false`來停用。
 
 ```diff-js
   // tailwind.config.js
