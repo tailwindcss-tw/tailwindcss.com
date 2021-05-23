@@ -131,6 +131,27 @@ localStorage.removeItem('theme')
 
 同樣的，你可以根據自己的心情喜好去管理它 ~~(就看你今天爽不爽這樣)~~，甚至是你想要把每個使用者的偏好設定都存在你伺服器的資料庫，然後再讀出來設定頁面，都隨便你。
 
+### Specificity considerations
+
+When using the `class` strategy, the specificity of dark mode utilities will be higher than regular utilities because the selector contains an extra class. This means that in certain situations the behavior of some combination of utilities can be slightly different in `class` mode than it is in `media` mode.
+
+For example, consider this HTML:
+
+```html
+<div class="text-black text-opacity-50 dark:text-white">
+  <!-- ... -->
+</div>
+```
+
+When using the `media` strategy, `dark:text-white` has the same specificity as `text-black` and `text-opacity-50`. Because `text-opacity-50` is defined later in the generated CSS than `dark:text-white`, the white text will have 50% opacity.
+
+When using the `class` strategy, `dark:text-white` has a _higher_ specificity, so even though it is defined sooner, it will actually override `text-opacity-50` and reset the opacity back to 1. So when using the `class` strategy, you'll need to re-specify the opacity in dark mode:
+
+```html
+<div class="text-black text-opacity-50 dark:text-white dark:text-opacity-50">
+  <!-- ... -->
+</div>
+```
 
 <!-- === 連結 ============== -->
 [use the 'class' strategy]: #-2

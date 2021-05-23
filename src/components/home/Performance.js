@@ -110,7 +110,7 @@ export function Performance() {
         <BigText className="mb-8">輕巧的生產環境</BigText>
         <Paragraph className="mb-6">
           {
-            'Tailwind 會在生產環境編譯時自動移除沒用到的CSS樣式，這表示你最終的CSS樣式會盡可能的壓縮到最小。事實上，大部分的 Tailwind 專案在交給客戶時，CSS 大小都低於 10KB。'
+            'Tailwind 會在生產環境編譯時自動移除沒用到的 CSS 樣式，這表示你最終的 CSS 樣式會盡可能的壓縮到最小。事實上，大部分的 Tailwind 專案在交給客戶時，CSS 大小都低於 10KB。'
           }
         </Paragraph>
         <Link href="/docs/optimizing-for-production" className="text-teal-500 hover:text-teal-700">
@@ -170,7 +170,7 @@ export function Performance() {
                   <dt className="text-sm font-medium">生產環境編譯</dt>
                   <dd className="text-3xl sm:text-4xl font-extrabold text-gray-900">
                     <Counter from={2413.4} to={8.7} round={1} progress={progress} />
-                    KB
+                    kB
                   </dd>
                 </div>
                 <div className="flex items-center border-t border-gray-100 -mx-4 sm:-mx-6 mt-4 sm:mt-6 px-4 sm:px-6 py-3 font-mono text-xs leading-5">
