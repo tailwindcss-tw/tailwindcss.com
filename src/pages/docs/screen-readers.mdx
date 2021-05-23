@@ -1,6 +1,6 @@
 ---
-title: "Screen Readers"
-description: "Utilities for improving accessibility with screen readers."
+title: "螢幕報讀器"
+description: "提升螢幕報讀機之無障礙功能的工具"
 ---
 
 import plugin from 'tailwindcss/lib/plugins/accessibility'
@@ -9,9 +9,9 @@ import { Disabling } from '@/components/Disabling'
 
 export const classes = { plugin }
 
-## Usage
+## 使用方式
 
-Use `sr-only` to hide an element visually without hiding it from screen readers:
+透過 `sr-only` 可以在視覺上隱藏元素但不會影響到螢幕報讀機:
 
 ```html
 <a href="#">
@@ -20,7 +20,7 @@ Use `sr-only` to hide an element visually without hiding it from screen readers:
 </a>
 ```
 
-Use `not-sr-only` to undo `sr-only`, making an element visible to sighted users as well as screen readers. This can be useful when you want to visually hide something on small screens but show it on larger screens for example:
+使用 `not-sr-only` 可以復原 `sr-only`, 讓元素可以被使用者跟螢幕報讀機判讀. 這便於當你想要在小螢幕時, 在視覺上的隱藏某個元件, 但是在大螢幕要顯示的情況, 舉個例子:
 
 ```html
 <a href="#">
@@ -29,7 +29,7 @@ Use `not-sr-only` to undo `sr-only`, making an element visible to sighted users 
 </a>
 ```
 
-By default, `responsive` and `focus` variants are generated for these utilities. You can use `focus:not-sr-only` to make an element visually hidden by default but visible when the user tabs to it — useful for "skip to content" links:
+預設情況下, `responsive` 跟 `focus` 會生成這個工具. 你可以透過使用 `focus:not-sr-only` 讓元素在預設的情況隱藏, 但在使用者tab到該元素時顯示 - 尤其利於 "前往内容" 連結:
 
 ```html
 <a href="#" class="sr-only focus:not-sr-only">
@@ -37,12 +37,12 @@ By default, `responsive` and `focus` variants are generated for these utilities.
 </a>
 ```
 
-## Customizing
+## 客製化
 
-### Variants
+### 變化模式
 
 <Variants plugin="accessibility" />
 
-### Disabling
+### 停用
 
 <Disabling plugin="accessibility" />
