@@ -21,6 +21,8 @@ export function Heading({
   let ref = useRef()
   let top = useTop(ref)
 
+  const _id = typeof children === 'string' ? children.toLowerCase() : children
+
   useEffect(() => {
     if (toc && typeof top !== 'undefined') {
       registerHeading(id, top)
@@ -34,7 +36,7 @@ export function Heading({
     <Component
       className={clsx('group flex whitespace-pre-wrap', className)}
       // id={id}
-      id={children}
+      id={_id}
       ref={ref}
       style={{ ...(hidden ? { marginBottom: 0 } : {}), ...style }}
       {...props}
@@ -43,7 +45,7 @@ export function Heading({
         // eslint-disable-next-line
         <a
           // href={`#${id}`}
-          href={`#${children}`}
+          href={`#${_id}`}
           className="absolute after:hash opacity-0 group-hover:opacity-100"
           style={{ marginLeft: '-1em', paddingRight: '0.5em', boxShadow: 'none', color: '#a1a1aa' }}
           aria-label="Anchor"

@@ -43,7 +43,7 @@ function TableOfContents({ tableOfContents, currentSection }) {
             <Fragment key={section.slug}>
               <li>
                 <a
-                  href={`#${section.title}`}
+                  href={`#${section.title.toLowerCase()}`}
                   onClick={closeNav}
                   className={clsx(
                     'block transform transition-colors duration-200 py-2 hover:text-gray-900',
