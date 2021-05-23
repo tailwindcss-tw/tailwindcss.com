@@ -30,7 +30,7 @@ module.exports = {
 ```
 
 <!-- Each property is a core plugin name pointing to an array of variants to generate for that plugin. -->
-每個屬性都是一個核心插件名稱，指向要為該插件產生的變化模式陣列。
+每個屬性都是一個核心插件的名稱，而要應用在這個核心插件的變化模式必須以陣列形式表示。
 
 <!-- The following variants are supported out of the box: -->
 以下為支援開箱即用的變化模式：
@@ -174,7 +174,7 @@ module.exports = {
 ```
 
 <!-- This means that given the following HTML: -->
-這意味著，給定以下 HTML：
+這會產生下列 HTML：
 
 ```html
 <input class="focus:bg-white hover:bg-black focus:border-white hover:border-black">
@@ -198,7 +198,7 @@ module.exports = {
 在 Tailwind 中，`responsive` 變化模式是一種特殊的情況，並且 _不會_ 受到你在變化模式配置中列出的順序的影響。
 
 <!-- This is because the `responsive` variant automatically _stacks_ with other variants, meaning that if you specify both `responsive` and `hover` variants for a utility, Tailwind will generate _responsive hover_ variants as well: -->
-這是因為 `responsive` 變化模式會自動與其他變化模式 _堆疊_ 在一起，這意味著如果你為一個功能指定了  `responsive` 和 `hover` 變化模式，Tailwind 也會產生 _responsive hover_ 變化模式。
+這是因為 `responsive` 變化模式會自動與其他變化模式 _堆疊_ 在一起，這意味著如果你為一個功能指定了 `responsive` 和 `hover` 變化模式，Tailwind 也會產生 _responsive hover_ 變化模式。
 
 ```js
 // tailwind.config.js
