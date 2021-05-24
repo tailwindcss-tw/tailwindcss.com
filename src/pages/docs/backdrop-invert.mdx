@@ -45,7 +45,25 @@ export const classes = {
 
 ## Customizing
 
-### Variant
+You can customize which `backdrop-invert` utilities are generated using the `backdropInvert` key in the `theme` section of your `tailwind.config.js` file.
+
+```diff-js
+  // tailwind.config.js
+  module.exports = {
+    theme: {
++     extend: {
++       backdropInvert: {
++         25: '.25',
++         75: '.75',
++       }
++     }
+    }
+  }
+```
+
+Learn more about customizing the default theme in the [theme customization documentation](/docs/theme#customizing-the-default-theme).
+
+### Variants
 
 <Variants plugin="backdropInvert" name="backdrop invert" />
 
