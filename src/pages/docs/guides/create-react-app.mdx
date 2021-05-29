@@ -1,6 +1,8 @@
 ---
-title: "Install Tailwind CSS with Create React App"
-description: "Setting up Tailwind CSS in a Create React App project."
+# title: "Install Tailwind CSS with Create React App"
+title: "在 Create React App 安裝 Tailwind CSS"
+# description: "Setting up Tailwind CSS in a Create React App project."
+description: "在 Create React App 專案中設定 Tailwind CSS。"
 tool: Create React App
 ---
 
@@ -19,13 +21,15 @@ version: compat-7
 
 ### Install and configure CRACO
 
-Since Create React App doesn't let you override the PostCSS configuration natively, we also need to install [CRACO](https://github.com/gsoft-inc/craco) to be able to configure Tailwind:
+<!-- Since Create React App doesn't let you override the PostCSS configuration natively, we also need to install [CRACO](https://github.com/gsoft-inc/craco) to be able to configure Tailwind: -->
+因為 Create React App 不能複寫 PostCSS 設定，所以我們需要安裝 [CRACO](https://github.com/gsoft-inc/craco) 來設定 Tailwind：
 
 ```shell
 npm install @craco/craco
 ```
 
-Once it's installed, update your `scripts` in your `package.json` file to use `craco` instead of `react-scripts` for all scripts except `eject`:
+<!-- Once it's installed, update your `scripts` in your `package.json` file to use `craco` instead of `react-scripts` for all scripts except `eject`: -->
+安裝好了之後，修改 `package.json` 檔案中的 `scripts` 以使用 `craco` 而不是 `react-scripts`，除了 `eject` 以外的指令都要修改：
 
 ```diff-json
   {
@@ -42,7 +46,8 @@ Once it's installed, update your `scripts` in your `package.json` file to use `c
   }
 ```
 
-Next, create a `craco.config.js` at the root of our project and add the `tailwindcss` and `autoprefixer` as PostCSS plugins:
+<!-- Next, create a `craco.config.js` at the root of our project and add the `tailwindcss` and `autoprefixer` as PostCSS plugins: -->
+接下來在專案的最底層目錄建立 `craco.config.js`，然後新增 `tailwindcss` 和 `autoprefixer` 當作 PostCSS 的插件：
 
 ```js
 // craco.config.js
@@ -58,7 +63,9 @@ module.exports = {
 }
 ```
 
-If you're planning to use any other PostCSS plugins, you should read our documentation on [using PostCSS as your preprocessor](/docs/using-with-preprocessors) for more details about the best way to order them alongside Tailwind.
+<!-- If you're planning to use any other PostCSS plugins, you should read our documentation on [using PostCSS as your preprocessor](/docs/using-with-preprocessors) for more details about the best way to order them alongside Tailwind. -->
+如果你打算使用別的 PostCSS 插件，你應該要閱讀我們在 [using PostCSS as your preprocessor](/docs/using-with-preprocessors) 的文件獲得更完整的資訊，來找出最合適的方式跟 Tailwind 一同運作。
+
 
 ```preval configuration
 postcss: false
@@ -74,6 +81,7 @@ file: ./src/index.css
 ```
 
 Finally, ensure your CSS file is being imported in your `./src/index.js` file:
+最後，確保你的 CSS 檔案有被 `./src/index.js` 檔案所引用 (import)：
 
 ```diff-js
   // src/index.js

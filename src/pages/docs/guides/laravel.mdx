@@ -1,6 +1,8 @@
 ---
-title: "Install Tailwind CSS with Laravel"
-description: "Setting up Tailwind CSS in a Laravel project."
+# title: "Install Tailwind CSS with Laravel"
+title: "在 Laravel 安裝 Tailwind CSS"
+# description: "Setting up Tailwind CSS in a Laravel project."
+description: "在 Laravel 專案中設定 Tailwind CSS。"
 tool: Laravel Mix
 ---
 
@@ -30,9 +32,11 @@ purge:
   - ./resources/**/*.vue
 ```
 
-### Configure Tailwind with Laravel Mix
+<!-- ### Configure Tailwind with Laravel Mix -->
+### 在 Laravel Mix 中設定 Tailwind
 
-In your `webpack.mix.js`, add `tailwindcss` as a PostCSS plugin:
+<!-- In your `webpack.mix.js`, add `tailwindcss` as a PostCSS plugin: -->
+在你的 `webpack.mix.js` 新增 `tailwindcss` 的 PostCSS 插件：
 
 ```diff-js
   // webpack.mix.js
@@ -47,7 +51,8 @@ tool: Laravel
 file: ./resources/css/app.css
 ```
 
-Next, import your stylesheet in your main Blade layout (commonly `resources/views/layouts/app.blade.php` or similar) and add the responsive viewport meta tag if it's not already present:
+<!-- Next, import your stylesheet in your main Blade layout (commonly `resources/views/layouts/app.blade.php` or similar) and add the responsive viewport meta tag if it's not already present: -->
+再來，在你的主要 Blade layout 引用你的樣式內容 (通常是 `resources/views/layouts/app.blade.php` 或類似檔案) 並且新增響應式 meta tag，如果沒有的話：
 
 ```diff-html
   <!doctype html>
