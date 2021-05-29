@@ -22,7 +22,7 @@ function md(input) {
   return markdown.parse(redent(input).replace(/^\n+/gm, '\n')).children
 }
 
-function joinAsSpeech(words, separator = ' and ') {
+function joinAsSpeech(words, separator = ' 和 ') {
   let all = words.slice()
   let last = all.pop()
 
@@ -106,12 +106,14 @@ function createPrevals({ tool: pageTool = error('UNKNOWN') } = {}) {
       disclaimer = null,
     }) {
       return md(`
-        ## Creating your project
+        ## 建立專案
 
-        Start by creating a new ${tool} project if you don't have one set up already.
+        <!-- Start by creating a new ${tool} project if you don't have one set up already. -->
+        首先，建立一個新的 ${tool}，如果你還沒有一個已經設定好的專案。
         ${
           reference !== null
-            ? `The most common approach is to use [${reference.name}](${reference.link}):`
+            ? // `The most common approach is to use [${reference.name}](${reference.link}):`
+              `最常見的方式是使用 [${reference.name}](${reference.link}):`
             : ''
         }
 
@@ -119,7 +121,12 @@ function createPrevals({ tool: pageTool = error('UNKNOWN') } = {}) {
         ${disclaimer !== null ? code('shell', `${script} my-project`) : ''}
         ${disclaimer !== null ? disclaimer : ''}
 
-        ${disclaimer !== null ? 'Next, change directories to your new project:' : ''}
+        ${
+          disclaimer !== null
+            ? // 'Next, change directories to your new project:'
+              '再來，進入到你的專案：'
+            : ''
+        }
         ${disclaimer !== null ? code('shell', 'cd my-project') : ''}
 
         ${
@@ -128,7 +135,12 @@ function createPrevals({ tool: pageTool = error('UNKNOWN') } = {}) {
             : ''
         }
 
-        ${npmInstall ? `Next, install ${tool}'s front-end dependencies using \`npm\`:` : ''}
+        ${
+          npmInstall
+            ? // `Next, install ${tool}'s front-end dependencies using \`npm\`:`
+              `再來，使用 \`npm\` 安裝 ${tool} 的前端依賴套件 (dependencies)：`
+            : ''
+        }
         ${npmInstall ? code('shell', 'npm install') : ''}
       `)
     },
@@ -139,35 +151,45 @@ function createPrevals({ tool: pageTool = error('UNKNOWN') } = {}) {
       let multipleFiles = files.length > 1
 
       return md(`
-        ### Create your configuration ${multipleFiles ? 'files' : 'file'}
+        <!-- ### Create your configuration ${multipleFiles ? 'files' : 'file'} -->
+        ### 建立設定檔案 ${multipleFiles ? 'files' : 'file'}
 
-        Next, generate your ${joinAsSpeech(files)} ${multipleFiles ? 'files' : 'file'}:
+        <!-- Next, generate your ${joinAsSpeech(files)} ${multipleFiles ? 'files' : 'file'}: -->
+        然後產生 ${joinAsSpeech(files)} 檔案：
 
         ${code('shell', `npx tailwindcss init ${postcss ? '-p' : ''}`)}
 
-        This will create a minimal \`tailwind.config.js\` file at the root of your project:
+        <!-- This will create a minimal \`tailwind.config.js\` file at the root of your project: -->
+        這會在專案的最底層目錄建立一個基本的 \`tailwind.config.js\` 檔案：
 
         ${code('js', stubs.tailwind, { file: 'tailwind.config.js' })}
 
-        Learn more about configuring Tailwind in the [configuration documentation](/docs/configuration).
+        <!-- Learn more about configuring Tailwind in the [configuration documentation](/docs/configuration). -->
+        想了解更多關於 Tailwind 的設定可以到 [文件配置](/docs/configuration)。
 
         ${
           postcss
-            ? 'It will also create a `postcss.config.js` file that includes `tailwindcss` and `autoprefixer` already configured:'
+            ? // 'It will also create a `postcss.config.js` file that includes `tailwindcss` and `autoprefixer` already configured:'
+              '這也會同時建立 `postcss.config.js` 檔案，並包含 `tailwindcss` 和 `autoprefixer` 的設定：'
             : ''
         }
         ${postcss ? code('js', stubs.postcss, { file: 'postcss.config.js' }) : ''}
         ${
           postcss
-            ? "If you're planning to use any other PostCSS plugins, you should read our documentation on [using PostCSS as your preprocessor](/docs/using-with-preprocessors) for more details about the best way to order them alongside Tailwind."
+            ? // "If you're planning to use any other PostCSS plugins, you should read our documentation on [using PostCSS as your preprocessor](/docs/using-with-preprocessors) for more details about the best way to order them alongside Tailwind."
+              '如果你打算使用別的 PostCSS 插件，你應該要閱讀我們在 [using PostCSS as your preprocessor](/docs/using-with-preprocessors) 的文件獲得更完整的資訊，來找出最合適的方式跟 Tailwind 一同運作。'
             : ''
         }
 
-        ### Configure Tailwind to remove unused styles in production
+        <!-- ### Configure Tailwind to remove unused styles in production -->
+        ### 讓 Tailwind 在生產環境移除不必要的樣式
 
-        In your \`tailwind.config.js\` file, configure the \`purge\` option with the paths to all of your ${joinAsSpeech(
+        <!-- In your \`tailwind.config.js\` file, configure the \`purge\` option with the paths to all of your ${joinAsSpeech(
           types
-        )} so Tailwind can tree-shake unused styles in production builds:
+        )} so Tailwind can tree-shake unused styles in production builds: -->
+        在你的 \`tailwind.config.js\` 檔案設定 \`purse\` 選項指定路徑到你所有的${joinAsSpeech(
+          types
+        )}，讓 Tailwind 可以在生產環境建置時清除沒有使用的樣式：
 
         ${code(
           'diff-js',
@@ -186,7 +208,8 @@ function createPrevals({ tool: pageTool = error('UNKNOWN') } = {}) {
           { file: 'tailwind.config.js' }
         )}
 
-        Read our separate guide on [optimizing for production](/docs/optimizing-for-production) to learn more about tree-shaking unused styles for best performance.
+        <!-- Read our separate guide on [optimizing for production](/docs/optimizing-for-production) to learn more about tree-shaking unused styles for best performance. -->
+        閱讀我們在 [優化生產環境](/docs/optimizing-for-production) 的說明來獲得更多關於清除不必要樣式以增進效能的資訊。
       `)
     },
     setup({
@@ -235,19 +258,26 @@ function createPrevals({ tool: pageTool = error('UNKNOWN') } = {}) {
         .filter(Boolean)
       let information =
         outdatedVersions.length > 0
-          ? `${joinAsSpeech(outdatedVersions)} ${
+          ? /* `${joinAsSpeech(outdatedVersions)} ${
               outdatedVersions.length === 1 ? "doesn't" : "don't"
-            } support PostCSS 8 yet${
+            } support PostCSS 8 yet ${
               soon ? " _(but it's coming soon)_" : ''
             } so you need to install [the Tailwind CSS v2.0 PostCSS 7 compatibility build](/docs/installation#post-css-7-compatibility-build) for now as we've shown above.`
+            */
+            `${joinAsSpeech(outdatedVersions)} 尚未支援 PostCSS 8 ${
+              soon ? ' _(但是快要有了)_' : ''
+            }，所以你需要安裝 [Tailwind CSS v2.0 PostCSS 7 相容版本](/docs/installation#post-css-7-compatibility-build)，如我們在上方顯示的。`
           : ''
 
       return md(`
-        ## Setting up Tailwind CSS
+        <!-- ## Setting up Tailwind CSS -->
+        ## 設定 Tailwind CSS
 
-        *Tailwind CSS requires Node.js 12.13.0 or higher.*
+        <!-- *Tailwind CSS requires Node.js 12.13.0 or higher.* -->
+        *Tailwind CSS 需要 Node.js 12.13.0 以上版本。*
 
-        ### Install Tailwind via npm
+        <!-- ### Install Tailwind via npm -->
+        ### 使用 npm 安裝 Tailwind
 
         ${
           uninstall.length > 0
@@ -258,10 +288,18 @@ function createPrevals({ tool: pageTool = error('UNKNOWN') } = {}) {
         }
         ${uninstall.length > 0 ? code('shell', `npm uninstall ${uninstall.join(' ')}`) : ''}
 
-        ${uninstall.length > 0 ? 'Next, install' : 'Install'} ${joinAsSpeech(
+        ${
+          uninstall.length > 0
+            ? // 'Next, install'
+              '再來使用 `npm` 安裝'
+            : // 'Install'
+              '使用 `npm` 安裝'
+        } ${joinAsSpeech(
         [...dependencies.map(quote('`')), 'Tailwind'],
-        ' as well as '
-      )} and its peer-dependencies using \`npm\`:
+        // ' as well as '
+        '以及'
+        // )} and its peer-dependencies using \`npm\`:
+      )} 和它需要的依賴套件 (peer-dependencies)：
 
         ${code('shell', installCode)}
 
@@ -270,14 +308,18 @@ function createPrevals({ tool: pageTool = error('UNKNOWN') } = {}) {
     },
     include({ file, create = false, tool = pageTool, withChromiumBug = false, level = 3 }) {
       return md(`
-        ${'#'.repeat(level)} Include Tailwind in your CSS
+        <!-- ${'#'.repeat(level)} Include Tailwind in your CSS -->
+        ${'#'.repeat(level)} 在你的 CSS 中使用 Tailwind
 
         ${
           create
-            ? `Create the \`${file}\` file`
-            : `Open the \`${file}\` file that ${tool} generates for you by default`
+            ? // `Create the \`${file}\` file`
+              `建立 \`${file}\` 檔案`
+            : // `Open the \`${file}\` file that ${tool} generates for you by default`
+              `打開 ${tool} 預先為你建立好的 \`${file}\` 檔案`
         }
-        and use the \`@tailwind\` directive to include Tailwind's \`base\`, \`components\`, and \`utilities\` styles, replacing the original file contents:
+        <!-- and use the \`@tailwind\` directive to include Tailwind's \`base\`, \`components\`, and \`utilities\` styles, replacing the original file contents: -->
+        使用 \`@tailwind\` 指令來引用 Tailwind 的 \`base\`、\`components\` 和 \`utilities\` 樣式，並且取代原本檔案的內容：
 
         ${code(
           'css',
@@ -296,19 +338,25 @@ function createPrevals({ tool: pageTool = error('UNKNOWN') } = {}) {
             : ''
         }
 
-        Tailwind will swap these directives out at build-time with all of the styles it generates based on your configured design system.
+        <!-- Tailwind will swap these directives out at build-time with all of the styles it generates based on your configured design system. -->
+        Tailwind 會在建置時將這些指令替換成你配置系統時所對應的樣式內容。
 
-        Read our documentation on [adding base styles](/docs/adding-base-styles), [extracting components](/docs/extracting-components), and [adding new utilities](/docs/adding-new-utilities) for best practices on extending Tailwind with your own custom CSS.
+        <!-- Read our documentation on [adding base styles](/docs/adding-base-styles), [extracting components](/docs/extracting-components), and [adding new utilities](/docs/adding-new-utilities) for best practices on extending Tailwind with your own custom CSS. -->
+        閱讀我們的 [增加基底樣式](/docs/adding-base-styles)、[提取成元件](/docs/extracting-components) 和 [增加新功能](/docs/adding-new-utilities) 文件以使用 Tailwind 為你自定義的 CSS 做最好的擴展。
       `)
     },
     finish({ scripts = [], tool = pageTool }) {
       return md(`
-        You're finished! Now when you run ${joinAsSpeech(
+        <!-- You're finished! Now when you run -->
+        你已經完成了！現在當你執行 ${joinAsSpeech(
           scripts.map(quote('`')),
-          ' or '
-        )}, Tailwind CSS will be ready to use in your ${tool} project.
+          // ' or '
+          ' 或 '
+        // )}, Tailwind CSS will be ready to use in your ${tool} project.
+        )}，Tailwind CSS 將會在你的 ${tool} 專案中運行。
 
-        [Next learn about the utility-first workflow &rarr;](/docs/utility-first)
+        <!-- [Next learn about the utility-first workflow &rarr;](/docs/utility-first) -->
+        [接下來了解功能優先流程 &rarr;](/docs/utility-first)
       `)
     },
   }
