@@ -187,7 +187,7 @@ function createPrevals({ tool: pageTool = error('UNKNOWN') } = {}) {
         <!-- In your \`tailwind.config.js\` file, configure the \`purge\` option with the paths to all of your ${joinAsSpeech(
           types
         )} so Tailwind can tree-shake unused styles in production builds: -->
-        在你的 \`tailwind.config.js\` 檔案設定 \`purse\` 選項指定路徑到你所有的${joinAsSpeech(
+        在你的 \`tailwind.config.js\` 檔案設定 \`purge\` 選項指定路徑到你所有的 ${joinAsSpeech(
           types
         )}，讓 Tailwind 可以在生產環境建置時清除沒有使用的樣式：
 
@@ -352,7 +352,7 @@ function createPrevals({ tool: pageTool = error('UNKNOWN') } = {}) {
           scripts.map(quote('`')),
           // ' or '
           ' 或 '
-        // )}, Tailwind CSS will be ready to use in your ${tool} project.
+          // )}, Tailwind CSS will be ready to use in your ${tool} project.
         )}，Tailwind CSS 將會在你的 ${tool} 專案中運行。
 
         <!-- [Next learn about the utility-first workflow &rarr;](/docs/utility-first) -->
