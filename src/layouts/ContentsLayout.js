@@ -217,7 +217,8 @@ export function ContentsLayout({ children, meta, classes, tableOfContents }) {
           <Link
             href={`https://github.com/tailwindcss-tw/tailwindcss.com/edit/master/src/pages${router.pathname}.mdx`}
           >
-            <a className="mt-10 text-sm hover:text-gray-900">Edit this page on GitHub</a>
+            {/* <a className="mt-10 text-sm hover:text-gray-900">Edit this page on GitHub</a> */}
+            <a className="mt-10 text-sm hover:text-gray-900">在 GitHub 編輯此頁</a>
           </Link>
         </div>
       </div>
