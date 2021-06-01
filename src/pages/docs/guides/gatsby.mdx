@@ -25,7 +25,8 @@ purge:
   - ./src/**/*.{js,jsx,ts,tsx}
 ```
 
-### Enable gatsby-plugin-postcss 
+<!-- ### Enable gatsby-plugin-postcss -->
+### 啟用 gatsby-plugin-postcss
 
 <!-- In your `gatsby-config.js` file, enable the [postcss plugin](https://www.gatsbyjs.com/plugins/gatsby-plugin-postcss/). -->
 在 `gatsby-config.js` 檔案中啟用 [postcss 插件](https://www.gatsbyjs.com/plugins/gatsby-plugin-postcss/)。
@@ -45,7 +46,7 @@ file: ./src/styles/global.css
 ```
 
 <!-- Finally, create a `./gatsby-browser.js` file at the root of your project if it doesn't already exist, and import your CSS file: -->
-最後，在專案的最底層目錄建立 `./gatsby-browser.js` 檔案，如果它還不存在的話，然後引用 (import) 你的 CSS 檔案：
+最後，如果 `./gatsby-browser.js` 檔案還不存在的話，請在專案的根目錄建立它，然後引用 (import) 你的 CSS 檔案：
 
 ```diff-js
   // ./gatsby-browser.js

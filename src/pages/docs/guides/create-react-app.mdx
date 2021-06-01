@@ -19,7 +19,8 @@ script: npx create-react-app
 version: compat-7
 ```
 
-### Install and configure CRACO
+<!-- ### Install and configure CRACO -->
+### 安裝並設定 CRACO
 
 <!-- Since Create React App doesn't let you override the PostCSS configuration natively, we also need to install [CRACO](https://github.com/gsoft-inc/craco) to be able to configure Tailwind: -->
 因為 Create React App 不能複寫 PostCSS 設定，所以我們需要安裝 [CRACO](https://github.com/gsoft-inc/craco) 來設定 Tailwind：
@@ -47,7 +48,7 @@ npm install @craco/craco
 ```
 
 <!-- Next, create a `craco.config.js` at the root of our project and add the `tailwindcss` and `autoprefixer` as PostCSS plugins: -->
-接下來在專案的最底層目錄建立 `craco.config.js`，然後新增 `tailwindcss` 和 `autoprefixer` 當作 PostCSS 的插件：
+接下來在專案的根目錄建立 `craco.config.js`，然後新增 `tailwindcss` 和 `autoprefixer` 當作 PostCSS 的插件：
 
 ```js
 // craco.config.js

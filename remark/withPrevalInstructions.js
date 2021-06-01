@@ -160,12 +160,12 @@ function createPrevals({ tool: pageTool = error('UNKNOWN') } = {}) {
         ${code('shell', `npx tailwindcss init ${postcss ? '-p' : ''}`)}
 
         <!-- This will create a minimal \`tailwind.config.js\` file at the root of your project: -->
-        這會在專案的最底層目錄建立一個基本的 \`tailwind.config.js\` 檔案：
+        這會在專案的根目錄建立一個基本的 \`tailwind.config.js\` 檔案：
 
         ${code('js', stubs.tailwind, { file: 'tailwind.config.js' })}
 
         <!-- Learn more about configuring Tailwind in the [configuration documentation](/docs/configuration). -->
-        想了解更多關於 Tailwind 的設定可以到 [文件配置](/docs/configuration)。
+        想了解更多關於 Tailwind 的設定可以到 [配置文件](/docs/configuration)。
 
         ${
           postcss
@@ -182,7 +182,7 @@ function createPrevals({ tool: pageTool = error('UNKNOWN') } = {}) {
         }
 
         <!-- ### Configure Tailwind to remove unused styles in production -->
-        ### 讓 Tailwind 在生產環境移除不必要的樣式
+        ### 讓 Tailwind 在生產環境建置時移除不必要的樣式
 
         <!-- In your \`tailwind.config.js\` file, configure the \`purge\` option with the paths to all of your ${joinAsSpeech(
           types
@@ -209,7 +209,7 @@ function createPrevals({ tool: pageTool = error('UNKNOWN') } = {}) {
         )}
 
         <!-- Read our separate guide on [optimizing for production](/docs/optimizing-for-production) to learn more about tree-shaking unused styles for best performance. -->
-        閱讀我們在 [優化生產環境](/docs/optimizing-for-production) 的說明來獲得更多關於清除不必要樣式以增進效能的資訊。
+        閱讀我們在 [優化生產環境](/docs/optimizing-for-production) 的說明來獲得更多關於 「清除不必要樣式以增進效能」 的資訊。
       `)
     },
     setup({
@@ -342,7 +342,7 @@ function createPrevals({ tool: pageTool = error('UNKNOWN') } = {}) {
         Tailwind 會在建置時將這些指令替換成你配置系統時所對應的樣式內容。
 
         <!-- Read our documentation on [adding base styles](/docs/adding-base-styles), [extracting components](/docs/extracting-components), and [adding new utilities](/docs/adding-new-utilities) for best practices on extending Tailwind with your own custom CSS. -->
-        閱讀我們的 [增加基底樣式](/docs/adding-base-styles)、[提取成元件](/docs/extracting-components) 和 [增加新功能](/docs/adding-new-utilities) 文件以使用 Tailwind 為你自定義的 CSS 做最好的擴展。
+        閱讀我們的 [增加基底樣式](/docs/adding-base-styles)、[提取成元件](/docs/extracting-components) 和 [增加新功能](/docs/adding-new-utilities) 文件以使用 Tailwind 為你自定義的 CSS 做最好的擴充。
       `)
     },
     finish({ scripts = [], tool = pageTool }) {
@@ -356,7 +356,7 @@ function createPrevals({ tool: pageTool = error('UNKNOWN') } = {}) {
         )}，Tailwind CSS 將會在你的 ${tool} 專案中運行。
 
         <!-- [Next learn about the utility-first workflow &rarr;](/docs/utility-first) -->
-        [接下來了解功能優先流程 &rarr;](/docs/utility-first)
+        [接著來了解功能優先流程 &rarr;](/docs/utility-first)
       `)
     },
   }
