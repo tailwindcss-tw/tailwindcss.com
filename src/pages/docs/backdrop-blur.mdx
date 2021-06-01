@@ -26,19 +26,11 @@ export const classes = {
 }
 
 ## Usage
-<!-- Use the backdrop-blur-{amount?} utilities alongside the backdrop-filter utility to blur an element. -->
-將 `backdrop-blur-{amount?}` 功能跟 `backdrop-filter` 功能搭配使用，即可模糊元素。
 
-```html rose
-<template preview class="p-4">
-  <div class="flex justify-center content-center flex-wrap h-24 bg-stripes2 bg-stripes-rose-500 rounded-lg">
-    <div class="backdrop-filter backdrop-blur-sm w-1/4 h-20 text-white text-2xl font-extrabold rounded-md border-rose-300 border-2 flex items-center justify-center bg-rose-500 bg-opacity-0">
-      DEMO
-    </div>
-  </div>
-</template>
+Use the `backdrop-blur-{amount?}` utilities alongside the `backdrop-filter` utility to control an element’s backdrop blur.
 
-<div class="backdrop-filter **backdrop-blur-sm** ...">
+```html
+<div class="backdrop-filter backdrop-blur-lg ...">
   <!-- ... -->
 </div>
 ```
