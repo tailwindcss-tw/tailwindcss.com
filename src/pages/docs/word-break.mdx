@@ -1,17 +1,19 @@
 ---
-title: "Word Break"
-description: "Utilities for controlling word breaks in an element."
+title: "Word Break (文字斷行)"
+description: 在元素中控制文字斷行的功能
 ---
 
 import plugin from 'tailwindcss/lib/plugins/wordBreak'
 import { Variants } from '@/components/Variants'
 import { Disabling } from '@/components/Disabling'
+import Responsive from '@/components/Responsive.mdx'
 
 export const classes = { plugin }
 
 ## Normal
 
-Use `break-normal` to only add line breaks at normal word break points.
+<!--Use `break-normal` to only add line breaks at normal word break points.-->
+在該斷的地方斷行(且保持文字完整)，使用 `break-normal` 。
 
 ```html lightBlue
 <template preview>
@@ -25,7 +27,8 @@ Use `break-normal` to only add line breaks at normal word break points.
 
 ## Break Words
 
-Use `break-words` to add line breaks mid-word if needed.
+<!--Use `break-words` to add line breaks mid-word if needed.-->
+字過長時，使用 `break-words` 把字從中斷行。
 
 ```html amber
 <template preview>
@@ -39,7 +42,8 @@ Use `break-words` to add line breaks mid-word if needed.
 
 ## Break All
 
-Use `break-all` to add line breaks whenever necessary, without trying to preserve whole words.
+<!--Use `break-all` to add line breaks whenever necessary, without trying to preserve whole words.-->
+使用 `break-all` 在該斷行的地方斷行，不保留文字完整性。
 
 ```html emerald
 <template preview>
@@ -51,9 +55,10 @@ Use `break-all` to add line breaks whenever necessary, without trying to preserv
 <p class="**break-all** ...">...</p>
 ```
 
-## Responsive
+## 響應式
 
-To control the word breaks in an element only at a specific breakpoint, add a `{screen}:` prefix to any existing word break utility. For example, adding the class `md:break-all` to an element would apply the `break-all` utility at medium screen sizes and above.
+<!--To control the word breaks in an element only at a specific breakpoint, add a `{screen}:` prefix to any existing word break utility. For example, adding the class `md:break-all` to an element would apply the `break-all` utility at medium screen sizes and above.-->
+在元素特定斷點控制文字斷行，可在文字斷行前加上前綴詞 `{screen}:`。例如：中等以上尺寸螢幕使用 `md:break-all` 以套用 `break-all` 功能。
 
 ```html
 <p class="break-normal **md:break-all** ...">
@@ -61,7 +66,8 @@ To control the word breaks in an element only at a specific breakpoint, add a `{
 </p>
 ```
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+<!--For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.-->
+<Responsive />
 
 ## Customizing
 
@@ -71,4 +77,4 @@ For more information about Tailwind's responsive design features, check out the 
 
 ### Disabling
 
-<Disabling plugin="wordBreak" />
+<Disabling plugin="wordBreak" name="word break" />
