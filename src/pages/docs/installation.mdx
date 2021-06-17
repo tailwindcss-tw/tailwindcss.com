@@ -274,17 +274,21 @@ This file will automatically be read when building your CSS with Tailwind CLI:
 npx tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css
 ```
 
-If you'd like to keep your config file in a different location or give it a different name, pass the config file path using the `-c` option when building your CSS:
+<!-- If you'd like to keep your config file in a different location or give it a different name, pass the config file path using the `-c` option when building your CSS: -->
+如果你想讓你的配置檔換一個名字或者在別的資料夾，請在你編譯 CSS 時加上 `-c` 選項並附上新的檔案名稱及路徑：
 
 ```shell
 npx tailwindcss -i ./src/tailwind.css -c ./.config/tailwind.config.js -o ./dist/tailwind.css
 ```
 
-Learn more about configuring Tailwind in the [configuration documentation](/docs/configuration).
+<!-- Learn more about configuring Tailwind in the [configuration documentation](/docs/configuration). -->
+在[配置](/docs/configuration)頁面中，可學習到更多有關 Tailwind 的配置。
 
-### Disabling Autoprefixer
+<!-- ### Disabling Autoprefixer -->
+### 停用 Autoprefixer
 
-By default, the Tailwind CLI tool will run your CSS through [Autoprefixer](https://github.com/postcss/autoprefixer) to add any necessary vendor prefixes. If you already have Autoprefixer set up in your build pipeline somewhere further down the chain, you can disable it in the Tailwind CLI tool using the `--no-autoprefixer` flag to avoid running it twice:
+<!-- By default, the Tailwind CLI tool will run your CSS through [Autoprefixer](https://github.com/postcss/autoprefixer) to add any necessary vendor prefixes. If you already have Autoprefixer set up in your build pipeline somewhere further down the chain, you can disable it in the Tailwind CLI tool using the `--no-autoprefixer` flag to avoid running it twice: -->
+一般來說，Tailwind CLI 工具會透過 [Autoprefixer](https://github.com/postcss/autoprefixer) 來增加必要的供應商前綴。如果你已經有在你的建置流程中使用 Autoprefixer，那你可以使用 `--no-autoprefixer` 選項來停用 Tailwind CLI 工具中的 Autoprefixer。
 
 ```shell
 npx tailwindcss --no-autoprefixer -o tailwind.css
@@ -322,15 +326,18 @@ If you'd like to automatically generate a basic `postcss.config.js` file when cr
 npx tailwindcss init --postcss
 ```
 
-### Building for production
+<!-- ### Building for production -->
+### 生產環境建置
 
-When building for production, set `NODE_ENV=production` on the command line when building your CSS:
+<!-- When building for production, set `NODE_ENV=production` on the command line when building your CSS: -->
+想要為生產環境進行建置，請在你建置 CSS 時把 `NODE_ENV=production` 加在指令最前方：
 
 ```shell
 NODE_ENV=production npx tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css
 ```
 
-This will make sure Tailwind removes any unused CSS for best performance. Read our separate guide on [optimizing for production](/docs/optimizing-for-production) to learn more.
+<!-- This will make sure Tailwind removes any unused CSS for best performance. Read our separate guide on [optimizing for production](/docs/optimizing-for-production) to learn more. -->
+為確保獲得最佳的效能，Tailwind 將會移除未用到的 CSS 樣式。你可以參閱[優化生產模式](/docs/optimizing-for-production)來獲得更多資訊。
 
 You can also use the `--minify` flag to compress your CSS with [cssnano](https://cssnano.co/):
 
@@ -396,24 +403,29 @@ NODE_ENV=production npx tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css
 
 ## PostCSS 7 的相容版本
 
-As of v2.0, Tailwind CSS depends on PostCSS 8. Because PostCSS 8 is only a few months old, many other tools in the ecosystem haven't updated yet, which means you might see an error like this in your terminal after installing Tailwind and trying to compile your CSS:
+<!-- As of v2.0, Tailwind CSS depends on PostCSS 8. Because PostCSS 8 is only a few months old, many other tools in the ecosystem haven't updated yet, which means you might see an error like this in your terminal after installing Tailwind and trying to compile your CSS: -->
+隨著 v2.0 版本的到來，Tailwind CSS 改為依賴 PostCSS 8。而正因為 PostCSS 8 才問世幾個月之久，其他許多工具的生態系統都尚未更新，所以你很有可能在安裝完 Tailwind 並嘗試編譯 CSS 時看到這個錯誤:
 
 ```shell
 Error: PostCSS plugin tailwindcss requires PostCSS 8.
 ```
 
-To help bridge the gap until everyone has updated, we also publish a PostCSS 7 compatibility build as `@tailwindcss/postcss7-compat` on npm.
+<!-- To help bridge the gap until everyone has updated, we also publish a PostCSS 7 compatibility build as `@tailwindcss/postcss7-compat` on npm. -->
+在大家都更新之前為了彌補 PostCSS 7 到 8 的差距，,我們也在 npm 上發布了 PostCSS 7 的相容建置版本 `@tailwindcss/postcss7-compat`。
 
-If you run into the error mentioned above, uninstall Tailwind and re-install using the compatibility build instead:
+<!-- If you run into the error mentioned above, uninstall Tailwind and re-install using the compatibility build instead: -->
+如果你遇到上述的錯誤，請移除 Tailwind 並改以相容建置版本重新安裝：
 
 ```shell
 npm uninstall tailwindcss postcss autoprefixer
 npm install -D tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
 ```
 
-The compatibility build is identical to the main build in every way, so you aren't missing out on any features or anything like that.
+<!-- The compatibility build is identical to the main build in every way, so you aren't missing out on any features or anything like that. -->
+相容建置版本與主要版本在每一處都是完全相同的，所以你不必擔心會失去任何特色功能。
 
-Once the rest of your tools have added support for PostCSS 8, you can move off of the compatibility build by re-installing Tailwind and its peer-dependencies using the `latest` tag:
+<!-- Once the rest of your tools have added support for PostCSS 8, you can move off of the compatibility build by re-installing Tailwind and its peer-dependencies using the `latest` tag: -->
+若你的工具開始支援 PostCSS 8 了，你可以透過 `-latest` 標籤並重新安裝 Tailwind 和它的對等依賴套件 (peer-dependencies) 來關閉相容建置版本。
 
 ```shell
 npm uninstall tailwindcss
