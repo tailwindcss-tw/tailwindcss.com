@@ -10,7 +10,7 @@ import Link from 'next/link'
 import stats from '@/utils/stats'
 
 
-如果你要用 CDN 方式引入 Tailwind，[點我快速帶你到那邊去](#cdn-tailwind)！
+如果你要用 CDN 方式引入 Tailwind，[點我快速帶你到那邊去](#透過%20cdn%20方式引入tailwind)！
 
 
 ## 各框架的安裝教學
@@ -42,14 +42,14 @@ If this is a bit over your head and you'd like to try Tailwind without configuri
 npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
 ```
 
-為了解決 Tailwind 生成 CSS 時[不自動添加供應商前綴 (vendor prefixes)](/docs/browser-support#vendor-prefixes) 的情形，這裡推薦可以使用上面這行指令安裝 autoprefixer 來處理問題。
+為了解決 Tailwind 生成 CSS 時[不自動添加供應商前綴 (vendor prefixes)](/docs/browser-support#前綴詞%20(vendor%20prefixes)) 的情形，這裡推薦可以使用上面這行指令安裝 autoprefixer 來處理問題。
 
 如果你的 Tailwind 是跟必須使用舊版 PostCSS 的工具做整合，很有可能會看到下面這個錯誤：
 
 ```shell
 Error: PostCSS plugin tailwindcss requires PostCSS 8.
 ```
-如果碰到上面這個情況，你需要改成 [安裝 PostCSS 7 的相容版本](#post-css-7)。
+如果碰到上面這個情況，你需要改成 [安裝 PostCSS 7 的相容版本](#postcss%207%20的相容版本)。
 
 ### 以 PostCSS 插件方式新增 Tailwind
 
@@ -154,47 +154,55 @@ import "tailwindcss/tailwind.css"
   }
 ```
 
-Read our separate guide on [optimizing for production](/docs/optimizing-for-production) to learn more about tree-shaking unused styles for best performance.
+<!-- Read our separate guide on [optimizing for production](/docs/optimizing-for-production) to learn more about tree-shaking unused styles for best performance. -->
+想學習更多關於「用 tree-shaking 來移除未用到的樣式」從而達到最佳效能的話，參閱我們的 [優化生產模式](/docs/optimizing-for-production) 這篇獨立指南。
 
-If you're integrating Tailwind with a tool that relies on an older version of PostCSS, you may see an error like this when trying to build your CSS:
+<!-- If you're integrating Tailwind with a tool that relies on an older version of PostCSS, you may see an error like this when trying to build your CSS: -->
+如果你是使用舊版 PostCSS 作為整合 Tailwind 的工具，那你非常有可能在嘗試編譯 CSS 時看到這個錯誤：
 
 ```shell
 Error: PostCSS plugin tailwindcss requires PostCSS 8.
 ```
 
-In this case, you should [switch to our PostCSS 7 compatibility build](#post-css-7-compatibility-build) instead.
+<!-- In this case, you should [switch to our PostCSS 7 compatibility build](#post-css-7-compatibility-build) instead. -->
+如果遇到這個情況，你應該要改成使用 [我們專為 PostCSS 7 建置的相容版本](#postcss%207%20的相容版本)。
 
 ---
 
 ## Using Tailwind CLI
 
-*Tailwind CSS requires Node.js 12.13.0 or higher.*
+<!-- *Tailwind CSS requires Node.js 12.13.0 or higher.* -->
+*Tailwind CSS 需要 Node.js 版本在 12.13.0 以上*
 
 If you'd like to compile your CSS with Tailwind without integrating it directly into any sort of build tooling, you can use the Tailwind CLI tool to generate your CSS without configuring PostCSS or even installing Tailwind as a dependency if you don't want to.
 
-Use `npx` which is a tool that is automatically installed alongside `npm` to generate a fully compiled Tailwind CSS file:
+<!-- Use `npx` which is a tool that is automatically installed alongside `npm` to generate a fully compiled Tailwind CSS file: -->
+使用 `npx` 工具來產生一個完整編譯版的 Tailwind CSS 檔案：
+(`npx` 會隨著 `npm` 一起自動安裝)
 
 ```shell
 npx tailwindcss -o tailwind.css
 ```
 
-This will create a file called `tailwind.css` generated based on Tailwind's [default configuration](https://unpkg.com/browse/tailwindcss@^2/stubs/defaultConfig.stub.js), and automatically add any necessary vendor prefixes using [autoprefixer](https://github.com/postcss/autoprefixer).
+<!-- This will create a file called `tailwind.css` generated based on Tailwind's [default configuration](https://unpkg.com/browse/tailwindcss@^2/stubs/defaultConfig.stub.js), and automatically add any necessary vendor prefixes using [autoprefixer](https://github.com/postcss/autoprefixer). -->
+執行後會產生一個名為 `tailwind.css` 的檔案，內容是根據 Tailwind 的[預設配置](https://unpkg.com/browse/tailwindcss@^2/stubs/defaultConfig.stub.js)做為基底產生的，且會使用 [autoprefixer](https://github.com/postcss/autoprefixer) 來自動地添加上所有必要的供應商前綴。
 
-Now you can pull this file into your HTML just like any other stylesheet:
+<!-- Now you can pull this file into your HTML just like any other stylesheet: -->
+現在，你可以像任何其他的 CSS 檔 (stylesheet) 一樣，將檔案掛載到你的 HTML 頁面上：
 
-```html
-<!doctype html>
-<html>
-<head>
-  <!-- ... -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="/tailwind.css" rel="stylesheet">
-</head>
-<body>
-  <!-- ... -->
-</body>
-</html>
+```diff-html
+  <!doctype html>
+  <html>
+  <head>
+    <!-- ... -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++   <link href="/tailwind.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- ... -->
+  </body>
+  </html>
 ```
 
 ### Watching for changes
@@ -205,9 +213,11 @@ You can use the `--watch` or `-w` flag to start a watch process and automaticall
 npx tailwindcss -o tailwind.css --watch
 ```
 
-### Using a custom CSS file
+<!-- ### Using a custom CSS file -->
+### 使用客製化的 CSS 檔
 
-If you'd like to process any custom CSS alongside the default styles Tailwind generates, create a CSS file wherever you normally would and use the `@tailwind` directive to include Tailwind's `base`, `components`, and `utilities` styles:
+<!-- If you'd like to process any custom CSS alongside the default styles Tailwind generates, create a CSS file wherever you normally would and use the `@tailwind` directive to include Tailwind's `base`, `components`, and `utilities` styles: -->
+如果你希望自訂的 CSS 樣式能隨著 Tailwind 的預設樣式一起編譯，請建立一個 CSS 檔案並且加上 `@tailwind` 來引入 Tailwind 的 `base`、`components` 以及 `utilities` 樣式：
 
 ```css
 /* ./src/tailwind.css */
@@ -228,24 +238,28 @@ Then include the path to that file when building your CSS:
 npx tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css
 ```
 
-Read about [adding base styles](/docs/adding-base-styles), [extracting components](/docs/extracting-components), and [adding new utilities](/docs/adding-new-utilities) to learn more about adding custom CSS on top of Tailwind.
+<!-- Read about [adding base styles](/docs/adding-base-styles), [extracting components](/docs/extracting-components), and [adding new utilities](/docs/adding-new-utilities) to learn more about adding custom CSS on top of Tailwind. -->
+看看[增加基底樣式](/docs/adding-base-styles)、[提取成元件](/docs/extracting-components)以及[增加新功能](/docs/adding-new-utilities)頁面來學習更多關於如何在 Tailwind 中自訂 CSS。
 
 
-### Customizing your configuration
+<!-- ### Customizing your configuration -->
+### 自訂配置
 
-If you'd like to customize what Tailwind generates, create a `tailwind.config.js` file using the Tailwind CLI tool:
+<!-- If you'd like to customize what Tailwind generates, create a `tailwind.config.js` file using the Tailwind CLI tool: -->
+如果你想要自訂 Tailwind 產生的內容，請用 Tailwind CLI 工具來建立一個 `tailwind.config.js` 檔案：
 
 ```shell
 npx tailwindcss init
 ```
 
-This will create a minimal `tailwind.config.js` file at the root of your project:
+<!-- This will create a minimal `tailwind.config.js` file at the root of your project: -->
+這個過程將會在你的專案根目錄中建立一個最小化配置的 `tailwind.config.js` 檔案：
 
 ```js
 // tailwind.config.js
 module.exports = {
   purge: [],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: false, // 也可以是 'media' 或 'class'
   theme: {
     extend: {},
   },
@@ -354,9 +368,11 @@ NODE_ENV=production npx tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css
 
 ---
 
-## HTML starter template
+<!-- ## HTML starter template -->
+## 入門 HTML 樣版
 
-For Tailwind's styles to work as expected, you'll want to use the HTML5 doctype and include the responsive viewport meta tag to properly handle responsive styles on all devices.
+<!-- For Tailwind's styles to work as expected, you'll want to use the HTML5 doctype and include the responsive viewport meta tag to properly handle responsive styles on all devices. -->
+為了讓你的 Tailwind 樣式能夠如預期般正常運作，你會需要用 HTML5 doctype (檔案類型聲明) 以及引用響應式 viewport meta 標籤來確保能夠在所有裝置上處理響應式樣式。
 
 ```html
 <!doctype html>
@@ -373,11 +389,12 @@ For Tailwind's styles to work as expected, you'll want to use the HTML5 doctype 
 </html>
 ```
 
-Many front-end frameworks like Next.js, vue-cli and others do all this for you behind the scenes automatically, so depending on what you're building you might not need to set this up.
+<!-- Many front-end frameworks like Next.js, vue-cli and others do all this for you behind the scenes automatically, so depending on what you're building you might not need to set this up. -->
+許多像是 Next.js、vue-cli 之類的前端框架都已經先把這部分處理及設定完了，所以根據你的建置內容而定，你也有可能不會需要設定這些。
 
 ---
 
-## PostCSS 7 的相容性版本
+## PostCSS 7 的相容版本
 
 As of v2.0, Tailwind CSS depends on PostCSS 8. Because PostCSS 8 is only a few months old, many other tools in the ecosystem haven't updated yet, which means you might see an error like this in your terminal after installing Tailwind and trying to compile your CSS:
 
