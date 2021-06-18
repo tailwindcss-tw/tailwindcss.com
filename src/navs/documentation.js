@@ -125,6 +125,7 @@ export const documentationNav = {
     pages['background-clip'],
     pages['background-color'],
     pages['background-opacity'],
+    pages['background-origin'],
     pages['background-position'],
     pages['background-repeat'],
     pages['background-size'],

@@ -72,10 +72,16 @@ const whatsNew = [
 const latestUpdates = [
   {
     title: 'Tailwind CSS 繁體中文化',
-    date: '2021-04-16T19:00:00.000+08:00',
+    date: '2021-06-18T19:00:00.000+08:00',
     url: '#',
     description:
       'Tailwindcss.tw 台灣團隊正在持續將技術文件進行繁體中文化，很快就會翻譯到您想看的篇章了，請耐心等候。',
+  },
+  {
+    title: 'Tailwind CSS v2.2',
+    date: '2021-06-17T19:00:00.000Z',
+    url: 'https://blog.tailwindcss.com/tailwindcss-2-2',
+    description: `Over the last few weeks, we've been having a ton of fun dumping new and exciting features into Tailwind. Now feels like the right time to cut a release, so here it is — Tailwind CSS v2.2! We've built-in a new high-performance CLI tool, added before and after pseudo-element support, introduced new sibling selector variants, the ability to style highlighted text, and tons more.`,
   },
   {
     title: 'Tailwind CSS v2.1',

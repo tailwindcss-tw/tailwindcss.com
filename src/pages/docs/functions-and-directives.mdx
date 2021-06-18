@@ -369,6 +369,26 @@ Tailwind 會自動地將使用 `@layer` 指令的 CSS 搬移到符合 `@tailwind
 
 ---
 
+## screen()
+
+The `screen` function accepts a screen name like `md` and generates the corresponding media feature expression:
+
+```css
+/* Input */
+@media screen(sm) {
+  /* ... */
+}
+
+/* Output */
+@media (min-width: 640px) {
+  /* ... */
+}
+```
+
+This can be useful when you using Tailwind with other CSS tooling that handles the `@screen` directive poorly. For example `postcss-nesting` doesn't understand `@screen` but understands `@media`, so using `@media` alongside the `screen()` function behaves more correctly.
+
+---
+
 ## theme()
 
 <!-- Use the `theme()` function to access your Tailwind config values using dot notation. -->
