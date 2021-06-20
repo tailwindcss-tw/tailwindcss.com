@@ -31,8 +31,8 @@ Tailwind CSS 的安裝過程可能會因為你所使用的框架 ( frameworks ) 
 
 如果你還沒有了解過 PostCSS，或不知道它和 Sass或其他工具的差別，你可以看一下 [PostCSS 預編譯器](/docs/using-with-preprocessors#using-post-css-as-your-preprocessor) 這篇的說明。
 
-<!-- 如果這對你來說有點困難，又或者你不想透過 PostCSS 來架設 Tailwind CSS，你可以用 [不透過 PostCSS 來設定 Tailwind](#using-tailwind-without-post-css) 這邊提供的方法來完成安裝。 -->
-If this is a bit over your head and you'd like to try Tailwind without configuring PostCSS, read our instructions on [using Tailwind CLI](#using-tailwind-cli) instead.
+<!-- If this is a bit over your head and you'd like to try Tailwind without configuring PostCSS, read our instructions on [using Tailwind CLI](#using-tailwind-cli) instead. -->
+如果這對你來說太麻煩了，而且你也不想透過 PostCSS 來架設 Tailwind CSS 的話，你可以看看我們關於[使用 Tailwind CLI](#使用%20tailwind%20cli) 的說明。
 
 ### 用 npm 來安裝 Tailwind
 
@@ -169,12 +169,14 @@ Error: PostCSS plugin tailwindcss requires PostCSS 8.
 
 ---
 
-## Using Tailwind CLI
+<!-- ## Using Tailwind CLI -->
+## 使用 Tailwind CLI
 
 <!-- *Tailwind CSS requires Node.js 12.13.0 or higher.* -->
 *Tailwind CSS 需要 Node.js 版本在 12.13.0 以上*
 
-If you'd like to compile your CSS with Tailwind without integrating it directly into any sort of build tooling, you can use the Tailwind CLI tool to generate your CSS without configuring PostCSS or even installing Tailwind as a dependency if you don't want to.
+<!-- If you'd like to compile your CSS with Tailwind without integrating it directly into any sort of build tooling, you can use the Tailwind CLI tool to generate your CSS without configuring PostCSS or even installing Tailwind as a dependency if you don't want to. -->
+如果你想要不與其他建置工具一起使用就能夠令 Tailwind 編譯你的 CSS，又或者是你不想配置 PostCSS 或安裝 Tailwind 為依賴套件，那麼你就可以直接透過 Tailwind CLI 工具來生成 CSS。 
 
 <!-- Use `npx` which is a tool that is automatically installed alongside `npm` to generate a fully compiled Tailwind CSS file: -->
 使用 `npx` 工具來產生一個完整編譯版的 Tailwind CSS 檔案：
@@ -205,9 +207,11 @@ npx tailwindcss -o tailwind.css
   </html>
 ```
 
-### Watching for changes
+<!-- ### Watching for changes -->
+### 監聽內容的變動
 
-You can use the `--watch` or `-w` flag to start a watch process and automatically rebuild your CSS any time you make any changes:
+<!-- You can use the `--watch` or `-w` flag to start a watch process and automatically rebuild your CSS any time you make any changes: -->
+你可以在指令中加上 `--watch` 或是 `-w` 標籤來啟動你的監聽程序。它會在檔案有任何變化時馬上自動重新編譯你的 CSS：
 
 ```shell
 npx tailwindcss -o tailwind.css --watch
@@ -232,7 +236,8 @@ npx tailwindcss -o tailwind.css --watch
 }
 ```
 
-Then include the path to that file when building your CSS:
+<!-- Then include the path to that file when building your CSS: -->
+接著，加入剛剛建立的 css 檔 (檔名包含路徑)，然後建置你的 CSS：
 
 ```shell
 npx tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css
@@ -268,7 +273,8 @@ module.exports = {
 }
 ```
 
-This file will automatically be read when building your CSS with Tailwind CLI:
+<!-- This file will automatically be read when building your CSS with Tailwind CLI: -->
+當你使用 Tailwind CLI 建構你的 CSS 時，這個檔案會被自動讀取：
 
 ```shell
 npx tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css
@@ -284,6 +290,7 @@ npx tailwindcss -i ./src/tailwind.css -c ./.config/tailwind.config.js -o ./dist/
 <!-- Learn more about configuring Tailwind in the [configuration documentation](/docs/configuration). -->
 在[配置](/docs/configuration)頁面中，可學習到更多有關 Tailwind 的配置。
 
+
 <!-- ### Disabling Autoprefixer -->
 ### 停用 Autoprefixer
 
@@ -294,9 +301,11 @@ npx tailwindcss -i ./src/tailwind.css -c ./.config/tailwind.config.js -o ./dist/
 npx tailwindcss --no-autoprefixer -o tailwind.css
 ```
 
-### Using a custom PostCSS configuration
+<!-- ### Using a custom PostCSS configuration -->
+### 使用自訂的 PostCSS 配置
 
-If you'd like to use other PostCSS plugins alongside Tailwind, you can create a `postcss.config.js` file in your project root to add your extra plugins and Tailwind will include them when building your CSS:
+<!-- If you'd like to use other PostCSS plugins alongside Tailwind, you can create a `postcss.config.js` file in your project root to add your extra plugins and Tailwind will include them when building your CSS: -->
+如果你想要別的 PostCSS 插件能隨著 Tailwind 一起使用，你可以在專案根目錄建立一個 `postcss.config.js` 檔案，並且在檔案中增添額外的插件，那麼 Tailwind 就會在建置你的 CSS 時將他們引入：
 
 ```js
 // postcss.config.js
@@ -307,7 +316,8 @@ module.exports = {
 }
 ```
 
-By default, plugins are applied _after_ Tailwind generates your CSS. If you have plugins that need to run before Tailwind, just include `tailwindcss` in your plugin list and Tailwind CLI will detect it and respect your custom plugin order:
+<!-- By default, plugins are applied _after_ Tailwind generates your CSS. If you have plugins that need to run before Tailwind, just include `tailwindcss` in your plugin list and Tailwind CLI will detect it and respect your custom plugin order: -->
+一般來說，所有的插件都只會在 Tailwind 生成完 CSS 後才會運作，但如果你你的插件需要搶先在 Tailwind 編譯之前執行，那就只要在你的插件列表中加入 `tailwindcss`，Tailwind CLI 將會偵測到，並且依照插件列表的順序執行：
 
 ```js
 // postcss.config.js
@@ -320,7 +330,8 @@ module.exports = {
 }
 ```
 
-If you'd like to automatically generate a basic `postcss.config.js` file when creating your `tailwind.config.js` file, use the `--postcss` or `-p` flag when initializing your config file:
+<!-- If you'd like to automatically generate a basic `postcss.config.js` file when creating your `tailwind.config.js` file, use the `--postcss` or `-p` flag when initializing your config file: -->
+如果你想要在產生 `tailwind.config.js` 時跟著自動產生基本款的 `postcss.config.js`，那你只要在指令中加上 `--postcss` 或 `-p` 標籤即可：
 
 ```shell
 npx tailwindcss init --postcss
@@ -339,7 +350,8 @@ NODE_ENV=production npx tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css
 <!-- This will make sure Tailwind removes any unused CSS for best performance. Read our separate guide on [optimizing for production](/docs/optimizing-for-production) to learn more. -->
 為確保獲得最佳的效能，Tailwind 將會移除未用到的 CSS 樣式。你可以參閱[優化生產模式](/docs/optimizing-for-production)來獲得更多資訊。
 
-You can also use the `--minify` flag to compress your CSS with [cssnano](https://cssnano.co/):
+<!-- You can also use the `--minify` flag to compress your CSS with [cssnano](https://cssnano.co/): -->
+你也可以用 `--minify` 標籤來透過 [cssnano](https://cssnano.co/) 來對你的 CSS 進行壓縮：
 
 ```shell
 NODE_ENV=production npx tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css --minify
