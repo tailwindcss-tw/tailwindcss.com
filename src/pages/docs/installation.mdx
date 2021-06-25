@@ -237,7 +237,7 @@ npx tailwindcss -o tailwind.css --watch
 ```
 
 <!-- Then include the path to that file when building your CSS: -->
-接著，加入剛剛建立的 css 檔 (檔名包含路徑)，然後建置你的 CSS：
+接著，加入剛剛建立的檔案 (檔名包含路徑)，然後建置你的 CSS：
 
 ```shell
 npx tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css
@@ -317,7 +317,7 @@ module.exports = {
 ```
 
 <!-- By default, plugins are applied _after_ Tailwind generates your CSS. If you have plugins that need to run before Tailwind, just include `tailwindcss` in your plugin list and Tailwind CLI will detect it and respect your custom plugin order: -->
-一般來說，所有的插件都只會在 Tailwind 生成完 CSS 後才會運作，但如果你你的插件需要搶先在 Tailwind 編譯之前執行，那就只要在你的插件列表中加入 `tailwindcss`，Tailwind CLI 將會偵測到，並且依照插件列表的順序執行：
+一般來說，所有的插件都 _只會在 Tailwind 生成完 CSS 後_ 才會運作，但如果你的插件需要搶先在 Tailwind 編譯之前執行，那就只要在你的插件列表中加入 `tailwindcss`，Tailwind CLI 將會偵測到，並且依照插件列表的順序執行：
 
 ```js
 // postcss.config.js
@@ -423,7 +423,7 @@ Error: PostCSS plugin tailwindcss requires PostCSS 8.
 ```
 
 <!-- To help bridge the gap until everyone has updated, we also publish a PostCSS 7 compatibility build as `@tailwindcss/postcss7-compat` on npm. -->
-在大家都更新之前為了彌補 PostCSS 7 到 8 的差距，,我們也在 npm 上發布了 PostCSS 7 的相容建置版本 `@tailwindcss/postcss7-compat`。
+在大家都更新之前為了彌補 PostCSS 7 到 8 的差距，我們也在 npm 上發布了 PostCSS 7 的相容建置版本 `@tailwindcss/postcss7-compat`。
 
 <!-- If you run into the error mentioned above, uninstall Tailwind and re-install using the compatibility build instead: -->
 如果你遇到上述的錯誤，請移除 Tailwind 並改以相容建置版本重新安裝：
