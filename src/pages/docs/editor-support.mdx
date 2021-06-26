@@ -1,25 +1,32 @@
 ---
-title: Editor Support
-description: Plugins and configuration settings that can improve the developer experience when working with Tailwind CSS.
+# title: Editor Support
+# description: Plugins and configuration settings that can improve the developer experience when working with Tailwind CSS.
+title: 編輯器支援
+description: 當使用 Tailwind CSS 來開發時，這些插件和配置設定可以改善你的開發者體驗
 ---
 
-## Syntax support
+<!-- ## Syntax support -->
+## 語法支援
 
-Tailwind CSS uses a lot of custom CSS at-rules like `@tailwind`, `@apply`, and `@screen`, and in many editors this can trigger warnings or errors where these rules aren't recognized.
+<!-- Tailwind CSS uses a lot of custom CSS at-rules like `@tailwind`, `@apply`, and `@screen`, and in many editors this can trigger warnings or errors where these rules aren't recognized. -->
+Tailwind CSS 使用了許多自訂像是 `@tailwind`、`@apply` 及 `@screen` 之類的 CSS @規則 (at-rules)，並且在許多編輯器中可能無法辨識這些規則而觸發警告或錯誤。
 
-The solution to this is almost always to install a plugin for your editor/IDE for PostCSS language support instead of regular CSS. For example, VS Code has a [PostCSS Language Support](https://marketplace.visualstudio.com/items?itemName=csstools.postcss) plugin you can use that works great with Tailwind CSS.
+<!-- The solution to this is almost always to install a plugin for your editor/IDE for PostCSS language support instead of regular CSS. For example, VS Code has a [PostCSS Language Support](https://marketplace.visualstudio.com/items?itemName=csstools.postcss) plugin you can use that works great with Tailwind CSS. -->
+而這個問題的解決方案大多是為你的編輯器、IDE 安裝像是 VS Code 上的 [PostCSS Language Support](https://marketplace.visualstudio.com/items?itemName=csstools.postcss) 這種 PostCSS 語言支援套件，就可以使 Tailwind CSS 運作正常。 (就不會有警告或錯誤提示)
 
-In some cases, you may need to disable native CSS linting/validations if your editor is very strict about the syntax it expects in your CSS files.
+<!-- In some cases, you may need to disable native CSS linting/validations if your editor is very strict about the syntax it expects in your CSS files. -->
+但某些情況下，如果你的編輯器對 CSS 檔的語法要求特別嚴格，那麼你就必須關閉原生 CSS 語法偵測、驗證的功能。
 
 
 ## IntelliSense for VS Code
 
-The official [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) extension for Visual Studio Code enhances the Tailwind development experience by providing users with advanced features such as autocomplete, syntax highlighting, and linting.
+<!-- The official [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) extension for Visual Studio Code enhances the Tailwind development experience by providing users with advanced features such as autocomplete, syntax highlighting, and linting. -->
+這個官方 Visual Studio Code 擴充套件 [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) 提供使用者如自動完成、語法強調、及語法檢查等許多優秀的特色功能，以增強 Tailwind 的開發體驗。
 
 <img src={require('@/img/intellisense.png').default} alt="" width={1344} height={672} />
 
 <!-- - **Autocomplete**. Intelligent suggestions for class names, as well as [CSS functions and directives](/docs/functions-and-directives). -->
-- **自動完成 (autocomplete)** 智能提示 class 名稱，以及 [CSS functions and directives](/docs/functions-and-directives)。
+- **自動完成 (autocomplete)** 智慧提示 class 名稱，以及 [CSS 函數與指令](/docs/functions-and-directives)。
 <!-- - **Linting**. Highlights errors and potential bugs in both your CSS and your markup. -->
 - **語法檢查 (Linting)** 突顯在你 CSS 和 HTML 中的錯誤和潛在 bugs。
 <!-- - **Hover Previews**. See the complete CSS for a Tailwind class name by hovering over it. -->
@@ -27,10 +34,13 @@ The official [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/it
 <!-- - **Syntax Highlighting**. Provides syntax definitions so that Tailwind features are highlighted correctly. -->
 - **語法強調 (Syntax Highlighting)** 提供語法定義來正確地強調 Tailwind 功能。
 
-Check out the project [on GitHub](https://github.com/tailwindcss/intellisense) to learn more, or [add it to Visual Studio Code](vscode:extension/bradlc.vscode-tailwindcss) to get started now.
+<!-- Check out the project [on GitHub](https://github.com/tailwindcss/intellisense) to learn more, or [add it to Visual Studio Code](vscode:extension/bradlc.vscode-tailwindcss) to get started now. -->
+到 [GitHub 上](https://github.com/tailwindcss/intellisense) 的專案來了解更多，或者直接在 [Visual Studio Code 中安裝](vscode:extension/bradlc.vscode-tailwindcss) 然後開始使用。
 
 ## JetBrains IDEs
 
-JetBrains IDEs like WebStorm, PhpStorm, and others include support for intelligent Tailwind CSS completions in your HTML and when using `@apply`.
+<!-- JetBrains IDEs like WebStorm, PhpStorm, and others include support for intelligent Tailwind CSS completions in your HTML and when using `@apply`. -->
+WebStorm、PhpStorm 等 JetBrains IDE 中包含支援在 HTML中 Tailwind CSS 智慧語法完成以及 `@apply` 指令的使用。
 
-[Learn more about Tailwind CSS support in JetBrains IDEs &rarr;](https://www.jetbrains.com/help/webstorm/tailwind-css.html)
+<!-- [Learn more about Tailwind CSS support in JetBrains IDEs &rarr;](https://www.jetbrains.com/help/webstorm/tailwind-css.html) -->
+[閱讀關於在 JetBrains IDE 中支援 Tailwind CSS 的資訊  &rarr;](https://www.jetbrains.com/help/webstorm/tailwind-css.html)
