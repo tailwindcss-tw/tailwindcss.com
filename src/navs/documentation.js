@@ -208,7 +208,7 @@ export const documentationNav = {
     pages['stroke'], 
     pages['stroke-width']
   ],
-  '平易近人 (Accessibility)': [
+  '無障礙 (Accessibility)': [
     pages['screen-readers']
   ],
   '官方插件 (Official Plugins)': [
