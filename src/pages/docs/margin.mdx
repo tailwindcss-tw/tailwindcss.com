@@ -1,6 +1,8 @@
 ---
-title: "Margin"
-description: "Utilities for controlling an element's margin."
+# title: "Margin"
+# description: "Utilities for controlling an element's margin."
+title: "Margin (外距)"
+description: "控制元素外邊距的功能"
 features:
   responsive: true
   customizable: true
@@ -12,17 +14,21 @@ import plugin from 'tailwindcss/lib/plugins/margin'
 import { Variants } from '@/components/Variants'
 import { Disabling } from '@/components/Disabling'
 import { numbersFirstByPrefix } from '@/utils/sortClasses'
+import Responsive from '@/components/Responsive.mdx'
 
 export const classes = {
   plugin,
   sort: numbersFirstByPrefix,
 }
 
-## Add margin to a single side
+<!-- ## Add margin to a single side -->
+## 為特定邊增加外邊距
 
-Control the margin on one side of an element using the `m{t|r|b|l}-{size}` utilities.
+<!-- Control the margin on one side of an element using the `m{t|r|b|l}-{size}` utilities. -->
+用 `m{t|r|b|l}-{size}` 功能來控制元素特定邊的外距。
 
-For example, `mt-6` would add `1.5rem` of margin to the top of an element, `mr-4` would add `1rem` of margin to the right of an element, `mb-8` would add `2rem` of margin to the bottom of an element, and `ml-2` would add `0.5rem` of margin to the left of an element.
+<!-- For example, `mt-6` would add `1.5rem` of margin to the top of an element, `mr-4` would add `1rem` of margin to the right of an element, `mb-8` would add `2rem` of margin to the bottom of an element, and `ml-2` would add `0.5rem` of margin to the left of an element. -->
+舉例，`mt-6` 會幫元素的上側增加 `1.5rem` 的外距，`mr-4` 是幫元素的右側增加 `1rem`的外距，`mb-8` 會在元素的下側增加 `2rem` 的外距，而 `ml-2` 則是會在元素的左側增加 `0.5rem` 的外距。
 
 ```html rose
 <template preview>
@@ -52,9 +58,11 @@ For example, `mt-6` would add `1.5rem` of margin to the top of an element, `mr-4
 <div class="**ml-8** ...">ml-8</div>
 ```
 
-## Add horizontal margin
+<!-- ## Add horizontal margin -->
+## 增添水平外邊距
 
-Control the horizontal margin of an element using the `mx-{size}` utilities.
+<!-- Control the horizontal margin of an element using the `mx-{size}` utilities. -->
+用 `mx-{size}` 功能來控制元素水平方向的外距。
 
 ```html purple
 <template preview>
@@ -68,9 +76,11 @@ Control the horizontal margin of an element using the `mx-{size}` utilities.
 <div class="**mx-8** ...">mx-8</div>
 ```
 
-## Add vertical margin
+<!-- ## Add vertical margin -->
+## 增添垂直外邊距
 
-Control the vertical margin of an element using the `my-{size}` utilities.
+<!-- Control the vertical margin of an element using the `my-{size}` utilities. -->
+用 `my-{size}` 功能來控制元素垂直方向的外距。
 
 ```html emerald
 <template preview>
@@ -84,9 +94,11 @@ Control the vertical margin of an element using the `my-{size}` utilities.
 <div class="**my-8** ...">my-8</div>
 ```
 
-## Add margin to all sides
+<!-- ## Add margin to all sides -->
+## 增添整體外距
 
-Control the margin on all sides of an element using the `m-{size}` utilities.
+<!-- Control the margin on all sides of an element using the `m-{size}` utilities. -->
+用 `m-{size}` 功能來同時控制元素四個邊的外距。
 
 ```html lightBlue
 <template preview>
@@ -100,9 +112,11 @@ Control the margin on all sides of an element using the `m-{size}` utilities.
 <div class="**m-8** ...">m-8</div>
 ```
 
-## Negative margins
+<!-- ## Negative margins -->
+## 負外距
 
-Control the negative margin of an element using the `-m{side?}-{size}` utilities.
+<!-- Control the negative margin of an element using the `-m{side?}-{size}` utilities. -->
+用 `-m{side?}-{size}` 功能來控制元素的負向外距。
 
 ```html fuchsia
 <template preview>
@@ -122,9 +136,11 @@ Control the negative margin of an element using the `-m{side?}-{size}` utilities
 
 ---
 
-## Responsive
+<!-- ## Responsive -->
+## 響應式
 
-To control the margin of an element at a specific breakpoint, add a `{screen}:` prefix to any existing margin utility. For example, adding the class `md:my-8` to an element would apply the `my-8` utility at medium screen sizes and above.
+<!-- To control the margin of an element at a specific breakpoint, add a `{screen}:` prefix to any existing margin utility. For example, adding the class `md:my-8` to an element would apply the `my-8` utility at medium screen sizes and above. -->
+如要讓元素的外距有響應式效果，可在現有內距功能前加上前綴詞 `{screen}:`。例如：中型或以上的螢幕尺寸使用 `md:my-8` 以套用 `my-8` 功能。
 
 ```html
 <div class="mt-8 **md:my-8**">
@@ -132,17 +148,22 @@ To control the margin of an element at a specific breakpoint, add a `{screen}:` 
 </div>
 ```
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+<!-- For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation. -->
+<Responsive />
 
 ---
 
-## Customizing
+<!-- ## Customizing -->
+## 客製化
 
-### Margin scale
+<!-- ### Margin scale -->
+### 外距的尺寸
 
-By default, Tailwind provides 20 margin utilities for each side and axis.
+<!-- By default, Tailwind provides 20 margin utilities for each side and axis. -->
+Tailwind 預設為每個邊及軸向提供 20 個定義好的外距功能。
 
-If you'd like to customize these values for padding, margin, width, and height all at once, use the `theme.spacing` section of your `tailwind.config.js` file.
+<!-- If you'd like to customize these values for padding, margin, width, and height all at once, use the `theme.spacing` section of your `tailwind.config.js` file. -->
+如果你想把自訂的數值一次設定在 padding、margin、width 以及 height 上的話，請在你的 `tailwind.config.js` 檔案中使用 `theme.spacing` 區段裡自訂。
 
 ```diff-js
   // tailwind.config.js
@@ -158,7 +179,8 @@ If you'd like to customize these values for padding, margin, width, and height a
   }
 ```
 
-To customize only the margin values, use the `theme.margin` section of your `tailwind.config.js` file.
+<!-- To customize only the margin values, use the `theme.margin` section of your `tailwind.config.js` file. -->
+只想要自訂外距的數值，請在你的 `tailwind.config.js` 檔案中的 `theme.margin` 區段裡自訂。
 
 ```diff-js
   // tailwind.config.js
@@ -174,11 +196,13 @@ To customize only the margin values, use the `theme.margin` section of your `tai
   }
 ```
 
-Learn more about customizing the default theme in the [theme customization documentation](/docs/theme#customizing-the-default-theme).
+<!-- Learn more about customizing the default theme in the [theme customization documentation](/docs/theme#customizing-the-default-theme). -->
+更多有關自訂預設主題的資訊，可參考 [theme customization documentation](/docs/theme#customizing-the-default-theme)。
 
-### Negative values
+### 負值
 
-If you'd like to add additional negative margin classes (taking the form `-m{side?}-{size}`), prefix the keys in your config file with a dash:
+<!-- If you'd like to add additional negative margin classes (taking the form `-m{side?}-{size}`), prefix the keys in your config file with a dash: -->
+如果你想增加額外的負外距 class (使用方法 `-m{side?}-{size}`)，請在你配置檔中的鍵值 (key) 前加上 `-` 做為前綴詞。
 
 ```diff-js
   // tailwind.config.js
@@ -193,12 +217,15 @@ If you'd like to add additional negative margin classes (taking the form `-m{sid
   }
 ```
 
-Tailwind is smart enough to generate classes like `-mx-72` when it sees the leading dash, not `mx--72` like you might expect.
+<!-- Tailwind is smart enough to generate classes like `-mx-72` when it sees the leading dash, not `mx--72` like you might expect. -->
+因為 Tailwind 夠聰明，所以會發現前面有個負號，並且在生成 class 時將其命名為 `-mx-72`，而不是你所想像的 `mx--72`。
 
-### Variants
+<!-- ### Variants -->
+### 變化模式
 
 <Variants plugin="margin" />
 
-### Disabling
+<!-- ### Disabling -->
+### 停用
 
 <Disabling plugin="margin" />
