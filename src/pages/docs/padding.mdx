@@ -1,6 +1,8 @@
 ---
-title: "Padding"
-description: "Utilities for controlling an element's padding."
+# title: "Padding"
+# description: "Utilities for controlling an element's padding."
+title: "Padding (內距)"
+description: "控制元素內邊距的功能"
 features:
   responsive: true
   customizable: true
@@ -12,17 +14,21 @@ import plugin from 'tailwindcss/lib/plugins/padding'
 import { Variants } from '@/components/Variants'
 import { Disabling } from '@/components/Disabling'
 import { numbersFirstByPrefix } from '@/utils/sortClasses'
+import Responsive from '@/components/Responsive.mdx'
 
 export const classes = {
   plugin,
   sort: numbersFirstByPrefix,
 }
 
-## Add padding to a single side
+<!-- ## Add padding to a single side -->
+## 為特定邊增加內邊距
 
-Control the padding on one side of an element using the `p{t|r|b|l}-{size}` utilities.
+<!-- Control the padding on one side of an element using the `p{t|r|b|l}-{size}` utilities. -->
+用 `p{t|r|b|l}-{size}` 功能來控制元素特定邊的內距。
 
-For example, `pt-6` would add `1.5rem` of padding to the top of an element, `pr-4` would add `1rem` of padding to the right of an element, `pb-8` would add `2rem` of padding to the bottom of an element, and `pl-2` would add `0.5rem` of padding to the left of an element.
+<!-- For example, `pt-6` would add `1.5rem` of padding to the top of an element, `pr-4` would add `1rem` of padding to the right of an element, `pb-8` would add `2rem` of padding to the bottom of an element, and `pl-2` would add `0.5rem` of padding to the left of an element. -->
+舉例，`pt-6` 會幫元素的上側增加 `1.5rem` 的內距，`pr-4` 是幫元素的右側增加 `1rem`的內距，`pb-8` 會在元素的下側增加 `2rem` 的內距，而 `pl-2` 則是會在元素的左側增加 `0.5rem` 的內距。
 
 ```html rose
 <template preview>
@@ -56,9 +62,11 @@ For example, `pt-6` would add `1.5rem` of padding to the top of an element, `pr-
 <div class="**pl-2** ...">pl-2</div>
 ```
 
-## Add horizontal padding
+<!-- ## Add horizontal padding -->
+## 增添水平內邊距
 
-Control the horizontal padding of an element using the `px-{size}` utilities.
+<!-- Control the horizontal padding of an element using the `px-{size}` utilities. -->
+用 `px-{size}` 功能來控制元素水平方向的內距。
 
 ```html emerald
 <template preview>
@@ -72,9 +80,11 @@ Control the horizontal padding of an element using the `px-{size}` utilities.
 <div class="**px-8** ...">px-8</div>
 ```
 
-## Add vertical padding
+<!-- ## Add vertical padding -->
+## 增添垂直內邊距
 
-Control the vertical padding of an element using the `py-{size}` utilities.
+<!-- Control the vertical padding of an element using the `py-{size}` utilities. -->
+用 `py-{size}` 功能來控制元素垂直方向的內距。
 
 ```html indigo
 <template preview>
@@ -88,9 +98,11 @@ Control the vertical padding of an element using the `py-{size}` utilities.
 <div class="**py-8** ...">py-8</div>
 ```
 
-## Add padding to all sides
+<!-- ## Add padding to all sides -->
+## 增添整體內距
 
-Control the padding on all sides of an element using the `p-{size}` utilities.
+<!-- Control the padding on all sides of an element using the `p-{size}` utilities. -->
+用 `p-{size}` 功能來同時控制元素四個邊的內距。
 
 ```html fuchsia
 <template preview>
@@ -106,9 +118,11 @@ Control the padding on all sides of an element using the `p-{size}` utilities.
 
 ---
 
-## Responsive
+<!-- ## Responsive -->
+## 響應式
 
-To control the padding of an element at a specific breakpoint, add a `{screen}:` prefix to any existing padding utility. For example, adding the class `md:py-8` to an element would apply the `py-8` utility at medium screen sizes and above.
+<!-- To control the padding of an element at a specific breakpoint, add a `{screen}:` prefix to any existing padding utility. For example, adding the class `md:py-8` to an element would apply the `py-8` utility at medium screen sizes and above. -->
+如要讓元素的內距有響應式效果，可在現有內距功能前加上前綴詞 `{screen}:`。例如：中型或以上的螢幕尺寸使用 `md:py-8` 以套用 `py-8` 功能。
 
 ```html
 <div class="**md:py-8** ...">
@@ -116,17 +130,22 @@ To control the padding of an element at a specific breakpoint, add a `{screen}:`
 </div>
 ```
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+<!-- For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation. -->
+<Responsive />
 
 ---
 
-## Customizing
+<!-- ## Customizing -->
+## 客製化
 
-### Padding scale
+<!-- ### Padding scale -->
+### 內距的尺寸
 
-By default, Tailwind provides 19 fixed padding utilities for each side and axis.
+<!-- By default, Tailwind provides 19 fixed padding utilities for each side and axis. -->
+Tailwind 預設為每個邊及軸向提供 19 個定義好的內距功能。
 
-If you'd like to customize these values for padding, margin, width, and height all at once, use the `theme.spacing` section of your `tailwind.config.js` file.
+<!-- If you'd like to customize these values for padding, margin, width, and height all at once, use the `theme.spacing` section of your `tailwind.config.js` file. -->
+如果你想把自訂的數值一次設定在 padding、margin、width 以及 height 上的話，請在你的 `tailwind.config.js` 檔案中使用 `theme.spacing` 區段裡自訂。
 
 ```diff-js
   // tailwind.config.js
@@ -142,7 +161,8 @@ If you'd like to customize these values for padding, margin, width, and height a
   }
 ```
 
-To customize only the padding values, use the `theme.padding` section of your `tailwind.config.js` file.
+<!-- To customize only the padding values, use the `theme.padding` section of your `tailwind.config.js` file. -->
+只想要自訂內距的數值，請在你的 `tailwind.config.js` 檔案中的 `theme.padding` 區段裡自訂。
 
 ```diff-js
   // tailwind.config.js
@@ -158,12 +178,15 @@ To customize only the padding values, use the `theme.padding` section of your `t
   }
 ```
 
-Learn more about customizing the default theme in the [theme customization documentation](/docs/theme#customizing-the-default-theme).
+<!-- Learn more about customizing the default theme in the [theme customization documentation](/docs/theme#customizing-the-default-theme). -->
+更多有關自訂預設主題的資訊，可參考 [theme customization documentation](/docs/theme#customizing-the-default-theme)。
 
-### Variants
+<!-- ### Variants -->
+### 變化模式
 
 <Variants plugin="padding" />
 
-### Disabling
+<!-- ### Disabling -->
+### 停用
 
 <Disabling plugin="padding" />
