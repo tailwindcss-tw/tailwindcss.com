@@ -31,15 +31,15 @@ module.exports = {
   // ...
 }
 ```
-現在，只要使用者的作業系統有開啟深色模式，那麼有 `dark:` 開頭的這些類別都會蓋過自己原本的樣式。其實 `media` 就是在背後使用了 `色彩偏好方案`(prefers-color-scheme)，但是如果你想要手動切換深色模式的效果，你可以 [使用 \`class\` 參數 ][use the 'class' strategy] 來控制它。
+現在，只要使用者的作業系統有開啟深色模式，那麼有 `dark:` 開頭的這些類別都會蓋過自己原本的樣式。其實 `media` 就是在背後使用了 `色彩偏好方案` (prefers-color-scheme)，但是如果你想要手動切換深色模式的效果，你可以[使用 class 參數 ](#深色模式的手動切換)來控制它。
 
-一般來說，開啟 `darkMode` 只會幫你把跟顏色有關的 class(類別)增加 `dark` 的狀態判斷，像是文字顏色、背景顏色、邊框顏色、漸層和 placeholder 的顏色。
+一般來說，開啟 `darkMode` 只會幫你把跟顏色有關的 class (類別) 增加 `dark` 的狀態判斷，像是文字顏色、背景顏色、邊框顏色、漸層和 placeholder 的顏色。
 
 ---
 
 ## 搭配其它的變化來使用
 
-`dark` 的變化模式也能與其它的變化搭在一起使用，比如[響應式][responsive]變化，和[狀態變化][state variants] (像是 hover 和 focus)：
+`dark` 的變化模式也能與其它的變化搭在一起使用，比如[響應式](/docs/responsive-design)變化，和[狀態變化模式](/docs/hover-focus-and-other-states) (像是 hover 和 focus)：
 
 ```html
 <button class="lg:dark:hover:bg-white ...">
@@ -131,11 +131,15 @@ localStorage.removeItem('theme')
 
 同樣的，你可以根據自己的心情喜好去管理它 ~~(就看你今天爽不爽這樣)~~，甚至是你想要把每個使用者的偏好設定都存在你伺服器的資料庫，然後再讀出來設定頁面，都隨便你。
 
-### Specificity considerations
 
-When using the `class` strategy, the specificity of dark mode utilities will be higher than regular utilities because the selector contains an extra class. This means that in certain situations the behavior of some combination of utilities can be slightly different in `class` mode than it is in `media` mode.
+<!-- ### Specificity considerations -->
+### 特性的考慮
 
-For example, consider this HTML:
+<!-- When using the `class` strategy, the specificity of dark mode utilities will be higher than regular utilities because the selector contains an extra class. This means that in certain situations the behavior of some combination of utilities can be slightly different in `class` mode than it is in `media` mode. -->
+當 darkMode 參數設為 `class` 時, 深色模式功能的特性優先權會高於一般的功能，因為選擇器包含了一個額外的 class。這代表某些情況下，有的功能組合後的效果在 `class` 和 `media` 模式下會有些微的差異。
+
+<!-- For example, consider this HTML: -->
+舉個例，先參考一下這個 HTML：
 
 ```html
 <div class="text-black text-opacity-50 dark:text-white">
@@ -143,17 +147,14 @@ For example, consider this HTML:
 </div>
 ```
 
-When using the `media` strategy, `dark:text-white` has the same specificity as `text-black` and `text-opacity-50`. Because `text-opacity-50` is defined later in the generated CSS than `dark:text-white`, the white text will have 50% opacity.
+<!-- When using the `media` strategy, `dark:text-white` has the same specificity as `text-black` and `text-opacity-50`. Because `text-opacity-50` is defined later in the generated CSS than `dark:text-white`, the white text will have 50% opacity. -->
+當 darkMode 參數設為 `media` 時，`dark:text-white` 就會和 `text-black` 一樣擁有 `text-opacity-50` 這個特性。因為在生成 CSS 時，`text-opacity-50` 定義的時間比 `dark:text-white` 晚，所以白色的文字才會擁有 50% 的透明度。
 
-When using the `class` strategy, `dark:text-white` has a _higher_ specificity, so even though it is defined sooner, it will actually override `text-opacity-50` and reset the opacity back to 1. So when using the `class` strategy, you'll need to re-specify the opacity in dark mode:
+<!-- When using the `class` strategy, `dark:text-white` has a _higher_ specificity, so even though it is defined sooner, it will actually override `text-opacity-50` and reset the opacity back to 1. So when using the `class` strategy, you'll need to re-specify the opacity in dark mode: -->
+而當參數設為 `class` 時，`dark:text-white` 特性的優先權會 _提高_，所以即使把定義的時間提前一點，它也會把 `text-opacity-50` 的效果覆蓋掉並重設回 1 。所以如果使用的是 `class` 參數，你就必須用深色模式中重新指定一次透明度，以確保特性存在：
 
 ```html
 <div class="text-black text-opacity-50 dark:text-white dark:text-opacity-50">
   <!-- ... -->
 </div>
 ```
-
-<!-- === 連結 ============== -->
-[use the 'class' strategy]: #-2
-[responsive]: /docs/responsive-design
-[state variants]: /docs/hover-focus-and-other-states
