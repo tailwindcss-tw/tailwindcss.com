@@ -1,6 +1,6 @@
 ---
-title: "Width"
-description: "Utilities for setting the width of an element"
+title: "Width (寬度)"
+description: 設定元素寬度的功能
 features:
   responsive: true
   customizable: true
@@ -12,31 +12,35 @@ import plugin from 'tailwindcss/lib/plugins/width'
 import { Variants } from '@/components/Variants'
 import { Disabling } from '@/components/Disabling'
 import { numbersFirst } from '@/utils/sortClasses'
+import Responsive from '@/components/Responsive.mdx'
 
 export const classes = {
   plugin,
   sort: numbersFirst,
 }
 
-## Auto
+## 自動設定寬度
 
-Use `w-auto` to let the browser calculate and select the width for the element. You can use it to unset a specific width:
+<!--Use `w-auto` to let the browser calculate and select the width for the element. You can use it to unset a specific width:-->
+使用 `w-auto` 讓瀏覽器自動為元素計算並選擇寬度。你可以用他還原已設定的寬度。
 
 ```html
 <div class="w-24 **md:w-auto** ..."></div>
 ```
 
-## Screen Width
+## 設定為螢幕寬度
 
-Use `w-screen` to make an element span the entire width of the viewport.
+<!--Use `w-screen` to make an element span the entire width of the viewport.-->
+使用 `w-screen` 讓元素寬度橫跨整個螢幕。
 
 ```html
 <div class="h-12 **w-screen**"></div>
 ```
 
-## Fixed Width
+## 固定寬度
 
-Use `w-{number}` or `w-px` to set an element to a fixed width.
+<!--Use `w-{number}` or `w-px` to set an element to a fixed width.-->
+使用 `w-{number}` 或 `w-px` 來設定元素的固定寬度。
 
 
 ```html lightBlue
@@ -69,9 +73,10 @@ Use `w-{number}` or `w-px` to set an element to a fixed width.
 </div>
 ```
 
-## Fluid Width
+## 浮動寬度
 
-Use `w-{fraction}` or `w-full` to set an element to a percentage based width.
+<!--Use `w-{fraction}` or `w-full` to set an element to a percentage based width.-->
+使用 `w-{fraction}` 或 `w-full` 設定元素寬度比例。
 
 ```html rose
 <template preview>
@@ -132,9 +137,10 @@ Use `w-{fraction}` or `w-full` to set an element to a percentage based width.
 <div class="**w-full** ...">w-full</div>
 ```
 
-## Responsive
+## 響應式
 
-To control the width of an element at a specific breakpoint, add a `{screen}:` prefix to any existing width utility. For example, adding the class `md:w-full` to an element would apply the `w-full` utility at medium screen sizes and above.
+<!--To control the width of an element at a specific breakpoint, add a `{screen}:` prefix to any existing width utility. For example, adding the class `md:w-full` to an element would apply the `w-full` utility at medium screen sizes and above.-->
+在元素特定斷點控制字詞寬度，可在寬度功能前加上前綴詞 `{screen}:`。例如：中等以上尺寸螢幕使用 `md:w-full` 以套用 `w-full` 功能。
 
 ```html
 <div class="w-1/2 **md:w-full** ...">
@@ -142,15 +148,18 @@ To control the width of an element at a specific breakpoint, add a `{screen}:` p
 </div>
 ```
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+<!--For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.-->
+<Responsive />
 
 ## Customizing
 
 ### Width scale
 
-By default, Tailwind's width scale is a combination of the [default spacing scale](/docs/customizing-spacing#default-spacing-scale) as well as some additional values specific to widths.
+<!--By default, Tailwind's width scale is a combination of the [default spacing scale](/docs/customizing-spacing#default-spacing-scale) as well as some additional values specific to widths.-->
+Tailwind 的寬度預設是由 [預設間距](/docs/customizing-spacing#default-spacing-scale) 及額外寬度設定組合而成。
 
-You can customize the spacing scale for padding, margin, width, and height all at once in the `theme.spacing` or `theme.extend.spacing` sections of your `tailwind.config.js` file:
+<!--You can customize the spacing scale for padding, margin, width, and height all at once in the `theme.spacing` or `theme.extend.spacing` sections of your `tailwind.config.js` file:-->
+在 `tailwind.config.js` 裡頭， `theme.spacing` 或 `theme.extend.spacing` 可同時設定間距裡的 padding, margin, 寬度和高度。
 
 ```diff-js
   // tailwind.config.js
@@ -167,7 +176,8 @@ You can customize the spacing scale for padding, margin, width, and height all a
   }
 ```
 
-To customize width separately, use the `theme.width` section of your `tailwind.config.js` file.
+<!--To customize width separately, use the `theme.width` section of your `tailwind.config.js` file.-->
+在 `tailwind.config.js` 裡頭， `theme.width` 可另行設定寬度。
 
 ```diff-js
   // tailwind.config.js
@@ -187,7 +197,8 @@ To customize width separately, use the `theme.width` section of your `tailwind.c
   }
 ```
 
-Learn more about customizing the default theme in the [theme customization documentation](/docs/theme#customizing-the-default-theme).
+<!--Learn more about customizing the default theme in the [theme customization documentation](/docs/theme#customizing-the-default-theme).-->
+更多有關 theme 的資訊，可參考[客製化 theme 文件](/docs/theme#customizing-the-default-theme)
 
 ### Variants
 
@@ -195,4 +206,4 @@ Learn more about customizing the default theme in the [theme customization docum
 
 ### Disabling
 
-<Disabling plugin="width" />
+<Disabling plugin="width" name="width" />
