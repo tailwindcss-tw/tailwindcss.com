@@ -84,7 +84,7 @@ export const documentationNav = {
     pages['place-items'],
     pages['place-self'],
   ],
-  '邊距 (Spacing)': [
+  '間距 (Spacing)': [
     pages['padding'], 
     pages['margin'], 
     pages['space']
