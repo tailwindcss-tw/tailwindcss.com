@@ -31,7 +31,7 @@ function TableOfContents({ tableOfContents, currentSection }) {
     <>
       <h5 className="text-gray-900 uppercase tracking-wide font-semibold mb-3 text-sm lg:text-xs">
         {/* On this page */}
-        在此頁面
+        本頁面內
       </h5>
       <ul className="overflow-x-hidden text-gray-500 font-medium">
         {tableOfContents.map((section) => {
@@ -162,8 +162,12 @@ export function ContentsLayoutOuter({ children, layoutProps, ...props }) {
 export function ContentsLayout({ children, meta, classes, tableOfContents }) {
   const router = useRouter()
   const toc = [
+    // ...(classes
+    //   ? [{ title: 'Default class reference', slug: 'class-reference', children: [] }]
+    //   : []),
+    // ...tableOfContents,
     ...(classes
-      ? [{ title: 'Default class reference', slug: 'class-reference', children: [] }]
+      ? [{ title: '預設 class 參考', slug: 'class-reference', children: [] }]
       : []),
     ...tableOfContents,
   ]

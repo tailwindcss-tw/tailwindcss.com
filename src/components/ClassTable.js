@@ -154,7 +154,8 @@ export const ClassTable = memo(
                     <div
                       className={clsx('pb-2 pl-2 border-b border-gray-200', { 'pr-2': preview })}
                     >
-                      Properties
+                      {/* Properties */}
+                      屬性
                     </div>
                   </th>
                   {preview && (
