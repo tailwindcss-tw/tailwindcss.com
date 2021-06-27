@@ -1,5 +1,7 @@
 ---
-title: 功能優先
+# title: Utility-First
+# description: Building complex components from a constrained set of primitive utilities.
+title: 功能優先 (Utility First)
 description: 從組合過的原生功能，來建立起複雜的元件。
 ---
 
@@ -98,40 +100,61 @@ import { CodeSample } from '@/components/CodeSample'
 </div>
 ```
 
+<!-- In the example above, we’ve used: -->
 在上面這個範例，我們用了：
 
+<!-- - Tailwind’s flexbox and padding utilities (flex, flex-shrink-0, and p-6) to control the overall card layout
+- The max-width and margin utilities (max-w-sm and mx-auto) to constrain the card width and center it horizontally
+- The background color, border radius, and box-shadow utilities (bg-white, rounded-xl, and shadow-md) to style the card’s appearance
+- The width and height utilities (w-12 and h-12) to size the logo image
+- The space-between utilities (space-x-4) to handle the spacing between the logo and the text
+- The font size, text color, and font-weight utilities (text-xl, text-black, font-medium, etc.) to style the card text -->
 - Tailwind 中 [flexbox](/docs/display#flex) 和[內距 (padding)](/docs/padding) 裡的功能 (`flex`, `flex-shrink-0`, and `p-6`) 去控制整個卡片的排版
-- [最大寬度 (max-width)](/docs/max-width) and [margin](/docs/margin) utilities (`max-w-sm` and `mx-auto`) to constrain the card width and center it horizontally
-- The [background color](/docs/background-color), [border radius](/docs/border-radius), and [box-shadow](/docs/box-shadow) utilities (`bg-white`, `rounded-xl`, and `shadow-md`) to style the card's appearance
-- The [width](/docs/width) and [height](/docs/height) utilities (`w-12` and `h-12`) to size the logo image
-- The [space-between](/docs/space) utilities (`space-x-4`) to handle the spacing between the logo and the text
-- The [font size](/docs/font-size), [text color](/docs/text-color), and [font-weight](/docs/font-weight) utilities (`text-xl`, `text-black`, `font-medium`, etc.) to style the card text
+- 使用[最大寬度 (max-width)](/docs/max-width) 及[外距 (margin)](/docs/margin) 功能 (`max-w-sm` 和 `mx-auto`) 來約束卡片寬度以及將卡片水平置中
+- 利用[背景顏色](/docs/background-color)、[圓邊圓角 (border radius)](/docs/border-radius)以及[陰影 (box-shadow)](/docs/box-shadow) 功能 (`bg-white`、`rounded-xl` 和 `shadow-md`) 來幫卡片外觀增添樣式
+- 用[寬度 (width)](/docs/width) 及[高度 (height)](/docs/height) 功能 (`w-12` and `h-12`) 幫 logo 調整大小
+- 以[元素間距 (space-between)](/docs/space) 功能 (`space-x-4`) 來處理 logo 與文字間的距離
+- 透過[字體大小](/docs/font-size)、[文字色彩](/docs/text-color)以及[字體粗細](/docs/font-weight) 功能 (`text-xl`, `text-black`, `font-medium`, etc.) 來改變卡片中文字的樣式
 
-This approach allows us to implement a completely custom component design without writing a single line of custom CSS.
+<!-- This approach allows us to implement a completely custom component design without writing a single line of custom CSS. -->
+這個方法讓我們不用撰寫任何一行的 CSS，就能夠實現完整的客製化元件設計。
 
-Now I know what you're thinking, _"this is an atrocity, what a horrible mess!"_ and you're right, it's kind of ugly. In fact it's just about impossible to think this is a good idea the first time you see it — **you have to actually try it**.
+<!-- Now I know what you're thinking, _"this is an atrocity, what a horrible mess!"_ and you're right, it's kind of ugly. In fact it's just about impossible to think this is a good idea the first time you see it — **you have to actually try it**. -->
+我知道你現在在想什麼：_「這太殘暴了吧...看起來也太亂太可怕了...」_。不過你沒有錯，這的確有點醜。事實上，第一次看到這個方法的時候幾乎不太可能認為這是一個好主意，不過**你必須試試看，試了就知道了。**
 
-But once you've actually built something this way, you'll quickly notice some really important benefits:
+<!-- But once you've actually built something this way, you'll quickly notice some really important benefits: -->
+但你實際用這個方法建構一次時，你就會很快的注意到一些真的非常讚的地方：
 
-- **You aren't wasting energy inventing class names**. No more adding silly class names like `sidebar-inner-wrapper` just to be able to style something, and no more agonizing over the perfect abstract name for something that's really just a flex container.
+<!-- - **You aren't wasting energy inventing class names**. No more adding silly class names like `sidebar-inner-wrapper` just to be able to style something, and no more agonizing over the perfect abstract name for something that's really just a flex container.
 - **Your CSS stops growing**. Using a traditional approach, your CSS files get bigger every time you add a new feature. With utilities, everything is reusable so you rarely need to write new CSS.
-- **Making changes feels safer**. CSS is global and you never know what you're breaking when you make a change. Classes in your HTML are local, so you can change them without worrying about something else breaking.
+- **Making changes feels safer**. CSS is global and you never know what you're breaking when you make a change. Classes in your HTML are local, so you can change them without worrying about something else breaking. -->
+- **你不用再浪費力氣去想 class 名稱**：不會再因為只是要增加某些樣式而創了一些像是 `sidebar-inner-wrapper` 這樣子傻傻的 class 名稱，也不用再因為覺得「flex 容器的名稱怎麼想都很抽象」而痛苦。
+- **你 CSS 的量不會再變多**：用傳統的方法，只要每次增加新功能時 CSS 的檔案就會變大。但有了功能性 class，你就很少再寫新的 CSS 樣式了，因為一切都是可以重複使用的。
+- **改樣式時感覺更安心**：CSS 是作用於整個網站的，所以你永遠不會知道你改變一個樣式的同時把其他地方的排版給弄爆了。Class 只作用於你指定的 HTML 元素，所以你完全不用擔心改樣式時會把什麼東西弄壞。
 
-When you realize how productive you can be working exclusively in HTML with predefined utility classes, working any other way will feel like torture.
+<!-- When you realize how productive you can be working exclusively in HTML with predefined utility classes, working any other way will feel like torture. -->
+當你僅僅只透過預定義的功能性 class 來撰寫 HTML 樣式時，你就會意識到那生產力有多高，反而用以前的方式去寫會是一種折磨。
 
 ---
 
-## Why not just use inline styles?
+<!-- ## Why not just use inline styles? -->
+## 為何不使用 inline style 就好？
 
-A common reaction to this approach is wondering, "isn't this just inline styles?" and in some ways it is — you're applying styles directly to elements instead of assigning them a class name and then styling that class.
+<!-- A common reaction to this approach is wondering, "isn't this just inline styles?" and in some ways it is — you're applying styles directly to elements instead of assigning them a class name and then styling that class. -->
+對於這個方法常見的反應大多都是「這難道不是 inline style 嗎？」，某些情況下來說應該是，但實際上是 — 你是正在幫元素直接使用樣式，而不是幫它們指定 class 名稱後再幫那個 class 設定樣式。
 
-But using utility classes has a few important advantages over inline styles:
+<!-- But using utility classes has a few important advantages over inline styles: -->
+但使用功能性 class 有幾個優於 inline style 的點：
 
-- **Designing with constraints**. Using inline styles, every value is a magic number. With utilities, you're choosing styles from a predefined [design system](/docs/theme), which makes it much easier to build visually consistent UIs.
+<!-- - **Designing with constraints**. Using inline styles, every value is a magic number. With utilities, you're choosing styles from a predefined [design system](/docs/theme), which makes it much easier to build visually consistent UIs.
 - **Responsive design**. You can't use media queries in inline styles, but you can use Tailwind's [responsive utilities](/docs/responsive-design) to build fully responsive interfaces easily.
-- **Hover, focus, and other states**. Inline styles can't target states like hover or focus, but Tailwind's [state variants](/docs/hover-focus-and-other-states) make it easy to style those states with utility classes.
+- **Hover, focus, and other states**. Inline styles can't target states like hover or focus, but Tailwind's [state variants](/docs/hover-focus-and-other-states) make it easy to style those states with utility classes. -->
+- **有約束的設計**：使用 inline style，每個數值都是一個實體數字 (magic number)。有了功能 (utilities)，你則是從一個預定義的[設計系統](/docs/theme)中挑選樣式，令我們能更輕鬆簡單的建構出與視覺一置的使用者介面 (UI)。
+- **響應式設計**：你無法在 inline style 使用 media query 來做響應式設計，但你可以使用 Tailwind 的[響應式功能 (responsive utilities)](/docs/responsive-design) 來更簡單地建構出完全響應式的介面。
+- **Hover、focus 及其他狀態**：inline styles 無法標記諸如 hover、focus 等的狀態，但 Tailwind [狀態變化模式](/docs/hover-focus-and-other-states)的功能性 class 能簡單的幫那些狀態增加樣式。
 
-This component is fully responsive and includes a button with hover and focus styles, and is built entirely with utility classes:
+<!-- This component is fully responsive and includes a button with hover and focus styles, and is built entirely with utility classes: -->
+這個元件完全支援響應式並包含一個有 hover 及 focus 樣式的按鈕，而且完全用功能性 class 建置。
 
 ```html purple
 <template preview class="px-6 py-12">
@@ -143,10 +166,12 @@ This component is fully responsive and includes a button with hover and focus st
           Erin Lindford
         </p>
         <p class="text-gray-500 font-medium">
-          Product Engineer
+          <!-- Product Engineer -->
+          產品工程師
         </p>
       </div>
-      <button class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">Message</button>
+      <!-- <button class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">Message</button> -->
+      <button class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">傳送訊息</button>
     </div>
   </div>
 </template>
@@ -159,21 +184,24 @@ This component is fully responsive and includes a button with hover and focus st
         Erin Lindford
       </p>
       <p class="text-gray-500 font-medium">
-        Product Engineer
+        產品工程師
       </p>
     </div>
-    <button class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 **hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2**">Message</button>
+    <button class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 **hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2**">傳送訊息</button>
   </div>
 </div>
 ```
 
 ---
 
-## Maintainability concerns
+<!-- ## Maintainability concerns -->
+## 關於可維護性
 
-The biggest maintainability concern when using a utility-first approach is managing commonly repeated utility combinations.
+<!-- The biggest maintainability concern when using a utility-first approach is managing commonly repeated utility combinations. -->
+透過使用功能優先的方式來管理經常重複的功能組合，使可維護性最大化。
 
-This is easily solved by [extracting components](/docs/extracting-components), usually as template partials or components.
+<!-- This is easily solved by [extracting components](/docs/extracting-components), usually as template partials or components. -->
+這可以透過[提取成元件](/docs/extracting-components) 的方式輕鬆解決，並成為元件或者模板的一部份。
 
 ```html
 <!-- PrimaryButton.vue -->
@@ -184,9 +212,10 @@ This is easily solved by [extracting components](/docs/extracting-components), u
 </template>
 ```
 
-You can also use Tailwind's `@apply` feature to create CSS abstractions around common utility patterns.
+<!-- You can also use Tailwind's `@apply` feature to create CSS abstractions around common utility patterns. -->
+你也可以用 Tailwind 的特色指令 `@apply` 來整合並簡化常用的 CSS 樣式，降低建構 class 的複雜度。
 
-```html emerald
+<!-- ```html emerald
 <template preview>
   <div class="text-center">
     <button type="button" class="py-2 px-4 bg-emerald-500 text-white font-semibold rounded-lg shadow-md hover:bg-emerald-700 focus:outline-none" tabindex="-1">
@@ -195,12 +224,12 @@ You can also use Tailwind's `@apply` feature to create CSS abstractions around c
   </div>
 </template>
 
-<!-- Using utilities -->
+Using utilities
 <button class="py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-green-500 hover:bg-green-700">
   Click me
 </button>
 
-<!-- Extracting classes using @apply -->
+Extracting classes using @apply
 <button class="**btn btn-green**">
   Button
 </button>
@@ -213,14 +242,46 @@ You can also use Tailwind's `@apply` feature to create CSS abstractions around c
     @apply text-white bg-green-500 hover:bg-green-700;
   }
 </style>
+``` -->
+```html emerald
+<template preview>
+  <div class="text-center">
+    <button type="button" class="py-2 px-4 bg-emerald-500 text-white font-semibold rounded-lg shadow-md hover:bg-emerald-700 focus:outline-none" tabindex="-1">
+      按我一下
+    </button>
+  </div>
+</template>
+
+<!-- 使用功能優先 Class -->
+<button class="py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-green-500 hover:bg-green-700">
+  按我一下
+</button>
+
+<!-- 用 @apply 提取 Class -->
+<button class="**btn btn-green**">
+  按鈕
+</button>
+
+<style>
+  **.btn** {
+    @apply py-2 px-4 font-semibold rounded-lg shadow-md;
+  }
+  **.btn-green** {
+    @apply text-white bg-green-500 hover:bg-green-700;
+  }
+</style>
 ```
 
-Aside from that, maintaining a utility-first CSS project turns out to be a lot easier than maintaining a large CSS codebase, simply because HTML is so much easier to maintain than CSS. Large companies like GitHub, Heroku, Kickstarter, Twitch, Segment, and more are using this approach with great success.
+<!-- Aside from that, maintaining a utility-first CSS project turns out to be a lot easier than maintaining a large CSS codebase, simply because HTML is so much easier to maintain than CSS. 
+Large companies like GitHub, Heroku, Kickstarter, Twitch, Segment, and more are using this approach with great success. -->
+此外，事實證明維護功能優先的 CSS 專案比起維護大量 CSS 程式碼要來的簡單多了，僅僅是因為 HTML 比 CSS 還容易維護。像是 GitHub、Heroku、Kickstarter、Twitch、Segment 還有其他等等的大公司都是這個方法的成功案例
 
-If you'd like to hear about others' experiences with this approach, check out the following resources:
+<!-- If you'd like to hear about others' experiences with this approach, check out the following resources: -->
+如果你想聽聽看其他人使用這個方法的經驗，可以瀏覽一下這些文章：
 
 - [By The Numbers: A Year and a Half with Atomic CSS](https://medium.com/@johnpolacek/by-the-numbers-a-year-and-half-with-atomic-css-39d75b1263b4) by John Polacek
 - [Building a Scalable CSS Architecture](https://blog.algolia.com/redesigning-our-docs-part-4-building-a-scalable-css-architecture/) by Sarah Dayan of Algolia
 - [Diana Mounter on using utility classes at GitHub](http://www.fullstackradio.com/75), a podcast interview
 
-For even more, check out [The Case for Atomic/Utility-First CSS](https://johnpolacek.github.io/the-case-for-atomic-css/), curated by [John Polacek](https://twitter.com/johnpolacek).
+<!-- For even more, check out [The Case for Atomic/Utility-First CSS](https://johnpolacek.github.io/the-case-for-atomic-css/), curated by [John Polacek](https://twitter.com/johnpolacek). -->
+還想了解更多，請看 [John Polacek](https://twitter.com/johnpolacek) 所撰寫的 [The Case for Atomic/Utility-First CSS](https://johnpolacek.github.io/the-case-for-atomic-css/)。
