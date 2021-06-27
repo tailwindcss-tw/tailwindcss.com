@@ -1,12 +1,15 @@
 ---
-title: "Space Between"
-description: "Utilities for controlling the space between child elements."
+# title: "Space Between"
+# description: "Utilities for controlling the space between child elements."
+title: "Space Between (元素間距)"
+description: "控制子元素間距離的功能"
 ---
 
 import plugin from 'tailwindcss/lib/plugins/space'
 import { Variants } from '@/components/Variants'
 import { Disabling } from '@/components/Disabling'
 import { numbersFirstByPrefix } from '@/utils/sortClasses'
+import Responsive from '@/components/Responsive.mdx'
 
 export const classes = {
   plugin,
@@ -18,9 +21,11 @@ export const classes = {
   ),
 }
 
-## Add horizontal space between children
+<!-- ## Add horizontal space between children -->
+## 增添子元素的水平間距
 
-Control the horizontal space between elements using the `space-x-{amount}` utilities.
+<!-- Control the horizontal space between elements using the `space-x-{amount}` utilities. -->
+用 `space-x-{amount}` 功能來控制子元素之間水平方向的距離。
 
 ```html fuchsia
 <template preview>
@@ -40,9 +45,11 @@ Control the horizontal space between elements using the `space-x-{amount}` utili
 </div>
 ```
 
-## Add vertical space between children
+<!-- ## Add vertical space between children -->
+## 增添子元素的垂直間距
 
-Control the vertical space between elements using the `space-y-{amount}` utilities.
+<!-- Control the vertical space between elements using the `space-y-{amount}` utilities. -->
+用 `space-y-{amount}` 功能來控制子元素之間垂直方向的距離。
 
 ```html lightBlue
 <template preview>
@@ -62,9 +69,11 @@ Control the vertical space between elements using the `space-y-{amount}` utiliti
 </div>
 ```
 
-## Reversing children order
+<!-- ## Reversing children order -->
+## 相反順序的子元素
 
-If your elements are in reverse order (using say `flex-row-reverse` or `flex-col-reverse`), use the `space-x-reverse` or `space-y-reverse` utilities to ensure the space is added to the correct side of each element.
+<!-- If your elements are in reverse order (using say `flex-row-reverse` or `flex-col-reverse`), use the `space-x-reverse` or `space-y-reverse` utilities to ensure the space is added to the correct side of each element. -->
+如果你的元素順序反轉了 (使用 `flex-row-reverse` 或 `flex-col-reverse`)，請使用 `space-x-reverse` 或 `space-y-reverse` 功能來確保每個元素的間距都被增加在正確的方向。
 
 ```html
 <template preview>
@@ -84,11 +93,14 @@ If your elements are in reverse order (using say `flex-row-reverse` or `flex-col
 </div>
 ```
 
-## Limitations
+<!-- ## Limitations -->
+## 限制
 
-These utilities are really just a shortcut for adding margin to all-but-the-first-item in a group, and aren't designed to handle complex cases like grids, layouts that wrap, or situations where the children are rendered in a complex custom order rather than their natural DOM order.
+<!-- These utilities are really just a shortcut for adding margin to all-but-the-first-item in a group, and aren't designed to handle complex cases like grids, layouts that wrap, or situations where the children are rendered in a complex custom order rather than their natural DOM order. -->
+這個功能只是一個在「除了第一個之外的所有項目」群組內增加外距的捷徑，它並非是設計來處理像是網格 (grids)、「layouts that wrap」或是「子元素以非 DOM 自然順序的自訂義複雜順序呈現」的複雜案例。.
 
-For those situations, it's better to use the [gap utilities](https://tailwindcss.com/docs/gap) when possible, or add margin to every element with a matching negative margin on the parent:
+<!-- For those situations, it's better to use the [gap utilities](https://tailwindcss.com/docs/gap) when possible, or add margin to every element with a matching negative margin on the parent: -->
+如果是那些情況，可以的話最好是使用[間隙功能](/docs/gap)，, 或為每一個元素增加外距，並在父元素中增加匹配好的負外距：
 
 ```html
 <div class="flow-root">
@@ -102,9 +114,11 @@ For those situations, it's better to use the [gap utilities](https://tailwindcss
 
 ---
 
-## Responsive
+<!-- ## Responsive -->
+## 響應式
 
-To control the space between elements at a specific breakpoint, add a `{screen}:` prefix to any existing space utility. For example, adding the class `md:space-x-8` to an element would apply the `space-x-8` utility at medium screen sizes and above.
+<!-- To control the space between elements at a specific breakpoint, add a `{screen}:` prefix to any existing space utility. For example, adding the class `md:space-x-8` to an element would apply the `space-x-8` utility at medium screen sizes and above. -->
+如要讓子元素的間距有響應式效果，可在現有元素間距功能前加上前綴詞 `{screen}:`。例如：中型或以上的螢幕尺寸使用 `md:space-x-8` 以套用 `space-x-8` 的功能。
 
 ```html
 <div class="flex space-x-2 **md:space-x-8**">
@@ -114,15 +128,19 @@ To control the space between elements at a specific breakpoint, add a `{screen}:
 </div>
 ```
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+<!-- For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation. -->
+<Responsive />
 
 ---
 
-## Customizing
+<!-- ## Customizing -->
+## 客製化
 
-### Spacing scale
+<!-- ### Spacing scale -->
+### 元素間距的尺寸
 
-If you'd like to customize your values for space between, padding, margin, width, and height all at once, use the `theme.spacing` section of your `tailwind.config.js` file.
+<!-- If you'd like to customize your values for space between, padding, margin, width, and height all at once, use the `theme.spacing` section of your `tailwind.config.js` file. -->
+如果你想把自訂的數值一次設定在 padding、margin、width 以及 height 上的話，請在你的 `tailwind.config.js` 檔案中使用 `theme.spacing` 區段裡自訂。
 
 ```diff-js
   // tailwind.config.js
@@ -138,7 +156,8 @@ If you'd like to customize your values for space between, padding, margin, width
   }
 ```
 
-To customize only the space between values, use the `theme.space` section of your `tailwind.config.js` file.
+<!-- To customize only the space between values, use the `theme.space` section of your `tailwind.config.js` file. -->
+只想要自訂元素間距的數值，請在你的 `tailwind.config.js` 檔案中的 `theme.space` 區段裡自訂。
 
 ```diff-js
   // tailwind.config.js
@@ -154,12 +173,13 @@ To customize only the space between values, use the `theme.space` section of you
   }
 ```
 
-Learn more about customizing the default theme in the [theme customization documentation](/docs/theme#customizing-the-default-theme).
+<!-- Learn more about customizing the default theme in the [theme customization documentation](/docs/theme#customizing-the-default-theme). -->
+更多有關自訂預設主題的資訊，可參考 [theme customization documentation](/docs/theme#customizing-the-default-theme)。
 
-### Variants
+### 變化模式
 
 <Variants plugin="space" />
 
-### Disabling
+### 停用
 
 <Disabling plugin="space" />
