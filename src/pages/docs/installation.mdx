@@ -304,8 +304,12 @@ npx tailwindcss --no-autoprefixer -o tailwind.css
 <!-- ### Using a custom PostCSS configuration -->
 ### 使用自訂的 PostCSS 配置
 
-<!-- If you'd like to use other PostCSS plugins alongside Tailwind, you can create a `postcss.config.js` file in your project root to add your extra plugins and Tailwind will include them when building your CSS: -->
-如果你想要別的 PostCSS 插件能隨著 Tailwind 一起使用，你可以在專案根目錄建立一個 `postcss.config.js` 檔案，並且在檔案中增添額外的插件，那麼 Tailwind 就會在建置你的 CSS 時將他們引入：
+If you'd like to use other PostCSS plugins alongside Tailwind, you can create a `postcss.config.js` file in your project root to add your extra plugins and Tailwind will include them if you use the `--postcss` flag when building your CSS:
+<!-- 如果你想要別的 PostCSS 插件能隨著 Tailwind 一起使用，你可以在專案根目錄建立一個 `postcss.config.js` 檔案，並且在檔案中增添額外的插件，那麼 Tailwind 就會在建置你的 CSS 時將他們引入： -->
+
+```shell
+npx tailwindcss --postcss -o tailwind.css
+```
 
 ```js
 // postcss.config.js
