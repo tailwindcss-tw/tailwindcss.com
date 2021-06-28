@@ -31,7 +31,7 @@ export const classes = {
 ## 設定為螢幕寬度
 
 <!--Use `w-screen` to make an element span the entire width of the viewport.-->
-使用 `w-screen` 讓元素寬度橫跨整個螢幕。
+使用 `w-screen` 讓元素佔據整個可視寬度。
 
 ```html
 <div class="h-12 **w-screen**"></div>
@@ -140,7 +140,7 @@ export const classes = {
 ## 響應式
 
 <!--To control the width of an element at a specific breakpoint, add a `{screen}:` prefix to any existing width utility. For example, adding the class `md:w-full` to an element would apply the `w-full` utility at medium screen sizes and above.-->
-在元素特定斷點控制字詞寬度，可在寬度功能前加上前綴詞 `{screen}:`。例如：中等以上尺寸螢幕使用 `md:w-full` 以套用 `w-full` 功能。
+要在特定斷點控制元素寬度，可在寬度功能前加上前綴詞 `{screen}:`。例如：中等以上尺寸螢幕使用 `md:w-full` 以套用 `w-full` 功能。
 
 ```html
 <div class="w-1/2 **md:w-full** ...">
@@ -151,7 +151,8 @@ export const classes = {
 <!--For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.-->
 <Responsive />
 
-## Customizing
+<!-- ## Customizing -->
+## 客製化
 
 ### Width scale
 
@@ -200,10 +201,12 @@ Tailwind 的寬度預設是由 [預設間距](/docs/customizing-spacing#default-
 <!--Learn more about customizing the default theme in the [theme customization documentation](/docs/theme#customizing-the-default-theme).-->
 更多有關 theme 的資訊，可參考[客製化 theme 文件](/docs/theme#customizing-the-default-theme)
 
-### Variants
+<!-- ### Variants -->
+### 變化模式
 
 <Variants plugin="width" />
 
-### Disabling
+<!-- ### Disabling -->
+### 停用
 
 <Disabling plugin="width" name="width" />
