@@ -1,6 +1,8 @@
 ---
-title: "Animation"
-description: "Utilities for animating elements with CSS animations."
+# title: "Animation"
+# description: "Utilities for animating elements with CSS animations."
+title: "動畫 (Animation)"
+description: "讓網頁元素動起來的 CSS 動畫功能"
 ---
 
 import redent from 'redent'
@@ -106,9 +108,11 @@ export const classes = (
   </div>
 )
 
-## Spin
+<!-- ## Spin -->
+## 旋轉 (Spin)
 
-Add the `animate-spin` utility to add a linear spin animation to elements like loading indicators.
+<!-- Add the `animate-spin` utility to add a linear spin animation to elements like loading indicators. -->
+為「讀取中」這類提示型的網頁元素加上 `animate-spin` 功能，使網頁元素以等速、線性 (linear) 的方式旋轉。
 
 ```html rose
 <template preview>
@@ -135,7 +139,9 @@ Add the `animate-spin` utility to add a linear spin animation to elements like l
 
 ## Ping
 
-Add the `animate-ping` utility to make an element scale and fade like a radar ping or ripple of water — useful for things like notification badges.
+<!-- Add the `animate-ping` utility to make an element scale and fade like a radar ping or ripple of water — useful for things like notification badges. -->
+加上 `animate-ping` 功能，讓網頁元素像雷達波或水波一樣擴散並淡化。
+- 這對通知標記一類的元素很實用。
 
 ```html purple
 <template preview>
@@ -158,9 +164,12 @@ Add the `animate-ping` utility to make an element scale and fade like a radar pi
 </span>
 ```
 
-## Pulse
+<!-- ## Pulse -->
+## 脈衝 (Pulse)
 
-Add the `animate-pulse` utility to make an element gently fade in and out — useful for things like skeleton loaders.
+<!-- Add the `animate-pulse` utility to make an element gently fade in and out — useful for things like skeleton loaders. -->
+加上 `animate-pulse` 功能，讓網頁元素輕輕的淡入及淡出。
+- 這很適合用在框架結構元素 (Skeleton loaders) 上製造頁面讀取中的效果。
 
 ```html lightBlue
 <template preview>
@@ -192,9 +201,12 @@ Add the `animate-pulse` utility to make an element gently fade in and out — us
 </div>
 ```
 
-## Bounce
+<!-- ## Bounce -->
+## 彈跳 (Bounce)
 
-Add the `animate-bounce` utility to make an element bounce up and down — useful for things like "scroll down" indicators.
+<!-- Add the `animate-bounce` utility to make an element bounce up and down — useful for things like "scroll down" indicators. -->
+加上 `animate-bounce` 功能，讓網頁元素上下跳動。
+- 這很適合用在「向下捲動」這類的元素上。
 
 ```html amber
 <template preview>
@@ -210,9 +222,11 @@ Add the `animate-bounce` utility to make an element bounce up and down — usefu
 </svg>
 ```
 
-## Prefers-reduced-motion
+<!-- ## Prefers-reduced-motion -->
+## 偏好設定：減少動態效果 (Prefers-reduced-motion)
 
-You can conditionally apply animations and transitions using the `motion-safe` and `motion-reduce` variants:
+<!-- You can conditionally apply animations and transitions using the `motion-safe` and `motion-reduce` variants: -->
+你可以透過使用 `motion-safe` 和 `motion-reduce` 變化模式，有條件的設置動畫 (animations) 和過場 (transitions)：
 
 ```html
 <button type="button" class="bg-indigo-600 ..." disabled>
@@ -223,7 +237,8 @@ You can conditionally apply animations and transitions using the `motion-safe` a
 </button>
 ```
 
-**These variants are not enabled by default**, but you can enable them in the `variants` section of your `tailwind.config.js` file:
+<!-- **These variants are not enabled by default**, but you can enable them in the `variants` section of your `tailwind.config.js` file: -->
+**這些變化模式預設情況下是不啟用的**，但你可以在你的 tailwind.config.js 檔案中透過 variants 設定啟用它們：
 
 ```js
 // tailwind.config.js
@@ -235,11 +250,16 @@ module.exports = {
 }
 ```
 
-Learn more in the [state variants documentation](/docs/hover-focus-and-other-states#motion-safe).
+<!-- Learn more in the [state variants documentation](/docs/hover-focus-and-other-states#motion-safe). -->
+想知道更多，請至 [Hover, Focus 以及其他狀態文件](/docs/hover-focus-and-other-states#motion-safe)。
 
-## Responsive
+<!-- ## Responsive -->
+## 響應式
 
-To change or disable an animation at a specific breakpoint, add a `{screen}:` prefix to any existing animation utility. For example, use `md:animate-none` to apply the `animate-none` utility at only medium screen sizes and above.
+<!-- To change or disable an animation at a specific breakpoint, add a `{screen}:` prefix to any existing animation utility. For example, use `md:animate-none` to apply the `animate-none` utility at only medium screen sizes and above. -->
+要在特定的斷點更改或禁用動畫效果，請在任何現有的動畫功能中添加 `{screen}:` 前綴。
+
+例如：使用 `md:animate-none` 在 `md` 以上的斷點設置 `animate-none` 功能。
 
 ```html
 <div class="animate-spin **md:animate-none** ...">
@@ -247,13 +267,18 @@ To change or disable an animation at a specific breakpoint, add a `{screen}:` pr
 </div>
 ```
 
-For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation.
+<!-- For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation. -->
+關於 Tailwind 響應式設計功能的更多資訊，請查閱 [響應式設計 (RWD)](/docs/responsive-design) 文件。
 
-## Customizing
+<!-- ## Customizing -->
+## 自定義設定
 
-Animations by their very nature tend to be highly project-specific. **The animations we include by default are best thought of as helpful examples**, and you're encouraged to customize your animations to better suit your needs.
+<!-- Animations by their very nature tend to be highly project-specific. **The animations we include by default are best thought of as helpful examples**, and you're encouraged to customize your animations to better suit your needs. -->
+動畫的性質常常是依賴專案需求決定的，**預設包含的動畫建議當做運用範例**，我們鼓勵你自行定義所需的動畫，才能更好的滿足你的需求。
 
-By default, Tailwind provides utilities for four different example animations, as well as the `animate-none` utility. You change, add, or remove these by customizing the `animation` section of your theme configuration.
+
+<!-- By default, Tailwind provides utilities for four different example animations, as well as the `animate-none` utility. You change, add, or remove these by customizing the `animation` section of your theme configuration. -->
+預設情況下，Tailwind 提供四個不同的動畫功能作為範例，並且也提供了 animate-none 功能。你可以透過設定檔中主題 (theme) 的 animation 設定來修改、新增、刪除這些功能。
 
 ```diff-js
   // tailwind.config.js
@@ -268,7 +293,8 @@ By default, Tailwind provides utilities for four different example animations, a
   }
 ```
 
-To add new animation `@keyframes`, use the `keyframes` section of your theme configuration:
+<!-- To add new animation `@keyframes`, use the `keyframes` section of your theme configuration: -->
+想要添加新的動畫 `@keyframes`，使用主題設定中的 `keyframes` 部分：
 
 ```diff-js
   // tailwind.config.js
@@ -286,7 +312,8 @@ To add new animation `@keyframes`, use the `keyframes` section of your theme con
   }
 ```
 
-You can then reference these keyframes by name in the `animation` section of your theme configuration:
+<!-- You can then reference these keyframes by name in the `animation` section of your theme configuration: -->
+然後就可以在你主題配置中的 `animation` 部分使用這些 keyframes 的名稱：
 
 ```diff-js
   // tailwind.config.js
@@ -301,7 +328,8 @@ You can then reference these keyframes by name in the `animation` section of you
   }
 ```
 
-Learn more about customizing the default theme in the [theme customization documentation](/docs/theme#customizing-the-default-theme).
+<!-- Learn more about customizing the default theme in the [theme customization documentation](/docs/theme#customizing-the-default-theme). -->
+了解更多有關 [自定義主題](/docs/theme#customizing-the-default-theme) 的資訊。
 
 ### Variants
 
