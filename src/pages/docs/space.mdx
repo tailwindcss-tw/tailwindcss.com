@@ -97,10 +97,10 @@ export const classes = {
 ## 限制
 
 <!-- These utilities are really just a shortcut for adding margin to all-but-the-first-item in a group, and aren't designed to handle complex cases like grids, layouts that wrap, or situations where the children are rendered in a complex custom order rather than their natural DOM order. -->
-這個功能只是一個在「除了第一個之外的所有項目」群組內增加外距的捷徑，它並非是設計來處理像是網格 (grids)、「layouts that wrap」或是「子元素以非 DOM 自然順序的自訂義複雜順序呈現」的複雜案例。.
+這個功能只是一個在「除了第一個之外的所有項目」群組內增加外距的捷徑，它並非是設計來處理包裝過的排版，像是網格 (grids)、「子元素以非 DOM 自然排列的自定義複雜順序呈現」等複雜案例。
 
 <!-- For those situations, it's better to use the [gap utilities](https://tailwindcss.com/docs/gap) when possible, or add margin to every element with a matching negative margin on the parent: -->
-如果是那些情況，可以的話最好是使用[間隙功能](/docs/gap)，, 或為每一個元素增加外距，並在父元素中增加匹配好的負外距：
+如果是那些情況，可以的話最好是使用[間隙功能](/docs/gap)，或為每一個元素增加外距，並在父元素中增加匹配好的負外距：
 
 ```html
 <div class="flow-root">
@@ -118,7 +118,7 @@ export const classes = {
 ## 響應式
 
 <!-- To control the space between elements at a specific breakpoint, add a `{screen}:` prefix to any existing space utility. For example, adding the class `md:space-x-8` to an element would apply the `space-x-8` utility at medium screen sizes and above. -->
-如要讓子元素的間距有響應式效果，可在現有元素間距功能前加上前綴詞 `{screen}:`。例如：中型或以上的螢幕尺寸使用 `md:space-x-8` 以套用 `space-x-8` 的功能。
+如要讓子元素的間距有響應式效果，可在現有元素間距功能前加上前綴詞 `{screen}:`。例如：使用 `md:space-x-8` 可以在中型或以上的螢幕尺寸套用 `space-x-8` 的功能。
 
 ```html
 <div class="flex space-x-2 **md:space-x-8**">
