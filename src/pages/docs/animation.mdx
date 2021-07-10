@@ -1,11 +1,12 @@
 ---
 # title: "Animation"
 # description: "Utilities for animating elements with CSS animations."
-title: "動畫 (Animation)"
+title: "Animation (動畫)"
 description: "讓網頁元素動起來的 CSS 動畫功能"
 ---
 
 import redent from 'redent'
+import Responsive from '@/components/Responsive.mdx'
 import { Variants } from '@/components/Variants'
 import { Disabling } from '@/components/Disabling'
 
@@ -259,7 +260,7 @@ module.exports = {
 <!-- To change or disable an animation at a specific breakpoint, add a `{screen}:` prefix to any existing animation utility. For example, use `md:animate-none` to apply the `animate-none` utility at only medium screen sizes and above. -->
 要在特定的斷點更改或禁用動畫效果，請在任何現有的動畫功能中添加 `{screen}:` 前綴。
 
-例如：使用 `md:animate-none` 在 `md` 以上的斷點設置 `animate-none` 功能。
+例如：使用 `md:animate-none` 在 `md` 及其之上的斷點設置 `animate-none` 功能。
 
 ```html
 <div class="animate-spin **md:animate-none** ...">
@@ -268,7 +269,7 @@ module.exports = {
 ```
 
 <!-- For more information about Tailwind's responsive design features, check out the [Responsive Design](/docs/responsive-design) documentation. -->
-關於 Tailwind 響應式設計功能的更多資訊，請查閱 [響應式設計 (RWD)](/docs/responsive-design) 文件。
+<Responsive />
 
 <!-- ## Customizing -->
 ## 自定義設定
@@ -278,7 +279,7 @@ module.exports = {
 
 
 <!-- By default, Tailwind provides utilities for four different example animations, as well as the `animate-none` utility. You change, add, or remove these by customizing the `animation` section of your theme configuration. -->
-預設情況下，Tailwind 提供四個不同的動畫功能作為範例，並且也提供了 animate-none 功能。你可以透過設定檔中主題 (theme) 的 animation 設定來修改、新增、刪除這些功能。
+預設情況下，Tailwind 提供四個不同的動畫功能作為範例，並且也提供了 `animate-none` 功能。你可以透過設定檔中主題 (theme) 的 `animation` 設定來修改、新增、刪除這些功能。
 
 ```diff-js
   // tailwind.config.js
@@ -313,7 +314,7 @@ module.exports = {
 ```
 
 <!-- You can then reference these keyframes by name in the `animation` section of your theme configuration: -->
-然後就可以在你主題配置中的 `animation` 部分使用這些 keyframes 的名稱：
+然後就可以在你主題配置中的 `animation` 區塊使用這些 keyframes 的名稱：
 
 ```diff-js
   // tailwind.config.js
@@ -331,10 +332,12 @@ module.exports = {
 <!-- Learn more about customizing the default theme in the [theme customization documentation](/docs/theme#customizing-the-default-theme). -->
 了解更多有關 [自定義主題](/docs/theme#customizing-the-default-theme) 的資訊。
 
-### Variants
+<!-- ### Variants -->
+### 變化模式
 
 <Variants plugin="animation" />
 
-### Disabling
+<!-- ### Disabling -->
+### 停用
 
 <Disabling plugin="animation" />
