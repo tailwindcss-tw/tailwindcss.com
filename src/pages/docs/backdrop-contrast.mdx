@@ -7,6 +7,7 @@ featureVersion: 'v2.1+'
 import { Variants } from '@/components/Variants'
 import { Disabling } from '@/components/Disabling'
 import Responsive from '@/components/Responsive.mdx'
+import Customizing from '@/components/Customizing.mdx'
 
 export const classes = {
   plugin: function () {
@@ -48,7 +49,8 @@ export const classes = {
 
 ## Customizing
 
-You can customize which `backdrop-contrast` utilities are generated using the `backdropContrast` key in the `theme` section of your `tailwind.config.js` file.
+<!-- You can customize which `backdrop-contrast` utilities are generated using the `backdropContrast` key in the `theme` section of your `tailwind.config.js` file. -->
+你可以在`tailwind.config.js`的`theme`區塊中，使用`backdropContrast`這個 key 來客製化你要的`backdrop-contrast`效果。
 
 ```diff-js
   // tailwind.config.js
@@ -63,11 +65,13 @@ You can customize which `backdrop-contrast` utilities are generated using the `b
   }
 ```
 
-Learn more about customizing the default theme in the [theme customization documentation](/docs/theme#customizing-the-default-theme).
+<Customizing />
 
-### Backdrop Contrast Scale
+<!-- ### Backdrop Contrast Scale -->
+### 背景對比大小
 
-You can customize the values for the `backdrop-contrast` filter in your Tailwind config.
+<!-- You can customize the values for the `backdrop-contrast` filter in your Tailwind config. -->
+你可以調整 Tailwind config. 中`backdrop-contrast`濾鏡的值來客製化對比度。
 
 ```diff-js
   // tailwind.config.js

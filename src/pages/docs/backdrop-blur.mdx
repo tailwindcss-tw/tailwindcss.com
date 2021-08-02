@@ -7,6 +7,7 @@ featureVersion: 'v2.1+'
 import { Variants } from '@/components/Variants'
 import { Disabling } from '@/components/Disabling'
 import Responsive from '@/components/Responsive.mdx'
+import Customizing from '@/components/Customizing.mdx'
 
 export const classes = {
   plugin: function () {
@@ -28,6 +29,7 @@ export const classes = {
 ## Usage
 
 Use the `backdrop-blur-{amount?}` utilities alongside the `backdrop-filter` utility to control an element’s backdrop blur.
+將 `backdrop-blur-{amount?}` 功能跟 `backdrop-filter` 功能搭配使用，即可控制元素的背景模糊。
 
 ```html
 <div class="backdrop-filter backdrop-blur-lg ...">
@@ -49,7 +51,8 @@ Use the `backdrop-blur-{amount?}` utilities alongside the `backdrop-filter` util
 
 ## Customizing
 
-You can customize which `backdrop-blur` utilities are generated using the `backdropBlur` key in the `theme` section of your `tailwind.config.js` file.
+<!-- You can customize which `backdrop-blur` utilities are generated using the `backdropBlur` key in the `theme` section of your `tailwind.config.js` file. -->
+你可以在`tailwind.config.js`的`theme`區塊中，使用`backdropBlur`這個 key 來客製化你要的`backdrop-blur`效果。
 
 ```diff-js
   // tailwind.config.js
@@ -64,7 +67,7 @@ You can customize which `backdrop-blur` utilities are generated using the `backd
   }
 ```
 
-Learn more about customizing the default theme in the [theme customization documentation](/docs/theme#customizing-the-default-theme).
+<Customizing />
 
 ### Variants
 
