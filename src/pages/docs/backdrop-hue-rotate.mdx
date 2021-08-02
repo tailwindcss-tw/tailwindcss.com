@@ -7,6 +7,7 @@ featureVersion: 'v2.1+'
 import { Variants } from '@/components/Variants'
 import { Disabling } from '@/components/Disabling'
 import Responsive from '@/components/Responsive.mdx'
+import Customizing from '@/components/Customizing.mdx'
 
 export const classes = {
   plugin: function () {
@@ -53,8 +54,9 @@ export const classes = {
 <Responsive />
 
 ## Customizing
-
-You can customize which `backdrop-hue-rotate` utilities are generated using the `backdropHueRotate` key in the `theme` section of your `tailwind.config.js` file.
+<!-- 
+You can customize which `backdrop-hue-rotate` utilities are generated using the `backdropHueRotate` key in the `theme` section of your `tailwind.config.js` file. -->
+你可以在`tailwind.config.js`的`theme`區塊中，使用`backdropHueRotate`這個 key 來客製化你要的`backdrop-hue-rotate`效果。
 
 ```diff-js
   // tailwind.config.js
@@ -70,7 +72,7 @@ You can customize which `backdrop-hue-rotate` utilities are generated using the 
   }
 ```
 
-Learn more about customizing the default theme in the [theme customization documentation](/docs/theme#customizing-the-default-theme).
+<Customizing />
 
 ### Variants
 
