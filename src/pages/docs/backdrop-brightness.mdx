@@ -7,6 +7,7 @@ featureVersion: 'v2.1+'
 import { Variants } from '@/components/Variants'
 import { Disabling } from '@/components/Disabling'
 import Responsive from '@/components/Responsive.mdx'
+import Customizing from '@/components/Customizing.mdx'
 
 export const classes = {
   plugin: function () {
@@ -28,7 +29,7 @@ export const classes = {
   }
 }
 
-## Usage 
+## 用法
 <!-- Use the backdrop-brightness-{amount?} utilities alongside the backdrop-filter utility to control an element's backdrop brightness. -->
 將 `backdrop-brightness-{amount?}` 功能跟 `backdrop-filter` 功能搭配使用，即可控制元素的背景亮度。
 
@@ -38,7 +39,7 @@ export const classes = {
 </div>
 ```
 
-## Responsive
+## 響應式
 <!-- To control an element's brightness at a specific breakpoint, add a {screen}: prefix to any existing brightness utility. For example, use md:brightness-150 to apply the brightness-150 utility at only medium screen sizes and above. -->
 如要讓元素的背景亮度有響應式效果，可在現有背景亮度功能前加上前綴詞 `{screen}:` 。例如：中型或以上的螢幕尺寸使用 `md:backdrop-brightness-150` 以套用 `backdrop-brightness-150` 功能。
 
@@ -49,9 +50,7 @@ export const classes = {
 ```
 <Responsive />
 
-## Customzing
-
-### Variant
+## 客製化
 
 <!-- You can customize which `backdrop-brightness` utilities are generated using the `backdropBrightness` key in the `theme` section of your `tailwind.config.js` file. -->
 你可以在`tailwind.config.js`的`theme`區塊中，使用`backdropBrightness`這個 key 來客製化你要的`backdrop-brightness`效果。
@@ -70,12 +69,12 @@ export const classes = {
   }
 ```
 
-<Responsive />
+<Customizing />
 
-### Variants
+### 變化模式
 
 <Variants plugin="backdropBrightness" name="backdrop brightness" />
 
-### Disabling
+### 停用
 
 <Disabling plugin="backdropBrightness" name="backdrop brightness" />

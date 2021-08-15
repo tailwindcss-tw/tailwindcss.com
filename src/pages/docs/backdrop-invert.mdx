@@ -20,7 +20,7 @@ export const classes = {
   }
 }
 
-## Usage
+## 用法
 
 <!-- Use the `backdrop-invert` and `backdrop-invert-0` utilities alongside the `backdrop-filter` utility to whether an element should be rendered with inverted backdrop colors or normally. -->
 視背景渲染需求，如負片效果，將 `backdrop-invert` 功能跟 `backdrop-filter` 功能搭配使用。如正常效果，將 `backdrop-invert-0` 功能跟 `backdrop-filter` 功能搭配使用。
@@ -31,7 +31,7 @@ export const classes = {
 </div>
 ```
 
-## Responsive
+## 響應式
 
 <!-- To control an element's backdrop invert filter at a specific breakpoint, add a `{screen}:` prefix to any existing backdrop invert utility. For example, use `md:backdrop-invert-0` to apply the `backdrop-invert-0` utility at only medium screen sizes and above. -->
 如要讓元素的背景負片有響應式效果，可在現有背景負片功能前加上前綴詞 `{screen}:` 。例如：中型或以上的螢幕尺寸使用 `md:backdrop-invert-0` 以套用 `backdrop-invert-0` 功能。
@@ -44,7 +44,7 @@ export const classes = {
 
 <Responsive />
 
-## Customizing
+## 客製化
 <!-- 
 You can customize which `backdrop-invert` utilities are generated using the `backdropInvert` key in the `theme` section of your `tailwind.config.js` file. -->
 你可以在`tailwind.config.js`的`theme`區塊中，使用`backdropInvert`這個 key 來客製化你要的`backdrop-invert`效果。
@@ -65,10 +65,9 @@ You can customize which `backdrop-invert` utilities are generated using the `bac
 
 <Customizing />
 
-### Variants
-
+### 變化模式
 <Variants plugin="backdropInvert" name="backdrop invert" />
 
-### Disabling
+### 停用
 
 <Disabling plugin="backdropInvert" name="backdrop invert" />
