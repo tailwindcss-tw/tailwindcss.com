@@ -25,7 +25,7 @@ Tailwind是 PostCSS 插件，因此你可以任意跟其他預處理器像是 Sa
 如果你的新專案正使用 Tailwind，且不需要跟任何既有的 Sass/Less/Stylus stylesheets 整合，你應該要依靠其他 PostCSS 插件來增加你要的預處理器功能，而不是使用另一個預處理器。
 
 <!-- This has a few benefits: -->
-這樣有以下幾個好處:
+這樣有以下幾個好處：
 
 <!-- - **Your builds will be faster**. Since your CSS doesn't have to be parsed and processed by multiple tools, your CSS will compile much quicker using only PostCSS. -->
 - **你的建置會更快** 因為你的 CSS 不會被解析，也不會被多種工具處理。只使用 PostCSS 可讓你的 CSS 編譯更快速。
@@ -150,7 +150,7 @@ module.exports = {
 ### 巢狀
 
 <!-- To add support for nested declarations, we recommend our bundled `tailwindcss/nesting` plugin, which is a PostCSS plugin that wraps [postcss-nested](https://github.com/postcss/postcss-nested) or [postcss-nesting](https://github.com/jonathantneal/postcss-nesting) and acts as a compatibility layer to make sure your nesting plugin of choice properly understands Tailwind's custom syntax like `@apply` and `@screen`. -->
-為了替巢狀定義增加支持，我們建議使用我們綑綁的 `tailwindcss/nesting` 插件。此插件包了 [postcss-nested](https://github.com/postcss/postcss-nested)或[postcss-nesting](https://github.com/jonathantneal/postcss-nesting)，且做為相容層以確保你選用的巢狀插件能充分了解 Tailwind 客製的語法，像 `@apply` and `@screen`。
+為了支援巢狀定義，我們建議使用我們附帶的 `tailwindcss/nesting` 插件。此插件包了 [postcss-nested](https://github.com/postcss/postcss-nested)或 [postcss-nesting](https://github.com/jonathantneal/postcss-nesting)，且做為相容層以確保你選用的巢狀插件能充分了解 Tailwind 客製的語法，像 `@apply` and `@screen`。
 
 <!-- It's included directly in the `tailwindcss` package itself, so to use it all you need to do is add it to your PostCSS configuration, somewhere before Tailwind: -->
 它被直接包在 `tailwindcss` 套件中。你需要做的就只是在加到你的 PostCSS 設定時，加在 Tailwind 之前：
@@ -168,17 +168,17 @@ module.exports = {
 ```
 
 <!-- By default, it uses the [postcss-nested](https://github.com/postcss/postcss-nested) plugin under the hood, which uses a Sass-like syntax and is the plugin that powers nesting support in the [Tailwind CSS plugin API](/docs/plugins#css-in-js-syntax). -->
-它使用了類-Sass 語法，事實上就是預設使用 [postcss-nested](https://github.com/postcss/postcss-nested)插件，提供了[Tailwind CSS plugin API](/docs/plugins#css-in-js-syntax)的巢狀支持。
+它使用了類-Sass 語法，事實上就是預設使用 [postcss-nested](https://github.com/postcss/postcss-nested)插件，提供了 [Tailwind CSS plugin API](/docs/plugins#css-in-js-syntax)的巢狀支持。
 
 <!-- If you'd rather use [postcss-nesting](https://github.com/jonathantneal/postcss-nesting) (which is based on the work-in-progress [CSS Nesting](https://drafts.csswg.org/css-nesting-1/) specification), first install the plugin: -->
-如你寧可使用 [postcss-nesting](https://github.com/jonathantneal/postcss-nesting)(以開發中的[CSS Nesting](https://drafts.csswg.org/css-nesting-1/)規範為基礎)，首先安裝：
+如你寧可使用 [postcss-nesting](https://github.com/jonathantneal/postcss-nesting) (以開發中的 [CSS Nesting](https://drafts.csswg.org/css-nesting-1/) 規範為基礎)，首先安裝：
 
 ```shell
 npm install postcss-nesting
 ```
 
 <!-- Then pass the plugin itself as an argument to `tailwindcss/nesting` in your PostCSS configuration: -->
-然後將插件以 `tailwindcss/nesting` 引數的方式傳到你的 PostCSS 設定。
+然後將插件當作 `tailwindcss/nesting` 插件的引數加到你的 PostCSS 設定。
 
 ```js
 // postcss.config.js
@@ -193,10 +193,10 @@ module.exports = {
 ```
 
 <!-- This can also be helpful if for whatever reason you need to use a very specific version of `postcss-nested` and want to override the version we bundle with `tailwindcss/nesting` itself. -->
-當你有需要使用某個特定版本的  `postcss-nested`，想要覆蓋我們綁定的 `tailwindcss/nesting`時，這也能夠有幫助。
+當你有需要使用某個特定版本的  `postcss-nested`，且想要覆蓋我們綁定的 `tailwindcss/nesting` 時，這也能夠有幫助。
 
 <!-- Note that if you are using [`postcss-preset-env`](https://github.com/csstools/postcss-preset-env) in your project, you should make sure to disable nesting and let `tailwindcss/nesting` handle it for you instead: -->
-請注意，如果你的專案使用 [`postcss-preset-env`](https://github.com/csstools/postcss-preset-env)，你應該確認停用巢狀，並讓 `tailwindcss/nesting` 幫你處理。
+請注意，如果你的專案使用 [`postcss-preset-env`](https://github.com/csstools/postcss-preset-env)，你應該確保停用了巢狀，並讓 `tailwindcss/nesting` 幫你處理。
 
 ```js
 // postcss.config.js
@@ -216,7 +216,7 @@ module.exports = {
 ### 變數
 
 <!-- These days CSS variables (officially known as custom properties) have really good [browser support](https://caniuse.com/#search=css%20custom%20properties), so you don't need a preprocessor to use variables at all. -->
-最近 CSS 變數 (官方稱客製化屬性)擁有很好的瀏覽器支持 [browser support](https://caniuse.com/#search=css%20custom%20properties)，因此你根本就不需預處理器才能使用變數。
+最近 CSS 變數 (官方稱客製化屬性) 擁有很好的瀏覽器支持 [browser support](https://caniuse.com/#search=css%20custom%20properties)，因此你根本就不需預處理器才能使用變數。
 
 ```css
 :root {
@@ -255,7 +255,7 @@ module.exports = {
 為了要自動管理 CSS 的供應商前綴，你應使用 [Autoprefixer](https://github.com/postcss/autoprefixer)。
 
 <!-- To use it, install it via npm: -->
-透過 npm 安裝:
+透過 npm 安裝：
 
 ```shell
 npm install autoprefixer
@@ -376,7 +376,7 @@ module.exports = {
 ### Stylus
 
 <!-- When using Tailwind with Stylus, you can't use Tailwind's `@apply` feature without wrapping the entire CSS rule in `@css` so that Stylus treats it as literal CSS: -->
-將 Stylus 跟 Tailwind 搭配使用時，要使用 Tailwind的 `@apply` 功能，必須要將全部的 CSS 規範包在 `@css` 之內，這樣 Stylus 才會視為 CSS 字面量:
+將 Stylus 跟 Tailwind 搭配使用時，要使用 Tailwind的 `@apply` 功能，必須要將全部的 CSS 規範包在 `@css` 之內，這樣 Stylus 才會視為 CSS 語法：
 
 {/* <TipBad>Won't work, Stylus complains about @apply</TipBad> */}
 <TipBad>無作用，Stylus 會報錯 @apply</TipBad>
@@ -402,10 +402,10 @@ module.exports = {
 儘管如此，這樣會造成巨大的損失，因為**你在 `@css` 區塊中，無法使用任何 Stylus 功能**。
 
 <!-- Another option is to use the `theme()` function instead of `@apply`, and write out the actual CSS properties in long form: -->
-另一個方法就是使用 `theme()` 函式取代 `@apply`，直接寫 CSS 屬性:
+另一個方法就是使用 `theme()` 函式取代 `@apply`，直接寫 CSS 屬性：
 
 {/* <TipGood>Use theme() instead of @apply</TipGood> */}
-<TipGood>用theme() 取代 @apply</TipGood>
+<TipGood>用 theme() 取代 @apply</TipGood>
 
 ```css
 .card {
