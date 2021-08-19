@@ -69,7 +69,7 @@ module.exports = {
 <!-- One important thing to note about `postcss-import` is that it strictly adheres to the CSS spec and disallows `@import` statements anywhere except at the very top of a file. -->
 有關 `postcss-import` 一個必須注意的重點是它很嚴謹遵守 CSS 規範，以及只允許 `@import` 出現在檔案最上面。
 
-<!-- {/* <TipBad>Won't work, `@import` statements must come first</TipBad> */} -->
+<!--  <TipBad>Won't work, `@import` statements must come first</TipBad>  -->
 <TipBad>無作用，`@import` 必須在最上面</TipBad>
 
 ```css
@@ -86,7 +86,7 @@ module.exports = {
 <!-- The easiest solution to this problem is to never mix regular CSS and imports in the same file. Instead, create one main entry-point file for your imports, and keep all of your actual CSS in separate files. -->
 這個問題最簡單的解法就是不要在同一個檔案中，混用一般 CSS 跟 imports。幫你的 imports 建立一個主要入口檔案，將你全部的 CSS 放在別的檔案。
 
-<!-- {/* <TipGood>Use separate files for imports and actual CSS</TipGood> */} -->
+<!--  <TipGood>Use separate files for imports and actual CSS</TipGood>  -->
 <TipGood>將 imports 跟 CSS 放在不同的檔案</TipGood> 
 
 ```css
@@ -112,7 +112,7 @@ module.exports = {
 <!-- The place you are most likely to run into this situation is in your main CSS file that includes your `@tailwind` declarations. -->
 你最可能遇到的情形就是在你的主要 CSS 檔案中，包含了你的 `@tailwind` 定義。
 
-<!-- {/* <TipBad>Won't work, `@import` statements must come first</TipBad> */} -->
+<!--  <TipBad>Won't work, `@import` statements must come first</TipBad>  -->
 <TipBad>無作用，`@import` 必須在最上面</TipBad>
 
 ```css
@@ -132,7 +132,7 @@ module.exports = {
 <!-- The `postcss-import` plugin is smart enough to look for files in the `node_modules` folder automatically, so you don't need to provide the entire path — `"tailwindcss/base"` for example is enough. -->
 `postcss-import` 插件聰明到可以自動在 `node_modules` 中找到檔案，所以你不用提供完整的路徑 - 舉例來說，`"tailwindcss/base"` 就夠了。
 
-<!-- {/* <TipGood>Import our provided CSS files</TipGood> */} -->
+<!--  <TipGood>Import our provided CSS files</TipGood>  -->
 <TipGood>引用我們提供的 CSS 檔案</TipGood>
 
 ```css
@@ -287,7 +287,7 @@ module.exports = {
 <!-- The most important thing to understand about using Tailwind with a preprocessor is that **preprocessors like Sass, Less, and Stylus run separately, before Tailwind**. This means that you can't feed output from Tailwind's `theme()` function into a Sass color function for example, because the `theme()` function isn't actually evaluated until your Sass has been compiled to CSS and fed into PostCSS. -->
 要了解如何使用 Tailwind 搭配預處理器最重要的就是要知道 **Sass、Less 或 Stylus 之類的預處理器是在 Tailwind 執行前分別執行**。舉例來說，你不能將 Tailwind 的 `theme()` 函式結果輸出到 Sass 顏色函式，因為要在 Sass 完成編譯並輸出給 PostCSS 後，`theme()` 函式才會被執行。
 
-<!-- {/* <TipBad>Won't work, Sass is processed first</TipBad> */} -->
+<!--  <TipBad>Won't work, Sass is processed first</TipBad>  -->
 <TipBad>無作用，Sass 先被處理</TipBad>
 
 ```css
@@ -307,7 +307,7 @@ module.exports = {
 <!-- When using Tailwind with Sass, using `!important` with `@apply` requires you to use interpolation to compile properly. -->
 將 Sass 跟 Tailwind 搭配使用時，`!important` 跟 `@apply` 會要求你使用內插。
 
-<!-- {/* <TipBad>Won't work, Sass complains about !important</TipBad> */} -->
+<!--  <TipBad>Won't work, Sass complains about !important</TipBad>  -->
 <TipBad>無作用，Sass 會報錯 !important</TipBad>
 
 ```css
@@ -316,7 +316,7 @@ module.exports = {
 }
 ```
 
-<!-- {/* <TipGood>Use interpolation as a workaround</TipGood> */} -->
+<!--  <TipGood>Use interpolation as a workaround</TipGood>  -->
 <TipGood>變通方式就是使用內插</TipGood>
 
 ```css
@@ -330,7 +330,7 @@ module.exports = {
 <!-- When using Tailwind with Less, you cannot nest Tailwind's `@screen` directive. -->
 將 Less 跟 Tailwind 搭配使用時，你不能使用 Tailwind 的 `@screen` 指令。
 
-<!-- {/* <TipBad>Won't work, Less doesn't realise it's a media query</TipBad> */} -->
+<!--  <TipBad>Won't work, Less doesn't realise it's a media query</TipBad>  -->
 <TipBad>無作用，Less 不會意識到這是 media query</TipBad>
 
 ```css
@@ -346,7 +346,7 @@ module.exports = {
 <!-- Instead, use a regular media query along with the `theme()` function to reference your screen sizes, or simply don't nest your `@screen` directives. -->
 反而應該將一般的 media query 跟 `theme()` 搭配使用來標示螢幕尺寸，或是不要將 `@screen` 放在巢狀裡。
 
-<!-- {/* <TipGood>Use a regular media query and theme()</TipGood> */} -->
+<!--  <TipGood>Use a regular media query and theme()</TipGood>  -->
 <TipGood>將一般的 media query 跟 theme() 一起使用</TipGood>
 
 ```css
@@ -359,7 +359,7 @@ module.exports = {
 }
 ```
 
-<!-- {/* <TipGood>Use the @screen directive at the top-level</TipGood> */} -->
+<!--  <TipGood>Use the @screen directive at the top-level</TipGood>  -->
 <TipGood>在最上層使用 @screen</TipGood>
 
 ```css
@@ -378,7 +378,7 @@ module.exports = {
 <!-- When using Tailwind with Stylus, you can't use Tailwind's `@apply` feature without wrapping the entire CSS rule in `@css` so that Stylus treats it as literal CSS: -->
 將 Stylus 跟 Tailwind 搭配使用時，要使用 Tailwind的 `@apply` 功能，必須要將全部的 CSS 規範包在 `@css` 之內，這樣 Stylus 才會視為 CSS 語法：
 <!-- 
-{/* <TipBad>Won't work, Stylus complains about @apply</TipBad> */} -->
+ <TipBad>Won't work, Stylus complains about @apply</TipBad>  -->
 <TipBad>無作用，Stylus 會報錯 @apply</TipBad>
 
 ```css
@@ -387,7 +387,7 @@ module.exports = {
 }
 ```
 
-<!-- {/* <TipGood>Use @css to avoid processing as Stylus</TipGood> */} -->
+<!--  <TipGood>Use @css to avoid processing as Stylus</TipGood>  -->
 <TipGood>使用 @css 避免被當成 Stylus 處理</TipGood>
 
 ```css
@@ -404,7 +404,7 @@ module.exports = {
 <!-- Another option is to use the `theme()` function instead of `@apply`, and write out the actual CSS properties in long form: -->
 另一個方法就是使用 `theme()` 函式取代 `@apply`，直接寫 CSS 屬性：
 
-<!-- {/* <TipGood>Use theme() instead of @apply</TipGood> */} -->
+<!--  <TipGood>Use theme() instead of @apply</TipGood>  -->
 <TipGood>用 theme() 取代 @apply</TipGood>
 
 ```css
@@ -418,7 +418,7 @@ module.exports = {
 <!-- In addition to this, Stylus doesn't support nesting the `@screen` directive (just like Less). -->
 除此之外，Stylus 不支持 `@screen` 指令 (就像 Less)。
 
-<!-- {/* <TipBad>Won't work, Stylus doesn't realise it's a media query</TipBad> */} -->
+<!--  <TipBad>Won't work, Stylus doesn't realise it's a media query</TipBad>  -->
 <TipBad>無作用，Stylus 不會意識到這是 media query</TipBad> 
 
 ```css
@@ -447,7 +447,7 @@ module.exports = {
 }
 ```
 
-<!-- {/* <TipGood>Use the @screen directive at the top-level</TipGood> */} -->
+<!--  <TipGood>Use the @screen directive at the top-level</TipGood>  -->
 <TipGood>在最上層使用 @screen</TipGood>
 
 ```css
