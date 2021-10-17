@@ -52,10 +52,10 @@ Tailwind 預設將用來創造線性漸層背景效果的背景圖片功能分�
   module.exports = {
     theme: {
       extend: {
-        backgroundImage: theme => ({
+        backgroundImage: {
 +         'hero-pattern': "url('/img/hero-pattern.svg')",
 +         'footer-texture': "url('/img/footer-texture.png')",
-        })
+        }
       }
     }
   }

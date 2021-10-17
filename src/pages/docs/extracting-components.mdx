@@ -218,6 +218,22 @@ Tailwind 將會自動地將這些樣式搬移到跟 `@tailwind components` 相�
 <!-- Using the `@layer` directive will also instruct Tailwind to consider those styles for purging when purging the `components` layer. Read our [documentation on optimizing for production](/docs/optimizing-for-production) for more details. -->
 使用 `@layer` 指令也能夠讓 Tailwind 理解在清除樣式時，哪些 `components` 層級的樣式需要清除。閱讀 [生產環境優化](/docs/optimizing-for-production) 以獲得更多細節。
 
+Like with custom utilities, you can generate `responsive`, `hover`, `focus`, `active`, and other [variants](/docs/hover-focus-and-other-states) of your own custom components using the `@variants` directive:
+
+```css
+/* ... */
+
+@layer components {
+  @variants responsive, hover {
+    .btn-blue {
+      @apply py-2 px-4 bg-blue-500 ...;
+    }
+  }
+}
+```
+
+Learn more in the [@variants directive documentation](/docs/functions-and-directives#variants).
+
 <!-- ### Writing a component plugin -->
 ### 撰寫元件插件
 
