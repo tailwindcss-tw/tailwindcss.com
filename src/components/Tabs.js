@@ -25,11 +25,21 @@ export function Tabs({ tabs, selected, onChange, className, iconClassName }) {
               >
                 {icon(selected === name)}
               </svg>
-              {name}
+              {/* {name} */}
+              {chineseName(name)? chineseName(name): name}
             </button>
           </li>
         ))}
       </ul>
     </div>
   )
+}
+
+function chineseName(name) {
+  return {
+    'Sizing': "尺寸",
+    'Colors': "色彩",
+    'Typography': "文字版式",
+    'Shadows': "陰影",
+  }[name]
 }
