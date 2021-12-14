@@ -979,7 +979,8 @@ export function Testimonials() {
           )}
           onClick={() => setExpanded(!expanded)}
         >
-          {expanded ? 'Okay, I get the point' : 'Show more...'}
+          {/* {expanded ? 'Okay, I get the point' : 'Show more...'} */}
+          {expanded ? '好了，我知道了啦！' : '閱讀更多'}
         </button>
       </div>
     </section>
