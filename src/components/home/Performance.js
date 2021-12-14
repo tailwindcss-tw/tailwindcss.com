@@ -5,7 +5,7 @@ import iconUrl from '@/img/icons/home/performance.png'
 import { Fragment, useCallback, useEffect, useRef, useState } from 'react'
 import clsx from 'clsx'
 import { GridLockup } from '../GridLockup'
-import { lines as html } from '../../samples/performance.html?highlight'
+import { lines as html } from '../../samples/performance-zh.html?highlight'
 import { lines as css } from '../../samples/performance.txt?highlight=css'
 import { useInView } from 'react-intersection-observer'
 import { animate } from 'framer-motion'
@@ -130,15 +130,20 @@ export function Performance() {
         <IconContainer>
           <img src={iconUrl} alt="" />
         </IconContainer>
-        <Caption className="text-sky-500">Performance</Caption>
-        <BigText>It's tiny — never ship unused CSS again.</BigText>
+        {/* <Caption className="text-sky-500">Performance</Caption> */}
+        <Caption className="text-sky-500">效能</Caption>
+        {/* <BigText>It's tiny — never ship unused CSS again.</BigText> */}
+        <BigText>輕巧微小 - 不再傳送任何用不到的 CSS</BigText>
         <Paragraph>
-          Tailwind automatically removes all unused CSS when building for production, which means
+          {/* Tailwind automatically removes all unused CSS when building for production, which means
           your final CSS bundle is the smallest it could possibly be. In fact, most Tailwind
-          projects ship less than 10kB of CSS to the client.
+          projects ship less than 10kB of CSS to the client. */}
+          Tailwind 會在生產環境建置時自動移除未使用的 CSS，這代表著你最後的 CSS 內容量會盡其所能的最小化。
+          事實上，大部分的 Tailwind 專案只會對客戶端傳送小於 10kB 的 CSS。
         </Paragraph>
         <Link href="/docs/optimizing-for-production" color="sky">
-          Learn more<span className="sr-only">, optimizing for production</span>
+          {/* Learn more<span className="sr-only">, optimizing for production</span> */}
+          繼續閱讀<span className="sr-only">關於生產環境優化的部分</span>
         </Link>
       </div>
       <GridLockup
