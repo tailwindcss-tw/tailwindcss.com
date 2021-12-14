@@ -15,7 +15,7 @@ import { addClassTokens } from '@/utils/addClassTokens'
 import { Token } from '@/components/Code'
 import clsx from 'clsx'
 import { GridLockup } from '../GridLockup'
-import { code, tokens } from '../../samples/dark-mode.html?highlight'
+import { code, tokens } from '../../samples/dark-mode-zh.html?highlight'
 
 function Sun(props) {
   return (
@@ -111,18 +111,25 @@ export function DarkMode() {
         <IconContainer>
           <img src={iconUrl} alt="" />
         </IconContainer>
-        <Caption className="text-gray-500">Dark mode</Caption>
+        {/* <Caption className="text-gray-500">Dark mode</Caption> */}
+        <Caption className="text-gray-500">深色模式</Caption>
         <BigText>
-          <Widont>Now with Dark Mode.</Widont>
+          {/* <Widont>Now with Dark Mode.</Widont> */}
+          <Widont>現在，有深色模式了</Widont>
         </BigText>
         <Paragraph>
-          Don’t want to be one of those websites that blinds people when they open it on their phone
+          {/* Don’t want to be one of those websites that blinds people when they open it on their phone
           at 2am? Enable dark mode in your configuration file then throw{' '}
           <InlineCode>dark:</InlineCode> in front of any color utility to apply it when dark mode is
-          active. Works for background colors, text colors, border colors, and even gradients.
+          active. Works for background colors, text colors, border colors, and even gradients. */}
+          不想讓在凌晨兩點用手機打開你網站時的用戶眼睛被閃瞎嗎？
+          在設定文件中開啟深色模式並在任何顏色功能前加上{' '}
+          <InlineCode>dark:</InlineCode> ，這麼一來，當深色模式開啟時，
+          背景顏色、文字顏色、邊框顏色甚至是漸層色都能發生變化。
         </Paragraph>
         <Link href="/docs/dark-mode" color="gray">
-          Learn more<span className="sr-only">, dark mode</span>
+          {/* Learn more<span className="sr-only">, dark mode</span> */}
+          了解更多<span className="sr-only">關於深色模式的內容</span>
         </Link>
       </div>
       <GridLockup
