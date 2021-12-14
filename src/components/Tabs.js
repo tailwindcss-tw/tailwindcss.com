@@ -43,10 +43,15 @@ function chineseName(name) {
     'Typography': "文字版式",
     'Shadows': "陰影",
 
-    // Layout
+    // Layouts
     'Simple': "簡約",
     'Playful': "生動",
     'Elegant': "典雅",
     'Brutalist': "狂野",
+
+    // Features
+    'CSS Grid': "CSS 網格",
+    'Transforms': "變形",
+    'Filters': "濾鏡",
   }[name]
 }
