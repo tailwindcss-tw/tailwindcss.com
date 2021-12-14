@@ -312,20 +312,26 @@ export function EditorTools() {
         <IconContainer>
           <img src={iconUrl} alt="" />
         </IconContainer>
-        <Caption className="text-sky-500">Editor tools</Caption>
-        <BigText>World-class IDE integration.</BigText>
+        {/* <Caption className="text-sky-500">Editor tools</Caption> */}
+        <Caption className="text-sky-500">編輯器插件</Caption>
+        {/* <BigText>World-class IDE integration.</BigText> */}
+        <BigText>世界級的 IDE 整合</BigText>
         <Paragraph as="div">
           <p>
-            Worried about remembering all of these class names? The Tailwind CSS IntelliSense
-            extension for VS Code has you covered.
+            {/* Worried about remembering all of these class names? The Tailwind CSS IntelliSense
+            extension for VS Code has you covered. */}
+            擔心記不住所有的 class 名稱嗎？
+            Tailwind CSS IntelliSense 這個 VS Code 擴充套件可以掩護你！
           </p>
           <p>
-            Get intelligent autocomplete suggestions, linting, class definitions and more, all
-            within your editor and with no configuration required.
+            {/* Get intelligent autocomplete suggestions, linting, class definitions and more, all
+            within your editor and with no configuration required. */}
+            智慧的語法建議、整理以及 class 定義等，全部在你的編輯器裡，而且還不用設定。
           </p>
         </Paragraph>
         <Link href="/docs/intellisense" color="sky">
-          Learn more<span className="sr-only">, editor setup</span>
+          {/* Learn more<span className="sr-only">, editor setup</span> */}
+          閱讀更多<span className="sr-only">關於編輯器的設定</span>
         </Link>
       </div>
       <GridLockup
