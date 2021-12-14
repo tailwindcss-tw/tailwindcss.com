@@ -43,18 +43,23 @@ export function ReadyMadeComponents() {
         <IconContainer>
           <img src={iconUrl} alt="" />
         </IconContainer>
-        <Caption className="text-indigo-500">Ready-made components</Caption>
+        {/* <Caption className="text-indigo-500">Ready-made components</Caption> */}
+        <Caption className="text-indigo-500">現成的元件</Caption>
         <BigText>
-          <Widont>Move even faster with Tailwind UI.</Widont>
+          {/* <Widont>Move even faster with Tailwind UI.</Widont> */}
+          <Widont>用 Tailwind UI 快速前進</Widont>
         </BigText>
         <Paragraph>
-          Tailwind UI is a collection of beautiful, fully responsive UI components, designed and
+          {/* Tailwind UI is a collection of beautiful, fully responsive UI components, designed and
           developed by us, the creators of Tailwind CSS. It's got hundreds of ready-to-use examples
           to choose from, and is guaranteed to help you find the perfect starting point for what you
-          want to build.
+          want to build. */}
+          Tailwind UI 集結了我們以及所有 Tailwind CSS 的創作者所設計研發的漂亮且完全響應式的 UI 元件。
+          那裏有數百個現成的範例讓你選擇，而且保證你能找到心目中想建構的完美起點。
         </Paragraph>
         <Link href="https://tailwindui.com/" color="indigo">
-          Learn more
+          {/* Learn more */}
+          了解詳情
         </Link>
       </div>
       <GridLockup
