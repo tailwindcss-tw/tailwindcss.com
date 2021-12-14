@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
-import { code as html, lines } from '../../samples/mobile-first.html?highlight'
+// import { code as html, lines } from '../../samples/mobile-first.html?highlight'
+import { code as html, lines } from '../../samples/mobile-first-zh.html?highlight'
 
 let images = {
   '/kevin-francis.jpg': require('@/img/kevin-francis.jpg').default,
