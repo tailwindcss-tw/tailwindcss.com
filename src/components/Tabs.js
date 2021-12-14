@@ -37,9 +37,16 @@ export function Tabs({ tabs, selected, onChange, className, iconClassName }) {
 
 function chineseName(name) {
   return {
+    // Utilities
     'Sizing': "尺寸",
     'Colors': "色彩",
     'Typography': "文字版式",
     'Shadows': "陰影",
+
+    // Layout
+    'Simple': "簡約",
+    'Playful': "生動",
+    'Elegant': "典雅",
+    'Brutalist': "狂野",
   }[name]
 }

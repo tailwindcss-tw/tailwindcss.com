@@ -14,9 +14,10 @@ import iconUrl from '@/img/icons/home/build-anything.png'
 import { HtmlZenGarden } from '@/components/HtmlZenGarden'
 import clsx from 'clsx'
 import { GridLockup } from '../GridLockup'
-import { lines } from '../../samples/build-anything.html?highlight'
+import { lines } from '../../samples/build-anything-zh.html?highlight'
 
 const code = {
+  /*html*/
   Simple: `<div class="flex font-sans">
   <div class="flex-none w-48 relative">
     <img src="/classic-utility-jacket.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" />
@@ -25,7 +26,8 @@ const code = {
     <div class="flex flex-wrap">
       <h1 class="flex-auto text-lg font-semibold text-gray-900">Classic Utility Jacket</h1>
       <div class="text-lg font-semibold text-gray-500">$110.00</div>
-      <div class="w-full flex-none text-sm font-medium text-gray-700 mt-2">In stock</div>
+      <!--div class="w-full flex-none text-sm font-medium text-gray-700 mt-2">In stock</div-->
+      <div class="w-full flex-none text-sm font-medium text-gray-700 mt-2">有現貨</div>
     </div>
     <div class="flex items-baseline mt-4 mb-6 pb-6 border-b border-gray-200">
       <div class="space-x-2 flex text-sm">
@@ -62,9 +64,11 @@ const code = {
         </svg>
       </button>
     </div>
-    <p class="text-sm text-gray-700">Free shipping on all continental US orders.</p>
+    <!--p class="text-sm text-gray-700">Free shipping on all continental US orders.</p-->
+    <p class="text-sm text-gray-700">全台灣保證24h到貨， 台北市 6h到貨</p>
   </form>
 </div>`,
+  /*html*/
   Playful: `<div class="flex font-sans">
   <div class="flex-none w-56 relative">
     <img src="/classic-utility-jacket.jpg" alt="" class="absolute inset-0 w-full h-full object-cover rounded-lg" />
@@ -73,7 +77,8 @@ const code = {
     <div class="flex flex-wrap">
       <h1 class="flex-auto font-medium text-gray-900">Classic Utility Jacket</h1>
       <div class="w-full flex-none mt-2 order-1 text-3xl font-bold text-violet-600">$110.00</div>
-      <div class="text-sm font-medium text-gray-400">In stock</div>
+      <!--div class="text-sm font-medium text-gray-400">In stock</div-->
+      <div class="text-sm font-medium text-gray-400">有現貨</div>
     </div>
     <div class="flex items-baseline mt-4 mb-6 pb-6 border-b border-gray-200">
       <div class="space-x-2 flex text-sm font-bold">
@@ -110,9 +115,11 @@ const code = {
         </svg>
       </button>
     </div>
-    <p class="text-sm text-gray-500">Free shipping on all continental US orders.</p>
+    <!--p class="text-sm text-gray-500">Free shipping on all continental US orders.</p-->
+    <p class="text-sm text-gray-500">全台灣保證24h到貨， 台北市 6h到貨</p>
   </form>
 </div>`,
+  /*html*/
   Elegant: `<div class="flex font-serif">
   <div class="flex-none w-52 relative">
     <img src="/classic-utility-jacket.jpg" alt="" class="absolute inset-0 w-full h-full object-cover rounded-lg" />
@@ -121,7 +128,8 @@ const code = {
     <div class="flex flex-wrap items-baseline">
       <h1 class="w-full flex-none mb-3 text-2xl leading-none text-gray-900">Classic Utility Jacket</h1>
       <div class="flex-auto text-lg font-medium text-gray-500">$350.00</div>
-      <div class="text-xs leading-6 font-medium uppercase text-gray-500">In stock</div>
+      <!--div class="text-xs leading-6 font-medium uppercase text-gray-500">In stock</div-->
+      <div class="text-xs leading-6 font-medium uppercase text-gray-500">有現貨</div>
     </div>
     <div class="flex items-baseline mt-4 mb-6 pb-6 border-b border-gray-200">
       <div class="space-x-1 flex text-sm font-medium">
@@ -158,9 +166,11 @@ const code = {
         </svg>
       </button>
     </div>
-    <p class="text-sm text-gray-500">Free shipping on all continental US orders.</p>
+    <!--p class="text-sm text-gray-500">Free shipping on all continental US orders.</p-->
+    <p class="text-sm text-gray-500">全台灣保證24h到貨， 台北市 6h到貨</p>
   </form>
 </div>`,
+  /*html*/
   Brutalist: `<div class="flex p-6 font-mono">
   <div class="flex-none w-48 mb-10 relative z-10 before:absolute before:top-1 before:left-1 before:w-full before:h-full before:bg-teal-400">
     <img src="/classic-utility-jacket.jpg" alt="" class="absolute z-10 inset-0 w-full h-full object-cover rounded-lg" />
@@ -169,7 +179,8 @@ const code = {
     <div class="relative flex flex-wrap items-baseline pb-6 before:bg-black before:absolute before:-top-6 before:bottom-0 before:-left-60 before:-right-6">
       <h1 class="relative w-full flex-none mb-2 text-2xl font-semibold text-white">Retro Shoe</h1>
       <div class="relative text-lg text-white">$89.00</div>
-      <div class="relative uppercase text-teal-400 ml-3">In stock</div>
+      <!--div class="relative uppercase text-teal-400 ml-3">In stock</div-->
+      <div class="relative uppercase text-teal-400 ml-3">有現貨</div>
     </div>
     <div class="flex items-baseline my-6">
       <div class="space-x-3 flex text-sm font-medium">
@@ -206,7 +217,8 @@ const code = {
         </svg>
       </button>
     </div>
-    <p class="text-xs leading-6 text-gray-500">Free shipping on all continental US orders.</p>
+    <!--p class="text-xs leading-6 text-gray-500">Free shipping on all continental US orders.</p-->
+    <p class="text-xs leading-6 text-gray-500">全台灣保證24h到貨， 台北市 6h到貨</p>
   </form>
 </div>`,
 }
@@ -223,10 +235,14 @@ const classes = {
 }
 
 const content = {
-  Simple: ['/classic-utility-jacket.jpg', 'Classic Utility Jacket', '$110.00'],
-  Playful: ['/kids-jumpsuit.jpg', 'Kids Jumpsuit', '$39.00'],
-  Elegant: ['/dogtooth-style-jacket.jpg', 'DogTooth Style Jacket', '$350.00'],
-  Brutalist: ['/retro-shoe.jpg', 'Retro Shoe', '$89.00'],
+  // Simple: ['/classic-utility-jacket.jpg', 'Classic Utility Jacket', '$110.00'],
+  // Playful: ['/kids-jumpsuit.jpg', 'Kids Jumpsuit', '$39.00'],
+  // Elegant: ['/dogtooth-style-jacket.jpg', 'DogTooth Style Jacket', '$350.00'],
+  // Brutalist: ['/retro-shoe.jpg', 'Retro Shoe', '$89.00'],
+  Simple: ['/classic-utility-jacket.jpg', '經典機能性夾克', '$110.00'],
+  Playful: ['/kids-jumpsuit.jpg', '兒童連身裝', '$39.00'],
+  Elegant: ['/dogtooth-style-jacket.jpg', '韓版西裝外套', '$350.00'],
+  Brutalist: ['/retro-shoe.jpg', 'NIKE 復古版球鞋', '$89.00'],
 }
 
 export function BuildAnything() {
@@ -246,17 +262,22 @@ export function BuildAnything() {
         <IconContainer>
           <img src={iconUrl} alt="" />
         </IconContainer>
-        <Caption className="text-pink-500">Build anything</Caption>
+        {/* <Caption className="text-pink-500">Build anything</Caption> */}
+        <Caption className="text-pink-500">打造萬物</Caption>
         <BigText>
-          <Widont>Build whatever you want, seriously.</Widont>
+          {/* <Widont>Build whatever you want, seriously.</Widont> */}
+          <Widont>你能創造你想要的一切，沒唬你</Widont>
         </BigText>
         <Paragraph>
-          Because Tailwind is so low-level, it never encourages you to design the same site twice.
+          {/* Because Tailwind is so low-level, it never encourages you to design the same site twice.
           Even with the same color palette and sizing scale, it's easy to build the same component
-          with a completely different look in the next project.
+          with a completely different look in the next project. */}
+          因為 Tailwind 就是這麼的好上手，所以它絕不鼓勵你設計出兩次同樣的網站。
+          即使用了同個色板和尺寸，還是可以很輕易的讓你在下個專案中用同樣的元件，做出完全不同的設計。
         </Paragraph>
         <Link href="/docs/installation" color="pink">
-          Get started<span className="sr-only">, installation</span>
+          {/* Get started<span className="sr-only">, installation</span> */}
+          快點開始<span className="sr-only">，安裝吧</span>
         </Link>
         <div className="mt-10">
           <Tabs
