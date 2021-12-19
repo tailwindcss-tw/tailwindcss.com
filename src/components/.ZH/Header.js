@@ -19,7 +19,7 @@ function Featured() {
         </svg>
         <span className="ml-2">
           {/* Just-in-Time all the time, colored shadows, scroll snap and more */}
-          全時段的 JIT 模式，還有陰影色彩、捲動吸附以及更多新功能
+          Just-in-Time all the time, colored shadows, scroll snap and more
         </span>
         <svg width="3" height="6" className="ml-3 overflow-visible text-sky-300" aria-hidden="true">
           <path

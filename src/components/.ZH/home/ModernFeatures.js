@@ -115,29 +115,23 @@ export function ModernFeatures() {
         <IconContainer>
           <img src={iconUrl} alt="" />
         </IconContainer>
-        {/* <Caption className="text-indigo-500">Modern features</Caption> */}
-        <Caption className="text-indigo-500">現代趨勢</Caption>
+        <Caption className="text-indigo-500">Modern features</Caption>
         <BigText>
-          {/* <Widont>Cutting-edge is our comfort zone.</Widont> */}
-          <Widont>我們，只活在尖端。</Widont>
+          <Widont>Cutting-edge is our comfort zone.</Widont>
         </BigText>
         <Paragraph as="div">
           <p>
-            {/* Tailwind is unapologetically modern, and takes advantage of all the latest and greatest
-            CSS features to make the developer experience as enjoyable as possible. */}
-            Tailwind 很潮。因為它具備最新最棒的 CSS 特色，只為了讓你的開發過程輕鬆愉快。
+            Tailwind is unapologetically modern, and takes advantage of all the latest and greatest
+            CSS features to make the developer experience as enjoyable as possible.
           </p>
           <p>
-            {/* We've got first-class CSS grid support, composable transforms and gradients powered by
+            We've got first-class CSS grid support, composable transforms and gradients powered by
             CSS variables, support for modern state selectors like{' '}
-            <InlineCode>:focus-visible</InlineCode>, and tons more. */}
-            我們用 CSS 變數提供一流的 CSS 網格、組合式變形，和漸層，也支援像是{' '}
-            <InlineCode>:focus-visible</InlineCode> 這種的現代狀態選擇器，以及更多其他功能。
+            <InlineCode>:focus-visible</InlineCode>, and tons more.
           </p>
         </Paragraph>
-        <Link href="zh/docs/grid-template-columns" color="indigo">
-          {/* Learn more<span className="sr-only">, grid template columns</span> */}
-          去了解<span className="sr-only">網格排版的相關內容</span>
+        <Link href="/docs/grid-template-columns" color="indigo">
+          Learn more<span className="sr-only">, grid template columns</span>
         </Link>
         <div className="mt-10">
           <Tabs

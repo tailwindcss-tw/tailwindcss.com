@@ -3,10 +3,10 @@ import { documentationNav } from '@/navs/.ZH/documentation'
 import { Logo } from '@/components/Logo'
 
 const chineseNames = {
-  'Getting Started': "起手式",
-  'Core Concepts': "核心概念",
-  'Customization': "客製化",
-  'Community': "社群",
+  'Getting Started': "Getting Started",
+  'Core Concepts': "Core Concepts",
+  'Customization': "Customization",
+  'Community': "Community",
 }
 
 const footerNav = [

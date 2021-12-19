@@ -277,23 +277,18 @@ export function ConstraintBased() {
         <IconContainer>
           <img src={iconUrl} alt="" />
         </IconContainer>
-        {/* <Caption className="text-indigo-500">Constraint-based</Caption> */}
-        <Caption className="text-indigo-500">以約束 (Constraint) 為基底</Caption>
+        <Caption className="text-indigo-500">Constraint-based</Caption>
         <BigText>
-          <Widont>為您設計系統而生的 API</Widont>
+          <Widont>An API for your design system.</Widont>
         </BigText>
         <Paragraph>
-          {/* Utility classes help you work within the constraints of a system instead of littering your
+          Utility classes help you work within the constraints of a system instead of littering your
           stylesheets with arbitrary values. They make it easy to be consistent with color choices,
           spacing, typography, shadows, and everything else that makes up a well-engineered design
-          system. */}
-          功能性 class 可以約束您的系統，而不是在樣式表中填上亂七八糟的數值。
-          它們讓顏色、間距、文字版式、陰影，以及其他的一切都能井然有序的保持一致性，
-          締造精良的設計系統。
+          system.
         </Paragraph>
-        <Link href="zh/docs/utility-first" color="indigo">
-          {/* Learn more<span className="sr-only">, utility-first fundamentals</span> */}
-          了解詳情<span className="sr-only">，功能優先的基本原則</span>
+        <Link href="/docs/utility-first" color="indigo">
+          Learn more<span className="sr-only">, utility-first fundamentals</span>
         </Link>
         <div className="mt-10">
           <Tabs

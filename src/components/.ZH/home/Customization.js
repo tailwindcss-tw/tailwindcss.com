@@ -100,30 +100,23 @@ export function Customization() {
         <IconContainer>
           <img src={iconUrl} alt="" />
         </IconContainer>
-        {/* <Caption className="text-pink-500">Customization</Caption> */}
-        <Caption className="text-pink-500">客製化</Caption>
+        <Caption className="text-pink-500">Customization</Caption>
         <BigText>
-          {/* <Widont>Extend it, tweak it, change it.</Widont> */}
-          <Widont>延伸、微調和改變， 隨你喜好。</Widont>
+          <Widont>Extend it, tweak it, change it.</Widont>
         </BigText>
         <Paragraph as="div">
           <p>
-            {/* Tailwind includes an expertly crafted set of defaults out-of-the-box, but literally
+            Tailwind includes an expertly crafted set of defaults out-of-the-box, but literally
             everything can be customized — from the color palette to the spacing scale to the box
-            shadows to the mouse cursor. */}
-            Tailwind 包含了一組專門設計、可以直接使用的預設值，
-            但是其實從色票、間距、陰影到滑鼠游標，任何東西，都是可以自訂的。
+            shadows to the mouse cursor.
           </p>
           <p>
-            {/* Use the tailwind.config.js file to craft your own design system, then let Tailwind
-            transform it into your own custom CSS framework. */}
-            用 tailwind.config.js 設定檔來創造自己的設計系統，
-            讓 Tailwind 來把它轉換成屬於你客製化的 CSS 框架。
+            Use the tailwind.config.js file to craft your own design system, then let Tailwind
+            transform it into your own custom CSS framework.
           </p>
         </Paragraph>
-        <Link href="zh/docs/configuration" color="pink">
-          {/* Learn more<span className="sr-only">, configuration</span> */}
-          了解詳情<span className="sr-only">，關於配置的部分</span>
+        <Link href="/docs/configuration" color="pink">
+          Learn more<span className="sr-only">, configuration</span>
         </Link>
         <div className="mt-10">
           <Tabs
