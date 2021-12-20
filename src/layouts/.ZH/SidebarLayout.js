@@ -5,6 +5,7 @@ import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect'
 import clsx from 'clsx'
 import { SearchButton } from '@/components/.ZH/Search'
 import { Dialog } from '@headlessui/react'
+import chineseCategory from '@/components/.ZH/ChineseCategory'
 
 export const SidebarContext = createContext()
 
@@ -141,7 +142,8 @@ function Nav({ nav, children, fallbackHref }) {
                       'text-gray-400': publishedItems.length === 0,
                     })}
                   >
-                    {category}
+                    {/* {category} */}
+                    {chineseCategory[category]}
                   </h5>
                   <ul className="space-y-6 lg:space-y-2 border-l border-gray-100">
                     {(fallbackHref ? nav[category] : publishedItems).map((item, i) => {
@@ -222,7 +224,8 @@ function TopLevelNav() {
   return (
     <>
       <TopLevelLink
-        href="/docs/installation"
+        // href="/docs/installation"
+        href="/docs/.ZH/installation"
         isActive={pathname.startsWith('/docs')}
         className="mb-4"
         shadow="group-hover:shadow-sky-200"
@@ -404,7 +407,8 @@ export function SidebarLayout({
             onClick={() => setNavIsOpen(false)}
             className="absolute top-5 right-5 w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-600"
           >
-            <span className="sr-only">Close navigation</span>
+            {/* <span className="sr-only">Close navigation</span> */}
+            <span className="sr-only">關閉導航欄</span>
             <svg viewBox="0 0 10 10" className="w-2.5 h-2.5 overflow-visible">
               <path
                 d="M0 0L10 10M10 0L0 10"
