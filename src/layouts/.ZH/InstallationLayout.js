@@ -1,20 +1,20 @@
-import { BasicLayout } from '@/layouts/BasicLayout'
+import { BasicLayout } from '@/layouts/.ZH/BasicLayout'
 import clsx from 'clsx'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { IconContainer } from '@/components/home/common'
 
 let tabs = {
-  'Tailwind CLI': '/docs/installation',
-  'Using PostCSS': '/docs/installation/using-postcss',
-  'Framework Guides': '/docs/installation/framework-guides',
-  'Play CDN': '/docs/installation/play-cdn',
+  'Tailwind CLI': '/ZH/docs/installation',
+  'Using PostCSS': '/ZH/docs/installation/using-postcss',
+  'Framework Guides': '/ZH/docs/installation/framework-guides',
+  'Play CDN': '/ZH/docs/installation/play-cdn',
 }
 
 let readNext = [
   {
     title: 'Utility-First Fundamentals',
-    href: '/docs/utility-first',
+    href: '/ZH/docs/utility-first',
     body: () => (
       <p>
         Using a utility-first workflow to build complex components from a constrained set of
@@ -25,7 +25,7 @@ let readNext = [
   },
   {
     title: 'Responsive Design',
-    href: '/docs/responsive-design',
+    href: '/ZH/docs/responsive-design',
     body: () => (
       <p>
         Build fully responsive user interfaces that adapt to any screen size using responsive
@@ -36,7 +36,7 @@ let readNext = [
   },
   {
     title: 'Hover, Focus & Other States',
-    href: '/docs/hover-focus-and-other-states',
+    href: '/ZH/docs/hover-focus-and-other-states',
     body: () => (
       <p>
         Style elements in interactive states like hover, focus, and more using conditional
@@ -47,7 +47,7 @@ let readNext = [
   },
   {
     title: 'Dark Mode',
-    href: '/docs/dark-mode',
+    href: '/ZH/docs/dark-mode',
     body: () => (
       <p>Optimize your site for dark mode directly in your HTML using the dark mode modifier.</p>
     ),
@@ -55,7 +55,7 @@ let readNext = [
   },
   {
     title: 'Reusing Styles',
-    href: '/docs/reusing-styles',
+    href: '/ZH/docs/reusing-styles',
     body: () => (
       <p>
         Manage duplication and keep your projects maintainable by creating reusable abstractions.
@@ -65,7 +65,7 @@ let readNext = [
   },
   {
     title: 'Customizing the Framework',
-    href: '/docs/adding-custom-styles',
+    href: '/ZH/docs/adding-custom-styles',
     body: () => (
       <p>Customize the framework to match your brand and extend it with your own custom styles.</p>
     ),
