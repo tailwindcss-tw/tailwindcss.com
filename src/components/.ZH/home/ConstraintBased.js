@@ -291,7 +291,7 @@ export function ConstraintBased() {
           它們讓顏色、間距、文字版式、陰影，以及其他的一切都能井然有序的保持一致性，
           締造精良的設計系統。
         </Paragraph>
-        <Link href="/docs/utility-first" color="indigo">
+        <Link href="zh/docs/utility-first" color="indigo">
           {/* Learn more<span className="sr-only">, utility-first fundamentals</span> */}
           了解詳情<span className="sr-only">，功能優先的基本原則</span>
         </Link>

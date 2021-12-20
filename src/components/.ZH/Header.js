@@ -102,7 +102,7 @@ export function NavItems() {
   return (
     <>
       <li>
-        <Link href="ZH/docs/installation">
+        <Link href="zh/docs/installation">
           {/* <a className="hover:text-sky-500">Docs</a> */}
           <a className="hover:text-sky-500">技術文件</a>
         </Link>
@@ -187,7 +187,7 @@ export function Header({ hasNav = false, navIsOpen, onNavToggle, title, section 
                   className="mr-3 flex-none w-[2.0625rem] overflow-hidden md:w-auto"
                   onContextMenu={(e) => {
                     e.preventDefault()
-                    Router.push('/ZH/brand')
+                    Router.push('/zh/brand')
                   }}
                 >
                   {/* <span className="sr-only">Tailwind CSS home page</span> */}

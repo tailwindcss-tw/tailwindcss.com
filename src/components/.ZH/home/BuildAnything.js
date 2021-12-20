@@ -278,7 +278,7 @@ export function BuildAnything() {
           因為 Tailwind 就是這麼的好上手，所以它絕不鼓勵你設計出兩次同樣的網站。
           即使用了同個色板和尺寸，還是可以很輕易的讓你在下個專案中用同樣的元件，做出完全不同的設計。
         </Paragraph>
-        <Link href="/docs/installation" color="pink">
+        <Link href="zh/docs/installation" color="pink">
           {/* Get started<span className="sr-only">, installation</span> */}
           快點開始<span className="sr-only">，安裝吧</span>
         </Link>

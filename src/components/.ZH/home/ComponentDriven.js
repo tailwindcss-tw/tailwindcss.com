@@ -343,7 +343,7 @@ function AtApplySection() {
           to extract repeated utility patterns into custom CSS classes just by copying and pasting */}
           想要保持老派格調，不想加入元件框架的世界中嗎？那用 Tailwind 的 <InlineCode>@apply</InlineCode> 指令把你重複的功能樣式集中到自訂的 CSS class 裡吧。
         </Paragraph>
-        <Link href="/docs/reusing-styles" color="sky">
+        <Link href="zh/docs/reusing-styles" color="sky">
           閱讀更多<span className="sr-only">關於樣式重新使用的內容</span>
         </Link>
       </div>
@@ -564,7 +564,7 @@ export function ComponentDriven() {
           如果你想要一直、一直、一直地重複使用你的功能或設計，
           那你需要的是把它們做成元件或樣板，這樣你只要改變一次，就能應用在所有地方。
         </Paragraph>
-        <Link href="/docs/reusing-styles" color="sky">
+        <Link href="zh/docs/reusing-styles" color="sky">
           閱讀更多<span className="sr-only">關於樣式重新使用的內容</span>
         </Link>
         <div className="mt-10">

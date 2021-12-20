@@ -272,7 +272,7 @@ export function MobileFirst() {
             將 {'"螢幕尺寸"'} 擺在任何功能性 class 前面，看看它在特定斷點時如何神奇的變化。
           </p>
         </Paragraph>
-        <Link href="/docs/responsive-design" color="indigo">
+        <Link href="zh/docs/responsive-design" color="indigo">
           {/* Learn more<span className="sr-only">, responsive design</span> */}
           快去看看<span className="sr-only">，關於響應式設計的一切</span>
         </Link>

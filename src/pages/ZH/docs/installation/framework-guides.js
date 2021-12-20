@@ -61,7 +61,7 @@ export default function FrameworkGuides() {
             <div className="ml-6 flex-auto">
               <h3 className="mb-2 leading-6 text-gray-900 font-semibold">
                 {/* <Link href={`/docs/guides/${slug}`}> */}
-                <Link href={`/ZH/docs/guides/${slug}`}>
+                <Link href={`/zh/docs/guides/${slug}`}>
                   <a className="before:absolute before:inset-0">{name}</a>
                 </Link>
               </h3>
