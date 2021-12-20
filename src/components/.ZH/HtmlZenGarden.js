@@ -1,9 +1,14 @@
 import { AnimateSharedLayout, motion } from 'framer-motion'
-import { font as pallyVariable } from '../fonts/generated/Pally-Variable.module.css'
-import { font as synonymVariable } from '../fonts/generated/Synonym-Variable.module.css'
-import { font as sourceSerifProRegular } from '../fonts/generated/SourceSerifPro-Regular.module.css'
-import { font as ibmPlexMonoRegular } from '../fonts/generated/IBMPlexMono-Regular.module.css'
-import { font as ibmPlexMonoSemiBold } from '../fonts/generated/IBMPlexMono-SemiBold.module.css'
+// import { font as pallyVariable } from '../fonts/generated/Pally-Variable.module.css'
+// import { font as synonymVariable } from '../fonts/generated/Synonym-Variable.module.css'
+// import { font as sourceSerifProRegular } from '../fonts/generated/SourceSerifPro-Regular.module.css'
+// import { font as ibmPlexMonoRegular } from '../fonts/generated/IBMPlexMono-Regular.module.css'
+// import { font as ibmPlexMonoSemiBold } from '../fonts/generated/IBMPlexMono-SemiBold.module.css'
+import { font as pallyVariable } from '../../fonts/generated/Pally-Variable.module.css'
+import { font as synonymVariable } from '../../fonts/generated/Synonym-Variable.module.css'
+import { font as sourceSerifProRegular } from '../../fonts/generated/SourceSerifPro-Regular.module.css'
+import { font as ibmPlexMonoRegular } from '../../fonts/generated/IBMPlexMono-Regular.module.css'
+import { font as ibmPlexMonoSemiBold } from '../../fonts/generated/IBMPlexMono-SemiBold.module.css'
 import { usePrevious } from '@/hooks/usePrevious'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import debounce from 'debounce'
@@ -432,8 +437,9 @@ export function HtmlZenGarden({ theme }) {
                       initial={false}
                       animate={{ opacity: theme === 'Simple' ? 1 : 0 }}
                     >
-                      <span className="hidden sm:inline whitespace-pre">Classic </span>Utility
-                      Jacket
+                      {/* <span className="hidden sm:inline whitespace-pre">Classic </span>Utility
+                      Jacket */}
+                      <span className="hidden sm:inline whitespace-pre">經典</span>機能性外套
                     </motion.h2>
                     <motion.h2
                       layout
@@ -445,7 +451,8 @@ export function HtmlZenGarden({ theme }) {
                       initial={false}
                       animate={{ opacity: theme === 'Playful' ? 1 : 0 }}
                     >
-                      Kids Jumpsuit
+                      {/* Kids Jumpsuit */}
+                      兒童連身裝
                     </motion.h2>
                     <motion.h2
                       layout
@@ -457,7 +464,8 @@ export function HtmlZenGarden({ theme }) {
                       initial={false}
                       animate={{ opacity: theme === 'Elegant' ? 1 : 0 }}
                     >
-                      Dogtooth Style Jacket
+                      {/* Dogtooth Style Jacket */}
+                      韓版西裝外套
                     </motion.h2>
                     <motion.h2
                       layout
@@ -469,7 +477,8 @@ export function HtmlZenGarden({ theme }) {
                       initial={false}
                       animate={{ opacity: theme === 'Brutalist' ? 1 : 0 }}
                     >
-                      Retro Shoe
+                      {/* Retro Shoe */}
+                      NIKE 復古版球鞋
                     </motion.h2>
                   </div>
                   <div className={clsx('relative', themes[theme].price)}>
@@ -527,7 +536,8 @@ export function HtmlZenGarden({ theme }) {
                         theme === 'Simple' ? '' : 'absolute bottom-0 left-0'
                       }`}
                     >
-                      In stock
+                      {/* In stock */}
+                      有現貨
                     </motion.div>
                     <motion.div
                       layout
@@ -537,7 +547,8 @@ export function HtmlZenGarden({ theme }) {
                         theme === 'Playful' ? '' : 'absolute bottom-0 left-0'
                       }`}
                     >
-                      In stock
+                      {/* In stock */}
+                      有現貨
                     </motion.div>
                     <motion.div
                       layout
@@ -547,7 +558,8 @@ export function HtmlZenGarden({ theme }) {
                         theme === 'Elegant' ? '' : 'absolute bottom-0 left-0'
                       }`}
                     >
-                      In stock
+                      {/* In stock */}
+                      有現貨
                     </motion.div>
                     <motion.div
                       layout
@@ -559,7 +571,8 @@ export function HtmlZenGarden({ theme }) {
                         theme === 'Brutalist' ? '' : 'absolute bottom-0 left-0'
                       )}
                     >
-                      In stock
+                      {/* In stock */}
+                      有現貨
                     </motion.div>
                   </div>
                 </div>
@@ -690,7 +703,8 @@ export function HtmlZenGarden({ theme }) {
                           initial={false}
                           animate={{ opacity: theme === name ? 1 : 0 }}
                         >
-                          <motion.span layout>Buy now</motion.span>
+                          {/* <motion.span layout>Buy now</motion.span> */}
+                          <motion.span layout>直接購買</motion.span>
                         </motion.span>
                       ))}
                     </motion.div>
@@ -723,7 +737,8 @@ export function HtmlZenGarden({ theme }) {
                           initial={false}
                           animate={{ opacity: theme === name ? 1 : 0 }}
                         >
-                          <motion.span layout>Add to bag</motion.span>
+                          {/* <motion.span layout>Add to bag</motion.span> */}
+                          <motion.span layout>加到購物車</motion.span>
                         </motion.span>
                       ))}
                     </motion.div>
@@ -782,8 +797,10 @@ export function HtmlZenGarden({ theme }) {
                       animate={{ opacity: theme === name ? 1 : 0 }}
                     >
                       <span>
-                        Free shipping on all
-                        <span className="hidden sm:inline"> continental US</span> orders.
+                        {/* Free shipping on all
+                        <span className="hidden sm:inline"> continental US</span> orders. */}
+                        全台保證 24h 到貨
+                        <span className="hidden sm:inline">，台北市 6h 到貨</span>
                       </span>
                     </motion.p>
                   ))}

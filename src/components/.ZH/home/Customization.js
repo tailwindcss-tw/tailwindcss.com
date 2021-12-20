@@ -7,20 +7,27 @@ import {
   Widont,
   themeTabs,
 } from '@/components/home/common'
-import { Tabs } from '@/components/Tabs'
+import { Tabs } from '@/components/.ZH/Tabs'
 import { CodeWindow } from '@/components/CodeWindow'
 import iconUrl from '@/img/icons/home/customization.png'
 import { useEffect, useRef, useState } from 'react'
 import tailwindColors from 'tailwindcss/colors'
 import { AnimatePresence, motion } from 'framer-motion'
-import { font as pallyVariable } from '../../fonts/generated/Pally-Variable.module.css'
-import { font as sourceSerifProRegular } from '../../fonts/generated/SourceSerifPro-Regular.module.css'
-import { font as ibmPlexMonoRegular } from '../../fonts/generated/IBMPlexMono-Regular.module.css'
-import { font as synonymVariable } from '../../fonts/generated/Synonym-Variable.module.css'
-import { Token } from '../Code'
+// import { font as pallyVariable } from '../../fonts/generated/Pally-Variable.module.css'
+// import { font as sourceSerifProRegular } from '../../fonts/generated/SourceSerifPro-Regular.module.css'
+// import { font as ibmPlexMonoRegular } from '../../fonts/generated/IBMPlexMono-Regular.module.css'
+// import { font as synonymVariable } from '../../fonts/generated/Synonym-Variable.module.css'
+import { font as pallyVariable } from '../../../fonts/generated/Pally-Variable.module.css'
+import { font as sourceSerifProRegular } from '../../../fonts/generated/SourceSerifPro-Regular.module.css'
+import { font as ibmPlexMonoRegular } from '../../../fonts/generated/IBMPlexMono-Regular.module.css'
+import { font as synonymVariable } from '../../../fonts/generated/Synonym-Variable.module.css'
+// import { Token } from '../Code'
+import { Token } from '@/components/Code'
 import clsx from 'clsx'
-import { GridLockup } from '../GridLockup'
-import { tokens } from '../../samples/customization.js?highlight'
+// import { GridLockup } from '../GridLockup'
+import { GridLockup } from '../../GridLockup'
+// import { tokens } from '../../samples/customization.js?highlight'
+import { tokens } from '../../../samples/customization.js?highlight'
 
 const defaultSampleBody =
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut augue gravida cras quis ac duis pretium ullamcorper consequat. Integer pellentesque eu.'
@@ -93,23 +100,30 @@ export function Customization() {
         <IconContainer>
           <img src={iconUrl} alt="" />
         </IconContainer>
-        <Caption className="text-pink-500">Customization</Caption>
+        {/* <Caption className="text-pink-500">Customization</Caption> */}
+        <Caption className="text-pink-500">客製化</Caption>
         <BigText>
-          <Widont>Extend it, tweak it, change it.</Widont>
+          {/* <Widont>Extend it, tweak it, change it.</Widont> */}
+          <Widont>延伸、微調和改變， 隨你喜好。</Widont>
         </BigText>
         <Paragraph as="div">
           <p>
-            Tailwind includes an expertly crafted set of defaults out-of-the-box, but literally
+            {/* Tailwind includes an expertly crafted set of defaults out-of-the-box, but literally
             everything can be customized — from the color palette to the spacing scale to the box
-            shadows to the mouse cursor.
+            shadows to the mouse cursor. */}
+            Tailwind 包含了一組專門設計、可以直接使用的預設值，
+            但是其實從色票、間距、陰影到滑鼠游標，任何東西，都是可以自訂的。
           </p>
           <p>
-            Use the tailwind.config.js file to craft your own design system, then let Tailwind
-            transform it into your own custom CSS framework.
+            {/* Use the tailwind.config.js file to craft your own design system, then let Tailwind
+            transform it into your own custom CSS framework. */}
+            用 tailwind.config.js 設定檔來創造自己的設計系統，
+            讓 Tailwind 來把它轉換成屬於你客製化的 CSS 框架。
           </p>
         </Paragraph>
         <Link href="/docs/configuration" color="pink">
-          Learn more<span className="sr-only">, configuration</span>
+          {/* Learn more<span className="sr-only">, configuration</span> */}
+          了解詳情<span className="sr-only">，關於配置的部分</span>
         </Link>
         <div className="mt-10">
           <Tabs

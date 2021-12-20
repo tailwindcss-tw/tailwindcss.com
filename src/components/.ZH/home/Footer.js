@@ -1,6 +1,13 @@
 import Link from 'next/link'
-import { documentationNav } from '@/navs/documentation'
+import { documentationNav } from '@/navs/.ZH/documentation'
 import { Logo } from '@/components/Logo'
+
+const chineseNames = {
+  'Getting Started': "起手式",
+  'Core Concepts': "核心概念",
+  'Customization': "客製化",
+  'Community': "社群",
+}
 
 const footerNav = [
   {
@@ -30,7 +37,8 @@ export function Footer() {
             >
               {Object.entries(sections).map(([title, items]) => (
                 <div key={title} className="lg:flex-none lg:w-1/2">
-                  <h2 className="font-semibold text-gray-900">{title}</h2>
+                  {/* <h2 className="font-semibold text-gray-900">{title}</h2> */}
+                  <h2 className="font-semibold text-gray-900">{chineseNames[title]? chineseNames[title]: title}</h2>
                   <ul className="mt-3 space-y-2">
                     {items.map((item) => (
                       <li key={item.href}>

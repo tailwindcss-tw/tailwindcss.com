@@ -13,14 +13,19 @@ import { addClassTokens2 } from '@/utils/addClassTokens'
 import { useEffect, useRef, useState } from 'react'
 import { usePrevious } from '@/hooks/usePrevious'
 import clsx from 'clsx'
-import { GridLockup } from '../GridLockup'
-import { lines } from '../../samples/state-variants.html?highlight'
+// import { GridLockup } from '../GridLockup'
+// import { lines } from '../../samples/state-variants-zh.html?highlight'
+import { GridLockup } from '@/components/GridLockup'
+import { lines } from '../../../samples/.ZH/state-variants.html?highlight'
 import { animate } from 'framer-motion'
 
 const projects = [
-  { title: 'API Integration', category: 'Engineering' },
-  { title: 'New Benefits Plan', category: 'Human Resources' },
-  { title: 'Onboarding Emails', category: 'Customer Success' },
+  // { title: 'API Integration', category: 'Engineering' },
+  // { title: 'New Benefits Plan', category: 'Human Resources' },
+  // { title: 'Onboarding Emails', category: 'Customer Success' },
+  { title: 'API 整合', category: '工程' },
+  { title: '薪資調整方案', category: '人資' },
+  { title: '求職信', category: '顧客成功案例' },
 ]
 
 const faces = [
@@ -92,19 +97,26 @@ export function StateVariants() {
         <IconContainer>
           <img src={iconUrl} alt="" />
         </IconContainer>
-        <Caption className="text-blue-500">State variants</Caption>
+        {/* <Caption className="text-blue-500">State variants</Caption> */}
+        <Caption className="text-blue-500">狀態變化</Caption>
         <BigText>
-          <Widont>Hover and focus states? We got ’em.</Widont>
+          {/* <Widont>Hover and focus states? We got ’em.</Widont> */}
+          <Widont>想要 hover 和 focus 的狀態？ 我們準備給你。</Widont>
         </BigText>
         <Paragraph>
-          Want to style something on hover? Stick <InlineCode>hover:</InlineCode> at the beginning
+          {/* Want to style something on hover? Stick <InlineCode>hover:</InlineCode> at the beginning
           of the class you want to add. Works for <InlineCode>focus</InlineCode>,{' '}
           <InlineCode>active</InlineCode>, <InlineCode>disabled</InlineCode>,{' '}
           <InlineCode>focus-within</InlineCode>, <InlineCode>focus-visible</InlineCode>, and even
-          fancy states we invented ourselves like <InlineCode>group-hover</InlineCode>.
+          fancy states we invented ourselves like <InlineCode>group-hover</InlineCode>. */}
+          想要在滑鼠停留時有不同的樣式嗎？那就在你想用的 class 前面加上 <InlineCode>hover:</InlineCode>！
+          同樣，你也能加上 <InlineCode>focus</InlineCode>、<InlineCode>active</InlineCode>、
+          <InlineCode>disabled</InlineCode>、<InlineCode>focus-within</InlineCode>、
+          <InlineCode>focus-visible</InlineCode> ，甚至是我們自己發明的超酷炫狀態 <InlineCode>group-hover</InlineCode>。
         </Paragraph>
         <Link href="/docs/hover-focus-and-other-states" color="blue">
-          Learn more<span className="sr-only">, handling hover, focus, and other states</span>
+          {/* Learn more<span className="sr-only">, handling hover, focus, and other states</span> */}
+          <span className="sr-only">了解關於 hover、focus 以及其他狀態的</span>詳細說明
         </Link>
       </div>
       <GridLockup
@@ -115,7 +127,8 @@ export function StateVariants() {
             <section>
               <header className="bg-white space-y-4 p-4 sm:px-8 sm:py-6 lg:p-4 xl:px-8 xl:py-6">
                 <div className="flex items-center justify-between">
-                  <h2 className="font-semibold text-gray-900">Projects</h2>
+                  {/* <h2 className="font-semibold text-gray-900">Projects</h2> */}
+                  <h2 className="font-semibold text-gray-900">專案</h2>
                   <div
                     className="group flex items-center rounded-md bg-blue-500 text-white text-sm font-medium pl-2 pr-3 py-2 cursor-pointer shadow-sm hover:bg-blue-400"
                     onMouseEnter={() => {
@@ -128,7 +141,8 @@ export function StateVariants() {
                     <svg width="20" height="20" fill="currentColor" className="mr-2">
                       <path d="M10 5a1 1 0 0 1 1 1v3h3a1 1 0 1 1 0 2h-3v3a1 1 0 1 1-2 0v-3H6a1 1 0 1 1 0-2h3V6a1 1 0 0 1 1-1Z" />
                     </svg>
-                    New
+                    {/* New */}
+                    建立
                   </div>
                 </div>
                 <form className="group relative">
@@ -154,7 +168,8 @@ export function StateVariants() {
                     }}
                     type="text"
                     aria-label="Filter projects"
-                    placeholder="Filter projects..."
+                    // placeholder="Filter projects..."
+                    placeholder="搜尋專案..."
                     className="w-full text-sm leading-6 text-gray-900 placeholder-gray-400 rounded-md py-2 pl-10 ring-1 ring-gray-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </form>
@@ -176,17 +191,20 @@ export function StateVariants() {
                   >
                     <dl className="grid sm:block lg:grid xl:block grid-cols-2 grid-rows-2 items-center">
                       <div>
-                        <dt className="sr-only">Title</dt>
+                        {/* <dt className="sr-only">Title</dt> */}
+                        <dt className="sr-only">標題</dt>
                         <dd className="font-semibold text-gray-900 group-hover:text-white">
                           {project.title}
                         </dd>
                       </div>
                       <div>
-                        <dt className="sr-only">Category</dt>
+                        {/* <dt className="sr-only">Category</dt> */}
+                        <dt className="sr-only">分類</dt>
                         <dd className="group-hover:text-blue-200">{project.category}</dd>
                       </div>
                       <div className="col-start-2 row-start-1 row-end-3 sm:mt-4 lg:mt-0 xl:mt-4">
-                        <dt className="sr-only">Users</dt>
+                        {/* <dt className="sr-only">Users</dt> */}
+                        <dt className="sr-only">用戶</dt>
                         <dd className="flex justify-end sm:justify-start lg:justify-end xl:justify-start -space-x-1.5">
                           {Array.from({ length: 5 }).map((_, j) => (
                             <img
@@ -222,7 +240,8 @@ export function StateVariants() {
                     >
                       <path d="M10 5a1 1 0 0 1 1 1v3h3a1 1 0 1 1 0 2h-3v3a1 1 0 1 1-2 0v-3H6a1 1 0 1 1 0-2h3V6a1 1 0 0 1 1-1Z" />
                     </svg>
-                    New project
+                    {/* New project */}
+                    建立專案
                   </div>
                 </li>
               </ul>
