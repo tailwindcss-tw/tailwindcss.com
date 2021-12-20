@@ -57,7 +57,8 @@ export default function App({ Component, pageProps, router }) {
   const showHeader = router.pathname !== '/'
   const meta = Component.layoutProps?.meta || {}
   const description =
-    meta.metaDescription || meta.description || 'Documentation for the Tailwind CSS framework.'
+    // meta.metaDescription || meta.description || 'Documentation for the Tailwind CSS framework.'
+    meta.metaDescription || meta.description || 'Tailwind CSS 框架技術文件'
 
   if (router.pathname.startsWith('/examples/')) {
     return <Component {...pageProps} />
@@ -79,20 +80,23 @@ export default function App({ Component, pageProps, router }) {
         <meta
           key="twitter:image"
           name="twitter:image"
-          content={`https://tailwindcss.com${socialCardLarge}`}
+          // content={`https://tailwindcss.com${socialCardLarge}`}
+          content={`https://tailwindcss.tw${socialCardLarge}`}
         />
         <meta key="twitter:creator" name="twitter:creator" content="@tailwindcss" />
         <meta
           key="og:url"
           property="og:url"
-          content={`https://tailwindcss.com${router.pathname}`}
+          // content={`https://tailwindcss.com${router.pathname}`}
+          content={`https://tailwindcss.tw${router.pathname}`}
         />
         <meta key="og:type" property="og:type" content="article" />
         <meta key="og:description" property="og:description" content={description} />
         <meta
           key="og:image"
           property="og:image"
-          content={`https://tailwindcss.com${socialCardLarge}`}
+          // content={`https://tailwindcss.com${socialCardLarge}`}
+          content={`https://tailwindcss.tw${socialCardLarge}`}
         />
         <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feeds/feed.xml" />
         <link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/atom.xml" />
