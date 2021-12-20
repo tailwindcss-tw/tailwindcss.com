@@ -1,7 +1,7 @@
-import { DocumentationLayout } from '@/layouts/zh/DocumentationLayout'
+import { DocumentationLayout } from '@/layouts/.ZH/DocumentationLayout'
 import { Button } from '@/components/Button'
 import clsx from 'clsx'
-import { BasicLayout } from '@/layouts/BasicLayout'
+import { BasicLayout } from '@/layouts/.ZH/BasicLayout'
 import { ReactComponent as DiscordIcon } from '@/img/icons/discord.svg'
 import { ReactComponent as GitHubIcon } from '@/img/icons/github.svg'
 
