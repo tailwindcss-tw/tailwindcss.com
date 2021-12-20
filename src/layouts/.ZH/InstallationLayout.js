@@ -5,16 +5,16 @@ import Link from 'next/link'
 import { IconContainer } from '@/components/home/common'
 
 let tabs = {
-  'Tailwind CLI': '/ZH/docs/installation',
-  'Using PostCSS': '/ZH/docs/installation/using-postcss',
-  'Framework Guides': '/ZH/docs/installation/framework-guides',
-  'Play CDN': '/ZH/docs/installation/play-cdn',
+  'Tailwind CLI': '/zh/docs/installation',
+  'Using PostCSS': '/zh/docs/installation/using-postcss',
+  'Framework Guides': '/zh/docs/installation/framework-guides',
+  'Play CDN': '/zh/docs/installation/play-cdn',
 }
 
 let readNext = [
   {
     title: 'Utility-First Fundamentals',
-    href: '/ZH/docs/utility-first',
+    href: '/zh/docs/utility-first',
     body: () => (
       <p>
         Using a utility-first workflow to build complex components from a constrained set of
@@ -25,7 +25,7 @@ let readNext = [
   },
   {
     title: 'Responsive Design',
-    href: '/ZH/docs/responsive-design',
+    href: '/zh/docs/responsive-design',
     body: () => (
       <p>
         Build fully responsive user interfaces that adapt to any screen size using responsive
@@ -36,7 +36,7 @@ let readNext = [
   },
   {
     title: 'Hover, Focus & Other States',
-    href: '/ZH/docs/hover-focus-and-other-states',
+    href: '/zh/docs/hover-focus-and-other-states',
     body: () => (
       <p>
         Style elements in interactive states like hover, focus, and more using conditional
@@ -47,7 +47,7 @@ let readNext = [
   },
   {
     title: 'Dark Mode',
-    href: '/ZH/docs/dark-mode',
+    href: '/zh/docs/dark-mode',
     body: () => (
       <p>Optimize your site for dark mode directly in your HTML using the dark mode modifier.</p>
     ),
@@ -55,7 +55,7 @@ let readNext = [
   },
   {
     title: 'Reusing Styles',
-    href: '/ZH/docs/reusing-styles',
+    href: '/zh/docs/reusing-styles',
     body: () => (
       <p>
         Manage duplication and keep your projects maintainable by creating reusable abstractions.
@@ -65,7 +65,7 @@ let readNext = [
   },
   {
     title: 'Customizing the Framework',
-    href: '/ZH/docs/adding-custom-styles',
+    href: '/zh/docs/adding-custom-styles',
     body: () => (
       <p>Customize the framework to match your brand and extend it with your own custom styles.</p>
     ),

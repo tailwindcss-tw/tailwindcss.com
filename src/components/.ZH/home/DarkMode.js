@@ -130,7 +130,7 @@ export function DarkMode() {
           <InlineCode>dark:</InlineCode> ，這麼一來，當深色模式開啟時，
           背景顏色、文字顏色、邊框顏色甚至是漸層色都能發生變化。
         </Paragraph>
-        <Link href="/docs/dark-mode" color="gray">
+        <Link href="zh/docs/dark-mode" color="gray">
           {/* Learn more<span className="sr-only">, dark mode</span> */}
           了解更多<span className="sr-only">關於深色模式的內容</span>
         </Link>

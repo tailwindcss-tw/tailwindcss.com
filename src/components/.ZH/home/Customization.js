@@ -121,7 +121,7 @@ export function Customization() {
             讓 Tailwind 來把它轉換成屬於你客製化的 CSS 框架。
           </p>
         </Paragraph>
-        <Link href="/docs/configuration" color="pink">
+        <Link href="zh/docs/configuration" color="pink">
           {/* Learn more<span className="sr-only">, configuration</span> */}
           了解詳情<span className="sr-only">，關於配置的部分</span>
         </Link>

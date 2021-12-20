@@ -1,8 +1,8 @@
 import { createPageList } from '@/utils/createPageList'
 
 const pages = createPageList(
-  require.context(`../../pages/ZH/docs/?meta=title,shortTitle,published`, false, /\.mdx$/),
-  'ZH/docs'
+  require.context(`../../pages/zh/docs/?meta=title,shortTitle,published`, false, /\.mdx$/),
+  'zh/docs'
 )
 
 export const documentationNav = {
@@ -11,8 +11,8 @@ export const documentationNav = {
       title: 'Installation',
       // href: '/docs/installation',
       // match: /^\/docs\/installation/,
-      href: '/ZH/docs/installation',
-      match: /^\/ZH\/docs\/installation/,
+      href: '/zh/docs/installation',
+      match: /^\/zh\/docs\/installation/,
     },
     // TODO: Add these pages
     // pages['tailwind-cli'],

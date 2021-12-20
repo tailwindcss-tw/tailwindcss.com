@@ -114,7 +114,7 @@ export function StateVariants() {
           <InlineCode>disabled</InlineCode>、<InlineCode>focus-within</InlineCode>、
           <InlineCode>focus-visible</InlineCode> ，甚至是我們自己發明的超酷炫狀態 <InlineCode>group-hover</InlineCode>。
         </Paragraph>
-        <Link href="/docs/hover-focus-and-other-states" color="blue">
+        <Link href="zh/docs/hover-focus-and-other-states" color="blue">
           {/* Learn more<span className="sr-only">, handling hover, focus, and other states</span> */}
           <span className="sr-only">了解關於 hover、focus 以及其他狀態的</span>詳細說明
         </Link>

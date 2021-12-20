@@ -225,7 +225,7 @@ function TopLevelNav() {
     <>
       <TopLevelLink
         // href="/docs/installation"
-        href="/docs/.ZH/installation"
+        href="zh/docs/installation"
         isActive={pathname.startsWith('/docs')}
         className="mb-4"
         shadow="group-hover:shadow-sky-200"
