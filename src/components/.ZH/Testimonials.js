@@ -295,7 +295,7 @@ let testimonials = [
       url: 'https://twitter.com/debs_obrien/status/1243255468241420288',
       author: {
         name: `Debbie O'Brien`,
-        role: 'Head of Learning @ Nuxt.js',
+        role: 'Head Developer Advocate @ Bit',
         avatar: require('@/img/avatars/debbie-obrien.jpg').default,
       },
     },
@@ -979,8 +979,7 @@ export function Testimonials() {
           )}
           onClick={() => setExpanded(!expanded)}
         >
-          {/* {expanded ? 'Okay, I get the point' : 'Show more...'} */}
-          {expanded ? '好了，我知道了啦！' : '閱讀更多'}
+          {expanded ? 'Okay, I get the point' : 'Show more...'}
         </button>
       </div>
     </section>

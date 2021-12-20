@@ -8,7 +8,6 @@ import { debounce } from 'debounce'
 import { useMedia } from '@/hooks/useMedia'
 import { wait } from '@/utils/wait'
 import { createInViewPromise } from '@/utils/createInViewPromise'
-// import { tokens, code } from '../../samples/hero.html?highlight'
 import { tokens, code } from '../../../samples/.ZH/hero.html?highlight'
 import colors from 'tailwindcss/colors'
 
@@ -336,11 +335,8 @@ export function Hero() {
                 >
                   <motion.div layout={layout} className="mb-4" transition={TRANSITION}>
                     <Words bolder={step >= 3} layout={layout} transition={TRANSITION}>
-                      {/* “Tailwind CSS is the only framework that I've seen scale on large teams. It’s
-                      easy to customize, adapts to any design, and the build size is tiny.” */}
-                      「Tailwind CSS 是我見過唯一一個可以在大型團隊中
-                      擴展開來的框架。它可以輕鬆的客製化、
-                      適應任何設計，而且建置後又很輕巧。」
+                      “Tailwind CSS is the only framework that I've seen scale on large teams. It’s
+                      easy to customize, adapts to any design, and the build size is tiny.”
                     </Words>
                   </motion.div>
                   <motion.div
@@ -370,8 +366,7 @@ export function Hero() {
                       }}
                       transition={TRANSITION}
                     >
-                      {/* Staff Engineer, Algolia */}
-                      Algolia 的主管工程師
+                      Staff Engineer, Algolia
                     </motion.p>
                   </motion.div>
                 </motion.div>

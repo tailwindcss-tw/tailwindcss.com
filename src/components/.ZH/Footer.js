@@ -50,15 +50,10 @@ export function Footer({ children, previous, next }) {
       )}
       <div className="pt-10 pb-28 border-t border-gray-200 sm:flex justify-between text-gray-500">
         <div className="mb-6 sm:mb-0 sm:flex">
-          {/* <p>Copyright &copy; 2021 Tailwind Labs Inc.</p> */}
-          <p>
-            Copyright &copy; 2021 Tailwind Labs Inc.<br/>
-            由兔兔教翻譯
-          </p>
+          <p>Copyright &copy; 2021 Tailwind Labs Inc.</p>
           <p className="sm:ml-4 sm:pl-4 sm:border-l sm:border-gray-200">
             <Link href="/brand">
-              {/* <a className="hover:text-gray-900">Trademark Policy</a> */}
-              <a className="hover:text-gray-900">商標政策</a>
+              <a className="hover:text-gray-900">Trademark Policy</a>
             </Link>
           </p>
         </div>

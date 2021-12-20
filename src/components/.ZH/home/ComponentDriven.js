@@ -42,7 +42,6 @@ import { lines as bladeListSample } from '../../../samples/blade/list.html?highl
 import { lines as bladeListItemSample } from '../../../samples/.ZH/blade/list-item.html?highlight'
 
 import { lines as css } from '../../../samples/apply.txt?highlight=css'
-// import { lines as html } from '../../samples/apply.html?highlight'
 import { lines as html } from '../../../samples/.ZH/apply.html?highlight'
 
 function highlightDecorators(lines) {
@@ -62,10 +61,8 @@ const movies = [
     starRating: '2.66',
     rating: 'PG-13',
     year: '2021',
-    // genre: 'Comedy',
-    genre: '喜劇',
-    // runtime: '1h 46m',
-    runtime: '106 分鐘',
+    genre: 'Comedy',
+    runtime: '1h 46m',
     cast: 'Simon Pegg, Zach Galifianakis',
     image: require('@/img/prognosis-negative.jpg').default,
   },
@@ -74,10 +71,8 @@ const movies = [
     starRating: '3.25',
     rating: 'R',
     year: '2020',
-    // genre: 'Romance',
-    genre: '浪漫',
-    // runtime: '1h 56m',
-    runtime: '116 分鐘',
+    genre: 'Romance',
+    runtime: '1h 56m',
     cast: 'Emilia Clarke',
     image: require('@/img/rochelle-rochelle.jpg').default,
   },
@@ -86,10 +81,8 @@ const movies = [
     starRating: '4.95',
     rating: '18A',
     year: '2020',
-    // genre: 'Action',
-    genre: '動作',
-    // runtime: '2h 5m',
-    runtime: '125 分鐘',
+    genre: 'Action',
+    runtime: '2h 5m',
     cast: 'Idris Elba, John Cena, Thandiwe Newton',
     image: require('@/img/death-blow.jpg').default,
   },
@@ -336,15 +329,14 @@ function AtApplySection() {
   return (
     <div className="mt-20 relative max-w-7xl mx-auto px-4 sm:mt-32 sm:px-6 md:px-8 lg:grid lg:grid-cols-12 lg:gap-x-8 lg:grid-rows-1">
       <div className="lg:col-span-7 xl:col-span-6 lg:row-end-1">
-        {/* <h3 className="text-3xl text-gray-900 font-extrabold">Not into component frameworks?</h3> */}
-        <h3 className="text-3xl text-gray-900 font-extrabold">沒有在使用元件框架？</h3>
+        <h3 className="text-3xl text-gray-900 font-extrabold">Not into component frameworks?</h3>
         <Paragraph>
-          {/* If you like to keep it old school use Tailwind's <InlineCode>@apply</InlineCode> directive
-          to extract repeated utility patterns into custom CSS classes just by copying and pasting */}
-          想要保持老派格調，不想加入元件框架的世界中嗎？那用 Tailwind 的 <InlineCode>@apply</InlineCode> 指令把你重複的功能樣式集中到自訂的 CSS class 裡吧。
+          If you like to keep it old school use Tailwind's <InlineCode>@apply</InlineCode> directive
+          to extract repeated utility patterns into custom CSS classes just by copying and pasting
+          the list of class names.
         </Paragraph>
-        <Link href="zh/docs/reusing-styles" color="sky">
-          閱讀更多<span className="sr-only">關於樣式重新使用的內容</span>
+        <Link href="/docs/reusing-styles" color="sky">
+          Learn more<span className="sr-only">, reusing styles</span>
         </Link>
       </div>
 
@@ -360,8 +352,7 @@ function AtApplySection() {
                 { 'opacity-25': inView }
               )}
             >
-              {/* Weekly one-on-one */}
-              每周 1 對 1 教學
+              Weekly one-on-one
             </h2>
             <dl
               className={clsx(
@@ -370,33 +361,26 @@ function AtApplySection() {
               )}
             >
               <div className="px-4 sm:px-6 lg:px-4 xl:px-6 pb-4">
-                {/* <dt className="sr-only">Date and time</dt> */}
-                <dt className="sr-only">日期與時間</dt>
+                <dt className="sr-only">Date and time</dt>
                 <dd>
-                  {/* <time dateTime="2020-11-15T10:00:00-05:00">Thu Nov 15, 2020 10:00am</time> -{' '} */}
-                  <time dateTime="2020-11-15T10:00:00-05:00">2020/11/15 (二) 上午 10:00</time> -{' '}
+                  <time dateTime="2020-11-15T10:00:00-05:00">Thu Nov 15, 2020 10:00am</time> -{' '}
                   <time dateTime="2020-11-15T11:00:00-05:00">
-                    {/* 11:00am<span className="sr-only sm:not-sr-only"> EST</span> */}
-                    11:00
+                    11:00am<span className="sr-only sm:not-sr-only"> EST</span>
                   </time>
                 </dd>
               </div>
               <div className="w-full flex-none flex items-center p-4 sm:p-6 lg:p-4 xl:p-6">
-                {/* <dt className="w-2/5 sm:w-1/4 flex-none text-gray-900 font-medium">Location</dt> */}
-                <dt className="w-2/5 sm:w-1/4 flex-none text-gray-900 font-medium">地點</dt>
+                <dt className="w-2/5 sm:w-1/4 flex-none text-gray-900 font-medium">Location</dt>
                 <dd>
                   Kitchener, <abbr title="Ontario">ON</abbr>
                 </dd>
               </div>
               <div className="w-full flex-none flex items-center p-4 sm:p-6 lg:p-4 xl:p-6">
-                {/* <dt className="w-2/5 sm:w-1/4 flex-none text-gray-900 font-medium">Description</dt> */}
-                <dt className="w-2/5 sm:w-1/4 flex-none text-gray-900 font-medium">案件描述</dt>
-                {/* <dd className="italic">No meeting description</dd> */}
-                <dd className="italic">無任何描述</dd>
+                <dt className="w-2/5 sm:w-1/4 flex-none text-gray-900 font-medium">Description</dt>
+                <dd className="italic">No meeting description</dd>
               </div>
               <div className="w-full flex-none flex items-center p-4 sm:py-5 sm:px-6 lg:p-4 xl:py-5 xl:px-6">
-                {/* <dt className="w-2/5 sm:w-1/4 flex-none text-gray-900 font-medium">Attendees</dt> */}
-                <dt className="w-2/5 sm:w-1/4 flex-none text-gray-900 font-medium">參與者</dt>
+                <dt className="w-2/5 sm:w-1/4 flex-none text-gray-900 font-medium">Attendees</dt>
                 <dd className="text-sm font-medium text-gray-700 bg-gray-100 rounded-full py-1 px-3">
                   Andrew McDonald
                 </dd>
@@ -404,12 +388,10 @@ function AtApplySection() {
             </dl>
             <div className="grid grid-cols-2 gap-x-4 sm:gap-x-6 lg:gap-x-4 xl:gap-x-6 p-4 sm:px-6 sm:py-5 lg:p-4 xl:px-6 xl:py-5">
               <div className="text-base font-medium rounded-lg bg-gray-100 text-gray-900 py-3 text-center cursor-pointer">
-                {/* Decline */}
-                拒絕
+                Decline
               </div>
               <div className="text-base font-medium rounded-lg bg-sky-500 text-white py-3 text-center cursor-pointer">
-                {/* Accept */}
-                接案
+                Accept
               </div>
             </div>
           </article>
@@ -551,21 +533,17 @@ export function ComponentDriven() {
         <IconContainer>
           <img src={iconUrl} alt="" />
         </IconContainer>
-        {/* <Caption className="text-sky-500">Component-driven</Caption> */}
-        <Caption className="text-sky-500">元件驅動</Caption>
+        <Caption className="text-sky-500">Component-driven</Caption>
         <BigText>
-          {/* <Widont>Worried about duplication? Don’t be.</Widont> */}
-          <Widont>擔心複用性的問題？ 免了啦</Widont>
+          <Widont>Worried about duplication? Don’t be.</Widont>
         </BigText>
         <Paragraph>
-          {/* If you're repeating the same utilities over and over and over again, all you have to do is
+          If you're repeating the same utilities over and over and over again, all you have to do is
           extract them into a component or template partial and boom — you've got a single source of
-          truth so you can make changes in one place. */}
-          如果你想要一直、一直、一直地重複使用你的功能或設計，
-          那你需要的是把它們做成元件或樣板，這樣你只要改變一次，就能應用在所有地方。
+          truth so you can make changes in one place.
         </Paragraph>
-        <Link href="zh/docs/reusing-styles" color="sky">
-          閱讀更多<span className="sr-only">關於樣式重新使用的內容</span>
+        <Link href="/docs/reusing-styles" color="sky">
+          Learn more<span className="sr-only">, reusing styles</span>
         </Link>
         <div className="mt-10">
           <Tabs
@@ -587,20 +565,17 @@ export function ComponentDriven() {
                 <ul className="flex space-x-3">
                   <li>
                     <div className="px-3 py-2 rounded-md bg-sky-500 text-white cursor-pointer">
-                      {/* New<span className="hidden sm:inline lg:hidden xl:inline"> Releases</span> */}
-                      新片<span className="hidden sm:inline lg:hidden xl:inline">上映</span>
+                      New<span className="hidden sm:inline lg:hidden xl:inline"> Releases</span>
                     </div>
                   </li>
                   <li>
                     <div className="px-3 py-2 rounded-md bg-gray-50 cursor-pointer">
-                      {/* Top<span className="hidden sm:inline"> Rated</span> */}
-                      熱門<span className="hidden sm:inline">電影</span>
+                      Top<span className="hidden sm:inline"> Rated</span>
                     </div>
                   </li>
                   <li>
                     <div className="px-3 py-2 rounded-md bg-gray-50 cursor-pointer">
-                      {/* Vincent’s Picks */}
-                      文森精選
+                      Vincent’s Picks
                     </div>
                   </li>
                 </ul>
@@ -626,8 +601,7 @@ export function ComponentDriven() {
                     <dl className="mt-2 flex flex-wrap text-sm leading-6 font-medium">
                       <div className="hidden absolute top-0 right-0 sm:flex items-center space-x-1">
                         <dt className="text-sky-500">
-                          {/* <span className="sr-only">Star rating</span> */}
-                          <span className="sr-only">評分</span>
+                          <span className="sr-only">Star rating</span>
                           <svg width="16" height="20" fill="currentColor">
                             <path d="M7.05 3.691c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.372 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.539 1.118l-2.8-2.034a1 1 0 00-1.176 0l-2.8 2.034c-.783.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.363-1.118L.98 9.483c-.784-.57-.381-1.81.587-1.81H5.03a1 1 0 00.95-.69L7.05 3.69z" />
                           </svg>
@@ -635,18 +609,15 @@ export function ComponentDriven() {
                         <dd>{starRating}</dd>
                       </div>
                       <div>
-                        {/* <dt className="sr-only">Rating</dt> */}
-                        <dt className="sr-only">分級</dt>
+                        <dt className="sr-only">Rating</dt>
                         <dd className="px-1.5 ring-1 ring-gray-200 rounded">{rating}</dd>
                       </div>
                       <div className="ml-2">
-                        {/* <dt className="sr-only">Year</dt> */}
-                        <dt className="sr-only">上映年份</dt>
+                        <dt className="sr-only">Year</dt>
                         <dd>{year}</dd>
                       </div>
                       <div>
-                        {/* <dt className="sr-only">Genre</dt> */}
-                        <dt className="sr-only">類型</dt>
+                        <dt className="sr-only">Genre</dt>
                         <dd className="flex items-center">
                           <svg
                             width="2"
@@ -661,8 +632,7 @@ export function ComponentDriven() {
                         </dd>
                       </div>
                       <div>
-                        {/* <dt className="sr-only">Runtime</dt> */}
-                        <dt className="sr-only">片長</dt>
+                        <dt className="sr-only">Runtime</dt>
                         <dd className="flex items-center">
                           <svg
                             width="2"
@@ -677,8 +647,7 @@ export function ComponentDriven() {
                         </dd>
                       </div>
                       <div className="flex-none w-full mt-2 font-normal">
-                        {/* <dt className="sr-only">Cast</dt> */}
-                        <dt className="sr-only">演員陣容</dt>
+                        <dt className="sr-only">Cast</dt>
                         <dd className="text-gray-400">{cast}</dd>
                       </div>
                     </dl>

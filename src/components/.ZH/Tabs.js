@@ -38,20 +38,20 @@ export function Tabs({ tabs, selected, onChange, className, iconClassName }) {
 function chineseName(name) {
   return {
     // Utilities
-    'Sizing': "尺寸",
-    'Colors': "色彩",
-    'Typography': "文字版式",
-    'Shadows': "陰影",
+    'Sizing': "Sizing",
+    'Colors': "Colors",
+    'Typography': "Typography",
+    'Shadows': "陰Shadows影",
 
     // Layouts
-    'Simple': "簡約",
-    'Playful': "生動",
-    'Elegant': "典雅",
-    'Brutalist': "狂野",
+    'Simple': "Simple",
+    'Playful': "Playful生動",
+    'Elegant': "Elegant",
+    'Brutalist': "Brutalist",
 
     // Features
-    'CSS Grid': "CSS 網格",
-    'Transforms': "變形",
-    'Filters': "濾鏡",
+    'CSS Grid': "CSS Grid",
+    'Transforms': "Transforms",
+    'Filters': "Filters",
   }[name]
 }

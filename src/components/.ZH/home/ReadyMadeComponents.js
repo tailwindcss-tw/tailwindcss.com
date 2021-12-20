@@ -2,7 +2,6 @@ import { IconContainer, Caption, BigText, Paragraph, Link, Widont } from '@/comp
 import iconUrl from '@/img/icons/home/ready-made-components.png'
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
-// import { GridLockup } from '../GridLockup'
 import { GridLockup } from '@/components/GridLockup'
 
 function AnimatedImage({ animate = false, delay = 0, ...props }) {
@@ -44,23 +43,18 @@ export function ReadyMadeComponents() {
         <IconContainer>
           <img src={iconUrl} alt="" />
         </IconContainer>
-        {/* <Caption className="text-indigo-500">Ready-made components</Caption> */}
-        <Caption className="text-indigo-500">現成的元件</Caption>
+        <Caption className="text-indigo-500">Ready-made components</Caption>
         <BigText>
-          {/* <Widont>Move even faster with Tailwind UI.</Widont> */}
-          <Widont>用 Tailwind UI 快速前進</Widont>
+          <Widont>Move even faster with Tailwind UI.</Widont>
         </BigText>
         <Paragraph>
-          {/* Tailwind UI is a collection of beautiful, fully responsive UI components, designed and
+          Tailwind UI is a collection of beautiful, fully responsive UI components, designed and
           developed by us, the creators of Tailwind CSS. It's got hundreds of ready-to-use examples
           to choose from, and is guaranteed to help you find the perfect starting point for what you
-          want to build. */}
-          Tailwind UI 集結了我們以及所有 Tailwind CSS 的創作者所設計研發的漂亮且完全響應式的 UI 元件。
-          那裏有數百個現成的範例讓你選擇，而且保證你能找到心目中想建構的完美起點。
+          want to build.
         </Paragraph>
         <Link href="https://tailwindui.com/" color="indigo">
-          {/* Learn more */}
-          了解詳情
+          Learn more
         </Link>
       </div>
       <GridLockup

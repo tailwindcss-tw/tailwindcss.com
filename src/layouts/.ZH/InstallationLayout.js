@@ -80,7 +80,7 @@ export function InstallationLayout({ children }) {
     <BasicLayout>
       <header className="mb-10 md:flex md:items-start">
         <div className="flex-auto max-w-4xl">
-          <p className="mb-4 text-sm leading-6 font-semibold text-sky-500">安裝</p>
+          <p className="mb-4 text-sm leading-6 font-semibold text-sky-500">Installation</p>
           <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">
             Get started with Tailwind CSS
           </h1>

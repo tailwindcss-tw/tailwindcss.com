@@ -1,13 +1,11 @@
 import { useState, useEffect, createContext, Fragment, useCallback, useContext } from 'react'
 import { ClassTable } from '@/components/ClassTable'
 import { useRouter } from 'next/router'
-// import { usePrevNext } from '@/hooks/usePrevNext'
 import { usePrevNext } from '@/hooks/.ZH/usePrevNext'
 import Link from 'next/link'
 import { SidebarLayout, SidebarContext } from '@/layouts/.ZH/SidebarLayout'
 import { PageHeader } from '@/components/PageHeader'
 import clsx from 'clsx'
-// import { Footer } from '@/components/Footer'
 import { Footer } from '@/components/.ZH/Footer'
 import { Heading } from '@/components/.ZH/Heading'
 import { MDXProvider } from '@mdx-js/react'
@@ -39,8 +37,7 @@ function TableOfContents({ tableOfContents, currentSection }) {
 
   return (
     <>
-      {/* <h5 className="text-gray-900 font-semibold mb-4 text-sm leading-6">On this page</h5> */}
-      <h5 className="text-gray-900 font-semibold mb-4 text-sm leading-6">此頁面中</h5>
+      <h5 className="text-gray-900 font-semibold mb-4 text-sm leading-6">On this page</h5>
       <ul className="text-gray-700 text-sm leading-6">
         {tableOfContents.map((section) => (
           <Fragment key={section.slug}>
@@ -200,8 +197,7 @@ export function ContentsLayout({ children, meta, classes, tableOfContents, secti
         <Link
           href={`https://github.com/tailwindlabs/tailwindcss.com/edit/master/src/pages${router.pathname}.mdx`}
         >
-          {/* <a className="hover:text-gray-900">Edit this page on GitHub</a> */}
-          <a className="hover:text-gray-900">在 GitHub 上編輯</a>
+          <a className="hover:text-gray-900">Edit this page on GitHub</a>
         </Link>
       </Footer>
 

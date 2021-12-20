@@ -1,9 +1,9 @@
 <template>
   <div class="divide-y divide-gray-100">
     <Nav>
-      <NavItem href="/new" isActive>新片上映</NavItem>
-      <NavItem href="/top">熱門電影</NavItem>
-      <NavItem href="/picks">文森精選</NavItem>
+      <NavItem href="/new" isActive>New Releases</NavItem>
+      <NavItem href="/top">Top Rated</NavItem>
+      <NavItem href="/picks">Vincent’s Picks</NavItem>
     </Nav>
     <List>
       <ListItem v-for="movie in movies" :key="movie.id" :movie="movie" />

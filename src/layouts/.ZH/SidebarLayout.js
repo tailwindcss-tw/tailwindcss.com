@@ -4,7 +4,6 @@ import { createContext, forwardRef, useRef } from 'react'
 import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayoutEffect'
 import clsx from 'clsx'
 import { SearchButton } from '@/components/Search'
-// import { SearchButton } from '@/components/.ZH/Search'
 import { Dialog } from '@headlessui/react'
 import chineseCategory from '@/components/.ZH/ChineseCategory'
 
@@ -119,8 +118,7 @@ function Nav({ nav, children, fallbackHref }) {
                 strokeLinejoin="round"
               />
             </svg>
-            {/* Quick search... */}
-            快速搜尋...
+            Quick search...
             {actionKey && (
               <span className="ml-auto pl-3 flex-none text-xs font-semibold">{actionKey[0]}K</span>
             )}
@@ -247,8 +245,7 @@ function TopLevelNav() {
           </>
         }
       >
-        {/* Documentation */}
-        技術文件
+        Documentation
       </TopLevelLink>
       <TopLevelLink
         href="https://tailwindui.com/components?utm_source=tailwindcss&utm_medium=navigation"
@@ -265,8 +262,7 @@ function TopLevelNav() {
           </>
         }
       >
-        {/* Components */}
-        元件庫
+        Components
       </TopLevelLink>
       <TopLevelLink
         href="https://www.youtube.com/tailwindlabs"
@@ -287,8 +283,7 @@ function TopLevelNav() {
           </>
         }
       >
-        {/* Screencasts */}
-        教學影片
+        Screencasts
       </TopLevelLink>
       <TopLevelLink
         href="https://play.tailwindcss.com"
@@ -317,8 +312,7 @@ function TopLevelNav() {
           </>
         }
       >
-        {/* Playground */}
-        遊樂場
+        Playground
       </TopLevelLink>
       <TopLevelLink
         href="/resources"
@@ -342,8 +336,7 @@ function TopLevelNav() {
           </>
         }
       >
-        {/* Resources */}
-        資源
+        Resources
       </TopLevelLink>
       <TopLevelLink
         href="https://github.com/tailwindlabs/tailwindcss/discussions"
@@ -363,8 +356,7 @@ function TopLevelNav() {
           </>
         }
       >
-        {/* Community */}
-        社群
+        Community
       </TopLevelLink>
     </>
   )
@@ -408,8 +400,7 @@ export function SidebarLayout({
             onClick={() => setNavIsOpen(false)}
             className="absolute top-5 right-5 w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-600"
           >
-            {/* <span className="sr-only">Close navigation</span> */}
-            <span className="sr-only">關閉導航欄</span>
+            <span className="sr-only">Close navigation</span>
             <svg viewBox="0 0 10 10" className="w-2.5 h-2.5 overflow-visible">
               <path
                 d="M0 0L10 10M10 0L0 10"

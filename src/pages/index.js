@@ -124,8 +124,7 @@ function Header() {
                     <path d="m19 19-3.5-3.5" />
                     <circle cx="11" cy="11" r="6" />
                   </svg>
-                  {/* <span className="flex-auto">Quick search...</span> */}
-                  <span className="flex-auto">快速搜尋...</span>
+                  <span className="flex-auto">Quick search...</span>
                   {actionKey && (
                     <kbd className="font-sans font-semibold dark:text-gray-500">
                       <abbr
@@ -155,17 +154,14 @@ export default function Home() {
         <meta
           key="twitter:title"
           name="twitter:title"
-          // content="Tailwind CSS - Rapidly build modern websites without ever leaving your HTML."
-          content="Tailwind CSS - 不用離開HTML，你還是可以極速建立最潮的網站。"
+          content="Tailwind CSS - Rapidly build modern websites without ever leaving your HTML."
         />
         <meta
           key="og:title"
           property="og:title"
-          // content="Tailwind CSS - Rapidly build modern websites without ever leaving your HTML."
-          content="Tailwind CSS - 不用離開HTML，你還是可以極速建立最潮的網站。"
+          content="Tailwind CSS - Rapidly build modern websites without ever leaving your HTML."
         />
-        {/* <title>Tailwind CSS - Rapidly build modern websites without ever leaving your HTML.</title> */}
-        <title>Tailwind CSS - 不用離開HTML，你還是可以極速建立最潮的網站</title>
+        <title>Tailwind CSS - Rapidly build modern websites without ever leaving your HTML.</title>
       </Head>
       <div className="mb-20 space-y-20 overflow-hidden sm:mb-32 sm:space-y-32 md:mb-40 md:space-y-40">
         <Header />
@@ -176,7 +172,7 @@ export default function Home() {
           <figure>
             <blockquote>
               <p className="mt-6 max-w-3xl mx-auto text-lg">
-                {/* I’ve written{' '}
+                I’ve written{' '}
                 <a
                   href="https://adamwathan.me/css-utility-classes-and-separation-of-concerns/"
                   className="text-sky-500 font-semibold dark:text-sky-400"
@@ -186,18 +182,7 @@ export default function Home() {
                 on why traditional “semantic class names” are the reason CSS is hard to maintain,
                 but the truth is you’re never going to believe me until you actually try it. If you
                 can suppress the urge to retch long enough to give it a chance, I really think
-                you’ll wonder how you ever worked with CSS any other way. */}
-                我不知道已經寫了
-                <a
-                  href="https://adamwathan.me/css-utility-classes-and-separation-of-concerns/"
-                  className="text-sky-500 font-semibold"
-                >
-                  幾千個字
-                </a>
-                就只為了說明讓 CSS 變得難以維護的原因，其實就是傳統的「語意化 class 名稱」。
-                但在你實際嘗試之前，你絕對不會認同我說的話。
-                如果你能不嫌棄地給它一個機會，
-                我相信你絕對會想知道怎麼透過其他的方式使用 CSS。
+                you’ll wonder how you ever worked with CSS any other way.
               </p>
             </blockquote>
             <figcaption className="mt-6 flex items-center justify-center space-x-4 text-left">
