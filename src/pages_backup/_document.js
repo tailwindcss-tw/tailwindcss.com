@@ -15,8 +15,7 @@ export default class Document extends NextDocument {
   render() {
     return (
       <Html
-        // lang="en"
-        lang="zh-Hant-TW"
+        lang="en"
         className={`text-gray-500 antialiased [--scroll-mt:9.875rem] lg:[--scroll-mt:6.3125rem] ${
           this.props.dangerousAsPath.startsWith('/examples/') ? '' : 'bg-white'
         }`}
