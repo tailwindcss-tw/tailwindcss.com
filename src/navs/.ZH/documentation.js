@@ -1,24 +1,19 @@
 import { createPageList } from '@/utils/createPageList'
 
 const pages = createPageList(
-  require.context(`../../pages/docs/.ZH/?meta=title,shortTitle,published`, false, /\.mdx$/),
-  'docs'
+  require.context(`../../pages/ZH/docs/?meta=title,shortTitle,published`, false, /\.mdx$/),
+  'ZH/docs'
 )
 
-// const pages_of_installation = createPageList(
-//   require.context(`../../pages/docs/.ZH/installation/?meta=title,shortTitle,published`, false, /\.js$/),
-//   'docs/installation'
-// )
-
 export const documentationNav = {
-  '起手式': [
+  'Getting Started': [
     {
-      title: '安裝',
+      title: 'Installation',
       // href: '/docs/installation',
-      href: '/docs/.ZH/installation',
-      match: /^\/docs\/installation/,
+      // match: /^\/docs\/installation/,
+      href: '/ZH/docs/installation',
+      match: /^\/ZH\/docs\/installation/,
     },
-    // pages_of_installation['index'],
     // TODO: Add these pages
     // pages['tailwind-cli'],
     // { title: 'Play CDN', href: '#' },
@@ -28,7 +23,7 @@ export const documentationNav = {
     pages['browser-support'],
     pages['upgrade-guide'],
   ],
-  '核心概念': [
+  'Core Concepts': [
     pages['utility-first'],
     // TODO: Maybe write this page
     // pages['writing-your-html'],
@@ -39,7 +34,7 @@ export const documentationNav = {
     pages['adding-custom-styles'],
     pages['functions-and-directives'],
   ],
-  '客製化': [
+  Customization: [
     pages['configuration'],
     pages['content-configuration'],
     // TODO: Remove + redirect to v2
@@ -53,8 +48,8 @@ export const documentationNav = {
     pages['plugins'],
     pages['presets'],
   ],
-  '基礎樣式': [pages['preflight']],
-  '排版': [
+  'Base Styles': [pages['preflight']],
+  Layout: [
     pages['aspect-ratio'],
     pages['container'],
     pages['columns'],
