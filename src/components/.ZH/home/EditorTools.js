@@ -331,7 +331,7 @@ export function EditorTools() {
             智慧的語法建議、整理以及 class 定義等，全部在你的編輯器裡，而且還不用設定。
           </p>
         </Paragraph>
-        <Link href="/docs/intellisense" color="sky">
+        <Link href="zh/docs/intellisense" color="sky">
           {/* Learn more<span className="sr-only">, editor setup</span> */}
           閱讀更多<span className="sr-only">關於編輯器的設定</span>
         </Link>

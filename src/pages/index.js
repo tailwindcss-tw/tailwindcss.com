@@ -41,7 +41,8 @@ function Header() {
           <Logo className="w-auto h-5" />
           <div className="flex items-center">
             <SearchButton className="text-gray-500 w-8 h-8 -my-1 flex items-center justify-center md:hidden">
-              <span className="sr-only">Search</span>
+              {/* <span className="sr-only">Search</span> */}
+              <span className="sr-only">搜尋</span>
               <svg
                 width="24"
                 height="24"
@@ -94,7 +95,7 @@ function Header() {
             </NextLink> */}
             <div className='flex flex-col gap-2'>
               心動。不如...
-              <NextLink href="/ZH/docs/installation">
+              <NextLink href="/zh/docs/installation">
                 <a className="bg-gray-900 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50 text-white font-semibold h-12 px-6 rounded-lg w-full flex items-center justify-center sm:w-auto">
                   馬上行動
                 </a>
