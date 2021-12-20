@@ -1,16 +1,21 @@
 import { IconContainer, Caption, BigText, Paragraph, Link, Widont } from '@/components/home/common'
-import { Tabs } from '@/components/Tabs'
+import { Tabs } from '@/components/.ZH/Tabs'
 import { CodeWindow, getClassNameForToken } from '@/components/CodeWindow'
 import iconUrl from '@/img/icons/home/constraint-based.png'
 import defaultConfig from 'defaultConfig'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
-import { GridLockup } from '../GridLockup'
+// import { GridLockup } from '../GridLockup'
+import { GridLockup } from '../../GridLockup'
 import clsx from 'clsx'
-import { lines as sizingSample } from '../../samples/sizing.html?highlight'
-import { lines as colorsSample } from '../../samples/colors.html?highlight'
-import { lines as typographySample } from '../../samples/typography.html?highlight'
-import { lines as shadowsSample } from '../../samples/shadows.html?highlight'
+// import { lines as sizingSample } from '../../samples/sizing.html?highlight'
+// import { lines as colorsSample } from '../../samples/colors.html?highlight'
+// import { lines as typographySample } from '../../samples/typography.html?highlight'
+// import { lines as shadowsSample } from '../../samples/shadows.html?highlight'
+import { lines as sizingSample } from '../../../samples/sizing.html?highlight'
+import { lines as colorsSample } from '../../../samples/colors.html?highlight'
+import { lines as typographySample } from '../../../samples/typography.html?highlight'
+import { lines as shadowsSample } from '../../../samples/shadows.html?highlight'
 
 const tokens = {
   Sizing: sizingSample,
@@ -272,18 +277,23 @@ export function ConstraintBased() {
         <IconContainer>
           <img src={iconUrl} alt="" />
         </IconContainer>
-        <Caption className="text-indigo-500">Constraint-based</Caption>
+        {/* <Caption className="text-indigo-500">Constraint-based</Caption> */}
+        <Caption className="text-indigo-500">以約束 (Constraint) 為基底</Caption>
         <BigText>
-          <Widont>An API for your design system.</Widont>
+          <Widont>為您設計系統而生的 API</Widont>
         </BigText>
         <Paragraph>
-          Utility classes help you work within the constraints of a system instead of littering your
+          {/* Utility classes help you work within the constraints of a system instead of littering your
           stylesheets with arbitrary values. They make it easy to be consistent with color choices,
           spacing, typography, shadows, and everything else that makes up a well-engineered design
-          system.
+          system. */}
+          功能性 class 可以約束您的系統，而不是在樣式表中填上亂七八糟的數值。
+          它們讓顏色、間距、文字版式、陰影，以及其他的一切都能井然有序的保持一致性，
+          締造精良的設計系統。
         </Paragraph>
         <Link href="/docs/utility-first" color="indigo">
-          Learn more<span className="sr-only">, utility-first fundamentals</span>
+          {/* Learn more<span className="sr-only">, utility-first fundamentals</span> */}
+          了解詳情<span className="sr-only">，功能優先的基本原則</span>
         </Link>
         <div className="mt-10">
           <Tabs

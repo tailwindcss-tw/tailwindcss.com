@@ -7,6 +7,7 @@ import { Logo } from '@/components/Logo'
 import { Dialog } from '@headlessui/react'
 import { useEffect, useState } from 'react'
 import clsx from 'clsx'
+import chineseCategory from '@/components/.ZH/ChineseCategory'
 
 function Featured() {
   return (
@@ -18,7 +19,7 @@ function Featured() {
         </svg>
         <span className="ml-2">
           {/* Just-in-Time all the time, colored shadows, scroll snap and more */}
-          Just-in-Time all the time, colored shadows, scroll snap and more
+          全時段的 JIT 模式，還有陰影色彩、捲動吸附以及更多新功能
         </span>
         <svg width="3" height="6" className="ml-3 overflow-visible text-sky-300" aria-hidden="true">
           <path
@@ -101,9 +102,9 @@ export function NavItems() {
   return (
     <>
       <li>
-        <Link href="/docs/.ZH/installation">
+        <Link href="ZH/docs/installation">
           {/* <a className="hover:text-sky-500">Docs</a> */}
-          <a className="hover:text-sky-500">文件</a>
+          <a className="hover:text-sky-500">技術文件</a>
         </Link>
       </li>
       <li>
@@ -186,7 +187,7 @@ export function Header({ hasNav = false, navIsOpen, onNavToggle, title, section 
                   className="mr-3 flex-none w-[2.0625rem] overflow-hidden md:w-auto"
                   onContextMenu={(e) => {
                     e.preventDefault()
-                    Router.push('/brand')
+                    Router.push('/ZH/brand')
                   }}
                 >
                   {/* <span className="sr-only">Tailwind CSS home page</span> */}
@@ -246,7 +247,8 @@ export function Header({ hasNav = false, navIsOpen, onNavToggle, title, section 
                 <ol className="ml-4 flex text-sm leading-6 whitespace-nowrap min-w-0">
                   {section && (
                     <li className="flex items-center">
-                      {section}
+                      {/* {section} */}
+                      {chineseCategory[section]}
                       <svg
                         width="3"
                         height="6"
