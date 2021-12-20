@@ -7,9 +7,11 @@ import Link from 'next/link'
 import { SidebarLayout, SidebarContext } from '@/layouts/.ZH/SidebarLayout'
 import { PageHeader } from '@/components/PageHeader'
 import clsx from 'clsx'
-import { Footer } from '@/components/Footer'
+// import { Footer } from '@/components/Footer'
+import { Footer } from '@/components/.ZH/Footer'
 import { Heading } from '@/components/Heading'
 import { MDXProvider } from '@mdx-js/react'
+import chineseCategory from '@/components/.ZH/ChineseCategory'
 
 export const ContentsContext = createContext()
 
@@ -37,7 +39,8 @@ function TableOfContents({ tableOfContents, currentSection }) {
 
   return (
     <>
-      <h5 className="text-gray-900 font-semibold mb-4 text-sm leading-6">On this page</h5>
+      {/* <h5 className="text-gray-900 font-semibold mb-4 text-sm leading-6">On this page</h5> */}
+      <h5 className="text-gray-900 font-semibold mb-4 text-sm leading-6">此頁面中</h5>
       <ul className="text-gray-700 text-sm leading-6">
         {tableOfContents.map((section) => (
           <Fragment key={section.slug}>
@@ -175,7 +178,8 @@ export function ContentsLayout({ children, meta, classes, tableOfContents, secti
         title={meta.title}
         description={meta.description}
         badge={{ key: 'Tailwind CSS version', value: meta.featureVersion }}
-        section={section}
+        // section={section}
+        section={chineseCategory[section]}
       />
       <ContentsContext.Provider value={{ registerHeading, unregisterHeading }}>
         {classes ? (
@@ -196,7 +200,8 @@ export function ContentsLayout({ children, meta, classes, tableOfContents, secti
         <Link
           href={`https://github.com/tailwindlabs/tailwindcss.com/edit/master/src/pages${router.pathname}.mdx`}
         >
-          <a className="hover:text-gray-900">Edit this page on GitHub</a>
+          {/* <a className="hover:text-gray-900">Edit this page on GitHub</a> */}
+          <a className="hover:text-gray-900">在 GitHub 上編輯</a>
         </Link>
       </Footer>
 
