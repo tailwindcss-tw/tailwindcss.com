@@ -11,8 +11,8 @@ import Head from 'next/head'
 import socialCardLarge from '@/img/social-card-large.jpg'
 import { ResizeObserver } from '@juggle/resize-observer'
 import 'intersection-observer'
-// import { SearchProvider } from '@/components/Search'
-import { SearchProvider } from '@/components/.ZH/Search'
+import { SearchProvider } from '@/components/Search'
+// import { SearchProvider } from '@/components/.ZH/Search'
 
 if (typeof window !== 'undefined' && !('ResizeObserver' in window)) {
   window.ResizeObserver = ResizeObserver
