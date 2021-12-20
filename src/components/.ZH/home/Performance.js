@@ -144,7 +144,7 @@ export function Performance() {
           Tailwind 會在生產環境建置時自動移除未使用的 CSS，這代表著你最後的 CSS 內容量會盡其所能的最小化。
           事實上，大部分的 Tailwind 專案只會對客戶端傳送小於 10kB 的 CSS。
         </Paragraph>
-        <Link href="/docs/optimizing-for-production" color="sky">
+        <Link href="zh/docs/optimizing-for-production" color="sky">
           {/* Learn more<span className="sr-only">, optimizing for production</span> */}
           繼續閱讀<span className="sr-only">關於生產環境優化的部分</span>
         </Link>

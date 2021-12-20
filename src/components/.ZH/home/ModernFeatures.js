@@ -135,7 +135,7 @@ export function ModernFeatures() {
             <InlineCode>:focus-visible</InlineCode> 這種的現代狀態選擇器，以及更多其他功能。
           </p>
         </Paragraph>
-        <Link href="/docs/grid-template-columns" color="indigo">
+        <Link href="zh/docs/grid-template-columns" color="indigo">
           {/* Learn more<span className="sr-only">, grid template columns</span> */}
           去了解<span className="sr-only">網格排版的相關內容</span>
         </Link>
