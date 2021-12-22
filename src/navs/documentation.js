@@ -9,7 +9,8 @@ export const documentationNav = {
   '起手式 (Getting started)': [
     pages['installation'],
     {
-      title: 'Release Notes',
+      // title: 'Release Notes',
+      title: '發佈日誌',
       href: 'https://github.com/tailwindlabs/tailwindcss/releases',
     },
     pages['upgrading-to-v2'],

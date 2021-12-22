@@ -56,7 +56,8 @@ export default function App({ Component, pageProps, router }) {
     : {}
   const meta = Component.layoutProps?.meta || {}
   const description =
-    meta.metaDescription || meta.description || 'Documentation for the Tailwind CSS framework.'
+    // meta.metaDescription || meta.description || 'Documentation for the Tailwind CSS framework.'
+    meta.metaDescription || meta.description || 'Tailwind CSS 框架技術文件 (v2).'
 
   if (router.pathname.startsWith('/examples/')) {
     return <Component {...pageProps} />
@@ -72,20 +73,20 @@ export default function App({ Component, pageProps, router }) {
         <meta
           key="twitter:image"
           name="twitter:image"
-          content={`https://tailwindcss.com${twitterLargeCard}`}
+          content={`https://v2.tailwindcss.tw${twitterLargeCard}`}
         />
         <meta key="twitter:creator" name="twitter:creator" content="@tailwindcss" />
         <meta
           key="og:url"
           property="og:url"
-          content={`https://tailwindcss.com${router.pathname}`}
+          content={`https://v2.tailwindcss.tw${router.pathname}`}
         />
         <meta key="og:type" property="og:type" content="article" />
         <meta key="og:description" property="og:description" content={description} />
         <meta
           key="og:image"
           property="og:image"
-          content={`https://tailwindcss.com${twitterLargeCard}`}
+          content={`https://v2.tailwindcss.tw${twitterLargeCard}`}
         />
       </Head>
       {router.pathname !== '/' && (

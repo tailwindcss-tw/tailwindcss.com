@@ -180,15 +180,19 @@ export function Header({ navIsOpen, onNavToggle }) {
           <BannerMarkRight className="hidden sm:block absolute left-1/2 transform translate-x-[330px] translate-y-[-357px] w-[848px] h-[513px]" />
           <div className="relative sm:flex justify-center items-center">
             <div className="text-sm font-medium text-white">
-              You're looking at the documentation for{' '}
+              {/* You're looking at the documentation for{' '}
+              <span class="whitespace-nowrap">Tailwind CSS v2.</span>{' '} */}
+              你正在瀏覽的是{' '}
               <span class="whitespace-nowrap">Tailwind CSS v2.</span>{' '}
+              的技術文件{' '}
             </div>
             <div class="mt-1 sm:hidden">
               <a
                 href="https://tailwindcss.com"
                 className="text-sm text-white font-bold underline sm:hidden"
               >
-                Go to Tailwind CSS v3 &rarr;
+                {/* Go to Tailwind CSS v3 &rarr; */}
+                前往 Tailwind CSS v3 &rarr;
               </a>
             </div>
             <span
@@ -200,7 +204,8 @@ export function Header({ navIsOpen, onNavToggle }) {
                 href="https://tailwindcss.com"
                 className="whitespace-nowrap inline-flex rounded-md bg-white py-2 px-3 text-xs font-semibold  text-blue-500 hover:bg-opacity-90"
               >
-                Go to Tailwind CSS v3 &rarr;
+                {/* Go to Tailwind CSS v3 &rarr; */}
+                前往 Tailwind CSS v3 &rarr;
               </a>
             </div>
           </div>
@@ -216,7 +221,8 @@ export function Header({ navIsOpen, onNavToggle }) {
                 Router.push('/brand')
               }}
             >
-              <span className="sr-only">Tailwind CSS home page</span>
+              {/* <span className="sr-only">Tailwind CSS home page</span> */}
+              <span className="sr-only">Tailwind CSS 首頁</span>
               <Logo className="w-auto h-6" />
             </a>
           </Link>
@@ -229,7 +235,8 @@ export function Header({ navIsOpen, onNavToggle }) {
               href="https://github.com/tailwindlabs/tailwindcss"
               className="text-gray-400 hover:text-gray-500 transition-colors duration-200"
             >
-              <span className="sr-only">Tailwind CSS on GitHub</span>
+              {/* <span className="sr-only">Tailwind CSS on GitHub</span> */}
+              <span className="sr-only">Tailwind CSS 的 GitHub</span>
               <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
                 <path
                   fillRule="evenodd"
@@ -245,7 +252,8 @@ export function Header({ navIsOpen, onNavToggle }) {
         className="fixed z-50 bottom-4 right-4 w-16 h-16 rounded-full bg-gray-900 text-white block lg:hidden"
         onClick={() => onNavToggle(!navIsOpen)}
       >
-        <span className="sr-only">Open site navigation</span>
+        {/* <span className="sr-only">Open site navigation</span> */}
+        <span className="sr-only">開啟網站導航欄</span>
         <svg
           width="24"
           height="24"

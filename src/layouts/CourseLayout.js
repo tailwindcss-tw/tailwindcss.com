@@ -85,12 +85,12 @@ export function CourseLayout(props) {
         <meta
           key="twitter:image"
           name="twitter:image"
-          content={`https://tailwindcss.com${twitterCardScreencasts}`}
+          content={`https://v2.tailwindcss.tw${twitterCardScreencasts}`}
         />
         <meta
           key="og:image"
           property="og:image"
-          content={`https://tailwindcss.com${twitterCardScreencasts}`}
+          content={`https://v2.tailwindcss.tw${twitterCardScreencasts}`}
         />
       </Head>
       <SidebarLayout nav={nav} fallbackHref="/course/coming-soon" {...props} />

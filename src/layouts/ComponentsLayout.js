@@ -27,7 +27,7 @@ export function ComponentsLayout(props) {
         <meta
           key="twitter:image"
           name="twitter:image"
-          content={`https://tailwindcss.com${twitterSquare}`}
+          content={`https://v2.tailwindcss.tw${twitterSquare}`}
         />
       </Head>
       <SidebarLayout nav={nav} {...props} />
