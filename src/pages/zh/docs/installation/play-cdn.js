@@ -1,6 +1,6 @@
 import NextLink from 'next/link'
-import { DocumentationLayout } from '@/layouts/DocumentationLayout'
-import { InstallationLayout } from '@/layouts/InstallationLayout'
+import { DocumentationLayout } from '@/layouts/.zh/DocumentationLayout'
+import { InstallationLayout } from '@/layouts/.zh/InstallationLayout'
 import { Steps } from '@/components/Steps'
 import { black } from 'tailwindcss/colors'
 import { theme } from 'tailwind.config'
@@ -37,7 +37,7 @@ let steps = [
     body: () => (
       <p>
         Edit the <code>tailwind.config</code> object to{' '}
-        <NextLink href="/docs/configuration">
+        <NextLink href="/zh/docs/configuration">
           <a>customize your configuration</a>
         </NextLink>{' '}
         with your own design tokens.
@@ -123,7 +123,7 @@ export default function PlayCdn({ code }) {
 }
 
 export function getStaticProps() {
-  let { highlightCode } = require('../../../../remark/utils')
+  let { highlightCode } = require('../../../../../remark/utils')
 
   return {
     props: {

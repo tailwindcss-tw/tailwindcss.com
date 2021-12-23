@@ -26,10 +26,12 @@ const Prism = require('prismjs')
 
 const fallbackLayouts = {
   'src/pages/docs/**/*': ['@/layouts/DocumentationLayout', 'DocumentationLayout'],
+  'src/pages/zh/docs/**/*': ['@/layouts/.zh/DocumentationLayout', 'DocumentationLayout'],
 }
 
 const fallbackDefaultExports = {
   'src/pages/{docs,components}/**/*': ['@/layouts/ContentsLayout', 'ContentsLayout'],
+  'src/pages/zh/{docs,components}/**/*': ['@/layouts/.zh/ContentsLayout', 'ContentsLayout'],
   'src/pages/blog/**/*': ['@/layouts/BlogPostLayout', 'BlogPostLayout'],
 }
 

@@ -1,5 +1,5 @@
-import { DocumentationLayout } from '@/layouts/DocumentationLayout'
-import { FrameworkGuideLayout } from '@/layouts/FrameworkGuideLayout'
+import { DocumentationLayout } from '@/layouts/.zh/DocumentationLayout'
+import { FrameworkGuideLayout } from '@/layouts/.zh/FrameworkGuideLayout'
 import { Steps } from '@/components/Steps'
 
 let steps = [
@@ -138,7 +138,7 @@ export default function UsingLaravel({ code }) {
 }
 
 export function getStaticProps() {
-  let { highlightCode } = require('../../../../remark/utils')
+  let { highlightCode } = require('../../../../../remark/utils')
 
   return {
     props: {

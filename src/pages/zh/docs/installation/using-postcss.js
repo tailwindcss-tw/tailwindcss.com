@@ -1,5 +1,5 @@
-import { DocumentationLayout } from '@/layouts/DocumentationLayout'
-import { InstallationLayout } from '@/layouts/InstallationLayout'
+import { DocumentationLayout } from '@/layouts/.zh/DocumentationLayout'
+import { InstallationLayout } from '@/layouts/.zh/InstallationLayout'
 import { Cta } from '@/components/Cta'
 import { Steps } from '@/components/Steps'
 
@@ -142,7 +142,7 @@ export default function UsingPostCss({ code }) {
 }
 
 export function getStaticProps() {
-  let { highlightCode } = require('../../../../remark/utils')
+  let { highlightCode } = require('../../../../../remark/utils')
 
   return {
     props: {

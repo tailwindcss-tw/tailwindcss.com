@@ -1,5 +1,5 @@
-import { DocumentationLayout } from '@/layouts/DocumentationLayout'
-import { InstallationLayout } from '@/layouts/InstallationLayout'
+import { DocumentationLayout } from '@/layouts/.zh/DocumentationLayout'
+import { InstallationLayout } from '@/layouts/.zh/InstallationLayout'
 import Link from 'next/link'
 
 import { ReactComponent as NextJsLogo } from '@/img/guides/nextjs.svg'
@@ -60,7 +60,7 @@ export default function FrameworkGuides() {
           <li key={name} className="relative flex flex-row-reverse">
             <div className="ml-6 flex-auto">
               <h3 className="mb-2 leading-6 text-gray-900 font-semibold dark:text-gray-200">
-                <Link href={`/docs/guides/${slug}`}>
+                <Link href={`/zh/docs/guides/${slug}`}>
                   <a className="before:absolute before:inset-0">{name}</a>
                 </Link>
               </h3>
@@ -75,11 +75,11 @@ export default function FrameworkGuides() {
       <div className="mt-16 prose max-w-3xl dark:prose-dark">
         <p>
           Don't see your framework of choice? Try using{' '}
-          <Link href="/docs/installation">
+          <Link href="/zh/docs/installation">
             <a>Tailwind CLI</a>
           </Link>{' '}
           or installing Tailwind{' '}
-          <Link href="/docs/installation/using-postcss">
+          <Link href="/zh/docs/installation/using-postcss">
             <a>as a PostCSS plugin</a>
           </Link>{' '}
           instead.

@@ -1,5 +1,5 @@
-import { DocumentationLayout } from '@/layouts/DocumentationLayout'
-import { FrameworkGuideLayout } from '@/layouts/FrameworkGuideLayout'
+import { DocumentationLayout } from '@/layouts/.zh/DocumentationLayout'
+import { FrameworkGuideLayout } from '@/layouts/.zh/FrameworkGuideLayout'
 import { Cta } from '@/components/Cta'
 import { Steps } from '@/components/Steps'
 
@@ -153,7 +153,7 @@ export default function UsingGatsby({ code }) {
 }
 
 export function getStaticProps() {
-  let { highlightCode } = require('../../../../remark/utils')
+  let { highlightCode } = require('../../../../../remark/utils')
 
   return {
     props: {
