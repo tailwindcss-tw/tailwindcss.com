@@ -8,5 +8,14 @@ module.exports = () => {
         replace: "元件",
       },
     },
+    {
+      test: /\.mdx$/,
+      loader: "./tester",
+      options: {
+        replacement: {
+          "editor-setup.mdx": "./zh/editor-setup.mdx",
+        },
+      },
+    },
   ];
 };
