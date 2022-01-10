@@ -4,12 +4,18 @@ const fsPromises = require('fs').promises
 const path = require('path')
 
 async function fileReplacer (source) {
-  const { base, replacements } = getOptions(this)
+  const { base, replacement } = getOptions(this)
   
   const filename = path.parse(this.resourcePath)
   
   const saveFilename = filename.base
-  const targetFilename = base ? path.join(base,String(replacements[saveFilename])) : replacements[saveFilename]
+  const targetFilename = (
+    base 
+    ? 
+    path.join(base,String(replacement[saveFilename])) 
+    :
+    replacement[saveFilename]
+  )
 
   try{
     await fsPromises.access(targetFilename, fs.constants.R_OK | fs.constants.W_OK)
