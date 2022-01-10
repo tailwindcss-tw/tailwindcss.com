@@ -1,31 +1,35 @@
 const { getOptions } = require("loader-utils")
 const fs = require('fs')
 const fsPromises = require('fs').promises
+const path = require('path')
 
-
-async function file_replacer (source) {
+async function fileReplacer (source) {
   const base = getOptions(this).base
   const list = getOptions(this).replacement
   
-  const filename = this.resourcePath.split(/[\/\\]+/)
+  const filename = path.parse(this.resourcePath)
   
-  const saveFilename = filename[filename.length-1]
-  const targetFilename = base ? [base,list[saveFilename]].join("/") : list[saveFilename]
-  
-  let translatedFileContent = ""
-  
+  const saveFilename = filename.base
+  const targetFilename = base ? path.join(base,String(list[saveFilename])) : list[saveFilename]
+
   try{
     await fsPromises.access(targetFilename, fs.constants.R_OK | fs.constants.W_OK)
     const stat = await fsPromises.lstat(targetFilename)
+    
+    let translatedFileContent = ""
 
     if(stat.isFile()){
       translatedFileContent = await fsPromises.readFile(targetFilename)
-      console.log(`[replacer] replaced '${saveFilename}' to '${targetFilename}'`)
+    } else {
+      throw `Target path "${targetFilename}" is not a file.`
     }
-  } catch {
     
+    console.log(`[file-replacer] replaced '${saveFilename}' to '${targetFilename}'`)
+    return translatedFileContent
+  } catch(e) {
+    // console.log(`[file-replacer] ${e}`)
+    return source
   }
-  return translatedFileContent? translatedFileContent: source
 };
 
-module.exports = file_replacer
+module.exports = fileReplacer
