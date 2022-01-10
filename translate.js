@@ -10,7 +10,7 @@ module.exports = () => {
     },
     {
       test: /\.mdx$/,
-      loader: "./tester",
+      loader: "./file-replacer",
       options: {
         base: "./translated",
         replacement: {
@@ -20,7 +20,7 @@ module.exports = () => {
     },
     {
       test: /documentation\.js$/,
-      loader: "./tester",
+      loader: "./file-replacer",
       options: {
         replacement: {
           "documentation.js": "./translated/navs/documentation.js",
@@ -29,7 +29,7 @@ module.exports = () => {
     },
     {
       test: /components[\/+\\+]home[\/+\\+]\w*\.js$/,
-      loader: "./tester",
+      loader: "./file-replacer",
       options: {
         base: "./translated/components/home",
         replacement: {
