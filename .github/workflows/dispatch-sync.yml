@@ -1,12 +1,12 @@
 # This is a basic workflow that is manually triggered
 
-name: Deploy workflow
+name: Dispatch sync-event
 
 on:
-  pull_request:
-    types: [closed]
+  push:
     branches:
       - tw
+      - v2
 
 jobs:
   dispatch_event:
