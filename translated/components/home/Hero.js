@@ -338,8 +338,11 @@ export function Hero() {
                 >
                   <motion.div layout={layout} className="mb-4" transition={TRANSITION}>
                     <Words bolder={step >= 3} layout={layout} transition={TRANSITION}>
-                      “Tailwind CSS is the only framework that I've seen scale on large teams. It’s
-                      easy to customize, adapts to any design, and the build size is tiny.”
+                      {/* “Tailwind CSS is the only framework that I've seen scale on large teams. It’s
+                      easy to customize, adapts to any design, and the build size is tiny.” */}
+                      「Tailwind CSS 是我見過唯一一個可以在大型團隊中
+                      擴展開來的框架。它可以輕鬆的客製化、
+                      適應任何設計，而且建置後又很輕巧。」
                     </Words>
                   </motion.div>
                   <motion.div
