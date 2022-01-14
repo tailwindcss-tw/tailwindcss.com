@@ -28,12 +28,23 @@ module.exports = () => {
     //   },
     // },
     {
-      test: /pages[\/+\\+]index\.js$/,
+      test: /samples[\/+\\+]\w*\.html$/,
       loader: "./file-replacer",
       options: {
-        base: "./translated",
+        base: "./translated/samples",
         replacement: {
-          "index.js": "index.js",
+          "hero.html": "hero.html",
+        },
+      },
+    },
+    {
+      test: /components[\/+\\+]\w*\.js$/,
+      loader: "./file-replacer",
+      options: {
+        base: "./translated/components",
+        replacement: {
+          "Testimonials.js": "Testimonials.js",
+          "Tabs.js": "Tabs.js",
         },
       },
     },
@@ -44,6 +55,17 @@ module.exports = () => {
         base: "./translated/components/home",
         replacement: {
           "Hero.js": "Hero.js",
+          "ConstraintBased.js": "ConstraintBased.js",
+        },
+      },
+    },
+    {
+      test: /pages[\/+\\+]index\.js$/,
+      loader: "./file-replacer",
+      options: {
+        base: "./translated/pages",
+        replacement: {
+          "index.js": "index.js",
         },
       },
     },
